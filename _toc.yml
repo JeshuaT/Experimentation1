@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Session 01
+    chapters:
+      - file: content/session_01/intro_01
+  - caption: Session 02
+    chapters:
+      - file: content/session_02/intro_02
+  - caption: Session 03
+    chapters:
+      - file: content/session_03/intro_03
+  - caption: Session 04
+    chapters:
+      - file: content/session_04/intro_04
+      - file: content/session_04/UltimatumGame/UltimatumGame
+

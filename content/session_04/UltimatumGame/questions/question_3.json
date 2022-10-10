@@ -1,0 +1,24 @@
+[
+  {
+    "question": "Let's say we made a silly mistake, and instead of defining $[O1_Me] we inserted $[FairOffer]. We run the experiment and $[O1_You] is presented on the left box. What will $[FairOffer] show?",
+    "type": "numeric",
+    "answers": [
+      {
+        "type": "value",
+        "value": 1,
+        "correct": true,
+        "feedback": "Correct!"
+      },
+      {
+        "type": "value",
+        "value": 2,
+        "correct": false,
+        "feedback": "Since O1_You is presented on the left box, you know that O1_Me is also presented on the left box. What does that tell you about FairOffer?"
+      },
+      {
+        "type": "default",
+        "feedback": "False! Try again."
+      }
+    ]
+  }
+]

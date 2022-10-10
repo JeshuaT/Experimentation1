@@ -1,0 +1,56 @@
+[
+  {
+    "question": "Why is the second row needed?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "To get two trials",
+        "correct": false,
+        "feedback": "False"
+      },
+      {
+        "answer": "To counter-balance which choice gets presented on the left and right side",
+        "correct": true,
+        "feedback": "Correct!"
+      }
+    ]
+  },
+  {
+    "question": "Why is the FairOffer not only useful, but necessary?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "To give feedback to Player 2 later with which probabilities that player should make its choice",
+        "correct": true,
+        "feedback": "Correct!"
+      },
+      {
+        "answer": "To keep track of how many times a fair offer was made",
+        "correct": false,
+        "feedback": "False."
+      }
+    ]
+  },
+  {
+    "question": "How many trials will we get with these parameters?",
+    "type": "numeric",
+    "answers": [
+      {
+        "type": "value",
+        "value": 10,
+        "correct": true,
+        "feedback": "Correct!"
+      },
+      {
+        "type": "value",
+        "value": 10,
+        "correct": false,
+        "feedback": "False! Each cycle is repeated 5x, but since we have two trials in our initial cycle, we will have twice as many trials for each repeat!"
+      },
+      {
+        "type": "default",
+        "feedback": "False! Try again."
+      }
+    ]
+  }
+]
