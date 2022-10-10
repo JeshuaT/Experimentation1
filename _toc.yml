@@ -1,20 +1,62 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
 root: intro
-parts:
-  - caption: Session 01
-    chapters:
-      - file: content/session_01/intro_01
-  - caption: Session 02
-    chapters:
-      - file: content/session_02/intro_02
-  - caption: Session 03
-    chapters:
-      - file: content/session_03/intro_03
-  - caption: Session 04
-    chapters:
-      - file: content/session_04/intro_04
+chapters:
+  - file: content/session_01/intro_01
+    sections:
+      - file: content/session_01/python_lessons_01
+      - file: content/session_01/python_exercises_01
+  - file: content/session_02/intro_02
+    sections:
+      - file: content/session_02/python_lessons_02
+      - file: content/session_02/python_exercises_02
+  - file: content/session_03/intro_03
+    sections:
+      - file: content/session_03/python_lessons_03
+      - file: content/session_03/python_exercises_03
+  - file: content/session_04/intro_04
+    sections:
+      - file: content/session_04/python_lessons_04
+      - file: content/session_04/python_exercises_04
       - file: content/session_04/UltimatumGame/UltimatumGame
-
+  - file: content/session_05/intro_05
+    sections:
+      - file: content/session_05/python_lessons_05
+      - file: content/session_05/python_exercises_05
+  - file: content/session_06/intro_06
+    sections:
+      - file: content/session_06/python_lessons_06
+      - file: content/session_06/python_exercises_06
+  - file: content/session_07/intro_07
+    sections:
+      - file: content/session_07/python_lessons_07
+      - file: content/session_07/python_exercises_07
+  - file: content/session_08/intro_08
+    sections:
+      - file: content/session_08/python_lessons_08
+      - file: content/session_08/python_exercises_08
+  - file: content/session_09/intro_09
+    sections:
+      - file: content/session_09/python_lessons_09
+      - file: content/session_09/python_exercises_09
+  - file: content/session_10/intro_10
+    sections:
+      - file: content/session_10/python_lessons_10
+      - file: content/session_10/python_exercises_10
+  - file: content/session_11/intro_11
+    sections:
+      - file: content/session_11/python_lessons_11
+      - file: content/session_11/python_exercises_11
+  - file: content/session_12/intro_12
+    sections:
+      - file: content/session_12/python_lessons_12
+      - file: content/session_12/python_exercises_12
+  - file: content/session_13/intro_13
+    sections:
+      - file: content/session_13/python_lessons_13
+      - file: content/session_13/python_exercises_13
+  - file: content/session_14/intro_14
+    sections:
+      - file: content/session_14/python_lessons_14
+      - file: content/session_14/python_exercises_14
