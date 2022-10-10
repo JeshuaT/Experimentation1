@@ -30,8 +30,7 @@ parse:
 
 # Online stuff
 repository:
-  url                       : https://github.com/JeshuaT/Experimentation1_Course  # The URL to your book's repository
-  path_to_book              : book
+  url                       : https://github.com/JeshuaT/Experimentation1  # The URL to your book's repository
   branch                    : main  # Which branch of the repository should be used when creating links
 
 launch_buttons:
