@@ -31,7 +31,6 @@ parse:
 # Online stuff
 repository:
   url                       : https://github.com/JeshuaT/Experimentation1  # The URL to your book's repository
-  path_to_book              : docs/
 
 launch_buttons:
   notebook_interface        : classic
