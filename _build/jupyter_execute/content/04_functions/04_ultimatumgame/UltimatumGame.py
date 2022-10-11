@@ -5,7 +5,7 @@
 
 
 from jupyterquiz import display_quiz
-from IPython.display import HTML
+from IPython.display import IFrame
 
 
 # # The Ultimatum Game
@@ -23,8 +23,12 @@ display_quiz("questions/question_1.json")
 
 
 # In this tutorial, we are going to program an Ultimatum game where the proposer (the participant) can either decide to propose a fair offer (5 points for me, 5 points for you) or an unfair offer (7 points for me, 3 points for you). After the proposer decision makes the decision, feedback about the response is shown on the screen. We'll invent a cover story for the participants: we'll tell them that the responder is a real person connected to the experiment via the internet. In reality, the responder is a virtual agent and just consists of some lines of Python code that makes decisions in a human-like way -- rational with some random variation. For this virtual responder, we'll determine the response behaviour using the following algorithm:
+
 # 
-# *When a fair offer is made by the proposer, I will accept it 80% of the time; when an unfair offer is made by the proposer, I will accept it only 25% of the time.*
+# ```
+# When a fair offer is made by the proposer, I will accept it 80% of the time; when an unfair offer is made by the proposer, I will accept it only 25% of the time.
+# ```
+
 # 
 # ## Building the framework
 # 
@@ -105,6 +109,11 @@ display_quiz("questions/question_4.json")
 # ![image info](./images/WaitingForOther.PNG)
 
 # ## The Decision of Player 2
+
+# :::{note}
+# For this part of the tutorial you will need to launch the script using Google Colab/Binder
+# :::
+
 # 
 # Great, we have the first part of the experiment nailed! Let's continue to the response of Player 2.
 # 
@@ -221,14 +230,8 @@ display_quiz("questions/question_5.json")
 # In[12]:
 
 
-HTML('<iframe width="560" height="315" src="https://www.youtube.com/embed/U6nB-WXZVQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+IFrame(src="https://www.youtube.com/embed/U6nB-WXZVQI", width="560", height="315")
 
 
 # 
 # Now you have a framework to test social decision making in humans. From here on you can tweak many variables depending on your hypothesis. Perhaps you are interested in more than just two options? And what will happen if Player 1 notices that Player 2 is very easy in accepting unfair decisions? Many possibilities to go to from, but you have a great basis to start from.
-
-# In[ ]:
-
-
-
-

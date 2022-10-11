@@ -654,7 +654,7 @@
   <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 </pre></div>
 </div>
 </div>
@@ -673,7 +673,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="EigWCMKyMcLc" data-shufflequestions="False"
+<div class="output text_html"><div id="XOYqXBzmXduJ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -835,7 +835,7 @@
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsEigWCMKyMcLc=[
+}</style></div><script type="application/javascript">var questionsXOYqXBzmXduJ=[
   {
     "question": "What do you think happened when multiple rounds would be played with the same player?",
     "type": "multiple_choice",
@@ -1602,12 +1602,14 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsEigWCMKyMcLc,  EigWCMKyMcLc);
+        show_questions(questionsXOYqXBzmXduJ,  XOYqXBzmXduJ);
         }
         </script></div>
 </div>
 <p>In this tutorial, we are going to program an Ultimatum game where the proposer (the participant) can either decide to propose a fair offer (5 points for me, 5 points for you) or an unfair offer (7 points for me, 3 points for you). After the proposer decision makes the decision, feedback about the response is shown on the screen. We’ll invent a cover story for the participants: we’ll tell them that the responder is a real person connected to the experiment via the internet. In reality, the responder is a virtual agent and just consists of some lines of Python code that makes decisions in a human-like way – rational with some random variation. For this virtual responder, we’ll determine the response behaviour using the following algorithm:</p>
-<p><em>When a fair offer is made by the proposer, I will accept it 80% of the time; when an unfair offer is made by the proposer, I will accept it only 25% of the time.</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">When</span> <span class="n">a</span> <span class="n">fair</span> <span class="n">offer</span> <span class="ow">is</span> <span class="n">made</span> <span class="n">by</span> <span class="n">the</span> <span class="n">proposer</span><span class="p">,</span> <span class="n">I</span> <span class="n">will</span> <span class="n">accept</span> <span class="n">it</span> <span class="mi">80</span><span class="o">%</span> <span class="n">of</span> <span class="n">the</span> <span class="n">time</span><span class="p">;</span> <span class="n">when</span> <span class="n">an</span> <span class="n">unfair</span> <span class="n">offer</span> <span class="ow">is</span> <span class="n">made</span> <span class="n">by</span> <span class="n">the</span> <span class="n">proposer</span><span class="p">,</span> <span class="n">I</span> <span class="n">will</span> <span class="n">accept</span> <span class="n">it</span> <span class="n">only</span> <span class="mi">25</span><span class="o">%</span> <span class="n">of</span> <span class="n">the</span> <span class="n">time</span><span class="o">.</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="building-the-framework">
 <h2>Building the framework<a class="headerlink" href="#building-the-framework" title="Permalink to this headline">¶</a></h2>
@@ -1624,7 +1626,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="qwPVpwNGqgNr" data-shufflequestions="False"
+<div class="output text_html"><div id="RrLLcsEzzmYt" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -1786,7 +1788,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsqwPVpwNGqgNr=[
+}</style></div><script type="application/javascript">var questionsRrLLcsEzzmYt=[
   {
     "question": "Why is the second row needed?",
     "type": "multiple_choice",
@@ -2575,7 +2577,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsqwPVpwNGqgNr,  qwPVpwNGqgNr);
+        show_questions(questionsRrLLcsEzzmYt,  RrLLcsEzzmYt);
         }
         </script></div>
 </div>
@@ -2602,7 +2604,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="sGQZgBwhbUXa" data-shufflequestions="False"
+<div class="output text_html"><div id="cKnuCycZGZOp" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -2764,7 +2766,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionssGQZgBwhbUXa=[
+}</style></div><script type="application/javascript">var questionscKnuCycZGZOp=[
   {
     "question": "Let's say we made a silly mistake, and instead of defining $[O1_Me] we inserted $[FairOffer]. We run the experiment and $[O1_You] is presented on the left box. What will $[FairOffer] show?",
     "type": "numeric",
@@ -3521,7 +3523,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionssGQZgBwhbUXa,  sGQZgBwhbUXa);
+        show_questions(questionscKnuCycZGZOp,  cKnuCycZGZOp);
         }
         </script></div>
 </div>
@@ -3539,7 +3541,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="XguCspCrcLHm" data-shufflequestions="False"
+<div class="output text_html"><div id="SfiOVDQWcFDu" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -3701,7 +3703,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsXguCspCrcLHm=[
+}</style></div><script type="application/javascript">var questionsSfiOVDQWcFDu=[
   {
     "question": "What will happen with those feedback sketchpads if we run the experiment now?",
     "type": "multiple_choice",
@@ -4457,7 +4459,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsXguCspCrcLHm,  XguCspCrcLHm);
+        show_questions(questionsSfiOVDQWcFDu,  SfiOVDQWcFDu);
         }
         </script></div>
 </div>
@@ -4472,6 +4474,10 @@ if (typeof version == 'undefined') {
 </div>
 <div class="section" id="the-decision-of-player-2">
 <h2>The Decision of Player 2<a class="headerlink" href="#the-decision-of-player-2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For this part of the tutorial you will need to launch the script using Google Colab/Binder</p>
+</div>
 <p>Great, we have the first part of the experiment nailed! Let’s continue to the response of Player 2.</p>
 <div class="section" id="an-inline-script-item-with-python-code-that-determines-the-choice-of-player-2-based-on-certain-probabilities-as-defined-before">
 <h3>4: An Inline Script item with Python code that determines the choice of Player 2 based on certain probabilities (as defined before)<a class="headerlink" href="#an-inline-script-item-with-python-code-that-determines-the-choice-of-player-2-based-on-certain-probabilities-as-defined-before" title="Permalink to this headline">¶</a></h3>
@@ -4544,7 +4550,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TwcDtptWGJtn" data-shufflequestions="False"
+<div class="output text_html"><div id="tyNoPhIvxzRV" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -4706,7 +4712,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsTwcDtptWGJtn=[
+}</style></div><script type="application/javascript">var questionstyNoPhIvxzRV=[
   {
     "question": "Lets say we want Player 1 to respond within 1000ms, so we code this in our OfferChoice object. The rest of the script is the same. On trial 10, Player 1 is too late and doesn't give a response. What will happen?",
     "type": "multiple_choice",
@@ -5462,7 +5468,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsTwcDtptWGJtn,  TwcDtptWGJtn);
+        show_questions(questionstyNoPhIvxzRV,  tyNoPhIvxzRV);
         }
         </script></div>
 </div>
@@ -5494,16 +5500,20 @@ if (typeof version == 'undefined') {
 <p>The experiment should look something like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/U6nB-WXZVQI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/U6nB-WXZVQI&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\program files (x86)\python36-32\lib\site-packages\IPython\core\display.py:717: UserWarning: Consider using IPython.display.IFrame instead
-  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
-</pre></div>
-</div>
-<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/U6nB-WXZVQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+<div class="output text_html">
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/U6nB-WXZVQI"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
 </div>
 <p>Now you have a framework to test social decision making in humans. From here on you can tweak many variables depending on your hypothesis. Perhaps you are interested in more than just two options? And what will happen if Player 1 notices that Player 2 is very easy in accepting unfair decisions? Many possibilities to go to from, but you have a great basis to start from.</p>
 </div>
