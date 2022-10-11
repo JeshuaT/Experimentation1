@@ -3,7 +3,7 @@
 format: jb-book
 root: intro
 chapters:
-  - file: content/01_getting_ready/01_intro
+  - file: content/01_getting_ready/gettingready_intro
     sections:
       - file: content/01_getting_ready/01_python_lessons
       - file: content/01_getting_ready/01_python_exercises
