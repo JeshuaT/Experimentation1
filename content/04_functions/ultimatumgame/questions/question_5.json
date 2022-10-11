@@ -1,0 +1,23 @@
+[
+  {
+    "question": "Lets say we want Player 1 to respond within 1000ms, so we code this in our OfferChoice object. The rest of the script is the same. On trial 10, Player 1 is too late and doesn't give a response. What will happen?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "The experiment will continue, and there is a 75% chance that Player 1 will see the RejectOffer screen",
+        "correct": true,
+        "feedback": "The response variable is set to None. In the if..else statement, the first condition will be false, so it will automatically continue to the else condition. This we have coded as the reject decision algorithm"
+      },
+      {
+        "answer": "The experiment will continue and there is a 80% chance that Player 1 will see the AcceptOffer screen",
+        "correct": false,
+        "feedback": "False!"
+      },
+      {
+        "answer": "The experiment will crash because no response was given",
+        "correct": false,
+        "feedback": "False!"
+      }
+    ]
+  }
+]
