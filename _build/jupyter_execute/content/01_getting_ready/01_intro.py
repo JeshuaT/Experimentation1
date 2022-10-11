@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 1
+# # Session 1: Getting Ready 3
 
 # <div class="alert alert-danger" role="alert">
 #   This denotes warnings
