@@ -5,58 +5,68 @@ root: intro
 chapters:
   - file: content/01_getting_ready/gettingready_intro
     sections:
-      - file: content/01_getting_ready/01_python_lessons
-      - file: content/01_getting_ready/01_python_exercises
-  - file: content/02_variables/02_intro
+      - file: content/01_getting_ready/gettingready_python_lessons
+      - file: content/01_getting_ready/gettingready_python_exercises
+  - file: content/02_variables/variables_intro
     sections:
-      - file: content/02_variables/02_python_lessons
-      - file: content/02_variables/02_python_exercises
-  - file: content/03_conditionals/03_intro
+      - file: content/02_variables/variables_python_lessons
+      - file: content/02_variables/variables_python_exercises
+      - file: content/02_variables/gaze_cuing
+  - file: content/03_conditionals/conditionals_intro
     sections:
-      - file: content/03_conditionals/03_python_lessons
-      - file: content/03_conditionals/03_python_exercises
-  - file: content/04_functions/04_intro
+      - file: content/03_conditionals/conditionals_python_lessons
+      - file: content/03_conditionals/conditionals_python_exercises
+      - file: content/03_conditionals/conflict_tasks
+  - file: content/04_functions/functions_intro
     sections:
-      - file: content/04_functions/04_python_lessons
-      - file: content/04_functions/04_python_exercises
-      - file: content/04_functions/04_ultimatumgame/UltimatumGame
-  - file: content/05_loops/05_intro
+      - file: content/04_functions/functions_python_lessons
+      - file: content/04_functions/functions_python_exercises
+      - file: content/04_functions/wcst
+      - file: content/04_functions/ultimatumgame/UltimatumGame
+  - file: content/05_loops/loops_intro
     sections:
-      - file: content/05_loops/05_python_lessons
-      - file: content/05_loops/05_python_exercises
-  - file: content/06_strings/06_intro
+      - file: content/05_loops/loops_python_lessons
+      - file: content/05_loops/loops_python_exercises
+      - file: content/05_loops/cyberball/Cyberball
+  - file: content/06_strings/strings_intro
     sections:
-      - file: content/06_strings/06_python_lessons
-      - file: content/06_strings/06_python_exercises
-  - file: content/07_files/07_intro
+      - file: content/06_strings/strings_python_lessons
+      - file: content/06_strings/strings_python_exercises
+      - file: content/06_strings/digitspan/digitspan
+  - file: content/07_files/files_intro
     sections:
-      - file: content/07_files/07_python_lessons
-      - file: content/07_files/07_python_exercises
-  - file: content/08_lists/08_intro
+      - file: content/07_files/files_python_lessons
+      - file: content/07_files/files_python_exercises
+      - file: content/07_files/merging_files
+  - file: content/08_lists/lists_intro
     sections:
-      - file: content/08_lists/08_python_lessons
-      - file: content/08_lists/08_python_exercises
-  - file: content/09_numbers/09_intro
+      - file: content/08_lists/lists_python_lessons
+      - file: content/08_lists/lists_python_exercises
+      - file: content/08_lists/visual_search
+  - file: content/09_numbers/numbers_intro
     sections:
-      - file: content/09_numbers/09_python_lessons
-      - file: content/09_numbers/09_python_exercises
-  - file: content/10_dataframes/10_intro
+      - file: content/09_numbers/numbers_python_lessons
+      - file: content/09_numbers/numbers_python_exercises
+      - file: content/09_numbers/attentional_blink
+  - file: content/10_dataframes/dataframes_intro
     sections:
-      - file: content/10_dataframes/10_python_lessons
-      - file: content/10_dataframes/10_python_exercises
-  - file: content/11_plotting/11_intro
+      - file: content/10_dataframes/dataframes_python_lessons
+      - file: content/10_dataframes/dataframes_python_exercises
+      - file: content/10_dataframes/datawrangling
+  - file: content/11_plotting/plotting_intro
     sections:
-      - file: content/11_plotting/11_python_lessons
-      - file: content/11_plotting/11_python_exercises
-  - file: content/12_ques/12_intro
+      - file: content/11_plotting/plotting_python_lessons
+      - file: content/11_plotting/plotting_python_exercises
+      - file: content/11_plotting/plotting_behavioral_data
+  - file: content/12_ques/ques_intro
     sections:
-      - file: content/12_ques/12_python_lessons
-      - file: content/12_ques/12_python_exercises
-  - file: content/13_input_output/13_intro
+      - file: content/12_ques/ques_python_lessons
+      - file: content/12_ques/ques_python_exercises
+  - file: content/13_input_output/io_intro
     sections:
-      - file: content/13_input_output/13_python_lessons
-      - file: content/13_input_output/13_python_exercises
-  - file: content/14_qa/14_intro
+      - file: content/13_input_output/io_python_lessons
+      - file: content/13_input_output/io_python_exercises
+  - file: content/14_qa/qa_intro
     sections:
-      - file: content/14_qa/14_python_lessons
-      - file: content/14_qa/14_python_exercises
+      - file: content/14_qa/qa_python_lessons
+      - file: content/14_qa/qa_python_exercises
