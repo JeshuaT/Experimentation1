@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Session 6 &#8212; Experimentation 1</title>
+    <title>Digital Span Task &#8212; Experimentation 1</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -102,7 +102,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_getting_ready/gettingready_intro.html">
-   Session 1: Getting Ready 3
+   Session 1 - Getting Ready
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -198,7 +198,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../04_functions/wcst.html">
-     Stroop and flanker tasks
+     WCST
     </a>
    </li>
    <li class="toctree-l2">
@@ -230,7 +230,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../05_loops/cyberball/Cyberball.html">
-     Introduction: The Cyberball game
+     The Cyberball game
     </a>
    </li>
   </ul>
@@ -257,7 +257,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Session 6
+     Digital Span Task
     </a>
    </li>
   </ul>
@@ -338,7 +338,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../09_numbers/attentional_blink.html">
-     Python exercises
+     Attentional Blink
     </a>
    </li>
   </ul>
@@ -569,6 +569,31 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-download-opensesame-file-and-adapt-it">
+   Step 1: Download OpenSesame file and adapt it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-change-number-stimuli-into-characters">
+   Step 2: Change number stimuli into characters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-provide-feedback">
+     Step 3: Provide feedback
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -576,19 +601,231 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Session 6</h1>
+                <h1>Digital Span Task</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-download-opensesame-file-and-adapt-it">
+   Step 1: Download OpenSesame file and adapt it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-change-number-stimuli-into-characters">
+   Step 2: Change number stimuli into characters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-provide-feedback">
+     Step 3: Provide feedback
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="session-6">
-<h1>Session 6<a class="headerlink" href="#session-6" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="digital-span-task">
+<h1>Digital Span Task<a class="headerlink" href="#digital-span-task" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-download-opensesame-file-and-adapt-it">
+<h2>Step 1: Download OpenSesame file and adapt it<a class="headerlink" href="#step-1-download-opensesame-file-and-adapt-it" title="Permalink to this headline">¶</a></h2>
+<p>Download the Digit Span task created by Grant M. Berry here.</p>
+<p>Open the file in OpenSesame and try to understand how it works.</p>
+<p>Let’s first make the layout of the loop nicer and reorder the columns in the <code class="docutils literal notranslate"><span class="pre">Trials</span></code> loop. This is not easy to do in OpenSesame, so use Excel (or other spreadsheet software) instead.</p>
+<ol class="simple">
+<li><p>Copy the entire content of the loop to a sheet in Excel. 2. Copy again and paste the transposed table (Paste Special) in a new sheet. 3. Sort the entire table on the first column (no header). 4. Copy again and paste again in a new sheet as transposed table. 5. Copy this table and paste it in the OpenSesame loop after you deleted all columns and rows first.</p></li>
+</ol>
+<p>Please note that Nback indicates the span of the sequence presented in the corresponding trial.</p>
+<p>Interestingly, if you run the program it always starts with span 3. Why is this the case? Fix the conditional running.</p>
+<p>Actually, let’s remove the 10 first rows all together.</p>
+<p>Set Weight to 1 (easier for debugging)</p>
+</div>
+<div class="section" id="step-2-change-number-stimuli-into-characters">
+<h2>Step 2: Change number stimuli into characters<a class="headerlink" href="#step-2-change-number-stimuli-into-characters" title="Permalink to this headline">¶</a></h2>
+<p>Let’s add some python code to provide real-time feedback to the participant whether the answer used was correct</p>
+<p>We first change the stimuli we present. Instead of presenting numbers 1..9 that can be used multiple times (random.choice picks a value WITH replacement)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">nums</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num0</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num1</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num2</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num3</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num4</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num5</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ellipsis
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">nums</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="s2">&quot;G&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">,</span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="s2">&quot;J&quot;</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">num0</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num1</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">num2</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">num3</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">num4</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">num5</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">num6</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">num7</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">num8</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">num9</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s print the content of the nine variables in a string</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">seq_presented</span> <span class="o">=</span> <span class="n">num0</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span> <span class="o">+</span> <span class="n">num4</span> <span class="o">+</span> <span class="n">num5</span> <span class="o">+</span> <span class="n">num6</span> <span class="o">+</span> <span class="n">num7</span> <span class="o">+</span> <span class="n">num8</span> <span class="o">+</span> <span class="n">num9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">seq_presented</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FEIADGBJHC
+</pre></div>
+</div>
+</div>
+</div>
+<p>change sequence depending on Nback</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nback</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">seq_presented</span> <span class="o">=</span> <span class="n">seq_presented</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">Nback</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">seq_presented</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FE
+</pre></div>
+</div>
+</div>
+</div>
+<p>raise an exception if current_span &gt; length</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nback</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">Nback</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq_presented</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid value for Nback (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">Nback</span><span class="p">)</span>
+
+<span class="n">seq_presented</span> <span class="o">=</span> <span class="n">seq_presented</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">Nback</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">seq_presented</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">994</span><span class="n">bfb12c16b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">Nback</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">Nback</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq_presented</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid value for Nback (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">Nback</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">seq_presented</span> <span class="o">=</span> <span class="n">seq_presented</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">Nback</span><span class="p">]</span>
+
+<span class="ne">Exception</span>: Invalid value for Nback (4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If your code works well, go back to OpenSesame and add it in the proper locations: the code for the presented stimuli should be inserted into <code class="docutils literal notranslate"><span class="pre">GenerateNums</span></code> and replace the part that refers to numbers.</p>
+<p>In addition, add a python inline script before the logger and call it <code class="docutils literal notranslate"><span class="pre">process_trial</span></code></p>
+<p>Add the code that calculates the <code class="docutils literal notranslate"><span class="pre">seq_presented</span></code> in this inline.</p>
+<p>Make sure you all variables with <code class="docutils literal notranslate"><span class="pre">var.</span></code> that refer to the OpenSesame environment.</p>
+<p>Check: is your data correctly logged. TODO: why is it not in the CSV??</p>
+<div class="section" id="step-3-provide-feedback">
+<h3>Step 3: Provide feedback<a class="headerlink" href="#step-3-provide-feedback" title="Permalink to this headline">¶</a></h3>
+<p>Let’s go back to the code in this tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;fcd&quot;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="o">==</span> <span class="n">seq_presented</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error
+</pre></div>
+</div>
+</div>
+</div>
+<p>remove spaces and make all capitals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;fe&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="o">==</span> <span class="n">seq_presented</span><span class="p">):</span>
+    <span class="n">fbtext</span> <span class="o">=</span> <span class="s2">&quot;Correct&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">fbtext</span> <span class="o">=</span> <span class="s2">&quot;Error&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fbtext</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correct
+</pre></div>
+</div>
+</div>
+</div>
+<p>get number of correctly retrieved items</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">num_total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">seq_presented</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">char</span><span class="p">))</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">num_correct</span> <span class="o">=</span> <span class="n">num_correct</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_correct</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>exercise:</p>
+<ol class="simple">
+<li><p>stop presenting when more than four trials in a row were incorrect</p></li>
+<li><p>recollect in reverse orde</p></li>
+</ol>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
