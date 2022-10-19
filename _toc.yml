@@ -5,6 +5,7 @@ root: intro
 chapters:
   - file: content/01_getting_ready/gettingready_intro
     sections:
+      - file: content/01_getting_ready/gettingready_software
       - file: content/01_getting_ready/gettingready_python_lessons
       - file: content/01_getting_ready/gettingready_python_exercises
   - file: content/02_variables/variables_intro
