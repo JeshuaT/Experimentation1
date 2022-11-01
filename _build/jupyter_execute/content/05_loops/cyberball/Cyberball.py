@@ -34,7 +34,7 @@
 # ![](images/Cyberball1.png)
 # 
 
-# #### Step 1: Programming the basic experimental flow
+# ### Step 1: Programming the basic experimental flow
 # 
 # To program the game, you first need some movie clips that show a ball moving between the players. You need six of them depicting all possible directions:
 # 
@@ -57,15 +57,14 @@
 # 
 # Let's create the entire experiment from scratch and use the 'default template', which is already loaded when OpenSesame is launched. You can simple delete the 'Get started!' and copy paste the introduction described above in the `welcome` sketchpad.
 # 
-# At any moment during the experiment we need to have access to the information about which player currently has the ball. So, create a new variable named `current_player` with the initial value 1, in a new inline_script at the beginning of your `experiment` procedure (the game always starts with Player 1 throwing the ball). As shown here:
-
-# In[1]:
-
-
-var.current_player = 1
-
-
+# Also, make sure you download and add all six video files mentioned above to the File pool first. Also, set the back-end of the experiment to `legacy`.
 # 
+# At any moment during the experiment we need to have access to the information about which player currently has the ball. So, create a new variable named `current_player` with the initial value 1, in a new inline_script called `init_exp` at the beginning of your `experiment` procedure (the game always starts with Player 1 throwing the ball). As shown here:
+
+# ```
+# var.current_player = 1
+# ```
+
 # Now you can implement the basic branching structure using conditional via the [run-if statement of the sequence](https://osdoc.cogsci.nl/3.2/manual/variables/#using-conditional-if-statements).
 # 
 # Depending on the value in current_player, the script may run one single trial in either `player1_loop`, `player2_loop`, or `player3_loop`. In order to do so, we make use of a combination of loops run in a `trial_seq`. Build a basic setup running 60 trials, as in the example below:
@@ -78,11 +77,11 @@ var.current_player = 1
 # 
 # TODO quiz. is == necessary or not. In which language
 # 
-# #### Step 2: Programming the behaviour of Player 1 and Player 3
+# ### Step 2: Programming the behaviour of Player 1 and Player 3
 # 
 # Let's now think about how to set up the `player1_loop` and `player2_loop`. These loops should retrieve the new destination that the virtual Players 1 and 3 will toss the ball to. So add a variable (column) in boths loops named `target_player` and type in the possible destinations of that player (a player is not allowed to toss the ball to themselves! It would be an interesting extension of the paradigm, though...).
 # 
-# These loops completely determine the behaviour of Player 1 and Player 3. It's up to you whether you want to make this behaviour predictable (use sequential selection), fully random (use random selection), or preferential (increase the number of rows of specific target players).
+# These loops fully determine the behaviour of Player 1 and Player 3. It's up to you whether you want to make this behaviour predictable (use sequential selection), fully random (use random selection), or preferential (increase the number of rows of specific target players).
 # 
 # TODO: explain break if feature!
 # 
@@ -92,8 +91,24 @@ var.current_player = 1
 # 
 # TODO quiz break if
 # 
-# Now let these loops run a sequence called `play1_seq` and `play3_seq` that contain an inline_script (name the scripts `prepare_player1` and `prepare_player3` respectively) and a subsequently presented inline_script `play_movie` and make sure you use the same script object in both sequences (Hint: use the Copy (linked) - Paste feature using right mouse button clicks in the Overview area).
+# Now let these loops run a sequence called `play1_seq` and `play3_seq` that contain an inline_script (name the scripts `prepare_player1` and `prepare_player3` respectively) and a subsequently presented media player `media_player_mpy`. 
 # 
+# Make sure you use the same media player object in both sequences (Hint: use the Copy (linked) - Paste feature using right mouse button clicks in the Overview area).
+# 
+# Hint: the media player object is available under the Visual stimuli header, at the bottom of the Toolbar (if you have a small screen resolution, it might be hidden under the small arrows pointing down).
+# 
+# Edit the `media_player_mpy` object in the following way:
+# 1. Refer to the variable `movie_filename` in the Video file field
+# 2. Set the Duration property to `sound` so that this object is presented for the entire duration of the video
+# 
+# Finally, give the variable `movie_filename` the initial (temporary) file name "'1to2.wmv" in the `init_exp` script. So add the following line there:
+
+# In[1]:
+
+
+var.movie_filename = "1to2.wmv"
+
+
 # Now, add this code in PreparePlayer1:
 
 # In[2]:
@@ -101,25 +116,25 @@ var.current_player = 1
 
 var.movie_filename = "1to" + str(var.target_player) + ".wmv"
 var.current_player = var.target_player # info for next trial
+items.prepare("media_player_mpy")
 
 
 # 
 # TODO difference single versus double quote when using indentation
 # 
-# This script overwrites the temporary filename in the MovieDisplay with the correct filename. The second line is also very important. Here, the value of the variable `current_player` is updated to the new destination, so that in the next trial the branching structure knows who is at that moment the `current_player` .
-# 
-# TODO feedbackdisplay
+# This script overwrites the temporary filename in the MovieDisplay with the correct filename. The second line is also very important. Here, the value of the variable `current_player` is updated to the new destination, so that in the next trial the branching structure knows who is at that moment the `current_player`. Finally, because of the [prepare-run strategy](https://osdoc.cogsci.nl/3.3/manual/prepare-run/) in OpenSesame, the temporary filename was used to prepare the media player at the start of the trial. To make sure the media player is updated and shows the proper file, we manually prepare it again using the items.prepare command. 
 # 
 # Almost the same code should be added to the PreparePlayer3 InLine:
 
 # In[3]:
 
 
-var.movie_filename = "3to" + str(var.target_player) + ".wmv"var.current_player = var.target_player # info for next trial
+var.movie_filename = "3to" + str(var.target_player) + ".wmv"
+var.current_player = var.target_player # info for next trial
+items.prepare("media_player_mpy")
 
 
-# 
-# #### Step 3: Programming Player 2
+# ### Step 3: Programming Player 2
 # 
 # Let's now add a Procedure named `play2_seq` to the `player2_loop`. We don't need any variables added to this loop. Just make sure the loop run only once.
 # 
@@ -133,17 +148,20 @@ var.movie_filename = "3to" + str(var.target_player) + ".wmv"var.current_player =
 
 
 var.movie_filename = "2to" + str(var.response) + ".wmv"var.current_player = var.response \# info for next trial
+items.prepare("media_player_mpy")
 
 
+# Done! Compare the structure of your experiment with the flowchart. You should now be able to play the Cyberball game. Use the "Run in window" feature and open the Variable inspector while your experiment runs. Check whether the variables `movie_filename` and `current_player` are properly updated.
+
+# ## Alternative solution: Custom code to play the movie
 # 
-# Done! Compare the structure of your experiment with the flowchart.
+# Although OpenSesame does have the standard `media_player_mpy` object to play a movie, you may notice that it does not work flawless. For example, if you are too quick, the response to player 2 is not recorded because there seems to be a small delay at the end of the movie. In addition, at the end of the movie the screen is cleared using the default OpenSesame background color. This creates an annoying screen glitch between movies.
 # 
-# #### Step 4: Playing the movie
+# No worries though. We can create our own python code to play a movie where we have full control. However, do not expect this is simple. :)
 # 
-# OpenSesame does not have a standard object to play a movie. No worries though. We can create our own python code to do so.
+# Save your old experiment and then save it again under a new filename. Now replace the media_player_mpy objects everywhere with a script called `play_movie`. Also, remove the `items.prepare("media_player_mpy")` calls from all inlines.
 # 
 # Let's first create a simple loop that presents something that moves on the screen. This code should be inserted into the `play_movie` inline script.
-# 
 
 # In[5]:
 
@@ -166,11 +184,9 @@ for i in range(-25,25):
 # Can you change the vertical position into a quadratic shape so it looks like a ball is thrown?\
 # y = i\*\*2 - 200
 # 
-# Okay, this was boring, right? Time to change the loop into a real movie.
+# Okay, this was boring, right? Time to change the loop and present the movie itself.
 # 
 # First comment the code you just wrote (select everything and press `Ctrl+/` (see OpenSesame [keyboard shortcuts](https://osdoc.cogsci.nl/3.3/manual/interface/#keyboard-shortcuts))
-# 
-# Also, make sure you download and add all six video files mentioned above to the File pool first. Also, set the back-end of the experiment to `legacy`.
 # 
 # Now we first need to load the correct movie file and then present the picture frame by frame in the loop.
 # 
@@ -211,9 +227,7 @@ for i in range(100):
     pygame.display.flip()
 
 
-# Were all steps implemented correctly?
-# 
-# You should now be able to play your first game created in OpenSesame. Run it and see whether it works!
+# Were all steps implemented correctly? Check whether the game works using this custom code.
 
 # ## Exercises
 # 
@@ -233,7 +247,7 @@ for i in range(100):
 
 
 videowidth = video.get(cv2.CAP_PROP_FRAME_WIDTH )
-videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT
+videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT)
 
 
 # 
@@ -246,7 +260,6 @@ videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT
 exp.surface.blit(surf, ((var.width - videowidth) / 2, (var.height - videoheight) / 2))
 
 
-# 
 # ### 2. Change the speed of the video
 # 
 # As you may have noticed, the speed of the video is currently determined by the speed of your cpu. If you have a very quick cpu the video is presented quicker than if you have a very slow cpu.
@@ -283,31 +296,33 @@ clock.sleep(1000/fps)
 # The function below mimics the functionality of the clock.tick method:
 # 
 
-# ``` python
-# def myclocktick(foo):
-#   #inspired by clock.tick
-#   #see https://stackoverflow.com/questions/34383559/pygame-clock-tick-vs-framerate-in-game-main-loop
-#   if var.has(u'prevt'):
-#         diff = ((1000/foo) - (clock.time() - var.prevt) ) - 10
-#         if diff>0:
-#             clock.sleep(diff)
-# 
-#   var.prevt = clock.time()
+# In[11]:
+
+
+def myclocktick(foo):
+  #inspired by clock.tick
+  #see https://stackoverflow.com/questions/34383559/pygame-clock-tick-vs-framerate-in-game-main-loop
+  if var.has(u'prevt'):
+        diff = ((1000/foo) - (clock.time() - var.prevt) ) - 10
+        if diff>0:
+            clock.sleep(diff)
+
+  var.prevt = clock.time()
+
 
 # 
 # Paste this code in the `Prepare` tab of the `play_movie` inline script. Then, in the `Run` tab replace the clock.sleep code with the following line:
 # 
 # 
 
-# In[11]:
+# In[12]:
 
 
 myclocktick(fps)
 
 
-# 
 # Try whether you notice any differences. On slower computers the movie may play more smoothly now.
-# 
+
 # ### 3. Manipulate the level of social exclusion
 # 
 # Add a `block_loop` around the trials_loop that runs two blocks. In one block (the exclusion block), player1 and player 3prefer to play with the other player in 8 out of 10 times. In the other block they have equal preference to play with you (player 2) or the other player.
@@ -322,7 +337,14 @@ myclocktick(fps)
 # Test whether this works. Do you feel more excluded in the first block then in the second block?
 # 
 # Add a third block that includes you 8 out of 10 times. Does the inclusion make you feel better?
+
+# ### 4. Alternatives to manually prepare an OpenSesame object
 # 
+# Experiment with two alternatives to the items.prepare() method:
+# #### 1. Dummy loop solution
+# Open the old experiment with the media_player you saved after Step 3. Replace the `media_player_mpy` with a dummy_loop that runs the media_player_mpy object. Add the column `my_movie_filename` to the dummy_loop and enter the value `[movie_filename]` in the first row. Change the Video file field of media_player_mpy to [my_movie_filename]. Remove any reference to the items.prepare() command in all inlines. Because the prepare-run strategy is repeated for each loop separately, the movie is updated automatically at the end of the trial. Try whether this solution works.
+# #### 2. Run-If solution
+# Because we have a limited number of videos to present (six combinations) it might be more elegant to preload all relevant movies in the beginning of the trial and use the Run If feature to only present the video that shows the correct target_player.  Open the old experiment with the media_player you saved after Step 3. Remove any reference to the items.prepare() command in all inlines. Use two media_players per trial with fixed filenames. Run only the relevant video depending on the value of target_player using the Run if feature in the `play1_seq`, `play2_seq`, and `play3_seq` sequences.
 
 # In[ ]:
 
