@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Stroop and flanker tasks
+# # Stroop and flanker tasks in OpenSesame
 # 
 
 # ## Stroop task

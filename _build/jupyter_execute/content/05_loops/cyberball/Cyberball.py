@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Cyberball game
+# # The Cyberball game in OpenSesame
 # 
 # :::{note} Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019).
 # 

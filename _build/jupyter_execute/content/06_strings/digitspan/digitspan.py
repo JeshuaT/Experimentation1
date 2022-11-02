@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Digital Span Task
+# # Digital Span Task in OpenSesame
 
 # ## Step 1: Download OpenSesame file and adapt it
 # 

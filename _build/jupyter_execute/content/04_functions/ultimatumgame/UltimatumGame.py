@@ -8,7 +8,7 @@ from jupyterquiz import display_quiz
 from IPython.display import IFrame
 
 
-# # The Ultimatum Game
+# # The Ultimatum Game in OpenSesame
 # ## Introduction
 # Imagine the following scenario. Your friend (let's call her Alex) is given an amount of money (say, €10), and is told she should share it with you. Alex can decide how much money you get, and how much she gets. Whatever she apportions to herself is hers to keep, on one condition: *you* have to agree to her proposal*.* In other words, Alex can propose any division of the money she likes, but the ultimate power lies in your hands: you can accept (and each of you gets your share) or decline (and both of you go home with nothing). What kind of split do you think Alex would suggest?
 # 

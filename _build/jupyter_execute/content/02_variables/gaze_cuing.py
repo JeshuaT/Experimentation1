@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # OpenSesame Gaze cuing tutorial
+# # Gaze cuing task in OpenSesame
 
 # TODO link naar https://osdoc.cogsci.nl/3.3/tutorials/beginner/
 # 
