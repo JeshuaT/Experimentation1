@@ -679,29 +679,16 @@
             
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="the-ultimatum-game-in-opensesame">
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-ultimatum-game-in-opensesame">
 <h1>The Ultimatum Game in OpenSesame<a class="headerlink" href="#the-ultimatum-game-in-opensesame" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Imagine the following scenario. Your friend (let’s call her Alex) is given an amount of money (say, €10), and is told she should share it with you. Alex can decide how much money you get, and how much she gets. Whatever she apportions to herself is hers to keep, on one condition: <em>you</em> have to agree to her proposal*.* In other words, Alex can propose any division of the money she likes, but the ultimate power lies in your hands: you can accept (and each of you gets your share) or decline (and both of you go home with nothing). What kind of split do you think Alex would suggest?</p>
 <p>According to classic economic theory, the only reasonable option is for Alex to propose the maximum share for herself (€9) and the minimum for you (€1). After all, you – the responder – would surely accept €1 as being better than nothing at all, so why would you decline her offer?</p>
 <p>When real people were asked to play this <em>Ultimatum Game</em> (Güth, Schmittberger &amp; Schwarze, 1982)<em>,</em> however, economics around the world were shocked and astonished to discover that people are not actually all that rational. In fact, responders will often decline unfair offers, even if they, in economic terms, are only shooting themselves in the foot! The players in Alex’s position – the proposers – also tend to be much nicer and tend to make proposals that are only <em>slightly</em> unfair.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_quiz</span><span class="p">(</span><span class="s2">&quot;questions/question_1.json&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="JBWsnBxvloWP" data-shufflequestions="False"
+<div class="output text_html"><div id="hZXSlWJDuXzy" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -863,7 +850,7 @@
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsJBWsnBxvloWP=[
+}</style></div><script type="application/javascript">var questionshZXSlWJDuXzy=[
   {
     "question": "What do you think happened when multiple rounds would be played with the same player?",
     "type": "multiple_choice",
@@ -1630,7 +1617,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsJBWsnBxvloWP,  JBWsnBxvloWP);
+        show_questions(questionshZXSlWJDuXzy,  hZXSlWJDuXzy);
         }
         </script></div>
 </div>
@@ -1647,14 +1634,9 @@ if (typeof version == 'undefined') {
 <p><img alt="image info" src="../../../_images/block_loop_empty.PNG" /></p>
 <p>From here, we define O1_Me and O1_You as choice 1, and O2_Me and O2_You as choice 2. We make a second row where we reverse the order of the choices, and also define which of the two is the fair choice. As of now, we have two trials. We ofcourse want to have more than two trials presented to Player 1. Change the “repeat” parameter to repeat each cycle 5 times.</p>
 <p><img alt="image info" src="../../../_images/block_loop.PNG" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_quiz</span><span class="p">(</span><span class="s2">&quot;questions/question_2.json&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="wNWQsQEdDkjG" data-shufflequestions="False"
+<div class="output text_html"><div id="YxKHadPfBGbr" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -1816,7 +1798,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionswNWQsQEdDkjG=[
+}</style></div><script type="application/javascript">var questionsYxKHadPfBGbr=[
   {
     "question": "Why is the second row needed?",
     "type": "multiple_choice",
@@ -2605,7 +2587,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionswNWQsQEdDkjG,  wNWQsQEdDkjG);
+        show_questions(questionsYxKHadPfBGbr,  YxKHadPfBGbr);
         }
         </script></div>
 </div>
@@ -2625,14 +2607,9 @@ if (typeof version == 'undefined') {
 <h3>1: Sketchpad item for presenting Player 1 with two options<a class="headerlink" href="#sketchpad-item-for-presenting-player-1-with-two-options" title="Permalink to this headline">¶</a></h3>
 <p>Add in a Sketchpad item, and call it “DecisionMe”. The DecisionMe should present two offers and wait until the participant decides to press either the numerical key 1 or the numerical key 2. Now you can see why we have two rows of trial defined in the block_loop. We can now simply define the variables O1_Me, O1_You, O2_Me and O2_You and the block_loop makes sure that the O1 offer isn’t always the fair or unfair offer. You can call variables defined in the block_loop by using the dollar sign followed by brackets ($[variable]). Here is the Sketchitem how we designed it:</p>
 <p><img alt="image info" src="../../../_images/DecisionMe.PNG" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_quiz</span><span class="p">(</span><span class="s2">&quot;questions/question_3.json&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="lmNyUpGCoPUF" data-shufflequestions="False"
+<div class="output text_html"><div id="zGJAPwXhnPcJ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -2794,7 +2771,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionslmNyUpGCoPUF=[
+}</style></div><script type="application/javascript">var questionszGJAPwXhnPcJ=[
   {
     "question": "Let's say we made a silly mistake, and instead of defining $[O1_Me] we inserted $[FairOffer]. We run the experiment and $[O1_You] is presented on the left box. What will $[FairOffer] show?",
     "type": "numeric",
@@ -3551,7 +3528,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionslmNyUpGCoPUF,  lmNyUpGCoPUF);
+        show_questions(questionszGJAPwXhnPcJ,  zGJAPwXhnPcJ);
         }
         </script></div>
 </div>
@@ -3562,14 +3539,9 @@ if (typeof version == 'undefined') {
 <h3>2: Two sketchpad items for feedback to Player 1. The one which is presented depends on the choice made by Player 1<a class="headerlink" href="#two-sketchpad-items-for-feedback-to-player-1-the-one-which-is-presented-depends-on-the-choice-made-by-player-1" title="Permalink to this headline">¶</a></h3>
 <p>Now, when Player 1 has made its decision, we want to show the Player which decision it made, just so the Player knows that pressing the response worked. To do that, we will copy the “DecisionMe” sketchpad twice and call those “DecisionMe_feedback1” and “DecisionMe_feedback2”. In one of the sketchpads, we draw a red line around the left box, to indicate that the Player chose that box. In the other sketchpad, we draw a red line around the right box, to indicate that the Player chose that box. To draw the red line you can simply use a red square without fill and draw it around the borders of the decision boxes.</p>
 <p><img alt="image info" src="../../../_images/DecisionMe_feedback.PNG" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_quiz</span><span class="p">(</span><span class="s2">&quot;questions/question_4.json&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="UwXPuEKxLNsL" data-shufflequestions="False"
+<div class="output text_html"><div id="DUEfjwHPIsWi" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -3731,7 +3703,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsUwXPuEKxLNsL=[
+}</style></div><script type="application/javascript">var questionsDUEfjwHPIsWi=[
   {
     "question": "What will happen with those feedback sketchpads if we run the experiment now?",
     "type": "multiple_choice",
@@ -4487,7 +4459,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsUwXPuEKxLNsL,  UwXPuEKxLNsL);
+        show_questions(questionsDUEfjwHPIsWi,  DUEfjwHPIsWi);
         }
         </script></div>
 </div>
@@ -4571,14 +4543,9 @@ if (typeof version == 'undefined') {
 <p>Then, something that you also probably noticed is that we put a <em>var</em> in front of some variables. This is how OpenSesame communicates with the Python environment, and allows us to use the variables in the OpenSesame. OpenSesame has its own (Python-like) scripting language and environment which is separate from the Python environment. Therefore we need to use tricks like these to build a bridge between the two environments (for more information, see <a class="reference external" href="https://osdoc.cogsci.nl/3.3/manual/python/var/">this link</a>).</p>
 <p>Finally, we have to let Player 1 know what the decision was of Player 2. Therefore, again, we make two sketchpad items. One of which is presented when Player 2 accepts the offer, the other one is presented when Player 2 rejects the offer. Call these sketchpads “AcceptOffer” and “RejectOffer”. These sketchpads should communicate the outcome of Player 2’s decision. Then, go back to the “trial_sequence” object, and change the “Run if” of the “AcceptOffer” and “RejectOffer”:</p>
 <p><img alt="image info" src="../../../_images/trial_sequence_final.PNG" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_quiz</span><span class="p">(</span><span class="s2">&quot;questions/question_5.json&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="nhXcFxvIqBoL" data-shufflequestions="False"
+<div class="output text_html"><div id="fCgbTQevHiEx" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -4740,7 +4707,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsnhXcFxvIqBoL=[
+}</style></div><script type="application/javascript">var questionsfCgbTQevHiEx=[
   {
     "question": "Lets say we want Player 1 to respond within 1000ms, so we code this in our OfferChoice object. The rest of the script is the same. On trial 10, Player 1 is too late and doesn't give a response. What will happen?",
     "type": "multiple_choice",
@@ -5496,7 +5463,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsnhXcFxvIqBoL,  nhXcFxvIqBoL);
+        show_questions(questionsfCgbTQevHiEx,  fCgbTQevHiEx);
         }
         </script></div>
 </div>
@@ -5526,12 +5493,7 @@ if (typeof version == 'undefined') {
 <p><img alt="image info" src="../../../_images/FinalOverview.PNG" /></p>
 <p>Now we are set to run the experiment, and record everything we want (and way more). Press the green arrow (or use the shortcut “CTRL + R”) to start the experiment. Insert the subject number, and test the experiment.</p>
 <p>The experiment should look something like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/U6nB-WXZVQI&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe

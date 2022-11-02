@@ -12,12 +12,15 @@
 # There are other open-source python-based experiment builders with their own advantages/disadvantages. For example, [Expyriment](https://www.expyriment.org/) is more lightweight than other experiment builders, but you should be comfortable with only coding. [PsychoPy](https://www.psychopy.org/) is a good alternative for OpenSesame, but also requires a bit more coding proficiency. This course used to be taught in [E-prime](https://pstnet.com/products/e-prime/), which is (paid) software with its own coding language specifically tailored for building experiments.
 # :::
 # 
-# ```html
-# <div class="admonition note" name="html-admonition" style="background: lightgreen; padding: 10px">
-# <p class="title">This is the **title**</p>
-# This is the *content*
-# </div>
-# ```
+
+# 
+# > **Note**: There are other open-source python-based experiment builders with their own advantages/disadvantages. For example, [Expyriment](https://www.expyriment.org/) is more lightweight than other experiment builders, but you should be comfortable with only coding. [PsychoPy](https://www.psychopy.org/) is a good alternative for OpenSesame, but also requires a bit more coding proficiency. This course used to be taught in [E-prime](https://pstnet.com/products/e-prime/), which is (paid) software with its own coding language specifically tailored for building experiments.
+
+# ---
+# 
+# **Note**
+# There are other open-source python-based experiment builders with their own advantages/disadvantages. For example, [Expyriment](https://www.expyriment.org/) is more lightweight than other experiment builders, but you should be comfortable with only coding. [PsychoPy](https://www.psychopy.org/) is a good alternative for OpenSesame, but also requires a bit more coding proficiency. This course used to be taught in [E-prime](https://pstnet.com/products/e-prime/), which is (paid) software with its own coding language specifically tailored for building experiments.
+# ---
 
 # ## Anaconda
 # Installing [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)) is a very convenient way to get started with programming in Python if you are a psychologist/neuroscientist. If you don't have any prior programming experience, we suggest you download the latest version of Anaconda via [this link](https://www.anaconda.com/). You can view Anaconda as a kind of starter pack for doing data-science in Python: it installs not only Python for you, but also all kinds of packages (add-ons) and software that you will most certainly use as a scientist.

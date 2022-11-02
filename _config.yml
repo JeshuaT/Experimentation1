@@ -27,7 +27,6 @@ parse:
     - linkify
     - substitution
     - tasklist
-    - html_admonition
 
 # Online stuff
 repository:
