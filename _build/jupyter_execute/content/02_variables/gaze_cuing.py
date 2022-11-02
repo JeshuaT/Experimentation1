@@ -10,6 +10,8 @@
 # 1. Load the gaze cuing experiment in OpenSesame.
 # 2. Change the TimeOut value of the Keyboard_response object to 500 (ms).
 # 3. Count the number of times the response was correct, incorrect and missing. Also, count the total number of trials presented. Present the percentage of correct, incorrect, and missing responses in the feedback item.
+# 4. Calculate the average of all reaction times
+# 
 # 
 
 # In[ ]:

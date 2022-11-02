@@ -3,13 +3,7 @@
 
 # # The Cyberball game in OpenSesame
 # 
-# :::{note} Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019).
-# 
-# Spapé M.M.\*, Verdonschot, R.G., & van Steenbergen, H.\* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press.
-# 
-# http://www.e-primer.com
-# 
-# :::
+# > Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019).  Spapé M.M.\*, Verdonschot, R.G., & van Steenbergen, H.\* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press. http://www.e-primer.com. Copyright 2019 by the authors and LUP. Adapted with permission.
 # 
 # ## Introduction
 # 

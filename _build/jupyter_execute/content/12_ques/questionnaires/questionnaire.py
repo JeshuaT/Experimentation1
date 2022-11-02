@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Administering Questionnaires in OpenSesame
+# # Questionnaires in OpenSesame
 # ##  Introduction
 # In this tutorial we are going to show how you can administer long questionnaires in OpenSesame. The example is similar to a solution in E-Prime that can be downloaded [here](https://www.henkvansteenbergen.com/open-science#Questionnaire).
 # 

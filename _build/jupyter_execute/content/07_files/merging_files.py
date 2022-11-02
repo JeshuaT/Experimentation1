@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 7
+# # Merging logfiles OpenSesame
 
-# # Merging OpenSesame logfiles
+# 
 
 # In[1]:
 
