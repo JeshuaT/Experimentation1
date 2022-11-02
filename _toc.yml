@@ -63,10 +63,12 @@ chapters:
     sections:
       - file: content/12_ques/ques_python_lessons
       - file: content/12_ques/ques_python_exercises
+      - file: content/12_ques/questionnaires/questionnaire
   - file: content/13_input_output/io_intro
     sections:
       - file: content/13_input_output/io_python_lessons
       - file: content/13_input_output/io_python_exercises
+      - file: content/13_input_output/parallelport
   - file: content/14_qa/qa_intro
     sections:
       - file: content/14_qa/qa_python_lessons
