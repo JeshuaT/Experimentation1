@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administering Questionnaires in OpenSesame &#8212; Experimentation 1</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Experimentation 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Experimentation I 2022-2023
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_getting_ready/gettingready_intro.html">
+   Session 1 - Getting Ready
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_getting_ready/gettingready_software.html">
+     OpenSesame, Anaconda and using this website
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_getting_ready/gettingready_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_getting_ready/gettingready_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02_variables/variables_intro.html">
+   Session 2 - Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_variables/variables_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_variables/variables_python_exercises.html">
+     Python Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_variables/gaze_cuing.html">
+     OpenSesame Gaze cuing tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03_conditionals/conditionals_intro.html">
+   Session 3 - Conditionals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_conditionals/conditionals_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_conditionals/conditionals_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_conditionals/conflict_tasks.html">
+     Stroop and flanker tasks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04_functions/functions_intro.html">
+   Session 4 - Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04_functions/functions_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04_functions/functions_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04_functions/wcst.html">
+     WCST
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04_functions/ultimatumgame/UltimatumGame.html">
+     The Ultimatum Game
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../05_loops/loops_intro.html">
+   Session 5 - Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05_loops/loops_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05_loops/loops_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05_loops/cyberball/Cyberball.html">
+     The Cyberball game
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../06_strings/strings_intro.html">
+   Session 6 - Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_strings/strings_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_strings/strings_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_strings/digitspan/digitspan.html">
+     Digital Span Task
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../07_files/files_intro.html">
+   Session 7 - Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../07_files/files_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../07_files/files_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../07_files/merging_files.html">
+     Session 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../08_lists/lists_intro.html">
+   Session 8 - Lists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../08_lists/lists_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../08_lists/lists_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../08_lists/visual_search.html">
+     Session 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../09_numbers/numbers_intro.html">
+   Session 9 - Numbers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_numbers/numbers_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_numbers/numbers_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_numbers/attentional_blink.html">
+     Attentional Blink
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../10_dataframes/dataframes_intro.html">
+   Session 10 - Dataframes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../10_dataframes/dataframes_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../10_dataframes/dataframes_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../10_dataframes/datawrangling.html">
+     Session 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../11_plotting/plotting_intro.html">
+   Session 11 - Plotting
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../11_plotting/plotting_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../11_plotting/plotting_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../11_plotting/plotting_behavioral_data.html">
+     Session 11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ques_intro.html">
+   Session 12 - Questionnaires
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ques_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ques_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../13_input_output/io_intro.html">
+   Session 13 - input/output
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../13_input_output/io_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../13_input_output/io_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../14_qa/qa_intro.html">
+   Session 14 - Questions &amp; Answers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../14_qa/qa_python_lessons.html">
+     Python lessons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../14_qa/qa_python_exercises.html">
+     Python exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/12_ques/questionnaires/questionnaire.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JeshuaT/Experimentation1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JeshuaT/Experimentation1/issues/new?title=Issue%20on%20page%20%2Fcontent/12_ques/questionnaires/questionnaire.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/JeshuaT/Experimentation1/edit/master/content/12_ques/questionnaires/questionnaire.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/JeshuaT/Experimentation1/master?urlpath=tree/content/12_ques/questionnaires/questionnaire.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/JeshuaT/Experimentation1/blob/master/content/12_ques/questionnaires/questionnaire.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-sketch-the-basic-outline-of-your-questionnaire">
+   Step 1. Sketch the basic outline of your questionnaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-create-a-canvas-and-add-the-continue-button">
+   Step 2. Create a Canvas and add the Continue button
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-add-the-header">
+   Step 3. Add the header
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-add-the-text-of-the-questions">
+   Step 4. Add the text of the questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-add-the-options">
+   Step 5. Add the options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-mark-preselected-options">
+   Step 6. Mark preselected options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-continously-update-the-content-of-the-canvas-until-the-user-clicks-continue">
+   Step 7. Continously update the content of the Canvas until the user clicks “Continue”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-big-loop">
+     Add the big loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-what-was-clicked">
+     Check what was clicked
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-an-option-was-clicked">
+     Check whether an option was clicked
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-canvas">
+     Update the Canvas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-the-ok-button-was-clicked">
+     Check whether the OK button was clicked
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-all-questions-are-answered">
+     Check whether all questions are answered
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-logging-all-answers">
+   Step 8. Logging all answers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-ok-button-earlier">
+     1. Update the OK button earlier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-striped-color-layout">
+     2. Create a striped color layout
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-the-code-more-compact">
+     3. Make the code more compact
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#radio-button-layout-advanced-level">
+     4. Radio-button layout (advanced level!)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Administering Questionnaires in OpenSesame</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-sketch-the-basic-outline-of-your-questionnaire">
+   Step 1. Sketch the basic outline of your questionnaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-create-a-canvas-and-add-the-continue-button">
+   Step 2. Create a Canvas and add the Continue button
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-add-the-header">
+   Step 3. Add the header
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-add-the-text-of-the-questions">
+   Step 4. Add the text of the questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-add-the-options">
+   Step 5. Add the options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-mark-preselected-options">
+   Step 6. Mark preselected options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-continously-update-the-content-of-the-canvas-until-the-user-clicks-continue">
+   Step 7. Continously update the content of the Canvas until the user clicks “Continue”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-big-loop">
+     Add the big loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-what-was-clicked">
+     Check what was clicked
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-an-option-was-clicked">
+     Check whether an option was clicked
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-canvas">
+     Update the Canvas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-the-ok-button-was-clicked">
+     Check whether the OK button was clicked
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-all-questions-are-answered">
+     Check whether all questions are answered
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-logging-all-answers">
+   Step 8. Logging all answers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-ok-button-earlier">
+     1. Update the OK button earlier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-striped-color-layout">
+     2. Create a striped color layout
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-the-code-more-compact">
+     3. Make the code more compact
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#radio-button-layout-advanced-level">
+     4. Radio-button layout (advanced level!)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="administering-questionnaires-in-opensesame">
+<h1>Administering Questionnaires in OpenSesame<a class="headerlink" href="#administering-questionnaires-in-opensesame" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial we are going to show how you can administer long questionnaires in OpenSesame. The example is similar to a solution in E-Prime that can be downloaded <a class="reference external" href="https://www.henkvansteenbergen.com/open-science#Questionnaire">here</a>.</p>
+<p>Assume you want to present the <a class="reference external" href="https://ipip.ori.org/new_ipip-50-item-scale.htm">50-item long International Personality Item Pool</a>, embedded in an OpenSesame experiment.</p>
+<p>One option is to create customs forms in OpenSesame as explained here TODO. In this tutorial we show step-by-step how you can also create a fully customizable questionnaire using the Canvas and mouse functionality.</p>
+</div>
+<div class="section" id="step-1-sketch-the-basic-outline-of-your-questionnaire">
+<h2>Step 1. Sketch the basic outline of your questionnaire<a class="headerlink" href="#step-1-sketch-the-basic-outline-of-your-questionnaire" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we want to present 5 sheets (or pages) of questions with 10 questions of the IPIP per sheet. To do so, we can use Canvas commands to draw text and rectangles at particular locations.</p>
+<p>In the figure below we present a possible outline of 10 questions (named <code class="docutils literal notranslate"><span class="pre">qst01</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10</span></code>), a general header for this sheet (named <code class="docutils literal notranslate"><span class="pre">qhd</span></code>) and 9 options to choose from per question (named <code class="docutils literal notranslate"><span class="pre">rt011</span></code> to <code class="docutils literal notranslate"><span class="pre">rt019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rt021</span></code> to <code class="docutils literal notranslate"><span class="pre">rt029</span></code> for the second question, et cetera).</p>
+<p><img alt="images/overviewques.png" src="content/12_ques/questionnaires/attachment:overviewques.png" /></p>
+<p>In addition, we add some shapes to the canvas. Above each question, we present a rectangle of height 1 pixel (basically a line) named <code class="docutils literal notranslate"><span class="pre">qst01bg</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10bg</span></code>. We also create a “Continue” button to proceed to the next sheet. And around all 90 options there is rectangle that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected. These rectangles are named <code class="docutils literal notranslate"><span class="pre">rbxxx</span></code>  (<code class="docutils literal notranslate"><span class="pre">rb011</span></code> to <code class="docutils literal notranslate"><span class="pre">rb019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rb021</span></code> to <code class="docutils literal notranslate"><span class="pre">rb029</span></code> for the second question, et cetera).</p>
+<p>We first sketched this outline on a piece of paper and then played around with finding some nice coordinates at the screen. For each element in the Canvas we have to provide the position (x and y-coordinate in pixels relative to the center of the screen), and its size (width and height in pixels). This information can be hard-coded in the script. Or simply be stored in variables.</p>
+</div>
+<div class="section" id="step-2-create-a-canvas-and-add-the-continue-button">
+<h2>Step 2. Create a Canvas and add the Continue button<a class="headerlink" href="#step-2-create-a-canvas-and-add-the-continue-button" title="Permalink to this headline">¶</a></h2>
+<p>Open the template provided here TODO. Note that the AllQuestionnaires loop already contains the <a class="reference external" href="https://ipip.ori.org/new_ipip-50-item-scale.htm">freely available</a> 50 items of the IPIP.</p>
+<p>In the template the RunOneSheetOf10Items has to present sheet 1 (items 1 to 10) and 5 (items 41 to 50) of the IPIP. The column QuestStartRow provides information where to find these items in the AllQuestionnaires loop.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sheet_seq</span></code> includes three python inline objects. Durign this tutorial you will write the code for these three objects.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">init_qcanvas</span></code> inline object, create a Canvas and show the Continue button using the code below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">penwidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="c1">#OK button</span>
+<span class="n">my_canvas</span><span class="p">[</span><span class="s2">&quot;OKbutton&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">290</span><span class="p">,</span> <span class="mi">345</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">my_canvas</span><span class="p">[</span><span class="s2">&quot;OKbutton_t&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Continue&quot;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">393</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">205</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">font_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">my_canvas</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now, open the <code class="docutils literal notranslate"><span class="pre">refr_qcanvas</span></code> inline object and use the following code to wait for a mouse key.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_mouse</span> <span class="o">=</span> <span class="n">Mouse</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#wait for mouse click</span>
+<span class="n">button</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="n">my_mouse</span><span class="o">.</span><span class="n">get_click</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run the experiment and confirm that you see the Canvas with the Continue button. The Canvas is presented twice because <code class="docutils literal notranslate"><span class="pre">RunOneSheetOf10Items</span></code> contains two rows.</p>
+</div>
+<div class="section" id="step-3-add-the-header">
+<h2>Step 3. Add the header<a class="headerlink" href="#step-3-add-the-header" title="Permalink to this headline">¶</a></h2>
+<p>Let’s go back to the <code class="docutils literal notranslate"><span class="pre">init_qcanvas</span></code> object and insert new code before the <code class="docutils literal notranslate"><span class="pre">my_canvas.show()</span></code> command.</p>
+<p>We first retrieve information from the AllQuestionnaires loop by loading all information as in a <code class="docutils literal notranslate"><span class="pre">dm</span></code> datamatrix variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#get data from AllQuestionnaires loop</span>
+<span class="n">dm</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="s1">&#39;AllQuestionnaires&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dm</span>
+</pre></div>
+</div>
+<p>Now, we can use the <code class="docutils literal notranslate"><span class="pre">QuestStartRow</span></code> variable to find the correct row in the AllQuestionnaires datamatrix that contains the ItemDescription we want to show as header. Note that we use -1 because the datamatrix is zero-based whereas the loop shown in OpenSesame is one-based! Let’s use a print statement to verify we have the right information.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#header</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ItemDescription</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the experiment again and check whether the Console contains the right information. Remove the -1 and compare the results.</p>
+<p>As a next step, let’s print the actual text of the header to the Canvas. Note the name of this element in the Canvas is <code class="docutils literal notranslate"><span class="pre">qhd</span></code> (see sketch above).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;qhd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ItemDescription</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">x</span><span class="o">=-</span><span class="mi">490</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">372</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">983</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">font_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Check whether this works.</p>
+</div>
+<div class="section" id="step-4-add-the-text-of-the-questions">
+<h2>Step 4. Add the text of the questions<a class="headerlink" href="#step-4-add-the-text-of-the-questions" title="Permalink to this headline">¶</a></h2>
+<p>We now can start adding the text of all questions and all options, using the names described in the sketch above. The script we write allows to use 9 options per questionnaires. Later on we will make sure that options are only clickable if there is a text associated with that option. The IPIP example has only 5 possible answeres and uses options 3 to 7; o01, 02, 08, and 09 are left empty in this case.</p>
+<p>Because we have to print 10 questions and 10 lines above each questions (and later on 90 options) we use a loop instead of manually entering all x and y positions per text item.</p>
+<p>The vertical distance between each question is available in <code class="docutils literal notranslate"><span class="pre">qs_ydist</span></code>. The x and y position of <code class="docutils literal notranslate"><span class="pre">qst_01</span></code>, and the width and height are also stored as variables. The loop than runs from 1 to 10 and then print the text <code class="docutils literal notranslate"><span class="pre">qst_xx</span></code> and the horizontal line 2 pixels above it (<code class="docutils literal notranslate"><span class="pre">qst_xx_bg</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define coordinates of questions</span>
+<span class="n">qs_ydist</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span> <span class="n">qs_w</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span> <span class="n">qs_h</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="n">qs_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">488</span><span class="p">;</span> <span class="n">qs_y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">294</span>
+
+<span class="c1">#loop questions (y)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1">#questions</span>
+    <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;qst&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ItemDescription</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">qs_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">qs_y</span><span class="o">+</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">qs_ydist</span><span class="p">),</span> <span class="n">max_width</span><span class="o">=</span><span class="n">qs_w</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;qst&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;bg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">qs_x</span><span class="p">,</span> <span class="n">qs_y</span><span class="o">+</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">qs_ydist</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;whitesmoke&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>QUIZ. What is the zfill doing?</p>
+<p>Test your code. Do you see 10 questions presented per sheet?</p>
+</div>
+<div class="section" id="step-5-add-the-options">
+<h2>Step 5. Add the options<a class="headerlink" href="#step-5-add-the-options" title="Permalink to this headline">¶</a></h2>
+<p>Time to add the 90 options to the canvas. Actually we add 180 objects: 90 text objects (named <code class="docutils literal notranslate"><span class="pre">rtxxx</span></code>) and 90 ‘clickable’ squares without fill (named <code class="docutils literal notranslate"><span class="pre">rbxxx</span></code>) around these text objects.</p>
+<p>We can nest a new loop into the <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span></code> loop, using variable j that runs from 1 to 9.</p>
+<p>Again, we define the positions of the options in separate variables too. Use the code below to replace the code in step 4.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define coordinates of questions</span>
+<span class="n">qs_ydist</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span> <span class="n">qs_w</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span> <span class="n">qs_h</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="n">qs_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">488</span><span class="p">;</span> <span class="n">qs_y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">294</span>
+<span class="c1">#define coordinates of options</span>
+<span class="n">opt_xdist</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span> <span class="n">opt_ydist</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span> <span class="n">opt_w</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="n">opt_h</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="n">opt_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">71</span><span class="p">;</span> <span class="n">opt_y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">294</span>
+
+
+<span class="c1">#loop questions (y)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1">#questions</span>
+    <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;qst&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;bg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">qs_x</span><span class="p">,</span> <span class="n">qs_y</span><span class="o">+</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">qs_ydist</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;whitesmoke&#39;</span><span class="p">)</span>
+    <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;qst&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ItemDescription</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">qs_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">qs_y</span><span class="o">+</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">qs_ydist</span><span class="p">),</span> <span class="n">max_width</span><span class="o">=</span><span class="n">qs_w</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    
+    <span class="c1">#loop options (x)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1">#options</span>
+        <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">opt_x</span><span class="o">+</span><span class="p">((</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">opt_xdist</span><span class="p">),</span> <span class="n">opt_y</span><span class="o">+</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">opt_ydist</span><span class="p">),</span> <span class="n">opt_w</span><span class="p">,</span> <span class="n">opt_h</span><span class="p">)</span>
+        <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o0&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)),</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">opt_x</span><span class="o">+</span><span class="p">((</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">opt_xdist</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">opt_y</span><span class="o">+</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">opt_ydist</span><span class="p">),</span> <span class="n">max_width</span><span class="o">=</span><span class="n">opt_w</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mf">10.5</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Run the file. Experiment with the location of the options and questionnares by changes the x and y values. Make sure you understand what the code is doing.</p>
+<p>QUIZ: what is the name of the box for question 4, option position 5?</p>
+</div>
+<div class="section" id="step-6-mark-preselected-options">
+<h2>Step 6. Mark preselected options<a class="headerlink" href="#step-6-mark-preselected-options" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">AllQuestionnaires</span></code> loop contains a column <code class="docutils literal notranslate"><span class="pre">PreSelection</span></code> that allows to mark already a particular option per question when the slide is presented.</p>
+<p>We first retrieve the information about the preselection from the datamatrix.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RSelected</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">PreSelection</span>
+</pre></div>
+</div>
+<p>Note that we will keep updating the variable RSelected when participants select an option with their mouse later in the script.</p>
+<p>QUIZ: dimensions of RSelected</p>
+<p>Around all 90 options there is a  rectangle object (named <code class="docutils literal notranslate"><span class="pre">rb011</span></code> to <code class="docutils literal notranslate"><span class="pre">rb019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rb021</span></code> to <code class="docutils literal notranslate"><span class="pre">rb029</span></code> for the second question, et cetera) that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected.</p>
+<p>The code below updates the color of all 90 rectangles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RSelected</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">PreSelection</span>
+<span class="c1">#update selection of all options depending on values in RSelected</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">j</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)]</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+            <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;white&#39;</span>
+</pre></div>
+</div>
+<p>Experiment with the PreSelection values in the loop. Do you see the correct options gets marked?</p>
+<p>QUIZ: What happens if you PreSelect an options that does not contain text? A: this is actually a feature of the questionnaire. The questionnaire will be programmed in such a way that participants can only proceed if they have provided answers to all questionnaires (to avoid missing data). If you do not want to force a response, you can preselect a hidden option (e.g. option1 which does not contain text in the IPIP template) in case you do not want to force the participant to answer some questions.</p>
+<p>Congratulations! You have finished the first part of the experiment that presents the canvas. Hang on to do more cool stuff!</p>
+</div>
+<div class="section" id="step-7-continously-update-the-content-of-the-canvas-until-the-user-clicks-continue">
+<h2>Step 7. Continously update the content of the Canvas until the user clicks “Continue”<a class="headerlink" href="#step-7-continously-update-the-content-of-the-canvas-until-the-user-clicks-continue" title="Permalink to this headline">¶</a></h2>
+<p>Let’s now work on the <code class="docutils literal notranslate"><span class="pre">refr_qcanvas</span></code> inline. This one has the most complex code so far. Let’s think before we code! We need to  consider the following requirements:</p>
+<ul class="simple">
+<li><p>we do only allow one response per question: whenever an option is clicked, unmark the previous selection (if any)</p></li>
+<li><p>enable the OK button only after all questions have been answered. So keep it “greyed out” by default.</p></li>
+<li><p>if the user click on something that is not option or the OK button, do nothing (redrawing the canvas is not necessary). However, if we change the canvas, we have to redraw the canvas to the screen</p></li>
+<li><p>we keep showing the screen as long as the user (participant) has not clicked the OK button (to do so we will use a loop that continuously runs some code while we do not update the screen; the user is simply not aware of this loop because the screen stays the same)</p></li>
+<li><p>we do not have to update the cursus position on the screen each time the mouse moves. This is automatically done by the Operating System.</p></li>
+</ul>
+<p>Now you need a piece of paper (or a tool like MS Visio) to sketch a diagram that does all of this in a way that makes sense. For example, the diagram below shows one implementation of a solution. Note that the diagram is still a bit simplified and we need a couple of more nested loops and decisions to make everything work perfectly.</p>
+<p><img alt="" src="../../../_images/flowchart.png" /></p>
+<p>Let’s try to describe what the diagram shows. We basically have a big loop that is repeated as long as the user does not press the OK button (once enabled). Within the loop, we first wait for a mouse click. We then check whether the user clicked the option or the OK button and take the actions as described in the flow chart. After that we check whether all questions are answered and enabled the OK button in that case. Finally, if a refresh of the screen is needed we draw the updated canvas to the screen (otherwise, the screen is not updated and hence stays as it was).</p>
+<p>There are at least two “states” of the experiment that we should keep in the working memory of the computer: 1) whether the OK button was selected or not (this is checked each time at the top of the loop), and 2) whether a refresh of the screen is needed (this state is TRUE when the OK button is enabled and/or when the user made a new selection).</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">refr_qcanvas</span></code> inline and add the following lines to the top of the script. This gives initial values to the variables that save the two “states” which can be changed later on in the script.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OK_pressed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">refresh_needed</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="section" id="add-the-big-loop">
+<h3>Add the big loop<a class="headerlink" href="#add-the-big-loop" title="Permalink to this headline">¶</a></h3>
+<p>Let’s now add the big loop that repeats itself until OK_pressed is True. Make sure you nest the existing code that waits for a mouse click into this loop, like in the code below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#big loop: refreshes questionnaire until all options are answered</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="p">(</span><span class="n">OK_pressed</span><span class="p">):</span>
+    <span class="n">my_mouse</span> <span class="o">=</span> <span class="n">Mouse</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1">#wait for mouse click</span>
+    <span class="n">button</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="n">my_mouse</span><span class="o">.</span><span class="n">get_click</span><span class="p">()</span>
+    
+    
+</pre></div>
+</div>
+<p>QUIZ: assume you run this experiment. How long will the canvas been shown to the user?
+- until eternity
+- until the user clicks with the mouse
+- until the user clicks the OK button</p>
+</div>
+<div class="section" id="check-what-was-clicked">
+<h3>Check what was clicked<a class="headerlink" href="#check-what-was-clicked" title="Permalink to this headline">¶</a></h3>
+<p>To check whether something was clicked at we need the <code class="docutils literal notranslate"><span class="pre">elements_at(x,y)</span></code> function of the Canvas object (learn more <a class="reference external" href="https://osdoc.cogsci.nl/manual/python/canvas/#Canvas-elements_at">here</a>).</p>
+<p>This function returns a list of object names that are ‘below’ a particular (x,y) coordinate in the respective Canvas.</p>
+<p>So if we use the x and y position of the mouse at the moment the user clicked, we can ask elements_at to provide the names of the objects (if any) that were below the mouse cursor.</p>
+<p>Let’s try whether this works. Add the following code below the wait for mouse click code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clicked on elements: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">my_canvas</span><span class="o">.</span><span class="n">elements_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Now run the experiment in Windowed mode (&gt;&gt; button) and check whether the results you see in the output console. What names appear when you click the text belonging to an answer option? And what does appear when you click the OK button?</p>
+<p>If you understand how the elements_at function work, you can comment out the print line (do not remove it, perhaps you need it again at a later stage when debugging your code).</p>
+<p>Given that the <code class="docutils literal notranslate"><span class="pre">elements_at</span></code> function returns a list (objects in a canvas can overlap spatially), we need a loop that runs over all object names in the list and check whether that object is a ‘clickable’ option or the OK button.</p>
+<p>The loop below assign the string <code class="docutils literal notranslate"><span class="pre">ce</span></code> (short for canvas element) sequentially to each element of the list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="n">ce</span> <span class="ow">in</span> <span class="n">my_canvas</span><span class="o">.</span><span class="n">elements_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Tip: at a print statement nested in the loop to show the content of ce while you run the experiment in Windowed mode if you do not yet understand the function of this loop.</p>
+</div>
+<div class="section" id="check-whether-an-option-was-clicked">
+<h3>Check whether an option was clicked<a class="headerlink" href="#check-whether-an-option-was-clicked" title="Permalink to this headline">¶</a></h3>
+<p>To check whether an option was clicked (it has name <code class="docutils literal notranslate"><span class="pre">rbxxx</span></code>) we can simply check whether the name of the object contains <code class="docutils literal notranslate"><span class="pre">rb</span></code>. This can be done because <code class="docutils literal notranslate"><span class="pre">rb</span></code> is a unique substring that is not part of any other object names in the Canvas.</p>
+<p>To do so, we can use the find command of the string class, which returns the position of the substring in the string or -1 if it was not found. In our case the position should be 0 (i.e. rb is found in the first position of the string, e.g. <code class="docutils literal notranslate"><span class="pre">rb</span></code> is found in <code class="docutils literal notranslate"><span class="pre">rb011</span></code>). And we also check whether the associated text at this position (e.g. <code class="docutils literal notranslate"><span class="pre">rt011</span></code> when <code class="docutils literal notranslate"><span class="pre">rb011</span></code> is clicked) is not empty.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="k">if</span> <span class="n">ce</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1">#check if the associated text at this position is not empty (only clickable if there is text)</span>
+                <span class="k">if</span> <span class="n">my_canvas</span><span class="p">[</span><span class="s2">&quot;rt&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">::])]</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+
+</pre></div>
+</div>
+<p>If all these conditions are met we know the option that is clicked and we can save this as an interger into a variable we call <code class="docutils literal notranslate"><span class="pre">newsel</span></code>.</p>
+<p>We also retrieve the previous selection of this question which is available in <code class="docutils literal notranslate"><span class="pre">RSelected</span></code> and store it into the integer <code class="docutils literal notranslate"><span class="pre">oldsel</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                    <span class="n">newsel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+                    <span class="n">oldsel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+</pre></div>
+</div>
+<p>Finally, if the new selection differs from the old selection, we set <code class="docutils literal notranslate"><span class="pre">refresh_needed</span></code> to True, update <code class="docutils literal notranslate"><span class="pre">RSelected</span></code>, remove the border of the old selection and add the border to the new selection.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                    <span class="k">if</span> <span class="n">newsel</span> <span class="o">!=</span> <span class="n">oldsel</span><span class="p">:</span>
+                        <span class="n">refresh_needed</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">RSelected</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">newsel</span>
+                        <span class="c1">#remove border old selection</span>
+                        <span class="k">if</span> <span class="n">oldsel</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">oldsel</span><span class="p">)]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;white&#39;</span>
+
+                        <span class="c1">#add border new selection</span>
+                        <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">newsel</span><span class="p">)]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span>
+</pre></div>
+</div>
+<p>Now check the flowchart above. We basically now finished the first branch of the decision flow in the loop (although we needed quite some additional conditionals and a loop not shown in detail there).</p>
+</div>
+<div class="section" id="update-the-canvas">
+<h3>Update the Canvas<a class="headerlink" href="#update-the-canvas" title="Permalink to this headline">¶</a></h3>
+<p>Let’s also add the last branch of the flowchart that updates the Canvas so that we can test whether everything works so far. Note that we set <code class="docutils literal notranslate"><span class="pre">refresh_needed</span></code> immediately to <code class="docutils literal notranslate"><span class="pre">False</span></code> after we have drawn the Canvas. This prevents that the Canvas is redrawn by default after each mouse click. It will only be redrawn when <code class="docutils literal notranslate"><span class="pre">refresh_needed</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> again (somewhere else in the code).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1">#check if refresh is needed</span>
+    <span class="k">if</span> <span class="n">refresh_needed</span><span class="p">:</span>
+        <span class="n">my_canvas</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">refresh_needed</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Now run the experiment and check whether you can select the options using your mouse.</p>
+<p>If something does not work properly, compare all your code in <code class="docutils literal notranslate"><span class="pre">refr_qcanvas</span></code> to the code below. It should look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OK_pressed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">refresh_needed</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">#big loop: refreshes questionnaire until all options are answered</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="p">(</span><span class="n">OK_pressed</span><span class="p">):</span>
+    <span class="n">my_mouse</span> <span class="o">=</span> <span class="n">Mouse</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1">#wait for mouse click</span>
+    <span class="n">button</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="n">my_mouse</span><span class="o">.</span><span class="n">get_click</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clicked on elements: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">my_canvas</span><span class="o">.</span><span class="n">elements_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">ce</span> <span class="ow">in</span> <span class="n">my_canvas</span><span class="o">.</span><span class="n">elements_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">ce</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1">#check if the associated text at this position is not empty (only clickable if there is text)</span>
+                <span class="k">if</span> <span class="n">my_canvas</span><span class="p">[</span><span class="s2">&quot;rt&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">::])]</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>            
+                    <span class="n">newsel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+                    <span class="n">oldsel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="k">if</span> <span class="n">newsel</span> <span class="o">!=</span> <span class="n">oldsel</span><span class="p">:</span>
+                        <span class="n">refresh_needed</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">RSelected</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">newsel</span>
+                        <span class="c1">#remove border old selection</span>
+                        <span class="k">if</span> <span class="n">oldsel</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">oldsel</span><span class="p">)]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;white&#39;</span>
+
+                        <span class="c1">#add border new selection</span>
+                        <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rb&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">newsel</span><span class="p">)]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span>
+                        
+    <span class="c1">#check if refresh is needed</span>
+    <span class="k">if</span> <span class="n">refresh_needed</span><span class="p">:</span>
+        <span class="n">my_canvas</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">refresh_needed</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-whether-the-ok-button-was-clicked">
+<h3>Check whether the OK button was clicked<a class="headerlink" href="#check-whether-the-ok-button-was-clicked" title="Permalink to this headline">¶</a></h3>
+<p>e are almost there! Have a look at the flowchart and let’s implement the second branch in the loop. This is relatively straightforward: we check whether the name of ce is <code class="docutils literal notranslate"><span class="pre">OKbutton</span></code>, and if so, if the color of the text of the OKbutton (named <code class="docutils literal notranslate"><span class="pre">OKbutton_t</span></code>) is black. If both conditions are true we set <code class="docutils literal notranslate"><span class="pre">OK_pressed</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Make sure you insert this code above the     code that checks if a refresh is needed (and nested into the <code class="docutils literal notranslate"><span class="pre">ce</span></code> loop).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="c1"># check if OK button was clicked</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ce</span> <span class="o">==</span> <span class="s2">&quot;OKbutton&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">my_canvas</span><span class="p">[</span><span class="s2">&quot;OKbutton_t&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">color</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black&quot;</span><span class="p">):</span>
+                    <span class="n">OK_pressed</span> <span class="o">=</span> <span class="kc">True</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-whether-all-questions-are-answered">
+<h3>Check whether all questions are answered<a class="headerlink" href="#check-whether-all-questions-are-answered" title="Permalink to this headline">¶</a></h3>
+<p>Finally, we have to check whether all questions were answered (the third branch in the flowchart). We basically know that not all questions are answered if there are still elements in <code class="docutils literal notranslate"><span class="pre">RSelected</span></code> with the value 0.</p>
+<p>To translate this logic in a script we create a new variable called <code class="docutils literal notranslate"><span class="pre">allselected</span></code> and we give it initial value of <code class="docutils literal notranslate"><span class="pre">True</span></code> (assuming all questions are answered). We now loop over all 10 questions and check whether the associated RSelected value is 0. Whenever this happens, we ‘veto’ the decision and set <code class="docutils literal notranslate"><span class="pre">allselected</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>. We need the following code for this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1">#check if all selections are made already</span>
+    <span class="n">allselected</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">allselected</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Let’s now consider a slightly different scenario. Assume that in some cases we do not to fill all 10 questions in a sheet. For example, when we have a questionnaire with 25 items, 2 sheets can present 10 items and the final sheet only 5 items. Of course we do not require participant to make a selection of an option that does not have a question.</p>
+<p>So let’s change the code and only ‘veto’ the decision if the Rselected value is 0 and at the same time the related question is not empty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1">#check if all selections are made already</span>
+    <span class="n">allselected</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;qst&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+            <span class="n">allselected</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Insert this code before the check if a refresh is needed. Now, we finally also need to ‘enable’ the OK button by making the text color ‘black’ when <code class="docutils literal notranslate"><span class="pre">allselected</span></code> equals <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">allselected</span><span class="p">:</span>
+        <span class="c1">#enable OK button</span>
+        <span class="n">my_canvas</span><span class="p">[</span><span class="s2">&quot;OKbutton_t&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;black&#39;</span>
+</pre></div>
+</div>
+<p>Note that we do not have to set refresh_need to True once more because the allselected status will by definition only change when an option is clicked (which itself forces a refresh already).</p>
+<p>Check whether the questionnare works properly now and proceeds to the next sheet of questions after you click Proceed. Also experiment with the PreSelection feature.</p>
+<p>Quiz: What happens if you set the PreSelections of all questions to 9?</p>
+</div>
+</div>
+<div class="section" id="step-8-logging-all-answers">
+<h2>Step 8. Logging all answers<a class="headerlink" href="#step-8-logging-all-answers" title="Permalink to this headline">¶</a></h2>
+<p>When analysing the data later on it is convenient if the answer to each item of a questionnaire is stored in a separate row in the log file (i.e. long format). However, to create a new row in the log file, we have to call the <code class="docutils literal notranslate"><span class="pre">logger</span></code> object multiple times. The easiest solution for this is to fill a loop with relevant information and let OpenSesame run this loop sequentially to store the information row by row into the log file.</p>
+<p>The template file consists of a <code class="docutils literal notranslate"><span class="pre">queslog_loop</span></code> that is doing exactly this. We only need to create a script in <code class="docutils literal notranslate"><span class="pre">log_answers</span></code> that overwrites the values in the 11 rows (1 header and 10 questions) in the <code class="docutils literal notranslate"><span class="pre">queslog_loop</span></code> object.</p>
+<p>We can do this in a simple loop that retrieves all the relevant information from the AllQuestionnaires loop (stored in <code class="docutils literal notranslate"><span class="pre">dm</span></code>), the selection options (stored in <code class="docutils literal notranslate"><span class="pre">RSelected</span></code>) and the actual text displayed for the selected option (stored in the <code class="docutils literal notranslate"><span class="pre">rtxxx</span></code> object in the Canvas).</p>
+<p>This is the code you need:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># All questions are answered. Now save all the information from this sheet to the question_log so that all information is logged in a LONG (not WIDE) format</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">items</span><span class="p">[</span><span class="s1">&#39;queslog_loop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dm</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ItemID</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">ItID</span>
+    <span class="n">items</span><span class="p">[</span><span class="s1">&#39;queslog_loop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dm</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ItemDescr</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">QuestStartRow</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">ItemDescription</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#not a header</span>
+        <span class="n">items</span><span class="p">[</span><span class="s1">&#39;queslog_loop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dm</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ChosenOption</span> <span class="o">=</span> <span class="n">RSelected</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">items</span><span class="p">[</span><span class="s1">&#39;queslog_loop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dm</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ChosenOptDes</span> <span class="o">=</span> <span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])]</span><span class="o">.</span><span class="n">text</span>
+
+</pre></div>
+</div>
+<p>Your questionnaire is now complete! Run the experiment and check whether your log file contains the right information for the columns <code class="docutils literal notranslate"><span class="pre">ItemID</span></code>, <code class="docutils literal notranslate"><span class="pre">ItemDescr</span></code>,<code class="docutils literal notranslate"><span class="pre">ChosenOption</span></code>, and <code class="docutils literal notranslate"><span class="pre">ChosenOptDes</span></code>.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="update-the-ok-button-earlier">
+<h3>1. Update the OK button earlier<a class="headerlink" href="#update-the-ok-button-earlier" title="Permalink to this headline">¶</a></h3>
+<p>When you set all the PreSelections of all questions to 9 the OK button stays grey until you click somewhere. How would you change the code so that this refresh is done BEFORE the user clicks the mouse? Which branches in the flowchart have to move? Try this is in your own code.</p>
+</div>
+<div class="section" id="create-a-striped-color-layout">
+<h3>2. Create a striped color layout<a class="headerlink" href="#create-a-striped-color-layout" title="Permalink to this headline">¶</a></h3>
+<p>Change the <code class="docutils literal notranslate"><span class="pre">qst01bg</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10bg</span></code> objects to rectangles with height <code class="docutils literal notranslate"><span class="pre">opt_h</span></code> that are only present for odd-numbered items. This creates a striped color layout of your questionnaire as in the example below:
+<img alt="" src="../../../_images/ques_striped.png" /></p>
+<p>To avoid white rectangles around the options not selected, make sure you also set the color of unselected options to <code class="docutils literal notranslate"><span class="pre">whitesmoke</span></code> instead of <code class="docutils literal notranslate"><span class="pre">white</span></code> in the odd-numbered rows. Note that you have to change this in two places in your script.</p>
+</div>
+<div class="section" id="make-the-code-more-compact">
+<h3>3. Make the code more compact<a class="headerlink" href="#make-the-code-more-compact" title="Permalink to this headline">¶</a></h3>
+<p>There might be places where the code could be written in a more compact way. For example, two nested if’s could be replaced by one if that combines the conditional expressions with a logical AND-operator. However, you may run into the risk that your code is (even) more difficult to understand. ;) Experiment with replacing the if… nested in the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">ce.find(&quot;rb&quot;)</span> <span class="pre">==</span> <span class="pre">0</span></code> conditional.</p>
+</div>
+<div class="section" id="radio-button-layout-advanced-level">
+<h3>4. Radio-button layout (advanced level!)<a class="headerlink" href="#radio-button-layout-advanced-level" title="Permalink to this headline">¶</a></h3>
+<p>Change the layout of the questionnaire, replacing the squares with radio-buttons (e.g. a big circle with a smaller circle that can be filled or not) next to the text.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\12_ques\questionnaires"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jeshua Tromp & Henk van Steenbergen<br/>
+    
+        &copy; Copyright 2022/2023.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
