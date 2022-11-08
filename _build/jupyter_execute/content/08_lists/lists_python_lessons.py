@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python lessons: Lists
-# 
-# > The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
-
 # In[1]:
 
 
@@ -35,10 +31,4 @@ IFrame(src="https://www.youtube.com/embed/GxADdpo6EP4", width="560", height="315
 
 
 IFrame(src="https://www.youtube.com/embed/CaVhM65wD6g", width="560", height="315")
-
-
-# In[ ]:
-
-
-
 

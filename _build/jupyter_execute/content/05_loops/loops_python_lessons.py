@@ -3,7 +3,7 @@
 
 # # Python lessons: Loops
 
-# > The video below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
+# > **Note** The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 
 # In[1]:
 
@@ -35,10 +35,4 @@ IFrame(src="https://www.youtube.com/embed/xsavQp8hd78", width="560", height="315
 
 
 IFrame(src="https://www.youtube.com/embed/yjlMMwf9Y5I", width="560", height="315")
-
-
-# In[5]:
-
-
-
 

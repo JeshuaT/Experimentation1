@@ -3,7 +3,7 @@
 
 # # Python Exercises: Variables
 # 
-# > Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/02-variables) by Charles R. Severance licensed under Creative Commons Attribution 3.0
+# > **Note** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/02-variables) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
 # 
 # ### Exercise 1. Print welcome text

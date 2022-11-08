@@ -3,7 +3,7 @@
 
 # # Python exercises: Functions
 
-# > The exercises below are  adapted from the [Python for Everyone Course](https://www.py4e.com/html3/04-functions) by Charles R. Severance licensed under Creative Commons Attribution 3.0
+# > **Note** The exercises below are  adapted from the [Python for Everyone Course](https://www.py4e.com/html3/04-functions) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 
 # ### Exercise 1. Sequence of function calls
 # 

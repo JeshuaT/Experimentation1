@@ -113,12 +113,46 @@ plt.show()
 # In[6]:
 
 
-df_block = df_trim_blocks.groupby('block').mean()
+fig, axs = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True, figsize=(5.5, 3.5))
 
-plt.plot(df_block)
+df_subj1_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 1)]
+df_subj2_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 2)]
+df_subj1_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 1)]
+df_subj2_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 2)]
+
+df_subj1_parity['response_time'].hist(ax=axs[0,0])
+df_subj2_parity['response_time'].hist(ax=axs[0,1])
+df_subj1_magnitude['response_time'].hist(ax=axs[1,0])
+df_subj2_magnitude['response_time'].hist(ax=axs[1,1])
+
+# Set common labels
+fig.text(0.28, -0.03, 'Parity', ha='center', va='center')
+fig.text(0.75, -0.03, 'Magnitude', ha='center', va='center')
+
+axs[0,0].set_ylabel('Subject 1')
+axs[1,0].set_ylabel('Subject 2')
+
+plt.show()
 
 
 # In[7]:
+
+
+print(df_subj1_switch.shape)
+print(df_subj2_switch.shape)
+print(df_subj1_repetition.shape)
+print(df_subj2_repetition.shape)
+
+
+# In[8]:
+
+
+fig, ax = plt.subplots()
+df_trim_blocks.groupby('subject_nr').plot(x='task_type', y='response_time', ax=ax, legend=False)
+plt.show()
+
+
+# In[9]:
 
 
 
@@ -144,7 +178,7 @@ df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].trans
 print(df)
 
 
-# In[8]:
+# In[10]:
 
 
 plt.figure(figsize=(8,6));
@@ -152,7 +186,7 @@ plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=10
 plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[9]:
+# In[11]:
 
 
 import seaborn as sns
@@ -166,19 +200,19 @@ sns.displot(
 )
 
 
-# In[10]:
+# In[12]:
 
 
 df
 
 
-# In[11]:
+# In[13]:
 
 
 df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
 
 
-# In[12]:
+# In[14]:
 
 
 df_sum

@@ -3,7 +3,7 @@
 
 # # Python exercises: Getting Ready
 
-# > Below are adapted from: https://www.py4e.com/html3/01-intro
+# > **Note** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/01-intro) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
 # ### Exercise 1. Printing "Hello world!"
 # **a.** What is wrong with the following code?

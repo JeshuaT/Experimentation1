@@ -2,8 +2,22 @@
 # coding: utf-8
 
 # # Python lessons: Numbers and arrays
-# 
-# https://pythontutorials.eu/numerical/numpy/
+
+# In[1]:
+
+
+from IPython.display import IFrame
+
+
+# The lessons can be found [here](https://pythontutorials.eu/numerical/numpy/)
+
+# In[2]:
+
+
+
+IFrame(src="https://pythontutorials.eu/numerical/numpy/", width="800", height="600")
+
+
 # 
 # ## Further reading
 # 

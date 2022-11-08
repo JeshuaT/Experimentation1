@@ -56,11 +56,3 @@
 # 
 # We are not encouraging you to put Easter Eggs in your programs; this is just an exercise.
 # 
-
-# 
-
-# In[ ]:
-
-
-
-

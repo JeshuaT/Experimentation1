@@ -3,7 +3,7 @@
 
 # # Python lessons: Conditionals
 # 
-# > The video below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
+# > **Note** The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
 
 # In[1]:
