@@ -284,7 +284,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
-     Python exercises
+     Python exercises: Files
     </a>
    </li>
    <li class="toctree-l2">
@@ -323,7 +323,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09_numbers/numbers_intro.html">
-   Session 9 - Numbers
+   Session 9 - Numbers and arrays
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -333,12 +333,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_lessons.html">
-     Python lessons: Numbers
+     Python lessons: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_exercises.html">
-     Python exercises: Numbers
+     Python exercises: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
@@ -398,11 +398,38 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+  <a class="reference internal" href="../12_ques/ques_intro.html">
+   Session 12 - Questionnaires
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_lessons.html">
+     Python lessons: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_exercises.html">
+     Python exercises: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/questionnaires/questionnaire.html">
+     Questionnaires in OpenSesame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../13_input_output/io_intro.html">
+   Session 13 - Input/Output
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -428,8 +455,8 @@
   <a class="reference internal" href="../14_qa/qa_intro.html">
    Session 14 - Q&amp;A
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -572,6 +599,155 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises-plotting">
 <h1>Python exercises: Plotting<a class="headerlink" href="#python-exercises-plotting" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#39;</span><span class="p">)</span>
+
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sepal_length</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">]</span>
+<span class="n">sepal_width</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span>
+<span class="n">species</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sepal_length</span><span class="p">,</span> <span class="n">sepal_width</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Month-wise Profit data of last year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Month number&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Profit in dollar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Company profit per month&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_python_exercises_3_0.png" src="../../_images/plotting_python_exercises_3_0.png" />
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

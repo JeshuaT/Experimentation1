@@ -14,7 +14,7 @@
 # 
 # In the figure below we present a possible outline of 10 questions (named `qst01` to `qst10`), a general header for this sheet (named `qhd`) and 9 options to choose from per question (named `rt011` to `rt019` for the first question, `rt021` to `rt029` for the second question, et cetera). 
 
-# ![images/overviewques.png](attachment:overviewques.png)
+# ![images/overviewques.png]
 
 # In addition, we add some shapes to the canvas. Above each question, we present a rectangle of height 1 pixel (basically a line) named `qst01bg` to `qst10bg`. We also create a "Continue" button to proceed to the next sheet. And around all 90 options there is rectangle that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected. These rectangles are named `rbxxx`  (`rb011` to `rb019` for the first question, `rb021` to `rb029` for the second question, et cetera).
 # 

@@ -54,6 +54,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Session 13 - Input/Output" href="../../13_input_output/io_intro.html" />
+    <link rel="prev" title="Python exercises: Canvas" href="../ques_python_exercises.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +99,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_getting_ready/gettingready_intro.html">
    Session 1 - Getting Ready
@@ -282,7 +284,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../07_files/files_python_exercises.html">
-     Python exercises
+     Python exercises: Files
     </a>
    </li>
    <li class="toctree-l2">
@@ -321,7 +323,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../09_numbers/numbers_intro.html">
-   Session 9 - Numbers
+   Session 9 - Numbers and arrays
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -331,12 +333,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../09_numbers/numbers_python_lessons.html">
-     Python lessons: Numbers
+     Python lessons: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../09_numbers/numbers_python_exercises.html">
-     Python exercises: Numbers
+     Python exercises: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
@@ -395,12 +397,39 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ques_intro.html">
+   Session 12 - Questionnaires
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ques_python_lessons.html">
+     Python lessons: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ques_python_exercises.html">
+     Python exercises: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Questionnaires in OpenSesame
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../13_input_output/io_intro.html">
    Session 13 - Input/Output
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -426,8 +455,8 @@
   <a class="reference internal" href="../../14_qa/qa_intro.html">
    Session 14 - Q&amp;A
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -804,7 +833,7 @@
 <h2>Step 1. Sketch the basic outline of your questionnaire<a class="headerlink" href="#step-1-sketch-the-basic-outline-of-your-questionnaire" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we want to present 5 sheets (or pages) of questions with 10 questions of the IPIP per sheet. To do so, we can use Canvas commands to draw text and rectangles at particular locations.</p>
 <p>In the figure below we present a possible outline of 10 questions (named <code class="docutils literal notranslate"><span class="pre">qst01</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10</span></code>), a general header for this sheet (named <code class="docutils literal notranslate"><span class="pre">qhd</span></code>) and 9 options to choose from per question (named <code class="docutils literal notranslate"><span class="pre">rt011</span></code> to <code class="docutils literal notranslate"><span class="pre">rt019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rt021</span></code> to <code class="docutils literal notranslate"><span class="pre">rt029</span></code> for the second question, et cetera).</p>
-<p><img alt="images/overviewques.png" src="content/12_ques/questionnaires/attachment:overviewques.png" /></p>
+<p>![images/overviewques.png]</p>
 <p>In addition, we add some shapes to the canvas. Above each question, we present a rectangle of height 1 pixel (basically a line) named <code class="docutils literal notranslate"><span class="pre">qst01bg</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10bg</span></code>. We also create a “Continue” button to proceed to the next sheet. And around all 90 options there is rectangle that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected. These rectangles are named <code class="docutils literal notranslate"><span class="pre">rbxxx</span></code>  (<code class="docutils literal notranslate"><span class="pre">rb011</span></code> to <code class="docutils literal notranslate"><span class="pre">rb019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rb021</span></code> to <code class="docutils literal notranslate"><span class="pre">rb029</span></code> for the second question, et cetera).</p>
 <p>We first sketched this outline on a piece of paper and then played around with finding some nice coordinates at the screen. For each element in the Canvas we have to provide the position (x and y-coordinate in pixels relative to the center of the screen), and its size (width and height in pixels). This information can be hard-coded in the script. Or simply be stored in variables.</p>
 </div>
@@ -1162,7 +1191,21 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../ques_python_exercises.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python exercises: Canvas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../13_input_output/io_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Session 13 - Input/Output</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

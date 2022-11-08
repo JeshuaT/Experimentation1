@@ -284,7 +284,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
-     Python exercises
+     Python exercises: Files
     </a>
    </li>
    <li class="toctree-l2">
@@ -323,7 +323,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09_numbers/numbers_intro.html">
-   Session 9 - Numbers
+   Session 9 - Numbers and arrays
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -333,12 +333,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_lessons.html">
-     Python lessons: Numbers
+     Python lessons: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_exercises.html">
-     Python exercises: Numbers
+     Python exercises: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
@@ -398,11 +398,38 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+  <a class="reference internal" href="../12_ques/ques_intro.html">
+   Session 12 - Questionnaires
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_lessons.html">
+     Python lessons: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_exercises.html">
+     Python exercises: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/questionnaires/questionnaire.html">
+     Questionnaires in OpenSesame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../13_input_output/io_intro.html">
+   Session 13 - Input/Output
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -428,8 +455,8 @@
   <a class="reference internal" href="../14_qa/qa_intro.html">
    Session 14 - Q&amp;A
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -552,6 +579,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-find-all-unique-words-in-a-file">
+   Exercise 1. Find all unique words in a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-minimalist-email-client">
+   Exercise 2. Minimalist Email Client
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-process-list-of-numbers">
+   Exercise 3. Process list of numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-todo-example-of-tuples">
+   Exercise 4. TODO example of tuples
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -564,6 +619,34 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-find-all-unique-words-in-a-file">
+   Exercise 1. Find all unique words in a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-minimalist-email-client">
+   Exercise 2. Minimalist Email Client
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-process-list-of-numbers">
+   Exercise 3. Process list of numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-todo-example-of-tuples">
+   Exercise 4. TODO example of tuples
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -572,6 +655,64 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises-lists">
 <h1>Python exercises: Lists<a class="headerlink" href="#python-exercises-lists" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p><strong>Note</strong> The exercises below are from the <a class="reference external" href="https://www.py4e.com/html3/08-lists">Python for Everyone Course</a> by Charles R. Severance licensed under Creative Commons Attribution 3.0</p>
+</div></blockquote>
+<div class="section" id="exercise-1-find-all-unique-words-in-a-file">
+<h2>Exercise 1. Find all unique words in a file<a class="headerlink" href="#exercise-1-find-all-unique-words-in-a-file" title="Permalink to this headline">¶</a></h2>
+<p>Shakespeare used over 20,000 words in his works. But how would you determine that? How would you produce the list of all the words that Shakespeare used? Would you download all his work, read it and track all unique words by hand?</p>
+<p>Let’s use Python to achieve that instead. List all unique words, sorted in alphabetical order, that are stored in a file romeo.txt containing a subset of Shakespeare’s work.</p>
+<p>To get started, download a copy of the file <a class="reference external" href="http://www.py4e.com/code3/romeo.txt">www.py4e.com/code3/romeo.txt</a>. Create a list of unique words, which will contain the final result. Write a program to open the file romeo.txt and read it line by line. For each line, split the line into a list of words using the split function. For each word, check to see if the word is already in the list of unique words. If the word is not in the list of unique words, add it to the list. When the program completes, sort and print the list of unique words in alphabetical order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">file</span><span class="p">:</span> <span class="n">romeo</span><span class="o">.</span><span class="n">txt</span>
+<span class="p">[</span><span class="s1">&#39;Arise&#39;</span><span class="p">,</span> <span class="s1">&#39;But&#39;</span><span class="p">,</span> <span class="s1">&#39;It&#39;</span><span class="p">,</span> <span class="s1">&#39;Juliet&#39;</span><span class="p">,</span> <span class="s1">&#39;Who&#39;</span><span class="p">,</span> <span class="s1">&#39;already&#39;</span><span class="p">,</span>
+<span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;breaks&#39;</span><span class="p">,</span> <span class="s1">&#39;east&#39;</span><span class="p">,</span> <span class="s1">&#39;envious&#39;</span><span class="p">,</span> <span class="s1">&#39;fair&#39;</span><span class="p">,</span> <span class="s1">&#39;grief&#39;</span><span class="p">,</span>
+<span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;kill&#39;</span><span class="p">,</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span> <span class="s1">&#39;moon&#39;</span><span class="p">,</span> <span class="s1">&#39;pale&#39;</span><span class="p">,</span> <span class="s1">&#39;sick&#39;</span><span class="p">,</span> <span class="s1">&#39;soft&#39;</span><span class="p">,</span>
+<span class="s1">&#39;sun&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;through&#39;</span><span class="p">,</span> <span class="s1">&#39;what&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span>
+<span class="s1">&#39;with&#39;</span><span class="p">,</span> <span class="s1">&#39;yonder&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-2-minimalist-email-client">
+<h2>Exercise 2. Minimalist Email Client<a class="headerlink" href="#exercise-2-minimalist-email-client" title="Permalink to this headline">¶</a></h2>
+<p>MBOX (mail box) is a popular file format to store and share a collection of emails. This was used by early email servers and desktop apps. Without getting into too many details, MBOX is a text file, which stores emails consecutively. Emails are separated by a special line which starts with From (notice the space). Importantly, lines starting with From: (notice the colon) describes the email itself and does not act as a separator. Imagine you wrote a minimalist email app, that lists the email of the senders in the user’s Inbox and counts the number of emails.</p>
+<p>Write a program to read through the mail box data and when you find line that starts with “From”, you will split the line into words using the split function. We are interested in who sent the message, which is the second word on the From line.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">From</span> <span class="n">stephen</span><span class="o">.</span><span class="n">marquard</span><span class="nd">@uct</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">za</span> <span class="n">Sat</span> <span class="n">Jan</span> <span class="mi">5</span> <span class="mi">09</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span> <span class="mi">2008</span>
+</pre></div>
+</div>
+<p>You will parse the From line and print out the second word for each From line, then you will also count the number of From (not From:) lines and print out a count at the end. This is a good sample output with a few lines removed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">fromcount</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">-</span><span class="n">short</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">stephen</span><span class="o">.</span><span class="n">marquard</span><span class="nd">@uct</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">za</span>
+<span class="n">louis</span><span class="nd">@media</span><span class="o">.</span><span class="n">berkeley</span><span class="o">.</span><span class="n">edu</span>
+<span class="n">zqian</span><span class="nd">@umich</span><span class="o">.</span><span class="n">edu</span>
+
+<span class="p">[</span><span class="o">...</span><span class="n">some</span> <span class="n">output</span> <span class="n">removed</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">ray</span><span class="nd">@media</span><span class="o">.</span><span class="n">berkeley</span><span class="o">.</span><span class="n">edu</span>
+<span class="n">cwen</span><span class="nd">@iupui</span><span class="o">.</span><span class="n">edu</span>
+<span class="n">cwen</span><span class="nd">@iupui</span><span class="o">.</span><span class="n">edu</span>
+<span class="n">cwen</span><span class="nd">@iupui</span><span class="o">.</span><span class="n">edu</span>
+<span class="n">There</span> <span class="n">were</span> <span class="mi">27</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">file</span> <span class="k">with</span> <span class="n">From</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">word</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-3-process-list-of-numbers">
+<h2>Exercise 3. Process list of numbers<a class="headerlink" href="#exercise-3-process-list-of-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Rewrite the program that prompts the user for a list of numbers and prints out the maximum and minimum of the numbers at the end when the user enters “done”. Write the program to store the numbers the user enters in a list and use the max() and min() functions to compute the maximum and minimum numbers after the loop completes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">9</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="n">done</span>
+<span class="n">Maximum</span><span class="p">:</span> <span class="mf">9.0</span>
+<span class="n">Minimum</span><span class="p">:</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-4-todo-example-of-tuples">
+<h2>Exercise 4. TODO example of tuples<a class="headerlink" href="#exercise-4-todo-example-of-tuples" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Python lessons: Canvas
+# 
+
 # In[1]:
 
 
-# Python lessons: Canvas
+
+https://www.youtube.com/watch?v=171uIsavFf8
 

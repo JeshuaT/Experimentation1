@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python exercises &#8212; Experimentation 1</title>
+    <title>Python exercises: Files &#8212; Experimentation 1</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -284,7 +284,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Python exercises
+     Python exercises: Files
     </a>
    </li>
    <li class="toctree-l2">
@@ -323,7 +323,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09_numbers/numbers_intro.html">
-   Session 9 - Numbers
+   Session 9 - Numbers and arrays
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -333,12 +333,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_lessons.html">
-     Python lessons: Numbers
+     Python lessons: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_exercises.html">
-     Python exercises: Numbers
+     Python exercises: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
@@ -398,11 +398,38 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+  <a class="reference internal" href="../12_ques/ques_intro.html">
+   Session 12 - Questionnaires
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_lessons.html">
+     Python lessons: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_exercises.html">
+     Python exercises: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/questionnaires/questionnaire.html">
+     Questionnaires in OpenSesame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../13_input_output/io_intro.html">
+   Session 13 - Input/Output
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -428,8 +455,8 @@
   <a class="reference internal" href="../14_qa/qa_intro.html">
    Session 14 - Q&amp;A
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -552,6 +579,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-print-content-of-text-file-line-by-line">
+   Exercise 1. Print content of text file line by line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-parsing-content-of-a-text-file">
+   Exercise 2. Parsing content of a text file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-add-an-easter-egg">
+   Exercise 3. Add an Easter Egg
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -559,19 +609,91 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python exercises</h1>
+                <h1>Python exercises: Files</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-print-content-of-text-file-line-by-line">
+   Exercise 1. Print content of text file line by line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-parsing-content-of-a-text-file">
+   Exercise 2. Parsing content of a text file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-add-an-easter-egg">
+   Exercise 3. Add an Easter Egg
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises">
-<h1>Python exercises<a class="headerlink" href="#python-exercises" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises-files">
+<h1>Python exercises: Files<a class="headerlink" href="#python-exercises-files" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p><strong>Note</strong> Some of the exercises below are adapted from the <a class="reference external" href="https://www.py4e.com/html3/07-files">Python for Everyone Course</a> by Charles R. Severance licensed under Creative Commons Attribution 3.0</p>
+</div></blockquote>
+<div class="section" id="exercise-1-print-content-of-text-file-line-by-line">
+<h2>Exercise 1. Print content of text file line by line<a class="headerlink" href="#exercise-1-print-content-of-text-file-line-by-line" title="Permalink to this headline">¶</a></h2>
+<p>Write a program to read through a file and print the contents of the file (line by line) all in upper case. Executing the program will look as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">shout</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">-</span><span class="n">short</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">FROM</span> <span class="n">STEPHEN</span><span class="o">.</span><span class="n">MARQUARD</span><span class="nd">@UCT</span><span class="o">.</span><span class="n">AC</span><span class="o">.</span><span class="n">ZA</span> <span class="n">SAT</span> <span class="n">JAN</span>  <span class="mi">5</span> <span class="mi">09</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span> <span class="mi">2008</span>
+<span class="n">RETURN</span><span class="o">-</span><span class="n">PATH</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">POSTMASTER</span><span class="nd">@COLLAB</span><span class="o">.</span><span class="n">SAKAIPROJECT</span><span class="o">.</span><span class="n">ORG</span><span class="o">&gt;</span>
+<span class="n">RECEIVED</span><span class="p">:</span> <span class="n">FROM</span> <span class="n">MURDER</span> <span class="p">(</span><span class="n">MAIL</span><span class="o">.</span><span class="n">UMICH</span><span class="o">.</span><span class="n">EDU</span> <span class="p">[</span><span class="mf">141.211.14.90</span><span class="p">])</span>
+     <span class="n">BY</span> <span class="n">FRANKENSTEIN</span><span class="o">.</span><span class="n">MAIL</span><span class="o">.</span><span class="n">UMICH</span><span class="o">.</span><span class="n">EDU</span> <span class="p">(</span><span class="n">CYRUS</span> <span class="n">V2</span><span class="mf">.3.8</span><span class="p">)</span> <span class="n">WITH</span> <span class="n">LMTPA</span><span class="p">;</span>
+     <span class="n">SAT</span><span class="p">,</span> <span class="mi">05</span> <span class="n">JAN</span> <span class="mi">2008</span> <span class="mi">09</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span> <span class="o">-</span><span class="mi">0500</span>
+</pre></div>
+</div>
+<p>You can download the file <span class="xref myst">here</span></p>
+</div>
+<div class="section" id="exercise-2-parsing-content-of-a-text-file">
+<h2>Exercise 2. Parsing content of a text file<a class="headerlink" href="#exercise-2-parsing-content-of-a-text-file" title="Permalink to this headline">¶</a></h2>
+<p>Write a program to prompt for a file name, and then read through the file and look for lines of the form:</p>
+<p>X-DSPAM-Confidence: 0.8475
+When you encounter a line that starts with “X-DSPAM-Confidence:” pull apart the line to extract the floating-point number on the line. Count these lines and then compute the total of the spam confidence values from these lines. When you reach the end of the file, print out the average spam confidence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Average</span> <span class="n">spam</span> <span class="n">confidence</span><span class="p">:</span> <span class="mf">0.894128046745</span>
+
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">-</span><span class="n">short</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Average</span> <span class="n">spam</span> <span class="n">confidence</span><span class="p">:</span> <span class="mf">0.750718518519</span>
+</pre></div>
+</div>
+<p>Test your file on the mbox.txt and mbox-short.txt files.</p>
+</div>
+<div class="section" id="exercise-3-add-an-easter-egg">
+<h2>Exercise 3. Add an Easter Egg<a class="headerlink" href="#exercise-3-add-an-easter-egg" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes when programmers get bored or want to have a bit of fun, they add a harmless Easter Egg to their program. Modify the program that prompts the user for the file name so that it prints a funny message when the user types in the exact file name “na na boo boo”. The program should behave normally for all other files which exist and don’t exist. Here is a sample execution of the program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">egg</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">There</span> <span class="n">were</span> <span class="mi">1797</span> <span class="n">subject</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">mbox</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">python</span> <span class="n">egg</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">missing</span><span class="o">.</span><span class="n">tyxt</span>
+<span class="n">File</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">opened</span><span class="p">:</span> <span class="n">missing</span><span class="o">.</span><span class="n">tyxt</span>
+
+<span class="n">python</span> <span class="n">egg</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">na</span> <span class="n">na</span> <span class="n">boo</span> <span class="n">boo</span>
+<span class="n">NA</span> <span class="n">NA</span> <span class="n">BOO</span> <span class="n">BOO</span> <span class="n">TO</span> <span class="n">YOU</span> <span class="o">-</span> <span class="n">You</span> <span class="n">have</span> <span class="n">been</span> <span class="n">punk</span><span class="s1">&#39;d!</span>
+</pre></div>
+</div>
+<p>We are not encouraging you to put Easter Eggs in your programs; this is just an exercise.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

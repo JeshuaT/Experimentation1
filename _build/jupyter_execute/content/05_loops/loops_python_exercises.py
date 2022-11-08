@@ -23,6 +23,8 @@
 # 
 # ### Exercise 3. Print moving text
 # Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~100 ms (0.1 seconds).
+# 
+# Note that you need the `range` function for this exercise that creates a list of numbers. You will learn more about `list` objects during a later session in this course.
 
 # In[1]:
 

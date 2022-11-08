@@ -11,8 +11,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set_theme()
 
 # disable chained assignments
 pd.options.mode.chained_assignment = None
@@ -37,71 +35,82 @@ df_trim_blocks['subject_nr'] = df_trim_blocks['subject_nr'].replace(4, 2)
 df_trim_blocks
 
 
-# 
-
-# First thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot we can easily make a histogram plot by specifying the column that should be plotted:
+# https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html
 
 # In[2]:
 
 
-plt.hist(df_trim_blocks['response_time'])
-plt.show()
+print(plt.style.available)
+plt.style.use('seaborn')
 
 
-# That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of matplotlib shows itself: you can customize virtually anything you want in these plots. L
+# First thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot we can easily make a histogram plot by specifying the column that should be plotted:
 
 # In[3]:
 
 
-plt.figure(figsize=(8,6), # Change size to width,height in inches
-           facecolor='grey', # Change background colour to grey
-           frameon=False) # Remove background behind the bars
-plt.grid(visible=None) # Remove the background grid lines
+fig, ax = plt.subplots()
+ax.hist(df_trim_blocks['response_time'])
+plt.show()
+print(plt.style.available)
 
-plt.hist(df_trim_blocks['response_time'],
+
+# That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of matplotlib shows itself: you can customize virtually anything you want in these plots.
+
+# In[4]:
+
+
+fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
+                       facecolor='grey', # Change background colour to grey
+                       frameon=False)
+
+ax.grid(visible=None) # Remove the background grid lines
+
+ax.hist(df_trim_blocks['response_time'],
          bins=30) # Bins defines the amount of bins you want to plot
 
-plt.xlabel("RT", size=14) # label on the x-axis, size defines font size
-plt.ylabel("Count", size=14) # label on the y-axis, size defines font size
-plt.title("Response time distribution") # title of the plot
+
+ax.set_xlabel("RT", size=14) # label on the x-axis, size defines font size
+ax.set_ylabel("Count", size=14) # label on the y-axis, size defines font size
+ax.set_title("Response time distribution") # title of the plot
 plt.show()
 
 
 # We can also make overlays to compare two distributions. Let's for example see how the distribution of correct versus incorrect trials look like.
 
-# In[4]:
+# In[5]:
 
 
-plt.figure(figsize=(8,6), # Change size to width,height in inches
+fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
            facecolor='grey', # Change background colour to grey
            frameon=False) # Remove background behind the bars
-plt.grid(visible=None) # Remove the background grid lines
+ax.grid(visible=None) # Remove the background grid lines
 
 # Here we make two dataframes, one with only correct trials and another with only incorrect trials
 correct_trials = df_trim_blocks[df_trim_blocks['correct'] == 1]
 incorrect_trials = df_trim_blocks[df_trim_blocks['correct'] == 0]
 
 # Then we make two histograms. Matplotlib will automatically place items you make in the same figure.
-plt.hist(correct_trials['response_time'],
+ax.hist(correct_trials['response_time'],
          bins=20,
          alpha=0.5, # This defines opacity of the bars
          color='green',
          label="correct trials") # This defines the label that the bar gets, for the legend
 
-plt.hist(incorrect_trials['response_time'],
+ax.hist(incorrect_trials['response_time'],
          bins=20,
          alpha=0.5,
          color='red',
          label="incorrect trials")
 
-plt.xlabel("RT", size=14)
-plt.ylabel("Count", size=14)
-plt.title("Correct vs incorrect response time distributions")
-plt.legend(loc='upper right') # This tells matplotlib to create a legend, and place it on the upper right field of the plot
+ax.set_xlabel("RT", size=14)
+ax.set_ylabel("Count", size=14)
+ax.set_title("Correct vs incorrect response time distributions")
+ax.legend(loc='upper right') # This tells matplotlib to create a legend, and place it on the upper right field of the plot
 plt.show()
 
 
-# In[5]:
+# In[6]:
 
 
 df_block = df_trim_blocks.groupby('block').mean()
@@ -109,7 +118,7 @@ df_block = df_trim_blocks.groupby('block').mean()
 plt.plot(df_block)
 
 
-# In[6]:
+# In[7]:
 
 
 
@@ -135,7 +144,7 @@ df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].trans
 print(df)
 
 
-# In[7]:
+# In[8]:
 
 
 plt.figure(figsize=(8,6));
@@ -143,7 +152,7 @@ plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=10
 plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[8]:
+# In[9]:
 
 
 import seaborn as sns
@@ -157,19 +166,19 @@ sns.displot(
 )
 
 
-# In[9]:
+# In[10]:
 
 
 df
 
 
-# In[10]:
+# In[11]:
 
 
 df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
 
 
-# In[11]:
+# In[12]:
 
 
 df_sum
