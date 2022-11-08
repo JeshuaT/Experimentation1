@@ -5,7 +5,7 @@
 
 # > Below are adapted from: https://www.py4e.com/html3/01-intro
 # 
-# ## Exercise 1
+# ### Exercise 1. Printing "Hello world!"
 # **a.** What is wrong with the following code?
 # ```
 # primt 'Hello world!'
@@ -27,7 +27,7 @@
 # 
 # **c.** Finally, let's use the same code in OpenSesame. Open OpenSesame and click File > New > Extended Template. Drag a new `inline_script` object from the Toolbar after the `instructions` object and enter the same python code. Run the experiment in a Window (use the green >> button) and check whether the message is printed to the Console. Close the experiment (Escape) and move the inline script into the `trial_sequence`. When is the print executed? How often is the print executed?
 # 
-# ## Exercise 2
+# ### Exercise 2. Incrementing value of numeric variable
 # 
 # **a.** Run the following code in the browser, in Spyder and in OpenSesame using the same method as described in Exercise 1. What value is printed out?
 # 

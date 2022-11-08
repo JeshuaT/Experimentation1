@@ -278,6 +278,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../07_files/files_python_lessons.html">
+     Python lessons: Files
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
      Python exercises
     </a>
@@ -547,6 +552,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-advanced-pay-computation-1">
+   Exercise 1. Advanced pay computation (1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-advanced-pay-computation-2">
+   Exercise 2. Advanced pay computation (2)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-convert-scores-to-grades">
+   Exercise 3. Convert scores to grades
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-check-age-of-your-participant">
+   Exercise 4. Check age of your participant
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -559,6 +592,34 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-advanced-pay-computation-1">
+   Exercise 1. Advanced pay computation (1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-advanced-pay-computation-2">
+   Exercise 2. Advanced pay computation (2)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-convert-scores-to-grades">
+   Exercise 3. Convert scores to grades
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-check-age-of-your-participant">
+   Exercise 4. Check age of your participant
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -570,36 +631,53 @@
 <blockquote>
 <div><p>The exercises below are  adapted from the <a class="reference external" href="https://www.py4e.com/html3/03-conditional">Python for Everyone Course</a> by Charles R. Severance licensed under Creative Commons Attribution 3.0</p>
 </div></blockquote>
-<p>Exercise 1: Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked above 40 hours.</p>
-<p>Enter Hours: 45
-Enter Rate: 10
-Pay: 475.0
-Exercise 2: Rewrite your pay program using try and except so that your program handles non-numeric input gracefully by printing a message and exiting the program. The following shows two executions of the program:</p>
-<p>Enter Hours: 20
-Enter Rate: nine
-Error, please enter numeric input
-Enter Hours: forty
-Error, please enter numeric input
-Exercise 3: Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error message. If the score is between 0.0 and 1.0, print a grade using the following table:</p>
-<p>Score   Grade</p>
-<blockquote>
-<div><p>= 0.9     A
-= 0.8     B
-= 0.7     C
-= 0.6     D
-&lt; 0.6     F
-Enter score: 0.95
-A
-Enter score: perfect
-Bad score
-Enter score: 10.0
-Bad score
-Enter score: 0.75
-C
-Enter score: 0.5
-F
-Run the program repeatedly as shown above to test the various different values for input.</p>
-</div></blockquote>
+<div class="section" id="exercise-1-advanced-pay-computation-1">
+<h2>Exercise 1. Advanced pay computation (1)<a class="headerlink" href="#exercise-1-advanced-pay-computation-1" title="Permalink to this headline">¶</a></h2>
+<p>Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked above 40 hours.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">Hours</span><span class="p">:</span> <span class="mi">45</span>
+<span class="n">Enter</span> <span class="n">Rate</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">Pay</span><span class="p">:</span> <span class="mf">475.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-2-advanced-pay-computation-2">
+<h2>Exercise 2. Advanced pay computation (2)<a class="headerlink" href="#exercise-2-advanced-pay-computation-2" title="Permalink to this headline">¶</a></h2>
+<p>Rewrite your pay program using try and except so that your program handles non-numeric input gracefully by printing a message and exiting the program. The following shows two executions of the program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">Hours</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">Enter</span> <span class="n">Rate</span><span class="p">:</span> <span class="n">nine</span>
+<span class="n">Error</span><span class="p">,</span> <span class="n">please</span> <span class="n">enter</span> <span class="n">numeric</span> <span class="nb">input</span>
+<span class="n">Enter</span> <span class="n">Hours</span><span class="p">:</span> <span class="n">forty</span>
+<span class="n">Error</span><span class="p">,</span> <span class="n">please</span> <span class="n">enter</span> <span class="n">numeric</span> <span class="nb">input</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-3-convert-scores-to-grades">
+<h2>Exercise 3. Convert scores to grades<a class="headerlink" href="#exercise-3-convert-scores-to-grades" title="Permalink to this headline">¶</a></h2>
+<p>Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error message. If the score is between 0.0 and 1.0, print a grade using the following table:</p>
+<p>Score   Grade
+&gt;= 0.9     A
+&gt;= 0.8     B
+&gt;= 0.7     C
+&gt;= 0.6     D
+&lt; 0.6     F</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.95</span>
+<span class="n">A</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="n">perfect</span>
+<span class="n">Bad</span> <span class="n">score</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">10.0</span>
+<span class="n">Bad</span> <span class="n">score</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.75</span>
+<span class="n">C</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.5</span>
+<span class="n">F</span>
+</pre></div>
+</div>
+<p>Run the program repeatedly as shown above to test the various different values for input.</p>
+</div>
+<div class="section" id="exercise-4-check-age-of-your-participant">
+<h2>Exercise 4. Check age of your participant<a class="headerlink" href="#exercise-4-check-age-of-your-participant" title="Permalink to this headline">¶</a></h2>
+<p>Write a program to prompt a user for their name and age. If the person is younger than 18 provide a message that the person is too young. If the person is older than 30 provides a message that the person is too old. If the value is between 18 and 30, provide a personalized welcome message, that says “Hello xx, welcome to this experiment.” (replace the xx).</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
