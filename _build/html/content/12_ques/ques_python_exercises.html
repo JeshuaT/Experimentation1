@@ -579,6 +579,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-reproduce-the-pokeball">
+   Exercise 1. Reproduce the pokeball
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-create-a-animated-countdown-timer">
+   Exercise 2. Create a animated countdown timer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-advanced-countdown-timer">
+   Exercise 3. Advanced countdown timer
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -591,6 +614,29 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-reproduce-the-pokeball">
+   Exercise 1. Reproduce the pokeball
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-create-a-animated-countdown-timer">
+   Exercise 2. Create a animated countdown timer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-advanced-countdown-timer">
+   Exercise 3. Advanced countdown timer
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -599,7 +645,9 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises-canvas">
 <h1>Python exercises: Canvas<a class="headerlink" href="#python-exercises-canvas" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<div class="section" id="exercise-1-reproduce-the-pokeball">
+<h2>Exercise 1. Reproduce the pokeball<a class="headerlink" href="#exercise-1-reproduce-the-pokeball" title="Permalink to this headline">¶</a></h2>
+<p>Reproduce the pokeball as explained during the video in today’s lessons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
@@ -620,6 +668,49 @@
 
 <span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-2-create-a-animated-countdown-timer">
+<h2>Exercise 2. Create a animated countdown timer<a class="headerlink" href="#exercise-2-create-a-animated-countdown-timer" title="Permalink to this headline">¶</a></h2>
+<p>Adapt he pokeball in such a way that you create an animated countdown timer that counts from 30 to 0 seconds and shows a red arc that become smaller with time.
+<img alt="" src="../../_images/countdowntimer.png" /></p>
+</div>
+<div class="section" id="exercise-3-advanced-countdown-timer">
+<h2>Exercise 3. Advanced countdown timer<a class="headerlink" href="#exercise-3-advanced-countdown-timer" title="Permalink to this headline">¶</a></h2>
+<p>Ask the user how many seconds they want to wait and run the timer with this value. Check whether the value is not higher than fits in the display (59m:59s).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;white&quot;,extent=360,start=90,width=10)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;white&quot;,extent=360,width=10)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1">#canvas = Canvas(window,height=500,width=500)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_arc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="mi">30</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;00:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Helvetica 80 bold&#39;</span><span class="p">))</span>
+    
+    <span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+    <span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;red&quot;,start=360/30*i,width=10)</span>
+    <span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;red&quot;,extent=360,width=10)</span>
+    <span class="c1">#canvas.pack()</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
