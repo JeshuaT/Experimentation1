@@ -17,7 +17,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from statsmodels.formula.api import ols
 
 # disable chained assignments
 pd.options.mode.chained_assignment = None
