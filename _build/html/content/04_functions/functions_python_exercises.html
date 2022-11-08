@@ -278,6 +278,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../07_files/files_python_lessons.html">
+     Python lessons: Files
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
      Python exercises
     </a>
@@ -547,6 +552,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-sequence-of-function-calls">
+   Exercise 1. Sequence of function calls
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-pay-computation-with-a-function">
+   Exercise 2. Pay computation with a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-grade-calculation-using-a-function">
+   Exercise 3. Grade calculation using a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-check-age-of-your-participant">
+   Exercise 4. Check age of your participant
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -559,6 +592,34 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-sequence-of-function-calls">
+   Exercise 1. Sequence of function calls
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-pay-computation-with-a-function">
+   Exercise 2. Pay computation with a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-grade-calculation-using-a-function">
+   Exercise 3. Grade calculation using a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-check-age-of-your-participant">
+   Exercise 4. Check age of your participant
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -570,43 +631,63 @@
 <blockquote>
 <div><p>The exercises below are  adapted from the <a class="reference external" href="https://www.py4e.com/html3/04-functions">Python for Everyone Course</a> by Charles R. Severance licensed under Creative Commons Attribution 3.0</p>
 </div></blockquote>
-<p>Exercise 5: What will the following Python program print out?</p>
-<p>def fred():
-print(“Zap”)</p>
-<p>def jane():
-print(“ABC”)</p>
-<p>jane()
-fred()
-jane()
-a) Zap ABC jane fred jane
+<div class="section" id="exercise-1-sequence-of-function-calls">
+<h2>Exercise 1. Sequence of function calls<a class="headerlink" href="#exercise-1-sequence-of-function-calls" title="Permalink to this headline">¶</a></h2>
+<p>What will the following Python program print out?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fred</span><span class="p">():</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zap&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">jane</span><span class="p">():</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
+
+<span class="n">jane</span><span class="p">()</span>
+<span class="n">fred</span><span class="p">()</span>
+<span class="n">jane</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>a) Zap ABC jane fred jane
 b) Zap ABC Zap
 c) ABC Zap jane
 d) ABC Zap ABC
 e) Zap Zap Zap</p>
-<p>Exercise 6: Rewrite your pay computation with time-and-a-half for overtime and create a function called computepay which takes two parameters (hours and rate).</p>
-<p>Enter Hours: 45
-Enter Rate: 10
-Pay: 475.0
-Exercise 7: Rewrite the grade program from the previous chapter using a function called computegrade that takes a score as its parameter and returns a grade as a string.</p>
-<p>Score   Grade</p>
-<blockquote>
-<div><p>= 0.9     A
-= 0.8     B
-= 0.7     C
-= 0.6     D
-&lt; 0.6     F
-Enter score: 0.95
-A
-Enter score: perfect
-Bad score
-Enter score: 10.0
-Bad score
-Enter score: 0.75
-C
-Enter score: 0.5
-F
-Run the program repeatedly to test the various different values for input.</p>
-</div></blockquote>
+<p>Check your answer by running the code</p>
+</div>
+<div class="section" id="exercise-2-pay-computation-with-a-function">
+<h2>Exercise 2. Pay computation with a function<a class="headerlink" href="#exercise-2-pay-computation-with-a-function" title="Permalink to this headline">¶</a></h2>
+<p>Rewrite your pay computation with time-and-a-half for overtime and create a function called computepay which takes two parameters (hours and rate).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">Hours</span><span class="p">:</span> <span class="mi">45</span>
+<span class="n">Enter</span> <span class="n">Rate</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">Pay</span><span class="p">:</span> <span class="mf">475.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-3-grade-calculation-using-a-function">
+<h2>Exercise 3. Grade calculation using a function<a class="headerlink" href="#exercise-3-grade-calculation-using-a-function" title="Permalink to this headline">¶</a></h2>
+<p>Rewrite the grade program from the previous session using a function called computegrade that takes a score as its parameter and returns a grade as a string.</p>
+<p>Score   Grade
+&gt;= 0.9     A
+&gt;= 0.8     B
+&gt;= 0.7     C
+&gt;= 0.6     D
+&lt; 0.6     F</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.95</span>
+<span class="n">A</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="n">perfect</span>
+<span class="n">Bad</span> <span class="n">score</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">10.0</span>
+<span class="n">Bad</span> <span class="n">score</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.75</span>
+<span class="n">C</span>
+<span class="n">Enter</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.5</span>
+<span class="n">F</span>
+</pre></div>
+</div>
+<p>Run the program repeatedly to test the various different values for input.</p>
+</div>
+<div class="section" id="exercise-4-check-age-of-your-participant">
+<h2>Exercise 4. Check age of your participant<a class="headerlink" href="#exercise-4-check-age-of-your-participant" title="Permalink to this headline">¶</a></h2>
+<p>Rewrite the check age program from the previous session using a function that takes the age and the name and returns the message as a string.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

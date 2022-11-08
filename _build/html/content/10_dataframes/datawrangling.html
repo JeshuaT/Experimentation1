@@ -278,6 +278,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../07_files/files_python_lessons.html">
+     Python lessons: Files
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
      Python exercises
     </a>
@@ -556,6 +561,23 @@
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -581,6 +603,23 @@
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -600,333 +639,25 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">subj1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/subject-1.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-<span class="n">subj2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/subject-2.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="c1"># disable chained assignments</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">subj1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/subject-3.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">subj2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/subject-4.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">subj1</span><span class="p">,</span> <span class="n">subj2</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>EEG</th>
-      <th>ET</th>
-      <th>acc</th>
-      <th>accuracy</th>
-      <th>average_response_time</th>
-      <th>avg_rt</th>
-      <th>background</th>
-      <th>baseline_measurement</th>
-      <th>bidi</th>
-      <th>block</th>
-      <th>...</th>
-      <th>time_trial_sequence_prac_paritymagnitude</th>
-      <th>time_white_baseline</th>
-      <th>time_wrong_response_feedback</th>
-      <th>title</th>
-      <th>total_correct</th>
-      <th>total_response_time</th>
-      <th>total_responses</th>
-      <th>trialnr</th>
-      <th>uniform_coordinates</th>
-      <th>width</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>929.279800</td>
-      <td>929.279800</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>1</td>
-      <td>9.292798e+02</td>
-      <td>1</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>760.166800</td>
-      <td>760.166800</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>2</td>
-      <td>1.520334e+03</td>
-      <td>2</td>
-      <td>2</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>1</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>681.195000</td>
-      <td>681.195000</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>3</td>
-      <td>2.043585e+03</td>
-      <td>3</td>
-      <td>3</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>75.000000</td>
-      <td>75.000000</td>
-      <td>881.623825</td>
-      <td>881.623825</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>3</td>
-      <td>3.526495e+03</td>
-      <td>4</td>
-      <td>4</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>1</td>
-      <td>80.000000</td>
-      <td>80.000000</td>
-      <td>869.731600</td>
-      <td>869.731600</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>4</td>
-      <td>4.348658e+03</td>
-      <td>5</td>
-      <td>5</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>947</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92.184369</td>
-      <td>92.184369</td>
-      <td>2187.341999</td>
-      <td>2187.341999</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>460</td>
-      <td>1.091484e+06</td>
-      <td>499</td>
-      <td>61</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>948</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92.200000</td>
-      <td>92.200000</td>
-      <td>2183.888454</td>
-      <td>2183.888454</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>461</td>
-      <td>1.091944e+06</td>
-      <td>500</td>
-      <td>62</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>949</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92.215569</td>
-      <td>92.215569</td>
-      <td>2180.879513</td>
-      <td>2180.879513</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>462</td>
-      <td>1.092621e+06</td>
-      <td>501</td>
-      <td>63</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>950</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92.231076</td>
-      <td>92.231076</td>
-      <td>2177.548002</td>
-      <td>2177.548002</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>463</td>
-      <td>1.093129e+06</td>
-      <td>502</td>
-      <td>64</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-    <tr>
-      <th>951</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92.246521</td>
-      <td>92.246521</td>
-      <td>2174.354693</td>
-      <td>2174.354693</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>464</td>
-      <td>1.093700e+06</td>
-      <td>503</td>
-      <td>65</td>
-      <td>yes</td>
-      <td>1680</td>
-    </tr>
-  </tbody>
-</table>
-<p>952 rows × 346 columns</p>
-</div></div></div>
 </div>
 <p>That’s a lot of columns. In your “logger” file in OpenSesame, the recommended thing to do is to check the box of “Log all variables”. This is the safest option, because it’s easy to remove columns and you would rather not have that you missed an essential variable after doing your experiment. Let’s pick the columns that we need:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">include_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_type&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;correct&#39;</span><span class="p">,</span> <span class="s1">&#39;response_time&#39;</span><span class="p">,</span> <span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;task_type&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">include_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">,</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_type&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;correct&#39;</span><span class="p">,</span> <span class="s1">&#39;response_time&#39;</span><span class="p">,</span> <span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;task_type&#39;</span><span class="p">,</span> <span class="s1">&#39;cue_color&#39;</span><span class="p">]</span>
 
 <span class="n">df_trim</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">include_columns</span><span class="p">]</span>
 <span class="n">df_trim</span>
@@ -954,69 +685,81 @@
       <th></th>
       <th>subject_nr</th>
       <th>block</th>
+      <th>session</th>
       <th>congruency_transition_type</th>
       <th>congruency_type</th>
       <th>correct</th>
       <th>response_time</th>
       <th>task_transition_type</th>
       <th>task_type</th>
+      <th>cue_color</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>3</td>
       <td>1</td>
-      <td>1</td>
+      <td>lowswitch</td>
       <td>NaN</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>929.2798</td>
+      <td>incongruent</td>
+      <td>0</td>
+      <td>1482.9738</td>
       <td>NaN</td>
       <td>parity</td>
+      <td>#7BB2D0</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>3</td>
       <td>1</td>
-      <td>1</td>
-      <td>congruency-repetition</td>
+      <td>lowswitch</td>
+      <td>congruency-switch</td>
       <td>congruent</td>
       <td>1</td>
-      <td>591.0538</td>
-      <td>task-repetition</td>
-      <td>parity</td>
+      <td>706.7057</td>
+      <td>task-switch</td>
+      <td>magnitude</td>
+      <td>#A6A0C6</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>3</td>
       <td>1</td>
-      <td>1</td>
+      <td>lowswitch</td>
       <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>523.2514</td>
-      <td>task-repetition</td>
+      <td>855.6105</td>
+      <td>task-switch</td>
       <td>parity</td>
+      <td>#7BB2D0</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>3</td>
       <td>1</td>
-      <td>1</td>
+      <td>lowswitch</td>
       <td>congruency-switch</td>
       <td>incongruent</td>
-      <td>0</td>
-      <td>1482.9103</td>
+      <td>1</td>
+      <td>867.8947</td>
       <td>task-repetition</td>
       <td>parity</td>
+      <td>#CDA277</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>3</td>
       <td>1</td>
+      <td>lowswitch</td>
+      <td>congruency-repetition</td>
+      <td>incongruent</td>
       <td>1</td>
-      <td>congruency-switch</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>822.1627</td>
-      <td>task-repetition</td>
-      <td>parity</td>
+      <td>1078.9412</td>
+      <td>task-switch</td>
+      <td>magnitude</td>
+      <td>#A6A0C6</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1028,66 +771,117 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>947</th>
-      <td>2</td>
+      <td>4</td>
       <td>12</td>
+      <td>highswitch</td>
       <td>congruency-repetition</td>
-      <td>incongruent</td>
+      <td>congruent</td>
       <td>1</td>
-      <td>551.2024</td>
-      <td>task-switch</td>
-      <td>parity</td>
+      <td>699.0107</td>
+      <td>task-repetition</td>
+      <td>magnitude</td>
+      <td>#CDA277</td>
     </tr>
     <tr>
       <th>948</th>
-      <td>2</td>
+      <td>4</td>
       <td>12</td>
-      <td>congruency-switch</td>
+      <td>highswitch</td>
+      <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>460.5698</td>
+      <td>582.9837</td>
       <td>task-repetition</td>
-      <td>parity</td>
+      <td>magnitude</td>
+      <td>#8FBF35</td>
     </tr>
     <tr>
       <th>949</th>
-      <td>2</td>
+      <td>4</td>
       <td>12</td>
+      <td>highswitch</td>
       <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>676.4091</td>
+      <td>731.3586</td>
       <td>task-switch</td>
-      <td>magnitude</td>
+      <td>parity</td>
+      <td>#7BB2D0</td>
     </tr>
     <tr>
       <th>950</th>
-      <td>2</td>
+      <td>4</td>
       <td>12</td>
+      <td>highswitch</td>
       <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>508.4610</td>
+      <td>437.6794</td>
       <td>task-repetition</td>
-      <td>magnitude</td>
+      <td>parity</td>
+      <td>#A6A0C6</td>
     </tr>
     <tr>
       <th>951</th>
-      <td>2</td>
+      <td>4</td>
       <td>12</td>
+      <td>highswitch</td>
       <td>congruency-repetition</td>
       <td>congruent</td>
-      <td>1</td>
-      <td>571.3132</td>
-      <td>task-repetition</td>
+      <td>0</td>
+      <td>1006.4980</td>
+      <td>task-switch</td>
       <td>magnitude</td>
+      <td>#8FBF35</td>
     </tr>
   </tbody>
 </table>
-<p>952 rows × 8 columns</p>
+<p>952 rows × 10 columns</p>
 </div></div></div>
+</div>
+<p>Before we make any changes to the dataframe, we must first be sure that all the columns are in the right <a class="reference external" href="https://pbpython.com/pandas_dtypes.html">type</a>. If we print the data types of each column, we can see that subject_nr is an integer. However, we don’t intend for the dataframe to interpret “3” and “4” as numbers, since it’s simply a categorization. Let’s change that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_trim</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_trim</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>subject_nr                      int64
+block                           int64
+session                        object
+congruency_transition_type     object
+congruency_type                object
+correct                         int64
+response_time                 float64
+task_transition_type           object
+task_type                      object
+cue_color                      object
+dtype: object
+subject_nr                    category
+block                            int64
+session                         object
+congruency_transition_type      object
+congruency_type                 object
+correct                       category
+response_time                  float64
+task_transition_type            object
+task_type                       object
+cue_color                       object
+dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <p>Alright, it’s getting a bit more uncluttered now. The task-design is so that the last two blocks are different kind of blocks. We don’t have to go in details now, but for further analysis we will have to create a dataframe without block 11 and 12. There are <a class="reference external" href="https://www.geeksforgeeks.org/selecting-rows-in-pandas-dataframe-based-on-conditions/">many ways to conditional selection of rows</a>, but here we opt to use the information that we need all blocks with a value smaller than 11.</p>
 <div class="cell docutils container">
@@ -1104,399 +898,142 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     subject_nr  block congruency_transition_type congruency_type  correct  \
-947           2     12      congruency-repetition     incongruent        1   
-948           2     12          congruency-switch       congruent        1   
-949           2     12      congruency-repetition       congruent        1   
-950           2     12      congruency-repetition       congruent        1   
-951           2     12      congruency-repetition       congruent        1   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    subject_nr  block     session congruency_transition_type congruency_type  \
+947          4     12  highswitch      congruency-repetition       congruent   
+948          4     12  highswitch      congruency-repetition       congruent   
+949          4     12  highswitch      congruency-repetition       congruent   
+950          4     12  highswitch      congruency-repetition       congruent   
+951          4     12  highswitch      congruency-repetition       congruent   
 
-     response_time task_transition_type  task_type  
-947       551.2024          task-switch     parity  
-948       460.5698      task-repetition     parity  
-949       676.4091          task-switch  magnitude  
-950       508.4610      task-repetition  magnitude  
-951       571.3132      task-repetition  magnitude  
-     subject_nr  block congruency_transition_type congruency_type  correct  \
-811           2     10          congruency-switch     incongruent        1   
-812           2     10          congruency-switch       congruent        1   
-813           2     10      congruency-repetition       congruent        1   
-814           2     10          congruency-switch     incongruent        1   
-815           2     10      congruency-repetition     incongruent        1   
+    correct  response_time task_transition_type  task_type cue_color  
+947       1       699.0107      task-repetition  magnitude   #CDA277  
+948       1       582.9837      task-repetition  magnitude   #8FBF35  
+949       1       731.3586          task-switch     parity   #7BB2D0  
+950       1       437.6794      task-repetition     parity   #A6A0C6  
+951       0      1006.4980          task-switch  magnitude   #8FBF35  
+    subject_nr  block     session congruency_transition_type congruency_type  \
+811          4     10  highswitch          congruency-switch     incongruent   
+812          4     10  highswitch      congruency-repetition     incongruent   
+813          4     10  highswitch      congruency-repetition     incongruent   
+814          4     10  highswitch          congruency-switch       congruent   
+815          4     10  highswitch      congruency-repetition       congruent   
 
-     response_time task_transition_type  task_type  
-811      1076.6005          task-switch     parity  
-812       941.5370          task-switch  magnitude  
-813       585.6160      task-repetition  magnitude  
-814      1180.6262          task-switch     parity  
-815      1031.3732      task-repetition     parity  
+    correct  response_time task_transition_type  task_type cue_color  
+811       1       844.0940          task-switch  magnitude   #8FBF35  
+812       1       674.5391          task-switch     parity   #A6A0C6  
+813       0       789.6114      task-repetition     parity   #7BB2D0  
+814       1      1353.6886          task-switch  magnitude   #CDA277  
+815       1       505.6633          task-switch     parity   #A6A0C6  
 </pre></div>
 </div>
 </div>
 </div>
+<p>Lastly, it’s a bit confusing that we have only two subjects, but they are called number 3 and 4, instead of 1 and 2. Let’s fix that by replacing subject 3 with subject 1, and subject 4 with subject 2. We can use the replace function of Pandas to achieve this. Then, with the pandas <em>unique</em> function we can verify that the subject numbers have been changed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check counts</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-    <span class="n">df_trim</span><span class="p">,</span>
-    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;correct&quot;</span><span class="p">,</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subject_nr&quot;</span><span class="p">],</span>
-    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;congruency_type&quot;</span><span class="p">],</span>
-    <span class="n">aggfunc</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;task_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;congruency_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>congruency-repetition    464
-congruency-switch        464
-Name: congruency_transition_type, dtype: int64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
+Categories (2, int64): [1, 2]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s get a feel wat we are dealing with.</p>
+<p>Let’s see what kind of data we are dealing with. The “session” column says lowswitch for subject 1, and highswitch for subject 2. This means that we should see less task-switch trials for subject 1 than subject 2. To check this, we can use the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html">pivot table</a> function from pandas. Let’s check:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dataframe syntax</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;task_transition_type == &#39;task-switch&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Task switches&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;task_transition_type == &#39;task-repetition&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Task repetitions&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_task_transition_exp</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;session&#39;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
+
+<span class="n">piv_task_transition_exp</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/datawrangling_9_0.png" src="../../_images/datawrangling_9_0.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>task_transition_type</th>
+      <th>task-repetition</th>
+      <th>task-switch</th>
+    </tr>
+    <tr>
+      <th>session</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>highswitch</th>
+      <td>82</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <th>lowswitch</th>
+      <td>245</td>
+      <td>85</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
+<p>It is always good practice to check if the trials count is what you expected. This experiment had a quite complex counterbalancing structure, since the researchers had to counterbalance:</p>
+<ul class="simple">
+<li><p>Amount of congruent/incongruent trials</p></li>
+<li><p>Amount of parity/magnitude trials</p></li>
+<li><p>Amount of congruent-switch/congruent-repetition trials</p></li>
+</ul>
+<p>All whilst keeping the task-repetition/task-switch rate to 25/75 or 75/25 (depending on the session).
+This all whilst keeping into account that the first trial of each block does not count as either repetition or switch trial. Let’s see if we can use a bit more complex pivot table to get a clear picture if all of this worked out</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df.head()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_cong</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;congruency_type&#39;</span><span class="p">],</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
 
-<span class="c1">#df[&#39;acc&#39;]</span>
-<span class="c1">#df.acc</span>
+<span class="n">piv_cong_transition</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">],</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
 
-<span class="c1">#df.iloc[1]</span>
+<span class="n">piv_task</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;task_type&#39;</span><span class="p">],</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
 
-<span class="c1">#print(df[&#39;congruency&#39;])</span>
+<span class="n">piv_task_transition</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
 
-<span class="c1">#df.shape</span>
+<span class="c1"># Add all dataframes to a list</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">piv_cong</span><span class="p">,</span> <span class="n">piv_cong_transition</span><span class="p">,</span> <span class="n">piv_task</span><span class="p">,</span> <span class="n">piv_task_transition</span><span class="p">]</span>
 
-<span class="c1">#dfg = df.groupby(&#39;subject_nr&#39;)</span>
-<span class="c1">#dfg.mean()</span>
-
-<span class="c1">#df.groupby(&#39;subject_nr&#39;).agg([np.sum, np.mean, np.std])</span>
-
-
-<span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df_trim_blocks</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">6672</span><span class="n">f6732f34</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> 
-<span class="g g-Whitespace">     </span><span class="mi">17</span> 
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> 
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="nb">print</span><span class="p">(</span><span class="n">df_trim_blocks</span><span class="p">)</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\groupby\generic.py</span> in <span class="ni">transform</span><span class="nt">(self, func, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> 
-<span class="g g-Whitespace">    </span><span class="mi">464</span>         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">465</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform_general</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> 
-<span class="g g-Whitespace">    </span><span class="mi">467</span>         <span class="k">elif</span> <span class="n">func</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base</span><span class="o">.</span><span class="n">transform_kernel_whitelist</span><span class="p">:</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\groupby\generic.py</span> in <span class="ni">_transform_general</span><span class="nt">(self, func, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span> 
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="n">result</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_obj</span><span class="o">.</span><span class="n">name</span>
-<span class="ne">--&gt; </span><span class="mi">514</span>         <span class="n">result</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_obj</span><span class="o">.</span><span class="n">index</span>
-<span class="g g-Whitespace">    </span><span class="mi">515</span>         <span class="k">return</span> <span class="n">result</span>
-<span class="g g-Whitespace">    </span><span class="mi">516</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\generic.py</span> in <span class="ni">__setattr__</span><span class="nt">(self, name, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5285</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5286</span>             <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">5287</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5288</span>         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5289</span>             <span class="k">pass</span>
-
-<span class="nn">pandas\_libs\properties.pyx</span> in <span class="ni">pandas._libs.properties.AxisProperty.__set__</span><span class="nt">()</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\series.py</span> in <span class="ni">_set_axis</span><span class="nt">(self, axis, labels, fastpath)</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span>         <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_index&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">fastpath</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">401</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">set_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span> 
-<span class="g g-Whitespace">    </span><span class="mi">403</span>     <span class="k">def</span> <span class="nf">_set_subtyp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_all_dates</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\internals\managers.py</span> in <span class="ni">set_axis</span><span class="nt">(self, axis, new_labels)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>         <span class="k">if</span> <span class="n">new_len</span> <span class="o">!=</span> <span class="n">old_len</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">178</span>                 <span class="sa">f</span><span class="s2">&quot;Length mismatch: Expected axis has </span><span class="si">{</span><span class="n">old_len</span><span class="si">}</span><span class="s2"> elements, new &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>                 <span class="sa">f</span><span class="s2">&quot;values have </span><span class="si">{</span><span class="n">new_len</span><span class="si">}</span><span class="s2"> elements&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>             <span class="p">)</span>
-
-<span class="ne">ValueError</span>: Length mismatch: Expected axis has 928 elements, new values have 952 elements
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &gt; 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\scope.py</span> in <span class="ni">resolve</span><span class="nt">(self, key, is_local)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_resolvers</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">187</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolvers</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\collections\__init__.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>                 <span class="k">pass</span>
-<span class="ne">--&gt; </span><span class="mi">883</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__missing__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>            <span class="c1"># support subclasses that define __missing__</span>
-<span class="g g-Whitespace">    </span><span class="mi">884</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\collections\__init__.py</span> in <span class="ni">__missing__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>     <span class="k">def</span> <span class="fm">__missing__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">875</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span> 
-
-<span class="ne">KeyError</span>: &#39;congruency&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\scope.py</span> in <span class="ni">resolve</span><span class="nt">(self, key, is_local)</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span>                 <span class="c1"># e.g., df[df &gt; 0]</span>
-<span class="ne">--&gt; </span><span class="mi">198</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">temps</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-
-<span class="ne">KeyError</span>: &#39;congruency&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">UndefinedVariableError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">514</span><span class="n">f596ca88f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">);</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &gt; 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">);</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\frame.py</span> in <span class="ni">query</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3229</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">3230</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">3231</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3232</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3233</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\frame.py</span> in <span class="ni">eval</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3344</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;resolvers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resolvers&quot;</span><span class="p">,</span> <span class="p">())</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">resolvers</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3345</span> 
-<span class="ne">-&gt; </span><span class="mi">3346</span>         <span class="k">return</span> <span class="n">_eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3347</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3348</span>     <span class="k">def</span> <span class="nf">select_dtypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;DataFrame&quot;</span><span class="p">:</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\eval.py</span> in <span class="ni">eval</span><span class="nt">(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span> 
-<span class="ne">--&gt; </span><span class="mi">332</span>         <span class="n">parsed_expr</span> <span class="o">=</span> <span class="n">Expr</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span> 
-<span class="g g-Whitespace">    </span><span class="mi">334</span>         <span class="c1"># construct the engine and evaluate the parsed expression</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">__init__</span><span class="nt">(self, expr, engine, parser, env, level)</span>
-<span class="g g-Whitespace">    </span><span class="mi">762</span>         <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">parser</span>
-<span class="g g-Whitespace">    </span><span class="mi">763</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_visitor</span> <span class="o">=</span> <span class="n">_parsers</span><span class="p">[</span><span class="n">parser</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">764</span>         <span class="bp">self</span><span class="o">.</span><span class="n">terms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">765</span> 
-<span class="g g-Whitespace">    </span><span class="mi">766</span>     <span class="nd">@property</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">parse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">779</span>     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span>         <span class="sd">&quot;&quot;&quot;Parse an expression&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">781</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span> 
-<span class="g g-Whitespace">    </span><span class="mi">783</span>     <span class="nd">@property</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Module</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span>             <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s2">&quot;only a single expression is allowed&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="n">expr</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">381</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> 
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="k">def</span> <span class="nf">visit_Expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Expr</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> 
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="k">def</span> <span class="nf">visit_Expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">384</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span> 
-<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="k">def</span> <span class="nf">_rewrite_membership_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_BoolOp</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span> 
-<span class="g g-Whitespace">    </span><span class="mi">702</span>         <span class="n">operands</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">values</span>
-<span class="ne">--&gt; </span><span class="mi">703</span>         <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">visitor</span><span class="p">,</span> <span class="n">operands</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span> 
-<span class="g g-Whitespace">    </span><span class="mi">705</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visitor</span><span class="nt">(x, y)</span>
-<span class="g g-Whitespace">    </span><span class="mi">694</span>     <span class="k">def</span> <span class="nf">visit_BoolOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">695</span>         <span class="k">def</span> <span class="nf">visitor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">696</span>             <span class="n">lhs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_visit_binop</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">697</span>             <span class="n">rhs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_visit_binop</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">698</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">_try_visit_binop</span><span class="nt">(self, bop)</span>
-<span class="g g-Whitespace">    </span><span class="mi">690</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bop</span><span class="p">,</span> <span class="p">(</span><span class="n">Op</span><span class="p">,</span> <span class="n">Term</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">691</span>             <span class="k">return</span> <span class="n">bop</span>
-<span class="ne">--&gt; </span><span class="mi">692</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">bop</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">693</span> 
-<span class="g g-Whitespace">    </span><span class="mi">694</span>     <span class="k">def</span> <span class="nf">visit_BoolOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Compare</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">674</span>             <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">translate_In</span><span class="p">(</span><span class="n">ops</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span>             <span class="n">binop</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">BinOp</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">comps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="ne">--&gt; </span><span class="mi">676</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">binop</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">677</span> 
-<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="c1"># recursive case: we have a chained comparison, a CMP b CMP c, etc.</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_BinOp</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span> 
-<span class="g g-Whitespace">    </span><span class="mi">496</span>     <span class="k">def</span> <span class="nf">visit_BinOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">497</span>         <span class="n">op</span><span class="p">,</span> <span class="n">op_class</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maybe_transform_eq_ne</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maybe_downcast_constants</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maybe_evaluate_binop</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">op_class</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">_maybe_transform_eq_ne</span><span class="nt">(self, node, left, right)</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>     <span class="k">def</span> <span class="nf">_maybe_transform_eq_ne</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>         <span class="k">if</span> <span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">416</span>             <span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>         <span class="k">if</span> <span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>             <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Name</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> 
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="k">def</span> <span class="nf">visit_Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">510</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">term_type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span> 
-<span class="g g-Whitespace">    </span><span class="mi">512</span>     <span class="k">def</span> <span class="nf">visit_NameConstant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\ops.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, env, side, encoding)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="n">tname</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="bp">self</span><span class="o">.</span><span class="n">is_local</span> <span class="o">=</span> <span class="n">tname</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">_LOCAL_TAG</span><span class="p">)</span> <span class="ow">or</span> <span class="n">tname</span> <span class="ow">in</span> <span class="n">_DEFAULT_GLOBALS</span>
-<span class="ne">---&gt; </span><span class="mi">82</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_name</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\ops.py</span> in <span class="ni">_resolve_name</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> 
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">def</span> <span class="nf">_resolve_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">99</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_name</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">is_local</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\scope.py</span> in <span class="ni">resolve</span><span class="nt">(self, key, is_local)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>                 <span class="kn">from</span> <span class="nn">pandas.core.computation.ops</span> <span class="kn">import</span> <span class="n">UndefinedVariableError</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> 
-<span class="ne">--&gt; </span><span class="mi">203</span>                 <span class="k">raise</span> <span class="n">UndefinedVariableError</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">is_local</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> 
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">def</span> <span class="nf">swapkey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="ne">UndefinedVariableError</span>: name &#39;congruency&#39; is not defined
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 576x432 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;subject_nr != 0&quot;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;congruency&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;subject_nr&quot;</span><span class="p">,</span>
-    <span class="n">binwidth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">facet_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">margin_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;is_outlier&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">81245387</span><span class="n">ed64</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<span class="c1"># Merge the dataframes</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1519,149 +1056,649 @@ Name: congruency_transition_type, dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>EEG</th>
-      <th>ET</th>
-      <th>acc</th>
-      <th>accuracy</th>
-      <th>average_response_time</th>
-      <th>avg_rt</th>
-      <th>background</th>
-      <th>baseline_measurement</th>
-      <th>bidi</th>
+      <th></th>
+      <th>congruent</th>
+      <th>incongruent</th>
+      <th>congruency-repetition</th>
+      <th>congruency-switch</th>
+      <th>magnitude</th>
+      <th>parity</th>
+      <th>task-repetition</th>
+      <th>task-switch</th>
+    </tr>
+    <tr>
+      <th>subject_nr</th>
       <th>block</th>
-      <th>...</th>
-      <th>time_trial_sequence_prac_paritymagnitude</th>
-      <th>time_white_baseline</th>
-      <th>time_wrong_response_feedback</th>
-      <th>title</th>
-      <th>total_correct</th>
-      <th>total_response_time</th>
-      <th>total_responses</th>
-      <th>trialnr</th>
-      <th>uniform_coordinates</th>
-      <th>width</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>929.279800</td>
-      <td>929.279800</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>1</td>
-      <td>9.292798e+02</td>
-      <td>1</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1680</td>
+      <th rowspan="10" valign="top">1</th>
+      <th>1</th>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>24</td>
+      <td>9</td>
     </tr>
+    <tr>
+      <th>2</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>24</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>24</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>18</td>
+      <td>16</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>24</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>16</td>
+      <td>18</td>
+      <td>17</td>
+      <td>16</td>
+      <td>16</td>
+      <td>18</td>
+      <td>24</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>16</td>
+      <td>25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>16</td>
+      <td>18</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">2</th>
+      <th>1</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>9</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>9</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>18</td>
+      <td>16</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>16</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>16</td>
+      <td>18</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>18</td>
+      <td>16</td>
+      <td>16</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18</td>
+      <td>16</td>
+      <td>16</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We are repeating quite a lot of code. Whenever you notice that happen, you can probably shorten the code. Let’s try it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_to_check</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;task_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_type&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">]</span>
+
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns_to_check</span><span class="p">:</span>
+    <span class="n">piv</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">column</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
+
+    <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">piv</span><span class="p">)</span>
+
+<span class="c1"># Merge the dataframes</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>magnitude</th>
+      <th>parity</th>
+      <th>congruent</th>
+      <th>incongruent</th>
+      <th>task-repetition</th>
+      <th>task-switch</th>
+      <th>congruency-repetition</th>
+      <th>congruency-switch</th>
+    </tr>
+    <tr>
+      <th>subject_nr</th>
+      <th>block</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="10" valign="top">1</th>
+      <th>1</th>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>18</td>
+      <td>24</td>
+      <td>9</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>24</td>
+      <td>9</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>25</td>
+      <td>8</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>25</td>
+      <td>8</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>24</td>
+      <td>9</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>17</td>
+      <td>17</td>
+      <td>18</td>
+      <td>16</td>
+      <td>24</td>
+      <td>9</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>25</td>
+      <td>8</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>16</td>
+      <td>18</td>
+      <td>16</td>
+      <td>18</td>
+      <td>24</td>
+      <td>9</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>18</td>
+      <td>16</td>
+      <td>16</td>
+      <td>18</td>
+      <td>25</td>
+      <td>8</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>25</td>
+      <td>8</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">2</th>
+      <th>1</th>
+      <td>16</td>
+      <td>18</td>
+      <td>17</td>
+      <td>17</td>
+      <td>9</td>
+      <td>24</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>9</td>
+      <td>24</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17</td>
+      <td>17</td>
+      <td>18</td>
+      <td>16</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>17</td>
+      <td>17</td>
+      <td>16</td>
+      <td>18</td>
+      <td>8</td>
+      <td>25</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>16</td>
+      <td>18</td>
+      <td>18</td>
+      <td>16</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>16</td>
+      <td>18</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>18</td>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>8</td>
+      <td>25</td>
+      <td>17</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>16</td>
+      <td>18</td>
+      <td>18</td>
+      <td>16</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Nice. It’s cleaner and also way easier to change this code if you want to check another column for example. The counterbalancing looks good on a block level. Let’s do some first checks on whether the results are what we expect. Let’s first remove all the incorrect trials, we aren’t interested in those at the moment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">df_correct</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>subject_nr</th>
+      <th>block</th>
+      <th>session</th>
+      <th>congruency_transition_type</th>
+      <th>congruency_type</th>
+      <th>correct</th>
+      <th>response_time</th>
+      <th>task_transition_type</th>
+      <th>task_type</th>
+      <th>cue_color</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>1</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>760.166800</td>
-      <td>760.166800</td>
-      <td>#a4b6d9</td>
+      <td>lowswitch</td>
+      <td>congruency-switch</td>
+      <td>congruent</td>
       <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>2</td>
-      <td>1.520334e+03</td>
-      <td>2</td>
-      <td>2</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>706.7057</td>
+      <td>task-switch</td>
+      <td>magnitude</td>
+      <td>#A6A0C6</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
       <td>1</td>
-      <td>100.000000</td>
-      <td>100.000000</td>
-      <td>681.195000</td>
-      <td>681.195000</td>
-      <td>#a4b6d9</td>
+      <td>lowswitch</td>
+      <td>congruency-repetition</td>
+      <td>congruent</td>
       <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>3</td>
-      <td>2.043585e+03</td>
-      <td>3</td>
-      <td>3</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>855.6105</td>
+      <td>task-switch</td>
+      <td>parity</td>
+      <td>#7BB2D0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>1</td>
       <td>1</td>
-      <td>75.000000</td>
-      <td>75.000000</td>
-      <td>881.623825</td>
-      <td>881.623825</td>
-      <td>#a4b6d9</td>
+      <td>lowswitch</td>
+      <td>congruency-switch</td>
+      <td>incongruent</td>
       <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>3</td>
-      <td>3.526495e+03</td>
-      <td>4</td>
-      <td>4</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>867.8947</td>
+      <td>task-repetition</td>
+      <td>parity</td>
+      <td>#CDA277</td>
     </tr>
     <tr>
       <th>4</th>
       <td>1</td>
       <td>1</td>
-      <td>80.000000</td>
-      <td>80.000000</td>
-      <td>869.731600</td>
-      <td>869.731600</td>
-      <td>#a4b6d9</td>
+      <td>lowswitch</td>
+      <td>congruency-repetition</td>
+      <td>incongruent</td>
       <td>1</td>
-      <td>yes</td>
+      <td>1078.9412</td>
+      <td>task-switch</td>
+      <td>magnitude</td>
+      <td>#A6A0C6</td>
+    </tr>
+    <tr>
+      <th>5</th>
       <td>1</td>
-      <td>...</td>
-      <td>2.992969e+06</td>
-      <td>3.099097e+06</td>
-      <td>2.904703e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>4</td>
-      <td>4.348658e+03</td>
-      <td>5</td>
-      <td>5</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>1</td>
+      <td>lowswitch</td>
+      <td>congruency-repetition</td>
+      <td>incongruent</td>
+      <td>1</td>
+      <td>819.4645</td>
+      <td>task-repetition</td>
+      <td>magnitude</td>
+      <td>#8FBF35</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1675,339 +1712,265 @@ Name: congruency_transition_type, dtype: int64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>947</th>
+      <th>810</th>
+      <td>2</td>
+      <td>10</td>
+      <td>highswitch</td>
+      <td>congruency-repetition</td>
+      <td>congruent</td>
       <td>1</td>
-      <td>1</td>
-      <td>92.184369</td>
-      <td>92.184369</td>
-      <td>2187.341999</td>
-      <td>2187.341999</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>460</td>
-      <td>1.091484e+06</td>
-      <td>499</td>
-      <td>61</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>321.1855</td>
+      <td>task-switch</td>
+      <td>parity</td>
+      <td>#7BB2D0</td>
     </tr>
     <tr>
-      <th>948</th>
+      <th>811</th>
+      <td>2</td>
+      <td>10</td>
+      <td>highswitch</td>
+      <td>congruency-switch</td>
+      <td>incongruent</td>
       <td>1</td>
-      <td>1</td>
-      <td>92.200000</td>
-      <td>92.200000</td>
-      <td>2183.888454</td>
-      <td>2183.888454</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>461</td>
-      <td>1.091944e+06</td>
-      <td>500</td>
-      <td>62</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>844.0940</td>
+      <td>task-switch</td>
+      <td>magnitude</td>
+      <td>#8FBF35</td>
     </tr>
     <tr>
-      <th>949</th>
+      <th>812</th>
+      <td>2</td>
+      <td>10</td>
+      <td>highswitch</td>
+      <td>congruency-repetition</td>
+      <td>incongruent</td>
       <td>1</td>
-      <td>1</td>
-      <td>92.215569</td>
-      <td>92.215569</td>
-      <td>2180.879513</td>
-      <td>2180.879513</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>462</td>
-      <td>1.092621e+06</td>
-      <td>501</td>
-      <td>63</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>674.5391</td>
+      <td>task-switch</td>
+      <td>parity</td>
+      <td>#A6A0C6</td>
     </tr>
     <tr>
-      <th>950</th>
+      <th>814</th>
+      <td>2</td>
+      <td>10</td>
+      <td>highswitch</td>
+      <td>congruency-switch</td>
+      <td>congruent</td>
       <td>1</td>
-      <td>1</td>
-      <td>92.231076</td>
-      <td>92.231076</td>
-      <td>2177.548002</td>
-      <td>2177.548002</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>463</td>
-      <td>1.093129e+06</td>
-      <td>502</td>
-      <td>64</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>1353.6886</td>
+      <td>task-switch</td>
+      <td>magnitude</td>
+      <td>#CDA277</td>
     </tr>
     <tr>
-      <th>951</th>
+      <th>815</th>
+      <td>2</td>
+      <td>10</td>
+      <td>highswitch</td>
+      <td>congruency-repetition</td>
+      <td>congruent</td>
       <td>1</td>
-      <td>1</td>
-      <td>92.246521</td>
-      <td>92.246521</td>
-      <td>2174.354693</td>
-      <td>2174.354693</td>
-      <td>#a4b6d9</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>2.951893e+06</td>
-      <td>3.038105e+06</td>
-      <td>2.874143e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>464</td>
-      <td>1.093700e+06</td>
-      <td>503</td>
-      <td>65</td>
-      <td>yes</td>
-      <td>1680</td>
+      <td>505.6633</td>
+      <td>task-switch</td>
+      <td>parity</td>
+      <td>#A6A0C6</td>
     </tr>
   </tbody>
 </table>
-<p>952 rows × 346 columns</p>
+<p>599 rows × 10 columns</p>
 </div></div></div>
 </div>
+<p>A really convenient way to quickly get an idea of your numerical columns, you can use the describe function of pandas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;congruency&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\scope.py</span> in <span class="ni">resolve</span><span class="nt">(self, key, is_local)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_resolvers</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">187</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolvers</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\collections\__init__.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>                 <span class="k">pass</span>
-<span class="ne">--&gt; </span><span class="mi">883</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__missing__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>            <span class="c1"># support subclasses that define __missing__</span>
-<span class="g g-Whitespace">    </span><span class="mi">884</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\collections\__init__.py</span> in <span class="ni">__missing__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>     <span class="k">def</span> <span class="fm">__missing__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">875</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span> 
-
-<span class="ne">KeyError</span>: &#39;rt_zscore&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\scope.py</span> in <span class="ni">resolve</span><span class="nt">(self, key, is_local)</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span>                 <span class="c1"># e.g., df[df &gt; 0]</span>
-<span class="ne">--&gt; </span><span class="mi">198</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">temps</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-
-<span class="ne">KeyError</span>: &#39;rt_zscore&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">UndefinedVariableError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span><span class="n">bd57070758</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;congruency&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\frame.py</span> in <span class="ni">query</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3229</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">3230</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">3231</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3232</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3233</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\frame.py</span> in <span class="ni">eval</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3344</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;resolvers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resolvers&quot;</span><span class="p">,</span> <span class="p">())</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">resolvers</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3345</span> 
-<span class="ne">-&gt; </span><span class="mi">3346</span>         <span class="k">return</span> <span class="n">_eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3347</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3348</span>     <span class="k">def</span> <span class="nf">select_dtypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;DataFrame&quot;</span><span class="p">:</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\eval.py</span> in <span class="ni">eval</span><span class="nt">(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span> 
-<span class="ne">--&gt; </span><span class="mi">332</span>         <span class="n">parsed_expr</span> <span class="o">=</span> <span class="n">Expr</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span> 
-<span class="g g-Whitespace">    </span><span class="mi">334</span>         <span class="c1"># construct the engine and evaluate the parsed expression</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">__init__</span><span class="nt">(self, expr, engine, parser, env, level)</span>
-<span class="g g-Whitespace">    </span><span class="mi">762</span>         <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">parser</span>
-<span class="g g-Whitespace">    </span><span class="mi">763</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_visitor</span> <span class="o">=</span> <span class="n">_parsers</span><span class="p">[</span><span class="n">parser</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">764</span>         <span class="bp">self</span><span class="o">.</span><span class="n">terms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">765</span> 
-<span class="g g-Whitespace">    </span><span class="mi">766</span>     <span class="nd">@property</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">parse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">779</span>     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span>         <span class="sd">&quot;&quot;&quot;Parse an expression&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">781</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span> 
-<span class="g g-Whitespace">    </span><span class="mi">783</span>     <span class="nd">@property</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Module</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span>             <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s2">&quot;only a single expression is allowed&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="n">expr</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">381</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> 
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="k">def</span> <span class="nf">visit_Expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Expr</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> 
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="k">def</span> <span class="nf">visit_Expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">384</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span> 
-<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="k">def</span> <span class="nf">_rewrite_membership_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Compare</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">674</span>             <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">translate_In</span><span class="p">(</span><span class="n">ops</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span>             <span class="n">binop</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">BinOp</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">comps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="ne">--&gt; </span><span class="mi">676</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">binop</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">677</span> 
-<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="c1"># recursive case: we have a chained comparison, a CMP b CMP c, etc.</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_BinOp</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span> 
-<span class="g g-Whitespace">    </span><span class="mi">496</span>     <span class="k">def</span> <span class="nf">visit_BinOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">497</span>         <span class="n">op</span><span class="p">,</span> <span class="n">op_class</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maybe_transform_eq_ne</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maybe_downcast_constants</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maybe_evaluate_binop</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">op_class</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">_maybe_transform_eq_ne</span><span class="nt">(self, node, left, right)</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>     <span class="k">def</span> <span class="nf">_maybe_transform_eq_ne</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>         <span class="k">if</span> <span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">416</span>             <span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>         <span class="k">if</span> <span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>             <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">visitor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>         <span class="k">return</span> <span class="n">visitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> 
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\expr.py</span> in <span class="ni">visit_Name</span><span class="nt">(self, node, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> 
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="k">def</span> <span class="nf">visit_Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">510</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">term_type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span> 
-<span class="g g-Whitespace">    </span><span class="mi">512</span>     <span class="k">def</span> <span class="nf">visit_NameConstant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\ops.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, env, side, encoding)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="n">tname</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="bp">self</span><span class="o">.</span><span class="n">is_local</span> <span class="o">=</span> <span class="n">tname</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">_LOCAL_TAG</span><span class="p">)</span> <span class="ow">or</span> <span class="n">tname</span> <span class="ow">in</span> <span class="n">_DEFAULT_GLOBALS</span>
-<span class="ne">---&gt; </span><span class="mi">82</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_name</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\ops.py</span> in <span class="ni">_resolve_name</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> 
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">def</span> <span class="nf">_resolve_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">99</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_name</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">is_local</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> 
-
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\pandas\core\computation\scope.py</span> in <span class="ni">resolve</span><span class="nt">(self, key, is_local)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>                 <span class="kn">from</span> <span class="nn">pandas.core.computation.ops</span> <span class="kn">import</span> <span class="n">UndefinedVariableError</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> 
-<span class="ne">--&gt; </span><span class="mi">203</span>                 <span class="k">raise</span> <span class="n">UndefinedVariableError</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">is_local</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> 
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">def</span> <span class="nf">swapkey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="ne">UndefinedVariableError</span>: name &#39;rt_zscore&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     599.000000
+mean      725.344337
+std       233.487524
+min       124.173900
+25%       550.588900
+50%       655.866000
+75%       876.164300
+max      1443.708500
+Name: response_time, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
+<p>We expect people to be slower when they have to switch from task, in comparison to when they can do the same task as on the previous trial. This is what we call <strong>switch cost</strong>. To show this in a table-format, we can again use the pivot_table function from pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sum</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check counts</span>
+<span class="n">switch_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">df_correct</span><span class="p">,</span>
+    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="c1"># The value that will be summarized</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subject_nr&quot;</span><span class="p">],</span> <span class="c1"># The rows to summarize over</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;task_transition_type&quot;</span><span class="p">],</span> <span class="c1"># The columns to summarize over</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="c1"># Calculate the mean response time per subject per task type</span>
+<span class="p">)</span>
+
+<span class="n">switch_table</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">ad991e913f3b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_sum</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_sum&#39; is not defined
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>task_transition_type</th>
+      <th>task-repetition</th>
+      <th>task-switch</th>
+    </tr>
+    <tr>
+      <th>subject_nr</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>749.989603</td>
+      <td>888.007569</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>638.137917</td>
+      <td>675.488397</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It is pretty clear that incongruent trials are slower than congruent trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the incongruent and congruent columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;switch cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-switch&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-repetition&#39;</span><span class="p">]</span>
+<span class="n">switch_table</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>task_transition_type</th>
+      <th>task-repetition</th>
+      <th>task-switch</th>
+      <th>switch cost</th>
+    </tr>
+    <tr>
+      <th>subject_nr</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>749.989603</td>
+      <td>888.007569</td>
+      <td>138.017966</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>638.137917</td>
+      <td>675.488397</td>
+      <td>37.350480</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Lastly, you can use the handy function <em>describe</em> to get a quick peek at the response times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     599.000000
+mean      725.344337
+std       233.487524
+min       124.173900
+25%       550.588900
+50%       655.866000
+75%       876.164300
+max      1443.708500
+Name: response_time, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>What we’ve done here is just a subset of the myriad of possibilities how you can change your dataframe in a way that is tidy and gives you a better overview of what you’re dealing with. <a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">This cheat sheet</a> gives a nice overview of the things we discussed and more! Use the cheat sheet for the following exercises.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The developers of OpenSesame have also created a Python package for working with column-based and continuous data, called <a class="reference external" href="http://pydatamatrix.eu/0.15/index/">DataMatrix</a>. It’s similar to the Pandas package we’ve been working with in this tutorial, but has some crucial differences in syntax. We have opted for the more versatile and widely used Pandas package, but be aware that the OpenSesame website and tutorials can sometimes refer to DataMatrixes instead of DataFrames.</p>
+</div></blockquote>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>We’ve removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per congruency using a pivot table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Next to removing incorrect trials from a dataframe, an often done dataframe manipulation is to remove outliers from your dataframe. These can be trials where participants where unrealistically quick, or just too slow to test the effect you are interested in.</p>
+<p>From the dataframe with correct trials only, remove all trials that have a reaction time below 400ms and above 1000ms. Use a conditional selection of rows, and use only one line of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_correct</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>What is a more objective way to do outlier detection? Name two outlier detection methods, one that is suited for normally distributed data, and one that is suited for non-normally distributed data.</p>
+<p><em>Answer to exercise 3</em></p>
+<p>During the next session we will dive deeper into outlier detection methods.</p>
 </div>
 </div>
 </div>

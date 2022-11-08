@@ -74,5 +74,7 @@ elif int(age) >= 25:
 # > **Note**: For this part of the tutorial you will need to launch the script using Google Colab
 
 # There are interactive elements (like multiple choice questions) for which you don't have to switch, so keep an eye out for this note before you go to Google Colab.
+# 
+# > **Note**: There are numerous links to other websites in this jupyter book. To navigate to one of those links without leaving this jupyter notebook, you can do *ctrl+click*. Try it out with [this link](https://www.computerhope.com/jargon/c/ctrl-click.htm)
 
 # 

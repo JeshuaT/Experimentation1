@@ -278,6 +278,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../07_files/files_python_lessons.html">
+     Python lessons: Files
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
      Python exercises
     </a>
@@ -547,6 +552,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-print-total-count-and-average">
+   Exercise 1. Print total, count, and average
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-print-maximum-and-minimum">
+   Exercise 2. Print maximum and minimum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-print-moving-text">
+   Exercise 3. Print moving text
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -559,6 +587,29 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-print-total-count-and-average">
+   Exercise 1. Print total, count, and average
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-print-maximum-and-minimum">
+   Exercise 2. Print maximum and minimum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-print-moving-text">
+   Exercise 3. Print moving text
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -568,17 +619,163 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises-loops">
 <h1>Python exercises: Loops<a class="headerlink" href="#python-exercises-loops" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>The exercises below are  adapted from the <a class="reference external" href="https://www.py4e.com/html3/05-iterations">Python for Everyone Course</a> by Charles R. Severance licensed under Creative Commons Attribution 3.0</p>
+<div><p><strong>Note</strong> Some of the exercises below are adapted from the <a class="reference external" href="https://www.py4e.com/html3/05-iterations">Python for Everyone Course</a> by Charles R. Severance licensed under Creative Commons Attribution 3.0</p>
 </div></blockquote>
-<p>Exercise 1: Write a program which repeatedly reads numbers until the user enters “done”. Once “done” is entered, print out the total, count, and average of the numbers. If the user enters anything other than a number, detect their mistake using try and except and print an error message and skip to the next number.</p>
-<p>Enter a number: 4
-Enter a number: 5
-Enter a number: bad data
-Invalid input
-Enter a number: 7
-Enter a number: done
-16 3 5.333333333333333
-Exercise 2: Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.</p>
+<div class="section" id="exercise-1-print-total-count-and-average">
+<h2>Exercise 1. Print total, count, and average<a class="headerlink" href="#exercise-1-print-total-count-and-average" title="Permalink to this headline">¶</a></h2>
+<p>Write a program which repeatedly reads numbers until the user enters “done”. Once “done” is entered, print out the total, count, and average of the numbers. If the user enters anything other than a number, detect their mistake using try and except and print an error message and skip to the next number.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="n">bad</span> <span class="n">data</span>
+<span class="n">Invalid</span> <span class="nb">input</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">7</span>
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="n">done</span>
+<span class="mi">16</span> <span class="mi">3</span> <span class="mf">5.333333333333333</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-2-print-maximum-and-minimum">
+<h2>Exercise 2. Print maximum and minimum<a class="headerlink" href="#exercise-2-print-maximum-and-minimum" title="Permalink to this headline">¶</a></h2>
+<p>Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.</p>
+</div>
+<div class="section" id="exercise-3-print-moving-text">
+<h2>Exercise 3. Print moving text<a class="headerlink" href="#exercise-3-print-moving-text" title="Permalink to this headline">¶</a></h2>
+<p>Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~100 ms (0.1 seconds).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">41</span><span class="p">):</span>
+    <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fill</span> <span class="o">+</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                  Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                   Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                       Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                           Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                              Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                  Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                      Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                       Hello world
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        Hello world
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
