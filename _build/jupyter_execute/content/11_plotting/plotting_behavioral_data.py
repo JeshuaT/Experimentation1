@@ -11,6 +11,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # disable chained assignments
 pd.options.mode.chained_assignment = None
@@ -35,18 +36,95 @@ df_trim_blocks['subject_nr'] = df_trim_blocks['subject_nr'].replace(4, 2)
 df_trim_blocks
 
 
-# https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html
-
 # In[2]:
 
 
-print(plt.style.available)
-plt.style.use('seaborn')
+plt.style.use('classic')
 
 
-# First thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot we can easily make a histogram plot by specifying the column that should be plotted:
+# As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (quick and rigid) and the object-oriented way (slower but more flexible). Let's visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:
 
 # In[3]:
+
+
+sns.lineplot(data=df_trim_blocks, x='session', y='response_time', hue='task_transition_type')
+
+
+# As you can see, with only one line of code we can visualize the switch cost difference. However, seaborn also does things we didn't ask for: it calculates the mean response time and gives us an error bar. We can explicitly change these settings of course, but it does illustrate a difference in coding philosophy: with the object-oriented way you build from the ground up, whilst in the seaborn (and the lesser extent the procedural way) you built from the top down. Let's see what happens with the procedural approach:
+
+# In[4]:
+
+
+df_trim_blocks.pivot_table("response_time", "session", "task_transition_type").plot(marker="o")
+
+
+# Alright, we don't get the error bars, and the y-axis is flipped. The style also is a bit retro, but you can change the style to whatever you like most. See the styles available [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html). Lets change the style and look at the new output right away:
+
+# In[5]:
+
+
+print(plt.style.available) # Print out all available styles
+plt.style.use('default') # Set style for the rest of the script
+
+# New style output
+df_trim_blocks.pivot_table("response_time", "session", "task_transition_type").plot(marker="o")
+
+
+# Some tweaking needs to be done now since the x-label "lowswitch" now falls out of the plot grid (depending on some styles). But again, with one line of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
+
+# In[6]:
+
+
+df = df_trim_blocks.groupby(['session','task_transition_type']).response_time.mean()
+
+# unstack the `task_transition_type` index, to place it as columns
+df_oo = df.unstack(level='task_transition_type')
+
+fig, ax = plt.subplots(figsize=(6, 4.5))
+ax.plot(df_oo)
+plt.show()
+
+
+# As you can see you need the most code for the object-oriented approach. Furthermore, it doesn't give you anything you don't ask for. We didn't specify if we wanted a legend, or if we wanted x- and y-labels, so we will then need to add this manually. It is however the best way to make your plots, since (1) the procedural and seaborn approach are built on the object-oriented syntax, so you can make changes to these plots with your understanding of object-oriented matplotlib usage, and (2) it is the most reproducible way to code your plots, since you make everything what you do explicit.
+# 
+# It's important to be aware of the difference between these approaches, as when you google solutions for your matplotlib problems, you will often encounter solutions for all three approaches. However, when you are coding in an object-oriented matter, simply inputting procedural code will not work, and vice-versa! For the rest of the tutorial, we will continue with the object-oriented approach, unless it is really inconvenient to do so (as you will see at the end of the tutorial). For now, let's improve the plot we made above:
+
+# In[7]:
+
+
+df = df_trim_blocks.groupby(['session','task_transition_type']).response_time.mean()
+
+# unstack the `task_transition_type` index, to place it as columns
+df_oo = df.unstack(level='task_transition_type')
+
+# The name of columns would become the name of legend
+# when using dataframe plot
+df_oo.columns.name = 'response time'
+
+fig, ax = plt.subplots(figsize=(6, 4.5))
+ax.plot(df_oo)
+ax.invert_xaxis()
+
+# set axis labels
+ax.set_xlabel('session')
+ax.set_ylabel('response time')
+
+# set markers; "o" codes for "circle", "s" codes for "square"
+markers = ['o', 's']
+for i, line in enumerate(ax.get_lines()):
+    line.set_marker(markers[i])
+
+# update legend
+ax.legend(ax.get_lines(), ["task-switch", "task-repetition"], loc='best', ncol=2)
+
+plt.tight_layout()
+
+
+# 
+
+# Let's continue. Next thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot we can easily make a histogram plot by specifying the column that should be plotted:
+
+# In[8]:
 
 
 fig, ax = plt.subplots()
@@ -55,9 +133,9 @@ plt.show()
 print(plt.style.available)
 
 
-# That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of matplotlib shows itself: you can customize virtually anything you want in these plots.
+# That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of object-oriented coding in matplotlib shows itself: you can customize virtually anything you want in these plots.
 
-# In[4]:
+# In[9]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -69,7 +147,6 @@ ax.grid(visible=None) # Remove the background grid lines
 ax.hist(df_trim_blocks['response_time'],
          bins=30) # Bins defines the amount of bins you want to plot
 
-
 ax.set_xlabel("RT", size=14) # label on the x-axis, size defines font size
 ax.set_ylabel("Count", size=14) # label on the y-axis, size defines font size
 ax.set_title("Response time distribution") # title of the plot
@@ -78,7 +155,7 @@ plt.show()
 
 # We can also make overlays to compare two distributions. Let's for example see how the distribution of correct versus incorrect trials look like.
 
-# In[5]:
+# In[10]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -110,49 +187,21 @@ ax.legend(loc='upper right') # This tells matplotlib to create a legend, and pla
 plt.show()
 
 
-# In[6]:
+# In[11]:
 
 
-fig, axs = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True, figsize=(5.5, 3.5))
-
-df_subj1_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 1)]
-df_subj2_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 2)]
-df_subj1_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 1)]
-df_subj2_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 2)]
-
-df_subj1_parity['response_time'].hist(ax=axs[0,0])
-df_subj2_parity['response_time'].hist(ax=axs[0,1])
-df_subj1_magnitude['response_time'].hist(ax=axs[1,0])
-df_subj2_magnitude['response_time'].hist(ax=axs[1,1])
-
-# Set common labels
-fig.text(0.28, -0.03, 'Parity', ha='center', va='center')
-fig.text(0.75, -0.03, 'Magnitude', ha='center', va='center')
-
-axs[0,0].set_ylabel('Subject 1')
-axs[1,0].set_ylabel('Subject 2')
-
-plt.show()
+sns.displot(
+    df_trim_blocks,
+    x="response_time", # What to code on the x-axis
+    col="task_type", # Column of the grid
+    row="subject_nr", # Rows of the grid
+    binwidth=50, # Width of the bins
+    height=3, # Height of the figure
+    facet_kws=dict(margin_titles=True),
+)
 
 
-# In[7]:
-
-
-print(df_subj1_switch.shape)
-print(df_subj2_switch.shape)
-print(df_subj1_repetition.shape)
-print(df_subj2_repetition.shape)
-
-
-# In[8]:
-
-
-fig, ax = plt.subplots()
-df_trim_blocks.groupby('subject_nr').plot(x='task_type', y='response_time', ax=ax, legend=False)
-plt.show()
-
-
-# In[9]:
+# In[12]:
 
 
 
@@ -178,7 +227,7 @@ df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].trans
 print(df)
 
 
-# In[10]:
+# In[13]:
 
 
 plt.figure(figsize=(8,6));
@@ -186,7 +235,7 @@ plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=10
 plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[11]:
+# In[14]:
 
 
 import seaborn as sns
@@ -200,19 +249,19 @@ sns.displot(
 )
 
 
-# In[12]:
+# In[15]:
 
 
 df
 
 
-# In[13]:
+# In[16]:
 
 
 df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
 
 
-# In[14]:
+# In[17]:
 
 
 df_sum
@@ -222,4 +271,32 @@ df_sum
 
 
 
+
+
+# ### Exercise
+# We made the facet grid plot in seaborn out of convenience. However, with a bit more code we can also reproduce that plot in the object-oriented approach of matplotlib. Reproduce the plot in this way.
+
+# In[18]:
+
+
+fig, axs = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True, figsize=(5.5, 3.5))
+
+df_subj1_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 1)]
+df_subj2_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 2)]
+df_subj1_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 1)]
+df_subj2_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 2)]
+
+df_subj1_parity['response_time'].hist(ax=axs[0,0])
+df_subj2_parity['response_time'].hist(ax=axs[0,1])
+df_subj1_magnitude['response_time'].hist(ax=axs[1,0])
+df_subj2_magnitude['response_time'].hist(ax=axs[1,1])
+
+# Set common labels
+fig.text(0.28, -0.03, 'Parity', ha='center', va='center')
+fig.text(0.75, -0.03, 'Magnitude', ha='center', va='center')
+
+axs[0,0].set_ylabel('Subject 1')
+axs[1,0].set_ylabel('Subject 2')
+
+plt.show()
 

@@ -172,7 +172,7 @@ df_correct['response_time'].describe()
 # In[11]:
 
 
-#check counts
+#check switch costs
 switch_table = pd.pivot_table(
     df_correct,
     values="response_time", # The value that will be summarized
