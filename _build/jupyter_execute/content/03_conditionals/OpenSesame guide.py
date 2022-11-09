@@ -97,12 +97,12 @@
 # class="underline">website</span>](https://osdoc.cogsci.nl/) and click on
 # the green download button.
 # 
-# <img src="attachment:media/image65.png" style="width:4.65625in;height:0.39583in" />
+# <img src="attachment:images/image65.png" style="width:4.65625in;height:0.39583in" />
 # 
 # At the top of the page, there will be a button that recommends which
 # download option to select based on your operating system.
 # 
-# <img src="attachment:media/image3.png" style="width:2.375in;height:0.98958in" />
+# <img src="attachment:images/image3.png" style="width:2.375in;height:0.98958in" />
 # 
 # This will typically be either Windows or Mac. Click on either the
 # Windows installer (.exe) or Mac OS package (.dmg), whichever is
@@ -190,7 +190,7 @@
 # If you open OpenSesame on your computer, you should get a window that
 # looks like this:
 # 
-# <img src="attachment:media/image24.png" style="width:6.5in;height:3.51389in" />
+# <img src="attachment:images/image24.png" style="width:6.5in;height:3.51389in" />
 # 
 # To help you start an experiment, there are some templates that you can
 # use. We are going to use the default template as we are going to make a
@@ -205,7 +205,7 @@
 # your computer. Once you have changed these, the general properties
 # window should look like this:
 # 
-# <img src="attachment:media/image44.png" style="width:4.61979in;height:3.74618in" />
+# <img src="attachment:images/image44.png" style="width:4.61979in;height:3.74618in" />
 # 
 # There are a few settings to explain here. Foreground and background
 # refers to the colour of the screen and the elements displayed on it. We
@@ -224,18 +224,18 @@
 # the components at the end of the experiment. The backbone of an
 # experiment is created through loop and sequence components. A loop
 # component
-# <img src="attachment:media/image45.png" style="width:0.22222in;height:0.20833in" />
+# <img src="attachment:images/image45.png" style="width:0.22222in;height:0.20833in" />
 # repeats what is inside it and defines any variables to use. A sequence
 # component
-# <img src="attachment:media/image1.png" style="width:0.21552in;height:0.20833in" />
+# <img src="attachment:images/image1.png" style="width:0.21552in;height:0.20833in" />
 # contains other components such as a screen showing text that make up a
 # single trial. Therefore, you would place a sequence component within a
 # loop component to control how many times the sequence is repeated. Drag
 # a loop component
-# <img src="attachment:media/image45.png" style="width:0.2178in;height:0.20833in" />and
+# <img src="attachment:images/image45.png" style="width:0.2178in;height:0.20833in" />and
 # place it after welcome in the overview window, and drag a sequence
 # component
-# <img src="attachment:media/image1.png" style="width:0.21552in;height:0.20833in" />
+# <img src="attachment:images/image1.png" style="width:0.21552in;height:0.20833in" />
 # and place it inside the loop. When you release the sequence, it will ask
 # whether you want it placing into the loop or after the loop. Press into
 # the loop and make sure they are both given informative names such as
@@ -245,7 +245,7 @@
 # any spaces. If you need spaces to make it easier to read, use an
 # underscore. You should now have a window that looks like this:
 # 
-# <img src="attachment:media/image19.png" style="width:3.85417in;height:3.6875in" />
+# <img src="attachment:images/image19.png" style="width:3.85417in;height:3.6875in" />
 # 
 # Therefore, once we define our variables later, trial\_sequence and
 # everything in it will repeat for however many times you specify in
@@ -257,13 +257,13 @@
 # ### Creating the fixation dot
 # 
 # This can be created using a sketchpad component
-# <img src="attachment:media/image82.png" style="width:0.21667in;height:0.20833in" />.
+# <img src="attachment:images/image82.png" style="width:0.21667in;height:0.20833in" />.
 # This is a very flexible component where you can present text, shapes,
 # and images. The sketchpad window has a list of elements on the left hand
 # side and a black screen with green lines to show where on the screen the
 # elements would be placed. OpenSesame has a very handy fixation cross
 # element called fixdot
-# <img src="attachment:media/image20.png" style="width:0.25568in;height:0.20833in" />.
+# <img src="attachment:images/image20.png" style="width:0.25568in;height:0.20833in" />.
 # Click on the fixdot element and this will turn your mouse into a pen
 # icon. If you move the mouse around the black gridded screen, the
 # coordinates are shown in the top right corner, and will change as you
@@ -279,7 +279,7 @@
 # change the name of the component to something informative such as
 # fixation. You should now have a screen that looks like this:
 # 
-# <img src="attachment:media/image8.png" style="width:5.99479in;height:4.27513in" />
+# <img src="attachment:images/image8.png" style="width:5.99479in;height:4.27513in" />
 # 
 # ### Creating the word component 
 # 
@@ -287,12 +287,12 @@
 # either the same colour as the word (congruent) or a different colour to
 # the word (incongruent). Therefore, the next thing we need to do is
 # create another sketchpad component
-# <img src="attachment:media/image82.png" style="width:0.20833in;height:0.20833in" />
+# <img src="attachment:images/image82.png" style="width:0.20833in;height:0.20833in" />
 # to present the words. Drag a sketchpad component and place it after
 # fixation in the trial sequence. Name it word to keep track of all the
 # components. This time instead of inserting a fixation cross, we need a
 # text element
-# <img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" />.
+# <img src="attachment:images/image15.png" style="width:0.23958in;height:0.19792in" />.
 # After you have selected the text element, change the colour to green
 # (all lowercase, it will say white by default). This will turn your mouse
 # into a pen, and you need to click in the middle of the screen at 0,0
@@ -304,12 +304,12 @@
 # component keyboard\_response. For the word component, you should have a
 # window that looks like this:
 # 
-# <img src="attachment:media/image78.png" style="width:6.375in;height:4.67708in" />
+# <img src="attachment:images/image78.png" style="width:6.375in;height:4.67708in" />
 # 
 # ### Creating the keyboard response component
 # 
 # The next component is keyboard\_response
-# <img src="attachment:media/image2.png" style="width:0.24382in;height:0.21334in" />.
+# <img src="attachment:images/image2.png" style="width:0.24382in;height:0.21334in" />.
 # Drag this from the menu and place it after word. We need this to tell
 # OpenSesame which keyboard responses are allowed and which responses are
 # correct. For now, we only have one green word, so the only response we
@@ -327,12 +327,12 @@
 # You should now have a screen that looks like this for
 # keyboard\_response:
 # 
-# <img src="attachment:media/image72.png" style="width:5.14583in;height:2.63542in" />
+# <img src="attachment:images/image72.png" style="width:5.14583in;height:2.63542in" />
 # 
 # ### Creating a blank screen
 # 
 # After the keyboard response, we will place another sketchpad component
-# <img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" />
+# <img src="attachment:images/image82.png" style="width:0.21368in;height:0.20833in" />
 # to signal the end of the trial. This time it will just be a blank screen
 # presented for 200ms. You can do this yourself based on the previous
 # sketchpad components and name it blank. We do not need to add any text
@@ -341,7 +341,7 @@
 # ### Creating the logger component 
 # 
 # The next component that we need is a logger
-# <img src="attachment:media/image81.png" style="width:0.20833in;height:0.22727in" />
+# <img src="attachment:images/image81.png" style="width:0.20833in;height:0.22727in" />
 # to save the data. OpenSesame does not save the responses by default, so
 # you need to create a logger to save the data from each trial. Drag a
 # logger component and place it after blank. For most experiments, you can
@@ -354,19 +354,19 @@
 # experiment has finished. Without this, the experiment just closes which
 # can make the participant panic and think they have done something wrong.
 # Create a new sketchpad component
-# <img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" />
+# <img src="attachment:images/image82.png" style="width:0.21368in;height:0.20833in" />
 # called end\_experiment and place it after block\_loop. Make sure it is
 # not in trial\_sequence. If you drop it on block\_loop, you can select
 # insert after block\_loop. Here we just need a brief message saying ‘The
 # experiment has now finished. Press any key to exit’. In order to create
 # this, select a text element
-# <img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" />
+# <img src="attachment:images/image15.png" style="width:0.23958in;height:0.19792in" />
 # , click in the middle of the screen, and enter the message. Now the
 # participant is fully aware that the experiment has finished
 # successfully. Make sure Duration is set to keypress. You should now have
 # an experiment that looks like this in the Overview window:
 # 
-# <img src="attachment:media/image67.png" style="width:2.54167in;height:3.05208in" />
+# <img src="attachment:images/image67.png" style="width:2.54167in;height:3.05208in" />
 # 
 # ### Modifying the welcome message 
 # 
@@ -384,7 +384,7 @@
 # 
 # Now it is time to make sure everything works! In the menu, there are
 # three arrow buttons.
-# <img src="attachment:media/image71.png" style="width:0.79688in;height:0.26563in" />
+# <img src="attachment:images/image71.png" style="width:0.79688in;height:0.26563in" />
 # If you were collecting data from a participant, you would press the big
 # green triangle to run the experiment full screen. The two green
 # triangles runs the experiment in a separate window. The two blue
@@ -433,7 +433,7 @@
 # for each word, you should have one congruent colour and one incongruent
 # colour. The grid should look like this:
 # 
-# <img src="attachment:media/image30.png" style="width:1.57292in;height:2.64209in" />
+# <img src="attachment:images/image30.png" style="width:1.57292in;height:2.64209in" />
 # 
 # We also need some additional variables that will be helpful for
 # analysing the data later. We need a column called ‘congruent’ and a
@@ -447,7 +447,7 @@
 # correct\_resp column, write the first letter of the colour variable for
 # that row, e.g. r for red. You should now have a full grid like this:
 # 
-# <img src="attachment:media/image18.png" style="width:3.42708in;height:2.78125in" />
+# <img src="attachment:images/image18.png" style="width:3.42708in;height:2.78125in" />
 # 
 # This will create 8 trials, one for each row. Remember how it is the loop
 # components that determine how many times the sequence component repeats.
@@ -459,7 +459,7 @@
 # 
 # If you click on the word component, Green is still in the middle of the
 # screen with green font. We need to click on the settings icon
-# <img src="attachment:media/image6.png" style="width:0.41667in;height:0.23958in" />
+# <img src="attachment:images/image6.png" style="width:0.41667in;height:0.23958in" />
 # in the top right corner and click on view script. We need to change two
 # things here: the color and text arguments. At the moment, these are
 # static and just present Green every time the component is called.
@@ -474,7 +474,7 @@
 # working is typos. You need an eagle eye to spot where you have made a
 # mistake. The script should now look like this:
 # 
-# <img src="attachment:media/image79.png" style="width:6.84574in;height:0.51563in" />
+# <img src="attachment:images/image79.png" style="width:6.84574in;height:0.51563in" />
 # 
 # Click on apply and close in the top right corner and we can move on to
 # keyboard\_response.
@@ -491,7 +491,7 @@
 # are separated by a semicolon and not a comma. After this, you should
 # have a window that looks like this:
 # 
-# <img src="attachment:media/image29.png" style="width:5.10417in;height:2.35577in" />
+# <img src="attachment:images/image29.png" style="width:5.10417in;height:2.35577in" />
 # 
 # ### Test the experiment
 # 
@@ -545,7 +545,7 @@
 # saving, we get many columns. The file should have 32 rows of data and
 # look similar to this:
 # 
-# <img src="attachment:media/image59.png" style="width:6.5in;height:1.41667in" />
+# <img src="attachment:images/image59.png" style="width:6.5in;height:1.41667in" />
 # 
 # We do not need every value here, but it is safer to save everything and
 # use what we need. The key variables for analysing the data in this
@@ -566,7 +566,7 @@
 # in. This is where you need to search to find where you saved the data on
 # your computer. The window should look like this:
 # 
-# <img src="attachment:media/image54.png" style="width:5.83854in;height:3.80815in" />
+# <img src="attachment:images/image54.png" style="width:5.83854in;height:3.80815in" />
 # 
 # Select the file you need, and click Open. This will open the Text Import
 # Wizard which requires six steps. 1) We do not have a predefined format,
@@ -586,10 +586,10 @@
 # available in the data view screen of SPSS. The whole process from above
 # is shown in the following series of screenshots:
 # 
-# | <img src="attachment:media/image17.png" style="width:3.03646in;height:2.8021in" />  | <img src="attachment:media/image62.png" style="width:3.05729in;height:2.79055in" /> |
+# | <img src="attachment:images/image17.png" style="width:3.03646in;height:2.8021in" />  | <img src="attachment:images/image62.png" style="width:3.05729in;height:2.79055in" /> |
 # |-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-# | <img src="attachment:media/image74.png" style="width:3.02604in;height:2.79163in" /> | <img src="attachment:media/image70.png" style="width:3.03646in;height:2.79055in" /> |
-# | <img src="attachment:media/image7.png" style="width:2.98438in;height:2.7271in" />   | <img src="attachment:media/image11.png" style="width:2.99479in;height:2.74171in" /> |
+# | <img src="attachment:images/image74.png" style="width:3.02604in;height:2.79163in" /> | <img src="attachment:images/image70.png" style="width:3.03646in;height:2.79055in" /> |
+# | <img src="attachment:images/image7.png" style="width:2.98438in;height:2.7271in" />   | <img src="attachment:images/image11.png" style="width:2.99479in;height:2.74171in" /> |
 # 
 # ### Importing the data in SPSS version 25
 # 
@@ -600,7 +600,7 @@
 # CSV Data and select the experiment file from where you saved it on your
 # computer. You should have a screen that looks similar to this:
 # 
-# <img src="attachment:media/image41.png" style="width:4.08333in;height:3.42762in" />
+# <img src="attachment:images/image41.png" style="width:4.08333in;height:3.42762in" />
 # 
 # You should not have to change any of the default settings apart from if
 # your data is saved in an international format. Some countries use a
@@ -647,7 +647,7 @@
 # Variable Name called something like ‘extreme\_responses’ and click
 # Change. You should now have a screen that looks like this:
 # 
-# <img src="attachment:media/image73.png" style="width:4.96875in;height:2.74511in" />
+# <img src="attachment:images/image73.png" style="width:4.96875in;height:2.74511in" />
 # 
 # Now click on Old and New Values. This allows us to recode response\_time
 # into several values by specifying individual values, or a range of
@@ -663,7 +663,7 @@
 # through HIGHEST, and specify 1001. Select a New Value of 1, and click
 # Add. You should have a window looking like this:
 # 
-# <img src="attachment:media/image60.png" style="width:5.85417in;height:3.34375in" />
+# <img src="attachment:images/image60.png" style="width:5.85417in;height:3.34375in" />
 # 
 # Click Continue and OK, and SPSS will create a new column called
 # extreme\_responses. Any row with a 0 is fine, and any with a 1 is
@@ -682,7 +682,7 @@
 # ‘correct = 1 & extreme\_responses = 0’. The window should look like
 # this:
 # 
-# <img src="attachment:media/image34.png" style="width:6.33854in;height:4.41343in" />
+# <img src="attachment:images/image34.png" style="width:6.33854in;height:4.41343in" />
 # 
 # Click Continue and then OK, and any responses not meeting our criteria
 # will be crossed out. For my data, there are four cases that are either
@@ -696,7 +696,7 @@
 # Dependent List and congruent into Factor List. Select Statistics under
 # Display. The window should look like this:
 # 
-# <img src="attachment:media/image39.png" style="width:4.6875in;height:3.44792in" />
+# <img src="attachment:images/image39.png" style="width:4.6875in;height:3.44792in" />
 # 
 # Press OK to produce the output. This will provide the descriptive
 # statistics split by the congruent variable. For the average, we will
@@ -753,7 +753,7 @@
 # <table>
 # <thead>
 # <tr class="header">
-# <th><img src="attachment:media/image36.png" style="width:3.96354in;height:4.16667in" /></th>
+# <th><img src="attachment:images/image36.png" style="width:3.96354in;height:4.16667in" /></th>
 # </tr>
 # </thead>
 # <tbody>
@@ -766,70 +766,70 @@
 # <p>We will go through the diagram above step by step in order to decode how it is designed. In this experiment a trial consists of a central fixation cross which stays on the screen for a random interval between 150-250ms. This randomness is usually introduced to stop participants just mindlessly clicking buttons to predictable stimuli. A stimulus then appears on the screen for 80ms. This period is sometimes called the Stimulus Onset Asynchrony (SOA), or for how long the stimuli remain on the screen. There are two conditions for the stimuli: congruent (HHHHH or SSSSS) or incongruent (SSHSS or HHSHH). For this task, the participant has to identify the middle letter by pressing either the letter ‘s’ or ‘h’ on the keyboard. After the stimulus has disappeared, there is a blank screen where the participant has up to 800ms to provide a response. After the response, a blank screen is presented for 300ms. The participant is then provided feedback to let them know whether they pressed the correct button or not. A ‘+’ is shown for a correct response and a ‘-’ is shown for an incorrect response. Finally, an inter-trial interval (ITI; although confusingly this is called an inter-stimulus interval despite indicating the end of a trial) is shown on the screen for 500ms to indicate the end of a trial.</p>
 # <h3 id="how-is-the-whole-experiment-organised">How is the whole experiment organised? </h3>
 # <p>Now that we know how one trial is structured, we can see how many times this is repeated to form a block of trials. In the method section, there are more details about how many trials are included. In order for the participants to understand they are completing the task accurately, they are provided with 20 trials in a practice block. The authors then explain that participants completed four blocks each containing 100 trials for a total of 400 trials. Between each block there is a rest period for the participant, but it does not say how long this period is. We will provide participants with a short 30 second break. Finally, we know that there are an equal number of congruent and incongruent stimuli in each block. As we have two types of congruent and incongruent stimuli, we can take a good guess that each one of these is presented 25 times in each block. The authors provide us with a diagram of each trial, but we can visualise the structure of the whole experiment like this:</p>
-# <p><img src="attachment:media/image80.png" style="width:6.35417in;height:1.73958in" /></p>
+# <p><img src="attachment:images/image80.png" style="width:6.35417in;height:1.73958in" /></p>
 # <p>This is the amount of information you need from an article to enable you to recreate the task the authors used. This is a particularly good example with the only missing information being the duration of the breaks, a relatively minor detail. You should be prepared to come across substantially less helpful authors that do not provide sufficient details. This is usually the case when it comes to tasks that use images. These are not normally shared or even described. Hopefully this will also demonstrate the importance of fully describing your experiment in a report or dissertation. Try and imagine you are the other researcher trying to recreate the task from your instructions. Now that we know how the task is designed, the next step is to recreate it in OpenSesame.</p>
 # <h2 id="creating-the-eriksen-flanker-task-in-opensesame">Creating the Eriksen Flanker Task in OpenSesame</h2>
 # <p>For this experiment, we will use the extended template rather than the default. This provides a helpful starting point by creating the basic outline of an experiment. This includes: instructions, a practice block, an experimental block, and an end of experiment message. The template should look like this when you first open it:</p>
-# <p><img src="attachment:media/image25.png" style="width:1.85in;height:4.84896in" /></p>
+# <p><img src="attachment:images/image25.png" style="width:1.85in;height:4.84896in" /></p>
 # <p>You can permanently delete about_this_template as it just describes the layout of the extended template. You can also permanently delete end_of_practice as we don’t need two messages for this. Start off by changing the name of the experiment by clicking on Extended template in the overview, and changing the name to Eriksen Flanker task by clicking on Extended template in blue. We then want to change the text size to 32, and enter your monitor’s resolution.</p>
 # <p>When we made the Stroop task, we only included one block of trials as it was intended to provide a short introduction to creating an experiment using OpenSesame. However, when you create a real experiment, it is a good idea to create a practice block to ensure the participant fully understands what they are doing. One of the helpful features in OpenSesame is the ability to copy and paste a linked component. This means that they are joined, and if you change one of the components, both of them change. This can save a lot of time if the same components are being used with the same settings. In the extended template, the two outer loops (practice_loop and experimental_loop) are independent, but all the components inside them are linked. When you provide people with practice trials, they are usually much shorter than the real experiment as is the case with the design of Rass et al. (2012). Therefore, we are going to delete experimental_loop and edit practice_loop. When we have finished editing practice_loop, we will copy and paste an unlinked version to create another experimental_loop. Right click to delete experimental_loop, and make sure you select permanently delete. If you just click delete, the components will be available in Unused items and it will mess up naming them later. Your Overview should now look like this:</p>
-# <p><img src="attachment:media/image50.png" style="width:2.90104in;height:4.33333in" /></p>
+# <p><img src="attachment:images/image50.png" style="width:2.90104in;height:4.33333in" /></p>
 # <h3 id="editing-the-fixation-dot">Editing the fixation dot </h3>
-# <p>In trial_sequence, there is helpfully a sketchpad component that already includes a fixation dot called sketchpad. Rename this component to fixation. In the trial diagram, fixation is displayed for a random interval between 150ms and 250ms. In the Stroop task, we just set a static duration for 500ms. To create a variable duration, we will need to use our first bit of real Python code. Drag an inline_script component <img src="attachment:media/image55.png" style="width:0.22321in;height:0.20833in" /> into trial_sequence and place it before fixation. This component allows you to write Python code that can be used in your experiment. Rename it fix_duration as it will control how long our fixation dot is presented for. Within an inline script component, there are two tabs: Prepare and Run. The difference is not important here as we will only be creating a random number. However, if you were to create some complicated stimuli, it can take longer to prepare which affects the timing of the experiment. Therefore, it is better to prepare the stimuli in advance using the Prepare tab, and these can then be presented when necessary using the Run tab. For this example, we will just be writing two lines of code in the Prepare tab. On the first line, type:</p>
+# <p>In trial_sequence, there is helpfully a sketchpad component that already includes a fixation dot called sketchpad. Rename this component to fixation. In the trial diagram, fixation is displayed for a random interval between 150ms and 250ms. In the Stroop task, we just set a static duration for 500ms. To create a variable duration, we will need to use our first bit of real Python code. Drag an inline_script component <img src="attachment:images/image55.png" style="width:0.22321in;height:0.20833in" /> into trial_sequence and place it before fixation. This component allows you to write Python code that can be used in your experiment. Rename it fix_duration as it will control how long our fixation dot is presented for. Within an inline script component, there are two tabs: Prepare and Run. The difference is not important here as we will only be creating a random number. However, if you were to create some complicated stimuli, it can take longer to prepare which affects the timing of the experiment. Therefore, it is better to prepare the stimuli in advance using the Prepare tab, and these can then be presented when necessary using the Run tab. For this example, we will just be writing two lines of code in the Prepare tab. On the first line, type:</p>
 # <p>import random</p>
 # <p>It is very important these are all lowercase as Python code is case sensitive. This imports a library called random. A library is a collection of Python code which have specific functions. Random has different functions for creating random numbers. On a new line (it does not matter whether it is on line 2 or 3), we need to create a new variable called fix_duration using the following code:</p>
 # <p>var.fix_duration = random.randint(150, 250)</p>
 # <p>This should look like the following:</p>
-# <p><img src="attachment:media/image31.png" style="width:6.29167in;height:2in" /></p>
+# <p><img src="attachment:images/image31.png" style="width:6.29167in;height:2in" /></p>
 # <p>We will take some time to unpack what this is doing. The first part var.fix_duration is creating a new variable called fix_duration. OpenSesame uses the var object to access and create experimental variables in inline scripts. We use the equals sign to assign fix_duration with a number created by the second part of the code. The second part random.randint(150, 250) is accessing a function within the random library called randint. This creates a random integer (whole number) between two numbers which you specify. As we want a random duration between 150ms and 250ms, we enter 150 and 250. Therefore, at the start of every trial (as we put fix_duration within block_loop), we get a new random value for fix_duration. For example, on the first trial it could be 250, on the second 178, and so on. This discourages the participant from mindlessly responding in a predictable fashion. As we created a new variable, we can use this to determine the Duration of fixation using square brackets. If you type [fix_duration] in the Duration of fixation, you should have a component that looks like this:</p>
-# <p><img src="attachment:media/image28.png" style="width:5.69792in;height:3.375in" /></p>
+# <p><img src="attachment:images/image28.png" style="width:5.69792in;height:3.375in" /></p>
 # <h3 id="creating-a-stimulus-component">Creating a stimulus component </h3>
-# <p>Drag a new sketchpad component <img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" />called stimulus and place it after fixation. Create a text element <img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" /> in the centre of the stimulus screen at coordinates 0,0 and type ‘[stimulus]’. We have not created a stimulus variable in block_loop yet, but we are preempting doing it later. From the trial diagram, we need to change the Duration to 80ms. This displays the stimuli very briefly.</p>
+# <p>Drag a new sketchpad component <img src="attachment:images/image82.png" style="width:0.21368in;height:0.20833in" />called stimulus and place it after fixation. Create a text element <img src="attachment:images/image15.png" style="width:0.23958in;height:0.19792in" /> in the centre of the stimulus screen at coordinates 0,0 and type ‘[stimulus]’. We have not created a stimulus variable in block_loop yet, but we are preempting doing it later. From the trial diagram, we need to change the Duration to 80ms. This displays the stimuli very briefly.</p>
 # <h3 id="creating-a-blank-response-screen-and-keyboard-response">Creating a blank response screen and keyboard response </h3>
-# <p>For the participant to provide a response, we need two components. We need a blank sketchpad component <img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" /> which we can call response_screen and place after stimulus. Set the Duration to 0 as we want the time allowed to be controlled by keyboard_response which was helpfully already present from the extended template.</p>
+# <p>For the participant to provide a response, we need two components. We need a blank sketchpad component <img src="attachment:images/image82.png" style="width:0.21368in;height:0.20833in" /> which we can call response_screen and place after stimulus. Set the Duration to 0 as we want the time allowed to be controlled by keyboard_response which was helpfully already present from the extended template.</p>
 # <p>We can edit keyboard_response for this task. In Correct response, we can preempt creating a variable by typing ‘[correct_resp]’. We only need two responses, so type ‘s; h’ in Allowed responses. We want the participant to respond within 800ms, so set Timeout to 800. This means that if the participant takes longer than 800ms to respond, the response is classified as None and incorrect. The keyboard_response component should look like this now:</p>
-# <p><img src="attachment:media/image12.png" style="width:5.32292in;height:2.53125in" /></p>
+# <p><img src="attachment:images/image12.png" style="width:5.32292in;height:2.53125in" /></p>
 # <h3 id="creating-another-blank-screen">Creating another blank screen</h3>
-# <p>Now we need another blank sketchpad component <img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" /> called blank_screen that has a duration of 300ms. This should be placed after keyboard_response. At this point in the trial, the participant is provided with feedback on whether they pressed the correct button or not.</p>
+# <p>Now we need another blank sketchpad component <img src="attachment:images/image82.png" style="width:0.21368in;height:0.20833in" /> called blank_screen that has a duration of 300ms. This should be placed after keyboard_response. At this point in the trial, the participant is provided with feedback on whether they pressed the correct button or not.</p>
 # <h3 id="creating-feedback-screens">Creating feedback screens</h3>
-# <p>We need two more sketchpad components <img src="attachment:media/image82.png" style="width:0.21875in;height:0.20833in" /> called correct_response and incorrect_response placed after blank_screen. Both components should have a Duration of 500ms. We need a text element <img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" /> placed in the centre of both screens. In correct_response, we need a ‘+’ to denote a correct response, and in incorrect_response we need a ‘-’ to denote an incorrect response. If we left the components like this, OpenSesame would display one and then the other. We need to use a bit of Python trickery to control which component is displayed depending on the response. If you click on trial_sequence, you will see a list of all the components within it. There is a second column called Run if. By default, this is set to always, so each component is displayed on every trial. We can modify this and use the correct variable that is updated on every trial. So if the participant pressed the correct button, this would be recorded as a 1, and if they pressed the wrong button, this would be recorded as a 0. Where it says always, change it to [correct] == 1 next to correct_response, and [correct] == 0 next to incorrect_response. The square brackets means we want to access a variable, and 1 and 0 refers to a correct or incorrect response. We two equals signs compares the values either side of the ==. If they match, it is evaluated as true, and if they do not, it is evaluated as false. Therefore, when we have a correct response, correct_response is run, and when we have an incorrect response, incorrect_response is run. At this point, trial_sequence should look like this:</p>
-# <p><img src="attachment:media/image69.png" style="width:3.97917in;height:4.73958in" /></p>
+# <p>We need two more sketchpad components <img src="attachment:images/image82.png" style="width:0.21875in;height:0.20833in" /> called correct_response and incorrect_response placed after blank_screen. Both components should have a Duration of 500ms. We need a text element <img src="attachment:images/image15.png" style="width:0.23958in;height:0.19792in" /> placed in the centre of both screens. In correct_response, we need a ‘+’ to denote a correct response, and in incorrect_response we need a ‘-’ to denote an incorrect response. If we left the components like this, OpenSesame would display one and then the other. We need to use a bit of Python trickery to control which component is displayed depending on the response. If you click on trial_sequence, you will see a list of all the components within it. There is a second column called Run if. By default, this is set to always, so each component is displayed on every trial. We can modify this and use the correct variable that is updated on every trial. So if the participant pressed the correct button, this would be recorded as a 1, and if they pressed the wrong button, this would be recorded as a 0. Where it says always, change it to [correct] == 1 next to correct_response, and [correct] == 0 next to incorrect_response. The square brackets means we want to access a variable, and 1 and 0 refers to a correct or incorrect response. We two equals signs compares the values either side of the ==. If they match, it is evaluated as true, and if they do not, it is evaluated as false. Therefore, when we have a correct response, correct_response is run, and when we have an incorrect response, incorrect_response is run. At this point, trial_sequence should look like this:</p>
+# <p><img src="attachment:images/image69.png" style="width:3.97917in;height:4.73958in" /></p>
 # <h3 id="creating-one-final-blank-screen">Creating one final blank screen</h3>
-# <p>The final component we need here is a final blank screen which Rass et al. (2012) call the inter-stimulus interval. Drag and place a new sketchpad component <img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" />called isi after incorrect_response and set the Duration to 500ms. The logger component is already in place from the extended template, so we just need to add some variables in block_loop before we can test if the experiment works at this point.</p>
+# <p>The final component we need here is a final blank screen which Rass et al. (2012) call the inter-stimulus interval. Drag and place a new sketchpad component <img src="attachment:images/image82.png" style="width:0.21368in;height:0.20833in" />called isi after incorrect_response and set the Duration to 500ms. The logger component is already in place from the extended template, so we just need to add some variables in block_loop before we can test if the experiment works at this point.</p>
 # <h3 id="creating-variables-in-block_loop">Creating variables in block_loop</h3>
 # <p>In block_loop, we need three columns: stimulus, congruent, and correct_resp. These need to be typed exactly as they were in the components from earlier. The stimulus variable should have four rows: HHHHH, HHSHH, SSSSS, and SSHSS. This covers all the stimuli outlined in the trial diagram. The congruent variable should be a 1 if the letters are all the same, and a 0 if the outer letters are different to the middle letter. Finally, correct_resp should be h or s depending on whether the middle letter is a h or s. The block_loop should now look like this:</p>
-# <p><img src="attachment:media/image52.png" style="width:5.46875in;height:4.02083in" /></p>
+# <p><img src="attachment:images/image52.png" style="width:5.46875in;height:4.02083in" /></p>
 # <h3 id="time-to-test-the-task">Time to test the task</h3>
-# <p>Now is the time to test out the task using quick run <img src="attachment:media/image71.png" style="width:0.22803in;height:0.2226in" />. It should run through all of the components and present four trials. We do not need to modify the instruction components yet as it is only to make sure the trials are presenting as they should do. If you have copied all the instructions exactly, it should work. If you get an error message, try and track down the problem. If it crashes, it will try and provide you with instructions on where the error was. Look for any typos or if you forgot to follow any of the steps.</p>
+# <p>Now is the time to test out the task using quick run <img src="attachment:images/image71.png" style="width:0.22803in;height:0.2226in" />. It should run through all of the components and present four trials. We do not need to modify the instruction components yet as it is only to make sure the trials are presenting as they should do. If you have copied all the instructions exactly, it should work. If you get an error message, try and track down the problem. If it crashes, it will try and provide you with instructions on where the error was. Look for any typos or if you forgot to follow any of the steps.</p>
 # <h3 id="editing-practice_loop">Editing practice_loop</h3>
 # <p>Before we duplicate practice_loop to create a set of experimental trials, we will adapt the loop settings to create some variables for the data file. In practice_loop, there is already one variable and row called practice and yes. We will change this slightly to say 1 instead of yes. Remember we usually use 1 to mean true. Practice trials are not included when you process the data, so this will make it easy to exclude them later on. We will then add a new variable called block with one row and a 0. We are using a 0 as we will be labelling each experimental block as 1-4. The practice_loop component should now look like this:</p>
-# <p><img src="attachment:media/image4.png" style="width:6.0625in;height:3.70833in" /></p>
+# <p><img src="attachment:images/image4.png" style="width:6.0625in;height:3.70833in" /></p>
 # <h3 id="creating-an-experimental-loop">Creating an experimental loop</h3>
 # <p>Now is the time to copy and paste practice_loop to create our experimental loop. It is very important that we copy an unlinked version of the component, as we want to add some components without changing practice_loop. As you cannot have duplicate component names, all of the new components will have _1 appended to their names. Change the name of practice_loop_1 to experimental_loop. We also do not want two unlinked logger components. This will effectively cause the data file to be twice as wide as each variable is recorded twice. Permanently delete logger_1 and copy and paste a linked version of logger in its place. You should now have an Overview that looks like this at the bottom (note this is missing some of the components at the top):</p>
-# <p><img src="attachment:media/image83.png" style="width:3.67113in;height:8.59896in" /></p>
+# <p><img src="attachment:images/image83.png" style="width:3.67113in;height:8.59896in" /></p>
 # <h3 id="editing-experimental_loop">Editing experimental_loop</h3>
 # <p>We will start by creating some variables in experimental_loop. Instead of block reading 0, we now want four rows with the numbers 1 to 4. This is because we will have four experimental blocks. You can then change the practice variable to have a 0 in each of the four rows as they are no longer practice blocks. Finally, change the Order to sequential so the data file is always organised as blocks 1 to 4. This will come in handy later when we will use the block variable to control when a break screen is displayed. The experimental_loop component should now look like this:</p>
-# <p><img src="attachment:media/image27.png" style="width:6.03125in;height:4.125in" /></p>
+# <p><img src="attachment:images/image27.png" style="width:6.03125in;height:4.125in" /></p>
 # <h3 id="creating-a-break-for-participants">Creating a break for participants </h3>
-# <p>After the end of each experimental block, we want to provide the participant with a break. As the final version of the task has 100 trials in each block, it can be mentally draining, so it is a good idea to provide your participants with an opportunity to rest their eyes. We will change feedback_1 to tell them they have 30 seconds to rest. Double click on the existing text when it changes to a grey colour, and write another line to read ‘You now have a 30 second break.’. By default, the font size is 18. Click on the settings icon <img src="attachment:media/image6.png" style="width:0.36232in;height:0.20833in" /> in the top right corner and click on view script. Change the font size to 32 instead of 18 and click apply and close. We will have to do this for each sketchpad component we edit as changing the default font size only applies to new text elements. Change the Duration to 30000 as this will display the screen for 30 seconds.</p>
+# <p>After the end of each experimental block, we want to provide the participant with a break. As the final version of the task has 100 trials in each block, it can be mentally draining, so it is a good idea to provide your participants with an opportunity to rest their eyes. We will change feedback_1 to tell them they have 30 seconds to rest. Double click on the existing text when it changes to a grey colour, and write another line to read ‘You now have a 30 second break.’. By default, the font size is 18. Click on the settings icon <img src="attachment:images/image6.png" style="width:0.36232in;height:0.20833in" /> in the top right corner and click on view script. Change the font size to 32 instead of 18 and click apply and close. We will have to do this for each sketchpad component we edit as changing the default font size only applies to new text elements. Change the Duration to 30000 as this will display the screen for 30 seconds.</p>
 # <h3 id="telling-the-participants-when-their-break-is-over">Telling the participants when their break is over</h3>
-# <p>We then want to create a new sketchpad component called end_break and place it after feedback_1 within block_sequence_1. In this component, we just need a text element <img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" />informing the participant their break has finished and to press any key to start the next block. Duration is set to keypress by default so you do not have to change this. This is to ensure the participant can begin when they are ready.</p>
+# <p>We then want to create a new sketchpad component called end_break and place it after feedback_1 within block_sequence_1. In this component, we just need a text element <img src="attachment:images/image15.png" style="width:0.23958in;height:0.19792in" />informing the participant their break has finished and to press any key to start the next block. Duration is set to keypress by default so you do not have to change this. This is to ensure the participant can begin when they are ready.</p>
 # <h3 id="controlling-when-the-breaks-are-presented">Controlling when the breaks are presented </h3>
 # <p>If we left it like this, feedback_1 and end_break would run at the end of every block, even at the end of the experiment. This is not necessary, so we can edit the Run if settings in block_sequence_1 to prevent this. Change always to [block] &lt; 4 for both feedback_1 and end_break. This means that these two components will only run on blocks 1 to 3. After the fourth block, we will just get the end of experiment message which tidies the task up. The block_sequence_1 component should now look like this:</p>
-# <p><img src="attachment:media/image77.png" style="width:4.45833in;height:3.55208in" /></p>
+# <p><img src="attachment:images/image77.png" style="width:4.45833in;height:3.55208in" /></p>
 # <h3 id="test-that-the-task-works-again">Test that the task works again</h3>
-# <p>This is the next point where we should make sure the task is working as intended. Use quick run <img src="attachment:media/image71.png" style="width:0.22803in;height:0.2226in" /> to test it is working with only 4 trials in each block. It is a good idea to keep the number of trials very small at the testing stage, so that if there is a mistake later in the experiment that causes it to crash, you have not spent 10 minutes working through the task. If you followed all the instructions, the task should run and there should only be three breaks.</p>
+# <p>This is the next point where we should make sure the task is working as intended. Use quick run <img src="attachment:images/image71.png" style="width:0.22803in;height:0.2226in" /> to test it is working with only 4 trials in each block. It is a good idea to keep the number of trials very small at the testing stage, so that if there is a mistake later in the experiment that causes it to crash, you have not spent 10 minutes working through the task. If you followed all the instructions, the task should run and there should only be three breaks.</p>
 # <h3 id="increasing-the-number-of-trials">Increasing the number of trials </h3>
-# <p>At this point, the skeleton of the task is complete and working as we want it to. All we have left to do is edit all of the messages to be informative and increase the number of trials. Make sure you edit instructions, feedback, and end_of_experiment. Make sure the participants are informed in feedback they will be starting the main experimental trials when they press a button. We know from the instructions in Rass et al. (2012) that there were 20 practice trials and 100 trials in each experimental block. In block_loop, change the repeat setting to 5 to create 20 trials. In block_loop_1, change the repeat setting to 25 to create 100 trials. You can now run the task full screen <img src="attachment:media/image71.png" style="width:0.20833in;height:0.21875in" /> to test it out and get a full data set to explore in the next section.</p>
+# <p>At this point, the skeleton of the task is complete and working as we want it to. All we have left to do is edit all of the messages to be informative and increase the number of trials. Make sure you edit instructions, feedback, and end_of_experiment. Make sure the participants are informed in feedback they will be starting the main experimental trials when they press a button. We know from the instructions in Rass et al. (2012) that there were 20 practice trials and 100 trials in each experimental block. In block_loop, change the repeat setting to 5 to create 20 trials. In block_loop_1, change the repeat setting to 25 to create 100 trials. You can now run the task full screen <img src="attachment:images/image71.png" style="width:0.20833in;height:0.21875in" /> to test it out and get a full data set to explore in the next section.</p>
 # <h2 id="analysing-response-time-data-from-the-eriksen-flanker-task">Analysing response time data from the Eriksen Flanker task</h2>
 # <p>After running the task, you should have a data set with 420 trials to work with. Follow the same instructions as task one to import the data set into SPSS as a .csv file depending on whether you are using version 23 or 25 of SPSS. Before looking at the reaction times, we will follow the same procedure as task one and remove any extreme and incorrect responses.</p>
 # <h3 id="removing-unwanted-trials">Removing unwanted trials</h3>
 # <p>Follow the previous instructions from task one to code extreme responses as 1 and acceptable responses as 0. For this experiment, we will also remove the practice trials. If you click on Data &gt; Select Cases, and then if condition is satisfied, we need to specify three criteria: correct = 1 &amp; practice = 0 &amp; extreme_response = 0. Your window should look like this:</p>
-# <p><img src="attachment:media/image51.png" style="width:6.17188in;height:4.34375in" /></p>
+# <p><img src="attachment:images/image51.png" style="width:6.17188in;height:4.34375in" /></p>
 # <p>If you click Continue and then OK, SPSS will remove the first 20 rows and any incorrect/extreme responses. You will probably notice that you made quite a few errors. The aim of this task in Rass et al. (2012) was to force participants to make several mistakes as they were interested in how participants responded to making errors using EEG. My accuracy was approximately 85% in each block.</p>
 # <h3 id="calculating-the-response-time-to-congruent-and-incongruent-trials">Calculating the response time to congruent and incongruent trials</h3>
 # <p>We can now look at the difference in respone time between congruent and incongruent trials. In order to calculate the median response time, click Analyze &gt; Descriptive Statistics &gt; Explore. Drag response_time into Dependent List and congruent into Factor List. Select Statistics under Display, and click OK to get the output. The Explore window should look like this:</p>
-# <p><img src="attachment:media/image64.png" style="width:4.71875in;height:3.38542in" /></p>
+# <p><img src="attachment:images/image64.png" style="width:4.71875in;height:3.38542in" /></p>
 # <p>For my data, my median reaction time to congruent stimuli (congruent = 1) was 330ms, but for incongruent stimuli (congruent = 0) it was 363ms. This shows a small effect of distracting noise on target identification. If you were to run an experiment using this task, you would record these values per participant like this:</p>
 # <table>
 # <thead>
@@ -855,82 +855,82 @@
 # <h3 id="dedandt-et-al.-2017-were-interested-in-comparing-smokers-and-non-smokers-on-their-ability-to-inhibit-a-response.-they-were-also-interested-if-different-backgrounds-would-influence-the-smokers-ability-to-inhibit-a-response.-therefore-three-different-backgrounds-were-used-a-smoking-cue-a-non-smoking-cue-and-a-neutral-cue.-if-we-look-in-the-method-section-of-dedandt-et-al.-2017-there-is-a-task-diagram-and-a-description-of-the-task.-we-will-go-through-the-design-of-each-trial-and-how-the-whole-task-is-structured.">Dedandt et al. (2017) were interested in comparing smokers and non-smokers on their ability to inhibit a response. They were also interested if different backgrounds would influence the smokers’ ability to inhibit a response. Therefore, three different backgrounds were used: a smoking cue, a non-smoking cue, and a neutral cue. If we look in the method section of Dedandt et al. (2017), there is a task diagram and a description of the task. We will go through the design of each trial, and how the whole task is structured.</h3>
 # <h3 id="what-is-the-structure-of-one-trial">What is the structure of one trial? </h3>
 # <p>For the structure of each trial, the authors include this helpful diagram on page 1876 (this is cropped slightly):</p>
-# <p><img src="attachment:media/image63.png" style="width:6.41667in;height:2.75in" /></p>
+# <p><img src="attachment:images/image63.png" style="width:6.41667in;height:2.75in" /></p>
 # <p>We can see from the diagram that each trial begins with the presentation of the background for 500ms. In contrast to our two previous tasks, there does not appear to be a fixation cross/dot included in this task. A Go or NoGo cue is then presented on the screen for 200ms. On Go trials, this is a letter ‘M’ superimposed onto the background. On NoGo trials, this is the letter ‘W’. After the offset of the cue, there is a 1300ms period where the participant can make a response. The start of the next trial then begins with the next 500ms screen.</p>
 # <h3 id="what-is-the-structure-of-the-whole-experiment">What is the structure of the whole experiment? </h3>
 # <p>For the structure of the whole task, the study explains there are six experimental blocks. There were five backgrounds used in the task, two smoking images, two non-smoking images, and a blank black background. In contrast to Rass et al. (2012) in the last section, there is quite a bit of missing information that we would need to fully reproduce the task. First, there is no mention of a practice block. Second, the study does not explain that the same black background is used in two blocks. Third, it is not directly explained that one background is shown per block. You can work it out from the introduction and other information in the methods section, but it is not directly specified. These details can be found in another paper which the methodology is based on (Petit et al. 2012). This is a common occurrence, as research teams often produce several publications based on the same method, but to prevent repeating the details in each article, they just reference the first. Finally, it does not explain what kind of break was provided to the participants in between each block. We will give people 30 seconds in order to rest their eyes.</p>
 # <p>Although we are trying to recreate the task from Dedandt et al. (2017), there is one feature we are going to consciously change: the proportion of Go and NoGo trials. In order to measure inhibitory control, the response to Go stimuli should be be prepotent, meaning you should want to quickly respond, in comparison to the NoGo trials. A long list of studies have been criticised for having too many NoGo trials (Wessel 2017; for a graphical explanation, see <a href="http://www.flexiblemeasures.com/nogo/"><span class="underline">FlexibleMeasures</span></a>). Therefore, Go-NoGo tasks should have a maximum of 20% NoGo trials. As Dedandt et al. (2017) had 30% of the trials as NoGo, we are going to tweak it slightly to be a more valid measure of inhibitory control. Therefore, instead of including 93 Go and 40 NoGo trials per block, we will include 100 Go trials and 25 NoGo trials per block. Similar to the Eriksen Flanker task, we can visualise the structure of the whole experiment like this:</p>
-# <p><img src="attachment:media/image14.png" style="width:5.72673in;height:3.24479in" /></p>
+# <p><img src="attachment:images/image14.png" style="width:5.72673in;height:3.24479in" /></p>
 # <h2 id="creating-the-task-in-opensesame">Creating the task in OpenSesame</h2>
 # <p>To start this task, we will use the extended template to create the general structure of the experiment. Click on Extended template in the Overview window. Begin by changing the title of the experiment to “Smoking Go-NoGo” by clicking on the blue main title. The resolution will need changing to your monitor’s dimensions, and the default text size should be 32 px. Permanently delete the experimental_loop so we can change the number of trials later without having to change all the blocks.</p>
 # <h3 id="adding-images-to-the-file-pool">Adding images to the file pool</h3>
-# <p>This task will use images as the background in order to manipulate the type of cues the participant is viewing. If we want to use images in OpenSesame, we need to make them accessible. To do this, we need to add them to the file pool <img src="attachment:media/image66.png" style="width:0.20833in;height:0.21667in" />. The images we will use for this task are from an experiment I have conducted before, and features two smoking images and two matched non-smoking images. They are available in the guide package. When you use images in experiments, it is important they are the same size. If you take the images on the same camera, this should not be a problem as they will all have the same dimensions. However, if you find the images on the internet, they may be all different sizes and you would need to adjust them using image editing software such as Photoshop. In order to add images into the file pool, click on the file pool in the menu <img src="attachment:media/image66.png" style="width:0.20833in;height:0.21667in" />, and click the small green add symbol. This will allow you to browse your computer and select the files. When you have added all four images, the file pool should look like this:</p>
-# <p><img src="attachment:media/image38.png" style="width:5.08333in;height:1.83333in" /></p>
+# <p>This task will use images as the background in order to manipulate the type of cues the participant is viewing. If we want to use images in OpenSesame, we need to make them accessible. To do this, we need to add them to the file pool <img src="attachment:images/image66.png" style="width:0.20833in;height:0.21667in" />. The images we will use for this task are from an experiment I have conducted before, and features two smoking images and two matched non-smoking images. They are available in the guide package. When you use images in experiments, it is important they are the same size. If you take the images on the same camera, this should not be a problem as they will all have the same dimensions. However, if you find the images on the internet, they may be all different sizes and you would need to adjust them using image editing software such as Photoshop. In order to add images into the file pool, click on the file pool in the menu <img src="attachment:images/image66.png" style="width:0.20833in;height:0.21667in" />, and click the small green add symbol. This will allow you to browse your computer and select the files. When you have added all four images, the file pool should look like this:</p>
+# <p><img src="attachment:images/image38.png" style="width:5.08333in;height:1.83333in" /></p>
 # <h3 id="creating-the-background-screen">Creating the background screen</h3>
-# <p>We will create a single trial in trial_sequence using three different components. The first component will be a blank background and we can rename sketchpad to background. The start of each trial is just the background which is presented for 500ms. For each block, the background will be an image we added to the file pool or a plain black screen. This means we need to insert an image <img src="attachment:media/image56.png" style="width:0.20833in;height:0.19792in" />element into the centre of the screen at coordinate 0,0. When you click where you want the image, you will be prompted to select an image from the file pool. Select any image as we will be changing it to a variable later.</p>
-# <p>We need to adapt the script, so click on View script under settings<img src="attachment:media/image6.png" style="width:0.36232in;height:0.20833in" />. By default, the sketchpad component contains a fixdot element, but we do not need it in this experiment. Delete the line starting with draw fixdot. Next, we will edit the image element. The file argument will say something like file = “F1.jpg”. We need to change this to file = “[image]” as we will be controlling it using a variable later. Next, change scale from 1 to 1.25 to make the image slightly larger, as its default size does not quite fill the screen (for different images, this would be something you would need to tweak yourself). Finally, at the moment, this will always present an image. One of the backgrounds is just plain black. One option would be to add an image that is just a black rectangle. Another option is to just show the black background of OpenSesame by controlling when the image is shown. We will do this using a little Python magic. By default, the image is always presented indicated by the argument show_if = always. We can change this to stop an image being presented when we want the background to be black. Change the show_if argument to show_if = “[cue_type] != ‘neutral’”. There is quite a bit going on here, so we will break it down step by step. [cue_type] refers to a yet unspecified variable which we will include in a loop later. The != is Python code meaning “does not equal”. If you remember before we used == to mean “equals”. This means we only want the image element to show when [cue_type] is not ‘neutral’. The quote marks are really important here. There should two dashes (“”) on the outside of the argument, and single dashes (‘’) around neutral. This is indicating to OpenSesame that ‘neutral’ is a string (letters not numbers). Click on apply and close when the script looks like this:</p>
-# <p><img src="attachment:media/image75.png" style="width:6.5in;height:2.04167in" /></p>
+# <p>We will create a single trial in trial_sequence using three different components. The first component will be a blank background and we can rename sketchpad to background. The start of each trial is just the background which is presented for 500ms. For each block, the background will be an image we added to the file pool or a plain black screen. This means we need to insert an image <img src="attachment:images/image56.png" style="width:0.20833in;height:0.19792in" />element into the centre of the screen at coordinate 0,0. When you click where you want the image, you will be prompted to select an image from the file pool. Select any image as we will be changing it to a variable later.</p>
+# <p>We need to adapt the script, so click on View script under settings<img src="attachment:images/image6.png" style="width:0.36232in;height:0.20833in" />. By default, the sketchpad component contains a fixdot element, but we do not need it in this experiment. Delete the line starting with draw fixdot. Next, we will edit the image element. The file argument will say something like file = “F1.jpg”. We need to change this to file = “[image]” as we will be controlling it using a variable later. Next, change scale from 1 to 1.25 to make the image slightly larger, as its default size does not quite fill the screen (for different images, this would be something you would need to tweak yourself). Finally, at the moment, this will always present an image. One of the backgrounds is just plain black. One option would be to add an image that is just a black rectangle. Another option is to just show the black background of OpenSesame by controlling when the image is shown. We will do this using a little Python magic. By default, the image is always presented indicated by the argument show_if = always. We can change this to stop an image being presented when we want the background to be black. Change the show_if argument to show_if = “[cue_type] != ‘neutral’”. There is quite a bit going on here, so we will break it down step by step. [cue_type] refers to a yet unspecified variable which we will include in a loop later. The != is Python code meaning “does not equal”. If you remember before we used == to mean “equals”. This means we only want the image element to show when [cue_type] is not ‘neutral’. The quote marks are really important here. There should two dashes (“”) on the outside of the argument, and single dashes (‘’) around neutral. This is indicating to OpenSesame that ‘neutral’ is a string (letters not numbers). Click on apply and close when the script looks like this:</p>
+# <p><img src="attachment:images/image75.png" style="width:6.5in;height:2.04167in" /></p>
 # <h3 id="creating-the-response-screen">Creating the response screen</h3>
-# <p>The next component we need is to display the cue that participants will need to respond to. To save having to repeat the procedure for the last component, copy and paste an unlinked version of background after the first background, and rename it stimulus_response. This component should have a duration of 200ms. This will be the same screen, but with a response cue and black circle superimposed on the background image. First, select a circle element <img src="attachment:media/image35.png" style="width:0.20833in;height:0.19792in" /> , click and drag it on the gridlines to increase the size. It may not appear exactly in the middle of the screen, so click the mouse element <img src="attachment:media/image53.png" style="width:0.23438in;height:0.20833in" /> from the side menu and drag the circle over the centre of the grid at coordinates 0,0. We will change it’s exact size later when we edit the script. Next, add a text element<img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" /> in the centre of the screen at coordinates 0,0 and enter the letter M. Again, we will edit this in the script in order to be controlled by a variable. Now that we have all the elements we need, we can open the script under settings<img src="attachment:media/image6.png" style="width:0.36458in;height:0.20833in" /> and make the necessary edits. The image element should look the same as in the previous step. The next element is the circle element. In the figure from Dedandt et al. (2017), we can see the circle is solid black. By default, the color of the circle is set to white and not filled (indicated by fill = 0). Change color to black, and fill to 1. Change the radius (r) to 19 as this just covers the size of the text. Now we need to edit the text element. Change color to yellow to be consistent with the original study, and change the text to [stim_letter]. This is short for stimulus letter and we are preempting another variable we will set in the loop. The script for stimulus_response should now look like this:</p>
-# <p><img src="attachment:media/image84.png" style="width:8.44351in;height:1.27083in" /></p>
+# <p>The next component we need is to display the cue that participants will need to respond to. To save having to repeat the procedure for the last component, copy and paste an unlinked version of background after the first background, and rename it stimulus_response. This component should have a duration of 200ms. This will be the same screen, but with a response cue and black circle superimposed on the background image. First, select a circle element <img src="attachment:images/image35.png" style="width:0.20833in;height:0.19792in" /> , click and drag it on the gridlines to increase the size. It may not appear exactly in the middle of the screen, so click the mouse element <img src="attachment:images/image53.png" style="width:0.23438in;height:0.20833in" /> from the side menu and drag the circle over the centre of the grid at coordinates 0,0. We will change it’s exact size later when we edit the script. Next, add a text element<img src="attachment:images/image15.png" style="width:0.23958in;height:0.19792in" /> in the centre of the screen at coordinates 0,0 and enter the letter M. Again, we will edit this in the script in order to be controlled by a variable. Now that we have all the elements we need, we can open the script under settings<img src="attachment:images/image6.png" style="width:0.36458in;height:0.20833in" /> and make the necessary edits. The image element should look the same as in the previous step. The next element is the circle element. In the figure from Dedandt et al. (2017), we can see the circle is solid black. By default, the color of the circle is set to white and not filled (indicated by fill = 0). Change color to black, and fill to 1. Change the radius (r) to 19 as this just covers the size of the text. Now we need to edit the text element. Change color to yellow to be consistent with the original study, and change the text to [stim_letter]. This is short for stimulus letter and we are preempting another variable we will set in the loop. The script for stimulus_response should now look like this:</p>
+# <p><img src="attachment:images/image84.png" style="width:8.44351in;height:1.27083in" /></p>
 # <p>The final thing to note here is the order of the elements is very important. OpenSesame presents them in layers, so the first element is created first, then the second, and so forth. We need to create the image, then the circle, and then the text. If we had a different order, the text or circle would not be visible, which we do not want. Click apply and close, and we will move on to the next component.</p>
 # <h3 id="creating-a-response-screen">Creating a response screen</h3>
 # <p>The final sketchpad component we need here is a plain background again, as the stimulus is only presented for 200ms and then disappears. Copy and paste another unlinked version of background after stimulus_response. Change the name to background_response and set the duration to 0. We will be using keyboard_response to control the duration. In keyboard_response, change Correct response to [correct_resp], Allowed responses to ‘m’ as this is the only response we will need, and Timeout to 1300. The logger is already there, so these are all the components we need. We can now start to add in all the variables we have preempted into block_loop.</p>
 # <h3 id="defining-variables-in-block_loop">Defining variables in block_loop</h3>
 # <p>There are three variables we need to change on a trial by trial basis. The first variable we want to define is not relevant for the experiment, but it will be helpful for data analysis later. Label the first variable trial_type and enter four rows of ‘go’ and one row of ‘nogo’. In the second column, type stim_letter to control which letter we are presenting. For each ‘go’ trial enter a capital ‘M’, and for the ‘nogo’ trial enter a capital ‘W’. Finally, create a third variable called correct_resp. For each ‘M’ in stim_letter, write a lowercase ‘m’. For the ‘nogo’ trial where we have a ‘W’, write ‘None’. As we are testing the participant’s ability to resist making a response on ‘nogo’ trials, the correct response should be nothing at all. This means we want keyboard_response to time out, which OpenSesame records for the response as ‘None’. Therefore, if we enter ‘None’ for correct_resp, we will get an accurate recording for correct responses and accuracy in the data file. These are all the variables we need to define in this loop component. The loop should look like this when you have finished:</p>
-# <p><img src="attachment:media/image37.png" style="width:3.34375in;height:2.27083in" /></p>
+# <p><img src="attachment:images/image37.png" style="width:3.34375in;height:2.27083in" /></p>
 # <h3 id="defining-the-background-image-in-practice_loop">Defining the background image in practice_loop</h3>
 # <p>At this point, you may be thinking where we will define the background image. We saw from Dedandt et al. (2017) that we want one image to be presented per block in order to display the same background for a long period of time. Therefore, we are going to define the background image in the outer loop called practice_loop. As this is the practice loop, we only want one block to let the participant try out the task and make sure they understand what they’re doing. The first variable should be practice, and this should be set to 1 to indicate true. The second variable should be ‘image’ and set to ‘F1.jpg’ in reference to one of the images we saved in the file pool. Finally, we need a variable called ‘cue_type’ with one row set to ‘neutral’. During the practice block, it is best to avoid using stimuli that will be in the experimental blocks as the participants may get used to it. We are only defining this image here as we need the image to exist in our file pool or the experiment will crash. However, as we are setting cue_type to ‘neutral’, the image will not display because of how we defined the show_if argument in the image elements. For the practice block, we will just present the participants with a blank black screen. The practice_loop component should now look like this:</p>
-# <p><img src="attachment:media/image61.png" style="width:2.71875in;height:1.125in" /></p>
+# <p><img src="attachment:images/image61.png" style="width:2.71875in;height:1.125in" /></p>
 # <h3 id="test-the-experiment-1">Test the experiment</h3>
-# <p>At this point, we can test the experiment to make sure it works in its current form. If everything has been defined correctly, you should be able to quick run the experiment<img src="attachment:media/image71.png" style="width:0.22803in;height:0.2226in" />and complete five trials. Remember you should avoid making a response when the letter ‘W’ appears.</p>
+# <p>At this point, we can test the experiment to make sure it works in its current form. If everything has been defined correctly, you should be able to quick run the experiment<img src="attachment:images/image71.png" style="width:0.22803in;height:0.2226in" />and complete five trials. Remember you should avoid making a response when the letter ‘W’ appears.</p>
 # <h3 id="creating-the-experimental_loop">Creating the experimental_loop</h3>
 # <p>Now that we know the task works in principle, we can scale it up to include experimental blocks and change the background image. Copy and paste an unlinked version of practice_loop and place it after end_of_practice. We do not need end_of_practice, so you can permanently delete it. The overview of your experiment should now look like this:</p>
-# <p><img src="attachment:media/image32.png" style="width:2.4824in;height:6.04688in" /></p>
+# <p><img src="attachment:images/image32.png" style="width:2.4824in;height:6.04688in" /></p>
 # <p>Rename practice_loop_1 to experimental_loop, and permanently delete logger_1. Copy and paste a linked version of logger in the place of logger_1 after keyboard_response_1. This will ensure we have a tidier data file.</p>
 # <h3 id="specifying-the-background-images">Specifying the background images </h3>
 # <p>We can now edit experimental_loop to control the background image on each block. The first row should already be there from copying and pasting the loop. This can stay the same as we need one black background screen. All you need to change is practice to 0 as this is now the experimental loop. We will create five more blocks. The image column should have five more rows with F1.jpg, F1.jpg, F11.jpg, N1.jpg, and N11.jpg. For the first two instances of F1.jpg, cue_type should be ‘neutral’ to create two blocks with a black background. For the remaining images starting with ‘F’, cue_type should be ‘smoking’, and for the images starting with ‘N’, cue_type should be ‘nonsmoking’. All the rows should have a 0 for practice. The experimental_loop component should now look like this:</p>
-# <p><img src="attachment:media/image23.png" style="width:3.01042in;height:2.13345in" /></p>
-# <p>Order should be kept as random, as we want a new order of experimental blocks per participant. At this point, we can test the experiment again using quickrun <img src="attachment:media/image71.png" style="width:0.22803in;height:0.2226in" /> in order to be certain that all the images are displaying properly and the blocks are presenting as we want them to. One image should be presented in each block, apart from two blocks will just have a black background.</p>
+# <p><img src="attachment:images/image23.png" style="width:3.01042in;height:2.13345in" /></p>
+# <p>Order should be kept as random, as we want a new order of experimental blocks per participant. At this point, we can test the experiment again using quickrun <img src="attachment:images/image71.png" style="width:0.22803in;height:0.2226in" /> in order to be certain that all the images are displaying properly and the blocks are presenting as we want them to. One image should be presented in each block, apart from two blocks will just have a black background.</p>
 # <h3 id="editing-the-instruction-components">Editing the instruction components</h3>
 # <p>Now we can focus on tidying up the instructions. The first thing to change is instructions. Here you can edit the text and explain to prospective participants that they need to press the letter ‘m’ when they see an ‘M’, and withhold a response when they see a ‘W’. Remember for any text you are editing, you will need to change the font size to 32 manually by editing the script. In feedback, we need to explain to the participants that they will begin the experimental trials when they press a button. In feedback_1, we need to explain to the participants that they have a 30 second break. Make sure you change the duration to 30000. We now need to insert a new sketchpad component called end_of_break after feedback_1. Write a message explaining to participants that their break has finished and ensure they can start the next block with a keypress. Finally, change end_of_experiment to thank the participants for their time and they can exit the experiment by pressing any button.</p>
 # <h3 id="controlling-when-the-breaks-are-presented-1">Controlling when the breaks are presented </h3>
-# <p>In the last experiment, we stopped feedback_1 and end_of_break from appearing after the final block. Each block was identical, so we just presented each block sequentially and used the number of the fourth block to stop the two components from appearing. However, this time it is not so simple. We cannot simply label each block 1 to 5 as they are being randomly presented. What we need is to label each block as we go along so the background is free to be randomly presented. We can do this by inserting two inline script components <img src="attachment:media/image55.png" style="width:0.22523in;height:0.20833in" />. Insert the first after instructions and name it block_start. In the prepare tab, write var.block = 0. This creates a new variable called block and assigns the number 0. Then insert another inline script component <img src="attachment:media/image55.png" style="width:0.22523in;height:0.20833in" />called block_count between reset_feedback_1 and block_loop_1 in experimental_loop. Here we need to write var.block = var.block + 1 in the prepare tab. For each loop around experimental_loop this assigns var.block to equal the previous value for block plus one. The positioning of these two inline script components is very important. We want block_start to be outside of experimental_loop as we do not want it to be reset to 0 on on each cycle around the loop. We also want block_count to be in experimental_group and not block_loop_1. If we placed it in block_loop_1, it would increase by one on each trial. We want it to increase by one on each block, so by the time we get to the fifth block, block will equal 5. This means that we can enter some short Python code into block_sequence_1 to control when feedback_1 and end_of_break are run. Where it says always, change it to [block] &lt; 5 for feedback_1 and end_of_break. The block_sequence_1 component should now look like this:</p>
-# <p><img src="attachment:media/image48.png" style="width:2.53125in;height:2.45833in" /></p>
-# <p>Test the experiment one last time before we increase the number of trials. Use quickrun <img src="attachment:media/image71.png" style="width:0.22803in;height:0.2226in" /> to test the experiment in a separate screen. The two break screens should not appear after the final break.</p>
+# <p>In the last experiment, we stopped feedback_1 and end_of_break from appearing after the final block. Each block was identical, so we just presented each block sequentially and used the number of the fourth block to stop the two components from appearing. However, this time it is not so simple. We cannot simply label each block 1 to 5 as they are being randomly presented. What we need is to label each block as we go along so the background is free to be randomly presented. We can do this by inserting two inline script components <img src="attachment:images/image55.png" style="width:0.22523in;height:0.20833in" />. Insert the first after instructions and name it block_start. In the prepare tab, write var.block = 0. This creates a new variable called block and assigns the number 0. Then insert another inline script component <img src="attachment:images/image55.png" style="width:0.22523in;height:0.20833in" />called block_count between reset_feedback_1 and block_loop_1 in experimental_loop. Here we need to write var.block = var.block + 1 in the prepare tab. For each loop around experimental_loop this assigns var.block to equal the previous value for block plus one. The positioning of these two inline script components is very important. We want block_start to be outside of experimental_loop as we do not want it to be reset to 0 on on each cycle around the loop. We also want block_count to be in experimental_group and not block_loop_1. If we placed it in block_loop_1, it would increase by one on each trial. We want it to increase by one on each block, so by the time we get to the fifth block, block will equal 5. This means that we can enter some short Python code into block_sequence_1 to control when feedback_1 and end_of_break are run. Where it says always, change it to [block] &lt; 5 for feedback_1 and end_of_break. The block_sequence_1 component should now look like this:</p>
+# <p><img src="attachment:images/image48.png" style="width:2.53125in;height:2.45833in" /></p>
+# <p>Test the experiment one last time before we increase the number of trials. Use quickrun <img src="attachment:images/image71.png" style="width:0.22803in;height:0.2226in" /> to test the experiment in a separate screen. The two break screens should not appear after the final break.</p>
 # <h3 id="increase-the-number-of-trials-1">Increase the number of trials </h3>
 # <p>In block_loop, change the number of repeats to 5 to create a practice block featuring 25 trials. In block_loop_1, we need to set the number of repeats to 25 in order to create 125 trials per experimental block. The experiment should now be in its completed form providing all the instruction components have been edited to be informative to the participants.</p>
 # <h3 id="test-the-experiment-full-screen">Test the experiment full screen</h3>
-# <p>You can now run the experiment full screen <img src="attachment:media/image71.png" style="width:0.20833in;height:0.21875in" /> to get a data set ready to analyse in the next section. At 750 trials, this is a pretty hefty task so it will take approximately 20-30 minutes to complete.</p>
+# <p>You can now run the experiment full screen <img src="attachment:images/image71.png" style="width:0.20833in;height:0.21875in" /> to get a data set ready to analyse in the next section. At 750 trials, this is a pretty hefty task so it will take approximately 20-30 minutes to complete.</p>
 # <h2 id="analysing-the-data-from-the-task">Analysing the data from the task</h2></td>
 # </tr>
 # <tr class="even">
 # <td><p>The Go NoGo task provides you with a few options for what you can use as your outcome variable. In the original study by Dedandt et al. (2017), they report three different outcomes: reaction times on Go trials, omission error rates (not pressing a button on Go trials), and commission error rates (pressing a button on Nogo trials). We will go through how you can calculate each one. However, if you were to use this task yourself, it is important to think about which measures you are interested in. Try and avoid analysing several outcomes and seeing which one works unless you are specifically conducting exploratory research.</p>
 # <h3 id="import-the-csv-data-into-spss">Import the csv data into SPSS</h3>
 # <p>Follow the instructions from the first task for importing the .csv data file from the experiment. You should have a screen that looks like this with 775 rows including the practice trials:</p>
-# <p><img src="attachment:media/image21.png" style="width:6.41667in;height:3.36111in" /></p>
+# <p><img src="attachment:images/image21.png" style="width:6.41667in;height:3.36111in" /></p>
 # <h3 id="coding-extreme-responses">Coding extreme responses</h3>
 # <p>This time we do not need to take out the incorrect responses as they are important for calculating the error rates. However, we still need to remove the 25 practice trials and extreme responses. Because of the nogo trials, we need to think more carefully about how we exclude extreme responses. In the previous tasks, we excluded any response outside of 100-1000ms. However, on nogo trials, the participants should not be pressing anything, which means the response time should always be 1300ms. This would mean all nogo trials would be excluded if we performed the same extreme response removal procedure. Click on Transform &gt; Recode into Different Variables. We can still call the Output Variable “extreme_response” and create the same Old and New Values. As a reminder, the menus should look like this:</p>
-# <p><img src="attachment:media/image68.png" style="width:6.35938in;height:2.58333in" /></p>
+# <p><img src="attachment:images/image68.png" style="width:6.35938in;height:2.58333in" /></p>
 # <p>Click Continue on the Old and New Values screen. In the Recode into Different Variables menu, click on If... above the OK button. Click Include if case satisfies condition and type trial_type = ‘go’. This means we only want to recode go trials, and ignore nogo trials for now. The menu should look like this:</p>
-# <p><img src="attachment:media/image22.png" style="width:6.35417in;height:4.9375in" /></p>
+# <p><img src="attachment:images/image22.png" style="width:6.35417in;height:4.9375in" /></p>
 # <p>Click Continue and OK, and the extreme_response column should have a 1.00 for extreme go responses, 0 for acceptable, and blank for nogo trials. The blank responses are created as we told SPSS to just recode go responses. Blank entries are not helpful, so we need to fill them in with a 0 for nogo trials.</p>
 # <p>Click Transform &gt; Recode into Same Variables. This allows us to change values in the same column, rather than computing another one as we have done previously. Drag extreme_response into Numeric Variables and click on Old and New Values. Click System-missing under Old Value and type 0 into Value under New Value and click Add. The screen should look like this:</p>
-# <p><img src="attachment:media/image85.png" style="width:6.28125in;height:3.625in" /></p>
+# <p><img src="attachment:images/image85.png" style="width:6.28125in;height:3.625in" /></p>
 # <p>If you click Continue and OK, this will fill in all the missing values with a 0 for our nogo trials.</p>
 # <h3 id="removing-extreme-responses-and-practice-trials">Removing extreme responses and practice trials</h3>
 # <p>We can now select cases using this the extreme_response column. Click on Data &gt; Select Cases, and if condition is satisfied. As we labelled the blocks starting as 0, we can select block &gt; 0. This will remove the practice block and leave blocks 1-6. In addition, include extreme_response = 0. The select cases window should look like this:</p>
-# <p><img src="attachment:media/image40.png" style="width:5.17708in;height:3.60738in" /></p>
+# <p><img src="attachment:images/image40.png" style="width:5.17708in;height:3.60738in" /></p>
 # <p>Click continue and OK to apply the select cases. This will cross out any practice trials and extreme go responses. Remember we want to retain incorrect responses for the analysis of error rates.</p>
 # <h3 id="calculating-error-rates">Calculating error rates </h3>
 # <p>We can calculate the omission and commission error rates together. Click on Analyze &gt; Descriptive Statistics &gt; Explore. Drag the correct variable In the Dependent List box. One of the benefits of coding correct and incorrect responses as 1 and 0 is calculating the mean provides you with the percentage correct. For example, if you have 100 trials and get 75 correct, the mean of the correct variable would be 0.75 (75%). Now drag cue_type and trial_type into Factor List. Finally, we only need statistics so click Statistics under display. If we pressed OK now, we would get two outputs, one table for correct split by cue_type, and one table for correct split by trial_type. SPSS can be stubborn and does not provide us with the option to split correct by the <em>combination</em> of cue_type and trial_type through the menu. However, we can edit the underlying syntax to get SPSS to do it. Click on Paste and this is the underlying syntax that SPSS uses to specify the analyses. You should have a window that looks like this:</p>
-# <p><img src="attachment:media/image58.png" style="width:5.84845in;height:2.11979in" /></p>
+# <p><img src="attachment:images/image58.png" style="width:5.84845in;height:2.11979in" /></p>
 # <p>We are interested in the first line of syntax. This is telling us we are examining correct by cue_type and trial_type. In order to examine correct by the interaction of the two variables, we simply need to add a star (*) between the two factors. This tells SPSS we want the combination of the two variables. You should now have a syntax screen that looks like this:</p>
-# <p><img src="attachment:media/image5.png" style="width:5.77957in;height:2.15104in" /></p>
+# <p><img src="attachment:images/image5.png" style="width:5.77957in;height:2.15104in" /></p>
 # <p>In order to get the statistics, we need to click the big green arrow to run the syntax. In the SPSS output, the first table should look like this:</p>
-# <p><img src="attachment:media/image49.png" style="width:6.26042in;height:2.3125in" /></p>
+# <p><img src="attachment:images/image49.png" style="width:6.26042in;height:2.3125in" /></p>
 # <p>This tells us we should have the information we want and correct is broken down by the combination of cue_type and trial_type. Note there are some missing go trials because of extreme responses. In order to get our first two outcome variables, we need the mean of correct for each combination of the variables in the Descriptives table. The Descriptives table should look like this:</p>
-# <p><img src="attachment:media/image42.png" style="width:4.13021in;height:4.47917in" /></p>
+# <p><img src="attachment:images/image42.png" style="width:4.13021in;height:4.47917in" /></p>
 # <p>This is a shortened version that shows the output for the neutral cue_type. In order to get the same outcome variable as Dedandt et al. (2017), we need to subtract the mean from 1 for both go and nogo trials. For my data, I would record the different conditions like this in my data file:</p>
 # <table>
 # <thead>
@@ -959,12 +959,12 @@
 # <p>This shows that I did not make any omission errors, and my commision error rate was around 20% for each cue condition.</p>
 # <h3 id="reporting-greater-precision">Reporting greater precision</h3>
 # <p>SPSS usually reports to two decimal places, which is fine for most purposes, and it is the precision reported in the original article. However, if we wanted a more precise answer, you can see the full number by double clicking on the table and clicking on the cell you are interested in. It should look like this:</p>
-# <p><img src="attachment:media/image57.png" style="width:6.41667in;height:4.02083in" /></p>
+# <p><img src="attachment:images/image57.png" style="width:6.41667in;height:4.02083in" /></p>
 # <h3 id="calculating-the-response-time-to-go-stimuli">Calculating the response time to go stimuli</h3>
 # <p>Calculating the median RT follows the same process as before but using response_time as the dependent variable instead of correct. This time we do have to remove incorrect responses as they may be an unreliable source for the response times. Edit the Select Cases menu and add correct = 1. It should now read: block &gt; 0 &amp; extreme_response = 0 &amp; correct = 1. In order to calculate the median RT, follow the instructions from the last example for the explore menu but replace correct with response_time. When you click paste and add the * between the two factors, the syntax window should now look like this:</p>
-# <p><img src="attachment:media/image76.png" style="width:6.41667in;height:2.29167in" /></p>
+# <p><img src="attachment:images/image76.png" style="width:6.41667in;height:2.29167in" /></p>
 # <p>All that we replaced is response_time before BY cue_type * trial_type. We could have even wrote this in the syntax ourselves if we typed it exactly as it is in the data file. Press the green arrow to run the syntax again. For the descriptives table in the output, you should have something that looks like this:</p>
-# <p><img src="attachment:media/image43.png" style="width:6.35417in;height:4.23491in" /></p>
+# <p><img src="attachment:images/image43.png" style="width:6.35417in;height:4.23491in" /></p>
 # <p>We are only interested in the go trials this time, so we only need to record three values. For my data I would record it like this:</p>
 # <table>
 # <thead>
@@ -1013,7 +1013,7 @@
 #     > as I press a key after the instructions, the experiment closes and
 #     > I get the following message:
 # 
-# <img src="attachment:media/image16.png" style="width:6.5in;height:2.54167in" />
+# <img src="attachment:images/image16.png" style="width:6.5in;height:2.54167in" />
 # 
 # > OpenSesame provides us with a reason for the experiment crashing: the
 # > variable “cuetype” does not exist. At this point, you realise you

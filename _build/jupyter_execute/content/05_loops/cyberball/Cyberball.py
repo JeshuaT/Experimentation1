@@ -85,11 +85,11 @@
 # 
 # TODO quiz break if
 # 
-# Now let these loops run a sequence called `play1_seq` and `play3_seq` that contain an inline_script (name the scripts `prepare_player1` and `prepare_player3` respectively) and a subsequently presented media player `media_player_mpy`. 
+# Now let these loops run a sequence called `play1_seq` and `play3_seq` that contain an inline_script (name the scripts `prepare_player1` and `prepare_player3` respectively) and a subsequently presented images player `media_player_mpy`.
 # 
-# Make sure you use the same media player object in both sequences (Hint: use the Copy (linked) - Paste feature using right mouse button clicks in the Overview area).
+# Make sure you use the same images player object in both sequences (Hint: use the Copy (linked) - Paste feature using right mouse button clicks in the Overview area).
 # 
-# Hint: the media player object is available under the Visual stimuli header, at the bottom of the Toolbar (if you have a small screen resolution, it might be hidden under the small arrows pointing down).
+# Hint: the images player object is available under the Visual stimuli header, at the bottom of the Toolbar (if you have a small screen resolution, it might be hidden under the small arrows pointing down).
 # 
 # Edit the `media_player_mpy` object in the following way:
 # 1. Refer to the variable `movie_filename` in the Video file field
@@ -116,7 +116,7 @@ items.prepare("media_player_mpy")
 # 
 # TODO difference single versus double quote when using indentation
 # 
-# This script overwrites the temporary filename in the MovieDisplay with the correct filename. The second line is also very important. Here, the value of the variable `current_player` is updated to the new destination, so that in the next trial the branching structure knows who is at that moment the `current_player`. Finally, because of the [prepare-run strategy](https://osdoc.cogsci.nl/3.3/manual/prepare-run/) in OpenSesame, the temporary filename was used to prepare the media player at the start of the trial. To make sure the media player is updated and shows the proper file, we manually prepare it again using the items.prepare command. 
+# This script overwrites the temporary filename in the MovieDisplay with the correct filename. The second line is also very important. Here, the value of the variable `current_player` is updated to the new destination, so that in the next trial the branching structure knows who is at that moment the `current_player`. Finally, because of the [prepare-run strategy](https://osdoc.cogsci.nl/3.3/manual/prepare-run/) in OpenSesame, the temporary filename was used to prepare the images player at the start of the trial. To make sure the images player is updated and shows the proper file, we manually prepare it again using the items.prepare command.
 # 
 # Almost the same code should be added to the PreparePlayer3 InLine:
 
