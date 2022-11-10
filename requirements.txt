@@ -5,5 +5,5 @@ jupyter-quiz
 IPython~=8.4.0
 
 pandas~=1.4.4
-seaborn~=0.11.2
+seaborn~=0.12.1
 jupyterquiz~=2.0.7
