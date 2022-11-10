@@ -599,12 +599,12 @@
      Exercise 2
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   Exercise 4
+  </a>
  </li>
 </ul>
 
@@ -641,12 +641,12 @@
      Exercise 2
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   Exercise 4
+  </a>
  </li>
 </ul>
 
@@ -972,6 +972,9 @@ Categories (2, int64): [1, 2]
 </div>
 </div>
 <p>Let’s see what kind of data we are dealing with. The “session” column says lowswitch for subject 1, and highswitch for subject 2. This means that we should see less task-switch trials for subject 1 than subject 2. To check this, we can use the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html">pivot table</a> function from pandas. Let’s check:</p>
+<blockquote>
+<div><p><strong>Note</strong>: We will be using the pandas pivot table for most of tutorial. Be aware however that all of this could also be accomplished with the pandas groupby function. Take a look <a class="reference external" href="https://levelup.gitconnected.com/pivot-tables-in-pandas-7b672e6d8f47">here</a> for more information on the pivot table and the difference between pivot table and groupby</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_task_transition_exp</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
@@ -1059,7 +1062,7 @@ This all whilst keeping into account that the first trial of each block does not
 <span class="c1"># Add all dataframes to a list</span>
 <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">piv_cong</span><span class="p">,</span> <span class="n">piv_cong_transition</span><span class="p">,</span> <span class="n">piv_task</span><span class="p">,</span> <span class="n">piv_task_transition</span><span class="p">]</span>
 
-<span class="c1"># Merge the dataframes</span>
+<span class="c1"># Merge the dataframes, axis=1 defines that the new dataframes should be added as columns instead of new rows</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1340,10 +1343,10 @@ This all whilst keeping into account that the first trial of each block does not
                     <span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">]</span>
 
 <span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns_to_check</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns_to_check</span><span class="p">:</span> <span class="c1"># Loop of &quot;columns_to_check&quot;</span>
     <span class="n">piv</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
         <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">],</span>
-        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">column</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="c1"># The for-loop inserts a new column here on every iteration</span>
         <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
 
     <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">piv</span><span class="p">)</span>
@@ -1810,27 +1813,6 @@ This all whilst keeping into account that the first trial of each block does not
 <p>599 rows × 10 columns</p>
 </div></div></div>
 </div>
-<p>A really convenient way to quickly get an idea of your numerical columns, you can use the describe function of pandas:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     599.000000
-mean      725.344337
-std       233.487524
-min       124.173900
-25%       550.588900
-50%       655.866000
-75%       876.164300
-max      1443.708500
-Name: response_time, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
 <p>We expect people to be slower when they have to switch from task, in comparison to when they can do the same task as on the previous trial. This is what we call <strong>switch cost</strong>. To show this in a table-format, we can again use the pivot_table function from pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1890,7 +1872,7 @@ Name: response_time, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>It is pretty clear that incongruent trials are slower than congruent trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the incongruent and congruent columns:</p>
+<p>It is pretty clear that task-switch trials are slower than task-repeat trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the task-switch trials and task-repeat trials:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;switch cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-switch&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-repetition&#39;</span><span class="p">]</span>
@@ -1972,10 +1954,17 @@ Name: response_time, dtype: float64
 </div></blockquote>
 <div class="section" id="exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
-<p>We’ve removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per congruency using a pivot table.</p>
+<p>We’ve removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per task_transition_type using a pivot table. Then, show the mean reaction time of correct/incorrect trials per task_transition_type using a second pivot table</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table mean</span>
 </pre></div>
 </div>
 </div>
@@ -1992,12 +1981,28 @@ Name: response_time, dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
-<p>What is a more objective way to do outlier detection? Name two outlier detection methods, one that is suited for normally distributed data, and one that is suited for non-normally distributed data.</p>
 <p><em>Answer to exercise 3</em></p>
-<p>During the next session we will dive deeper into outlier detection methods.</p>
+</div>
+</div>
+<div class="section" id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p>Apply the two outlier methods to the dataframe with the correct responses, and save the resulting dataframe. Do this by:
+(1) Identifying the rows that fall out of your outlier range
+(2) Making a new column called “outlier” where you mark the rows with outlier values with 1, and all the other rows with 0
+(3) Saving the new dataframe. If you don’t know the command to save, search on the internet for “save csv pandas” or something similar</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Outlier method one</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Outlier method two</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

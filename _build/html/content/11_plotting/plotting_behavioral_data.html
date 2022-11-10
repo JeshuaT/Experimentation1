@@ -674,23 +674,31 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;classic&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (quick and rigid) and the object-oriented way (slower but more flexible). Let’s visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:</p>
+<p>As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (also quick but a bit less rigid) and the object-oriented way (slowest but most flexible). Let’s visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_trim_blocks</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;response_time&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here, the sns.lineplot function tells seaborn we want a line plot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_trim_blocks</span><span class="p">,</span>
+             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span>
+             <span class="n">y</span><span class="o">=</span><span class="s1">&#39;response_time&#39;</span><span class="p">,</span>
+             <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span> <span class="c1"># Which groups to separate and give different colors (hue stands for color)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mf">977e2638</span><span class="n">b300</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_trim_blocks</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;response_time&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">ba4c2ad94da6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Here, the sns.lineplot function tells seaborn we want a line plot</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_trim_blocks</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">x</span><span class="o">=</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;response_time&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>              <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span> <span class="c1"># Which groups to separate and give different colors (hue stands for color)</span>
 
 <span class="ne">NameError</span>: name &#39;sns&#39; is not defined
 </pre></div>
@@ -700,29 +708,40 @@
 <p>As you can see, with only one line of code we can visualize the switch cost difference. However, seaborn also does things we didn’t ask for: it calculates the mean response time and gives us an error bar. We can explicitly change these settings of course, but it does illustrate a difference in coding philosophy: with the object-oriented way you build from the ground up, whilst in the seaborn (and the lesser extent the procedural way) you built from the top down. Let’s see what happens with the procedural approach:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="s2">&quot;task_transition_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because the procedural approach doesn&#39;t have the handy &quot;hue&quot; parameter, we first need to make the grouping ourselves</span>
+<span class="n">pivot</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;response_time&quot;</span><span class="p">,</span>
+                                   <span class="n">index</span><span class="o">=</span> <span class="s2">&quot;subject_nr&quot;</span><span class="p">,</span>
+                                   <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;task_transition_type&quot;</span><span class="p">,</span>
+                                   <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+
+<span class="c1"># Then, use the pivot table to plot, pyplot automatically takes &quot;index&quot; as x-values, &quot;values&quot; as y-axis and &quot;columns&quot; as grouping</span>
+<span class="n">pivot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">44</span><span class="n">d54f6e6903</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="s2">&quot;task_transition_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">0</span><span class="n">a4c4ba4c7b4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Because the procedural approach doesn&#39;t have the handy &quot;hue&quot; parameter, we first need to make the grouping ourselves</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;response_time&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                                    <span class="n">index</span><span class="o">=</span> <span class="s2">&quot;subject_nr&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                                    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;task_transition_type&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                                    <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;df_trim_blocks&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>Alright, we don’t get the error bars, and the y-axis is flipped. The style also is a bit retro, but you can change the style to whatever you like most. See the styles available <a class="reference external" href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html">here</a>. Lets change the style and look at the new output right away:</p>
+<p>Alright, we don’t get the error bars, and no label for the y-axis, but other than that looks pretty similar to the seaborn plot. You can change the style to whatever you like most. See the styles available <a class="reference external" href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html">here</a>. Below you can change the style and look at the new output right away:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span><span class="p">)</span> <span class="c1"># Print out all available styles</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="c1"># Set style for the rest of the script</span>
 
-<span class="c1"># New style output</span>
-<span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="s2">&quot;task_transition_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="c1"># Another way of making a quick plot (this code is the same as above, only way shorter but less explicit)</span>
+<span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;subject_nr&quot;</span><span class="p">,</span> <span class="s2">&quot;task_transition_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -732,26 +751,31 @@
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">8</span><span class="n">f3a0b8b7dee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">09</span><span class="n">f9863313df</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># New style output</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="s2">&quot;task_transition_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Another way of making a quick plot (this code is the same as above, only way shorter but less explicit)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;subject_nr&quot;</span><span class="p">,</span> <span class="s2">&quot;task_transition_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;df_trim_blocks&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>Some tweaking needs to be done now since the x-label “lowswitch” now falls out of the plot grid (depending on some styles). But again, with one line of code we get a pretty good idea of how the switch cost looks like between conditions. Let’s now try the object-oriented approach:</p>
+<p>Some tweaking needs to be done now since the plots assume that “subject_nr” is a continuous variable, and in some styles not all the x-ticks are shown. But again, with a few lines of code we get a pretty good idea of how the switch cost looks like between conditions. Let’s now try the object-oriented approach:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;session&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="c1"># unstack the `task_transition_type` index, to place it as columns</span>
 <span class="n">df_oo</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span>
 
+<span class="c1"># Make the framework and place in &quot;fig&quot; and &quot;ax&quot; variables</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
+
+<span class="c1"># Populate the &quot;ax&quot; variable with the dataframe</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_oo</span><span class="p">)</span>
+
+<span class="c1"># Show dataframe</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -759,8 +783,8 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">f23ca496a9fd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;session&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">a444ccd5e3ab</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># unstack the `task_transition_type` index, to place it as columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_oo</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span>
@@ -775,27 +799,25 @@
 <p>It’s important to be aware of the difference between these approaches, as when you google solutions for your matplotlib problems, you will often encounter solutions for all three approaches. However, when you are coding in an object-oriented matter, simply inputting procedural code will not work, and vice-versa! For the rest of the tutorial, we will continue with the object-oriented approach, unless it is really inconvenient to do so (as you will see at the end of the tutorial). For now, let’s improve the plot we made above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;session&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="c1"># unstack the `task_transition_type` index, to place it as columns</span>
 <span class="n">df_oo</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span>
 
-<span class="c1"># The name of columns would become the name of legend</span>
-<span class="c1"># when using dataframe plot</span>
-<span class="n">df_oo</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;response time&#39;</span>
-
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_oo</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
 
 <span class="c1"># set axis labels</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;response time&#39;</span><span class="p">)</span>
 
-<span class="c1"># set markers; &quot;o&quot; codes for &quot;circle&quot;, &quot;s&quot; codes for &quot;square&quot;</span>
+<span class="c1"># set different markers for each group; &quot;o&quot; refers to &quot;circle&quot;, &quot;s&quot; refers to &quot;square&quot;</span>
 <span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()):</span>
     <span class="n">line</span><span class="o">.</span><span class="n">set_marker</span><span class="p">(</span><span class="n">markers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1"># explicitly state which xticks to use, here we only want &quot;1&quot; and &quot;2&quot; because those are our subject numbers</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="c1"># update legend</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;task-switch&quot;</span><span class="p">,</span> <span class="s2">&quot;task-repetition&quot;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -807,8 +829,8 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">c2f2c668f793</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;session&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">e830736c6c91</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">response_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># unstack the `task_transition_type` index, to place it as columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_oo</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">)</span>

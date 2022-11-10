@@ -79,6 +79,8 @@ df_trim_blocks['subject_nr'].unique()
 
 
 # Let's see what kind of data we are dealing with. The "session" column says lowswitch for subject 1, and highswitch for subject 2. This means that we should see less task-switch trials for subject 1 than subject 2. To check this, we can use the [pivot table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html) function from pandas. Let's check:
+# 
+# > **Note**: We will be using the pandas pivot table for most of tutorial. Be aware however that all of this could also be accomplished with the pandas groupby function. Take a look [here](https://levelup.gitconnected.com/pivot-tables-in-pandas-7b672e6d8f47) for more information on the pivot table and the difference between pivot table and groupby
 
 # In[6]:
 
@@ -125,7 +127,7 @@ piv_task_transition = df_trim_blocks.pivot_table(
 # Add all dataframes to a list
 dfs = [piv_cong, piv_cong_transition, piv_task, piv_task_transition]
 
-# Merge the dataframes
+# Merge the dataframes, axis=1 defines that the new dataframes should be added as columns instead of new rows
 pd.concat(dfs, axis=1)
 
 
@@ -138,10 +140,10 @@ columns_to_check = ['task_type', 'congruency_type',
                     'task_transition_type', 'congruency_transition_type']
 
 dfs = []
-for column in columns_to_check:
+for column in columns_to_check: # Loop of "columns_to_check"
     piv = df_trim_blocks.pivot_table(
         index=['subject_nr', 'block'],
-        columns=[column],
+        columns=[column], # The for-loop inserts a new column here on every iteration
         aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
     dfs.append(piv)
@@ -159,17 +161,9 @@ df_correct = df_trim_blocks[df_trim_blocks['correct'] == 1]
 df_correct
 
 
-# A really convenient way to quickly get an idea of your numerical columns, you can use the describe function of pandas:
-
-# In[10]:
-
-
-df_correct['response_time'].describe()
-
-
 #   We expect people to be slower when they have to switch from task, in comparison to when they can do the same task as on the previous trial. This is what we call **switch cost**. To show this in a table-format, we can again use the pivot_table function from pandas.
 
-# In[11]:
+# In[10]:
 
 
 #check switch costs
@@ -184,9 +178,9 @@ switch_table = pd.pivot_table(
 switch_table
 
 
-# It is pretty clear that incongruent trials are slower than congruent trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the incongruent and congruent columns:
+# It is pretty clear that task-switch trials are slower than task-repeat trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the task-switch trials and task-repeat trials:
 
-# In[12]:
+# In[11]:
 
 
 switch_table['switch cost'] = switch_table['task-switch'] - switch_table['task-repetition']
@@ -195,7 +189,7 @@ switch_table
 
 # Lastly, you can use the handy function *describe* to get a quick peek at the response times.
 
-# In[13]:
+# In[12]:
 
 
 df_correct['response_time'].describe()
@@ -206,12 +200,18 @@ df_correct['response_time'].describe()
 # > **Note:** The developers of OpenSesame have also created a Python package for working with column-based and continuous data, called [DataMatrix](http://pydatamatrix.eu/0.15/index/). It's similar to the Pandas package we've been working with in this tutorial, but has some crucial differences in syntax. We have opted for the more versatile and widely used Pandas package, but be aware that the OpenSesame website and tutorials can sometimes refer to DataMatrixes instead of DataFrames.
 
 # ### Exercise 1
-# We've removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per congruency using a pivot table.
+# We've removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per task_transition_type using a pivot table. Then, show the mean reaction time of correct/incorrect trials per task_transition_type using a second pivot table
+
+# In[13]:
+
+
+# Pivot table count
+
 
 # In[14]:
 
 
-# Pivot table
+# Pivot table mean
 
 
 # ### Exercise 2
@@ -225,9 +225,22 @@ df_correct['response_time'].describe()
 # df_correct
 
 
-# ### Exercise 3
-# What is a more objective way to do outlier detection? Name two outlier detection methods, one that is suited for normally distributed data, and one that is suited for non-normally distributed data.
-
 # *Answer to exercise 3*
 
-# During the next session we will dive deeper into outlier detection methods.
+# ## Exercise 4
+# Apply the two outlier methods to the dataframe with the correct responses, and save the resulting dataframe. Do this by:
+# (1) Identifying the rows that fall out of your outlier range
+# (2) Making a new column called "outlier" where you mark the rows with outlier values with 1, and all the other rows with 0
+# (3) Saving the new dataframe. If you don't know the command to save, search on the internet for "save csv pandas" or something similar
+
+# In[16]:
+
+
+# Outlier method one
+
+
+# In[17]:
+
+
+# Outlier method two
+

@@ -39,15 +39,19 @@ df_trim_blocks
 # In[2]:
 
 
-plt.style.use('classic')
+plt.style.use('default')
 
 
-# As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (quick and rigid) and the object-oriented way (slower but more flexible). Let's visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:
+# As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (also quick but a bit less rigid) and the object-oriented way (slowest but most flexible). Let's visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:
 
 # In[3]:
 
 
-sns.lineplot(data=df_trim_blocks, x='session', y='response_time', hue='task_transition_type')
+# Here, the sns.lineplot function tells seaborn we want a line plot
+sns.lineplot(data=df_trim_blocks,
+             x='subject_nr',
+             y='response_time',
+             hue='task_transition_type') # Which groups to separate and give different colors (hue stands for color)
 
 
 # As you can see, with only one line of code we can visualize the switch cost difference. However, seaborn also does things we didn't ask for: it calculates the mean response time and gives us an error bar. We can explicitly change these settings of course, but it does illustrate a difference in coding philosophy: with the object-oriented way you build from the ground up, whilst in the seaborn (and the lesser extent the procedural way) you built from the top down. Let's see what happens with the procedural approach:
@@ -55,10 +59,17 @@ sns.lineplot(data=df_trim_blocks, x='session', y='response_time', hue='task_tran
 # In[4]:
 
 
-df_trim_blocks.pivot_table("response_time", "session", "task_transition_type").plot(marker="o")
+# Because the procedural approach doesn't have the handy "hue" parameter, we first need to make the grouping ourselves
+pivot = df_trim_blocks.pivot_table(values = "response_time",
+                                   index= "subject_nr",
+                                   columns="task_transition_type",
+                                   aggfunc=np.mean)
+
+# Then, use the pivot table to plot, pyplot automatically takes "index" as x-values, "values" as y-axis and "columns" as grouping
+pivot.plot(kind="line")
 
 
-# Alright, we don't get the error bars, and the y-axis is flipped. The style also is a bit retro, but you can change the style to whatever you like most. See the styles available [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html). Lets change the style and look at the new output right away:
+# Alright, we don't get the error bars, and no label for the y-axis, but other than that looks pretty similar to the seaborn plot. You can change the style to whatever you like most. See the styles available [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html). Below you can change the style and look at the new output right away:
 
 # In[5]:
 
@@ -66,22 +77,27 @@ df_trim_blocks.pivot_table("response_time", "session", "task_transition_type").p
 print(plt.style.available) # Print out all available styles
 plt.style.use('default') # Set style for the rest of the script
 
-# New style output
-df_trim_blocks.pivot_table("response_time", "session", "task_transition_type").plot(marker="o")
+# Another way of making a quick plot (this code is the same as above, only way shorter but less explicit)
+df_trim_blocks.pivot_table("response_time", "subject_nr", "task_transition_type").plot(kind="line")
 
 
-# Some tweaking needs to be done now since the x-label "lowswitch" now falls out of the plot grid (depending on some styles). But again, with one line of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
+# Some tweaking needs to be done now since the plots assume that "subject_nr" is a continuous variable, and in some styles not all the x-ticks are shown. But again, with a few lines of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
 
 # In[6]:
 
 
-df = df_trim_blocks.groupby(['session','task_transition_type']).response_time.mean()
+df = df_trim_blocks.groupby(['subject_nr','task_transition_type']).response_time.mean()
 
 # unstack the `task_transition_type` index, to place it as columns
 df_oo = df.unstack(level='task_transition_type')
 
+# Make the framework and place in "fig" and "ax" variables
 fig, ax = plt.subplots(figsize=(6, 4.5))
+
+# Populate the "ax" variable with the dataframe
 ax.plot(df_oo)
+
+# Show dataframe
 plt.show()
 
 
@@ -92,27 +108,25 @@ plt.show()
 # In[7]:
 
 
-df = df_trim_blocks.groupby(['session','task_transition_type']).response_time.mean()
+df = df_trim_blocks.groupby(['subject_nr','task_transition_type']).response_time.mean()
 
 # unstack the `task_transition_type` index, to place it as columns
 df_oo = df.unstack(level='task_transition_type')
 
-# The name of columns would become the name of legend
-# when using dataframe plot
-df_oo.columns.name = 'response time'
-
 fig, ax = plt.subplots(figsize=(6, 4.5))
 ax.plot(df_oo)
-ax.invert_xaxis()
 
 # set axis labels
-ax.set_xlabel('session')
+ax.set_xlabel('subject')
 ax.set_ylabel('response time')
 
-# set markers; "o" codes for "circle", "s" codes for "square"
+# set different markers for each group; "o" refers to "circle", "s" refers to "square"
 markers = ['o', 's']
 for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
+
+# explicitly state which xticks to use, here we only want "1" and "2" because those are our subject numbers
+ax.set_xticks(ticks=[1,2])
 
 # update legend
 ax.legend(ax.get_lines(), ["task-switch", "task-repetition"], loc='best', ncol=2)
