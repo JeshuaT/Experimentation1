@@ -5,25 +5,28 @@
 # 
 
 # ## Introduction
-# You build the experiment and ran your first participant. Now, it is time to take a look at the data you have collected.
+# You build the experiment and ran your first two participants. Now, it is time to take a look at the data you have collected. We will be working with a dataset of a task-switching study. In this study, the participants had to conduct two tasks separately: they either had to specify with the left or right button whether the number on screen was odd or even (parity task) or they had to specify with the left or right button whether the number was smaller or larger than 5 (magnitude task). The catch is that they were only told which task they had to do 500 milliseconds before the number came on screen on which they had to respond. If they had to repeat the task from the previous trial, we call that a **repeat trial**. If they had to switch to another task relative to the previous trial, we call that a **switch trial**. See below for a schematic overview of the experiment:
 # 
-# OpenSesame outputs a *comma-separated values (csv)* file. This is a very widely used format, and you can painlessly import this file type in Python using the datafile package **pandas**. Let's import a datafile from two participants and merge those in one file:
+# ![image info](./images/task_design_figure.png)
 # 
+# Each participant goes through two sessions. In one session, they have to switch tasks 75% of the time (high-switch condition). In the other session, they have to switch tasks 25% of the time (low-switch condition). This setup allows us to examine what happens when people have to switch tasks: are they faster or slower? And what happens with their response time when they have to switch tasks a lot? Or very little? Let's find out.
 # 
+# OpenSesame outputs a *comma-separated values (csv)* file. This is a very widely used format, and you can painlessly import this file type in Python using the datafile package **pandas** (as we've seen in the exercises and lessons). Let's import a datafile from two participants and merge those in one file:
 
 # In[1]:
 
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 
-# disable chained assignments
+# disable chained assignments, you can ignore this line of code
 pd.options.mode.chained_assignment = None
 
+# load the subject data
 subj1 = pd.read_csv("data/subject-3.csv", sep=",")
 subj2 = pd.read_csv("data/subject-4.csv", sep=",")
 
+# merge the subject data in one dataframe
 df = pd.concat([subj1, subj2], ignore_index=True)
 
 
@@ -33,10 +36,14 @@ df = pd.concat([subj1, subj2], ignore_index=True)
 # In[2]:
 
 
+# make a list of column names that we want to include
 include_columns = ['subject_nr', 'block', 'session', 'congruency_transition_type', 'congruency_type',
-                   'correct', 'response_time', 'task_transition_type', 'task_type', 'cue_color']
+                   'correct', 'response_time', 'task_transition_type', 'task_type', "response"]
 
+# make a new df, called df_trim, that only included the columns that are in the "include_columns" list
 df_trim = df[include_columns]
+
+# show the new df
 df_trim
 
 
@@ -45,12 +52,12 @@ df_trim
 # In[3]:
 
 
-print(df_trim.dtypes)
+print("Column types BEFORE changing: \n", df_trim.dtypes, "\n")
 
 df_trim['subject_nr'] = df_trim['subject_nr'].astype('category')
 df_trim['correct'] = df_trim['correct'].astype('category')
 
-print(df_trim.dtypes)
+print("Column types AFTER changing: \n",df_trim.dtypes)
 
 
 # Alright, it's getting a bit more uncluttered now. The task-design is so that the last two blocks are different kind of blocks. We don't have to go in details now, but for further analysis we will have to create a dataframe without block 11 and 12. There are [many ways to conditional selection of rows](https://www.geeksforgeeks.org/selecting-rows-in-pandas-dataframe-based-on-conditions/), but here we opt to use the information that we need all blocks with a value smaller than 11.
@@ -58,14 +65,14 @@ print(df_trim.dtypes)
 # In[4]:
 
 
-# Here the last blocks should be 12
-print(df_trim.tail(5))
+# Here the last blocks should be 12, lets check by printing the last 5 rows of the block column using the tail function
+print("The last block here is 12: \n", df_trim["block"].tail(5), "\n")
 
 # Conditionally select rows based on if the value in the "block" column is lower than 11
 df_trim_blocks = df_trim[df_trim['block'] < 11]
 
 # Check to see if the last block is now 10 instead of 12
-print(df_trim_blocks.tail(5))
+print("Here the last block should be 10: \n", df_trim_blocks["block"].tail(5))
 
 
 # Lastly, it's a bit confusing that we have only two subjects, but they are called number 3 and 4, instead of 1 and 2. Let's fix that by replacing subject 3 with subject 1, and subject 4 with subject 2. We can use the replace function of Pandas to achieve this. Then, with the pandas *unique* function we can verify that the subject numbers have been changed.
@@ -73,12 +80,17 @@ print(df_trim_blocks.tail(5))
 # In[5]:
 
 
+# Replace 3 with 1 in subject_nr column
 df_trim_blocks['subject_nr'] = df_trim_blocks['subject_nr'].replace(3, 1)
+
+# Replace 4 with 2 in subject_nr column
 df_trim_blocks['subject_nr'] = df_trim_blocks['subject_nr'].replace(4, 2)
+
+# Print out all unique values in subject_nr column, should be 1 and 2
 df_trim_blocks['subject_nr'].unique()
 
 
-# Let's see what kind of data we are dealing with. The "session" column says lowswitch for subject 1, and highswitch for subject 2. This means that we should see less task-switch trials for subject 1 than subject 2. To check this, we can use the [pivot table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html) function from pandas. Let's check:
+# Let's see what kind of data we are dealing with. The "session" column tells us whether the trial was in the "lowswitch" or "highswitch" condition. This means that we should see less task-switch trials in the "lowswitch" than in the "highswitch" condition. To check this, we can use the [pivot table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html) function from pandas. Let's check:
 # 
 # > **Note**: We will be using the pandas pivot table for most of tutorial. Be aware however that all of this could also be accomplished with the pandas groupby function. Take a look [here](https://levelup.gitconnected.com/pivot-tables-in-pandas-7b672e6d8f47) for more information on the pivot table and the difference between pivot table and groupby
 
@@ -86,41 +98,42 @@ df_trim_blocks['subject_nr'].unique()
 
 
 piv_task_transition_exp = df_trim_blocks.pivot_table(
-    index=['session'],
-    columns='task_transition_type',
+    index=['session'], # Index on session
+    columns='task_transition_type', # Group on 'task_transition_type'
     aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
+# Print out the pivot table
 piv_task_transition_exp
 
 
-# It is always good practice to check if the trials count is what you expected. This experiment had a quite complex counterbalancing structure, since the researchers had to counterbalance:
+# Hmmm...doesn't balance exactly but it's close. It is always good practice to check if the trials count is what you expected. This experiment had a quite complex counterbalancing structure, since the researchers had to counterbalance:
 # - Amount of congruent/incongruent trials
 # - Amount of parity/magnitude trials
 # - Amount of congruent-switch/congruent-repetition trials
 # 
 # All whilst keeping the task-repetition/task-switch rate to 25/75 or 75/25 (depending on the session).
-# This all whilst keeping into account that the first trial of each block does not count as either repetition or switch trial. Let's see if we can use a bit more complex pivot table to get a clear picture if all of this worked out
+# This all whilst keeping into account that the first trial of each block does not count as either repetition or switch trial. In complex structures like this, sometimes you cannot aim for perfect counterbalancing, but you can aim for "as good as possible" (hence the slight discrepancy in the pivot table above). Let's see if we can use a bit more complex pivot table to get a clearer picture if all of this worked out
 
 # In[7]:
 
 
 piv_cong = df_trim_blocks.pivot_table(
-    index=['subject_nr', 'block'],
+    index=['subject_nr'],
     columns=['congruency_type'],
     aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
 piv_cong_transition = df_trim_blocks.pivot_table(
-    index=['subject_nr', 'block'],
+    index=['subject_nr'],
     columns=['congruency_transition_type'],
     aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
 piv_task = df_trim_blocks.pivot_table(
-    index=['subject_nr', 'block'],
+    index=['subject_nr'],
     columns=['task_type'],
     aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
 piv_task_transition = df_trim_blocks.pivot_table(
-    index=['subject_nr', 'block'],
+    index=['subject_nr'],
     columns='task_transition_type',
     aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
@@ -136,23 +149,30 @@ pd.concat(dfs, axis=1)
 # In[8]:
 
 
+# Specify the columns we want to check
 columns_to_check = ['task_type', 'congruency_type',
                     'task_transition_type', 'congruency_transition_type']
 
+# Make an empty list so we can populate this later
 dfs = []
-for column in columns_to_check: # Loop of "columns_to_check"
+
+# Loop over columns_to_check and make a new pivot table for each column
+for column in columns_to_check: # Loops over "columns_to_check"
     piv = df_trim_blocks.pivot_table(
-        index=['subject_nr', 'block'],
+        index=['subject_nr'],
         columns=[column], # The for-loop inserts a new column here on every iteration
         aggfunc='size') # Function to aggregate columns on, here we specify "size"
 
+    # Append the pivot table to our "dfs" list (which was empty initially)
     dfs.append(piv)
 
-# Merge the dataframes
+# Merge the dataframes that are in the "dfs" list
 pd.concat(dfs, axis=1)
 
 
-# Nice. It's cleaner and also way easier to change this code if you want to check another column for example. The counterbalancing looks good on a block level. Let's do some first checks on whether the results are what we expect. Let's first remove all the incorrect trials, we aren't interested in those at the moment.
+# Nice. It's cleaner and also way easier to change this code if you want to check another column for example. The counterbalancing looks good enough.
+# 
+# Now we'll do some first checks on whether the results are what we expect. Let's first remove all the incorrect trials, we aren't interested in those at the moment.
 
 # In[9]:
 
@@ -166,7 +186,7 @@ df_correct
 # In[10]:
 
 
-#check switch costs
+# Check switch costs
 switch_table = pd.pivot_table(
     df_correct,
     values="response_time", # The value that will be summarized
@@ -175,6 +195,7 @@ switch_table = pd.pivot_table(
     aggfunc=np.mean, # Calculate the mean response time per subject per task type
 )
 
+# Print out the pivot table
 switch_table
 
 
@@ -225,13 +246,21 @@ df_correct['response_time'].describe()
 # df_correct
 
 
+# ## Exercise 3
+# What we did in exercise 2 was an outlier removal, though it was a pretty arbitrary one. There are plenty of outlier removal methods that are more objective. Find two outlier methods, and specify them below with a short explanation. One outlier method should be suitable for *normally distributed data*, whilst the other method should be suitable for *non-normally distributed data*.
+# 
+# > **Hint:** In the next exercise you will have to apply the outlier methods. Therefore, search for outlier methods that you can easily implement in Python/Pandas (e.g. by simply searching for Python/Pandas implementations of outlier methods)
+
 # *Answer to exercise 3*
+# Outlier method for normally distributed data:
+# 
+# Outlier method for non-normally distributed data:
 
 # ## Exercise 4
 # Apply the two outlier methods to the dataframe with the correct responses, and save the resulting dataframe. Do this by:
 # (1) Identifying the rows that fall out of your outlier range
 # (2) Making a new column called "outlier" where you mark the rows with outlier values with 1, and all the other rows with 0
-# (3) Saving the new dataframe. If you don't know the command to save, search on the internet for "save csv pandas" or something similar
+# (3) Saving the new dataframe. If you don't know the command to save, search on the internet for "save csv pandas" or something similar. You will need the dataframe in the next module!
 
 # In[16]:
 
