@@ -38,12 +38,12 @@
 # python fromcount.py
 # Enter a file name: mbox-short.txt
 # stephen.marquard@uct.ac.za
-# louis@images.berkeley.edu
+# louis@media.berkeley.edu
 # zqian@umich.edu
 # 
 # [...some output removed...]
 # 
-# ray@images.berkeley.edu
+# ray@media.berkeley.edu
 # cwen@iupui.edu
 # cwen@iupui.edu
 # cwen@iupui.edu

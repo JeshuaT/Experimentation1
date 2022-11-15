@@ -3,7 +3,6 @@ matplotlib~=3.5.2
 numpy~=1.23.1
 jupyter-quiz
 IPython~=8.4.0
-
 pandas~=1.4.4
 seaborn~=0.12.1
 jupyterquiz~=2.0.7

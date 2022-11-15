@@ -95,7 +95,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Experimentation I 2022-2023
+   Programming Psychological Experiments using python and OpenSesame
   </a>
  </li>
 </ul>
@@ -1570,6 +1570,13 @@ Name: response_time, dtype: float64
 <blockquote>
 <div><p><strong>Note:</strong> The developers of OpenSesame have also created a Python package for working with column-based and continuous data, called <a class="reference external" href="http://pydatamatrix.eu/0.15/index/">DataMatrix</a>. It’s similar to the Pandas package we’ve been working with in this tutorial, but has some crucial differences in syntax. We have opted for the more versatile and widely used Pandas package, but be aware that the OpenSesame website and tutorials can sometimes refer to DataMatrixes instead of DataFrames.</p>
 </div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../11_plotting/data/df_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
 <p>We’ve removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per task_transition_type using a pivot table. Then, show the mean reaction time of correct/incorrect trials per task_transition_type using a second pivot table</p>
@@ -1614,6 +1621,7 @@ Outlier method for normally distributed data:</p>
 <div class="section" id="exercise-4">
 <h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
 <p>Apply the two outlier methods to the dataframe with the correct responses, and save the resulting dataframe. Do this by:
+(1) Writing down what the cutoff values are for the outliers (you will need this later)
 (1) Identifying the rows that fall out of your outlier range
 (2) Making a new column called “outlier” where you mark the rows with outlier values with 1, and all the other rows with 0
 (3) Saving the new dataframe. If you don’t know the command to save, search on the internet for “save csv pandas” or something similar. You will need the dataframe in the next module!</p>

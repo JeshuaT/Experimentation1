@@ -13,27 +13,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# disable chained assignments
-pd.options.mode.chained_assignment = None
+# Import cleaned dataframe from the datawrangling module
+df = pd.read_csv('data/df_cleaned.csv')
 
-subj1 = pd.read_csv("data/subject-3.csv", sep=",")
-subj2 = pd.read_csv("data/subject-4.csv", sep=",")
-
-df = pd.concat([subj1, subj2], ignore_index=True)
-
-include_columns = ['subject_nr', 'block', 'session', 'congruency_transition_type', 'congruency_type',
-                   'correct', 'response_time', 'task_transition_type', 'task_type', 'cue_color']
-
-df_trim = df[include_columns]
-df_trim['subject_nr'] = df_trim['subject_nr'].astype('category')
-df_trim['correct'] = df_trim['correct'].astype('category')
-
-df_trim_blocks = df_trim[df_trim['block'] < 11]
-
-df_trim_blocks['subject_nr'] = df_trim_blocks['subject_nr'].replace(3, 1)
-df_trim_blocks['subject_nr'] = df_trim_blocks['subject_nr'].replace(4, 2)
-
-df_trim_blocks
+# Print first 10 rows of the dataframe
+df.head(10)
 
 
 # In[2]:
@@ -48,7 +32,7 @@ plt.style.use('default')
 
 
 # Here, the sns.lineplot function tells seaborn we want a line plot
-sns.lineplot(data=df_trim_blocks,
+sns.lineplot(data=df,
              x='subject_nr',
              y='response_time',
              hue='task_transition_type') # Which groups to separate and give different colors (hue stands for color)
@@ -60,10 +44,10 @@ sns.lineplot(data=df_trim_blocks,
 
 
 # Because the procedural approach doesn't have the handy "hue" parameter, we first need to make the grouping ourselves
-pivot = df_trim_blocks.pivot_table(values = "response_time",
-                                   index= "subject_nr",
-                                   columns="task_transition_type",
-                                   aggfunc=np.mean)
+pivot = df.pivot_table(values = "response_time",
+                       index= "subject_nr",
+                       columns="task_transition_type",
+                       aggfunc=np.mean)
 
 # Then, use the pivot table to plot, pyplot automatically takes "index" as x-values, "values" as y-axis and "columns" as grouping
 pivot.plot(kind="line")
@@ -75,21 +59,31 @@ pivot.plot(kind="line")
 
 
 print(plt.style.available) # Print out all available styles
-plt.style.use('default') # Set style for the rest of the script
+plt.style.use('ggplot') # Set style for the rest of the script, change 'default' to something else
 
 # Another way of making a quick plot (this code is the same as above, only way shorter but less explicit)
-df_trim_blocks.pivot_table("response_time", "subject_nr", "task_transition_type").plot(kind="line")
+df.pivot_table("response_time", "subject_nr", "task_transition_type").plot(kind="line")
 
 
-# Some tweaking needs to be done now since the plots assume that "subject_nr" is a continuous variable, and in some styles not all the x-ticks are shown. But again, with a few lines of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
+# Alright, let's set it back to default:
 
 # In[6]:
 
 
-df = df_trim_blocks.groupby(['subject_nr','task_transition_type']).response_time.mean()
+plt.style.use('default') # Set style for the rest of the script, change 'default' to something else
 
-# unstack the `task_transition_type` index, to place it as columns
-df_oo = df.unstack(level='task_transition_type')
+
+# Some tweaking needs to be done now since the plots assume that "subject_nr" is a continuous variable, and in some styles not all the x-ticks are shown. But again, with a few lines of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
+
+# In[7]:
+
+
+# Group dataframe by both subject number and task_transition_type
+df_group = df.groupby(['subject_nr','task_transition_type']).response_time.mean()
+print(df_group)
+
+# Unstack the `task_transition_type` index, to place it as columns
+df_oo = df_group.unstack(level='task_transition_type')
 
 # Make the framework and place in "fig" and "ax" variables
 fig, ax = plt.subplots(figsize=(6, 4.5))
@@ -105,60 +99,65 @@ plt.show()
 # 
 # It's important to be aware of the difference between these approaches, as when you google solutions for your matplotlib problems, you will often encounter solutions for all three approaches. However, when you are coding in an object-oriented matter, simply inputting procedural code will not work, and vice-versa! For the rest of the tutorial, we will continue with the object-oriented approach, unless it is really inconvenient to do so (as you will see at the end of the tutorial). For now, let's improve the plot we made above:
 
-# In[7]:
+# In[8]:
 
 
-df = df_trim_blocks.groupby(['subject_nr','task_transition_type']).response_time.mean()
+# Group dataframe by both subject number and task_transition_type
+df_group = df.groupby(['subject_nr','task_transition_type']).response_time.mean()
 
-# unstack the `task_transition_type` index, to place it as columns
-df_oo = df.unstack(level='task_transition_type')
+# Unstack the `task_transition_type` index, to place it as columns
+df_oo = df_group.unstack(level='task_transition_type')
 
+# Make the framework and place in "fig" and "ax" variables
 fig, ax = plt.subplots(figsize=(6, 4.5))
 ax.plot(df_oo)
 
-# set axis labels
+# Set axis labels on the "ax" variable
 ax.set_xlabel('subject')
 ax.set_ylabel('response time')
 
-# set different markers for each group; "o" refers to "circle", "s" refers to "square"
+# Set different markers for each group; "o" refers to "circle", "s" refers to "square", can you see what's going on here?
 markers = ['o', 's']
 for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 
-# explicitly state which xticks to use, here we only want "1" and "2" because those are our subject numbers
+# Explicitly state which xticks to use, here we only want "1" and "2" because those are our subject numbers
 ax.set_xticks(ticks=[1,2])
 
-# update legend
+# Update legend
 ax.legend(ax.get_lines(), ["task-switch", "task-repetition"], loc='best', ncol=2)
 
+# Show the dataframe in a tight layout
 plt.tight_layout()
 
 
 # 
 
-# Let's continue. Next thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot we can easily make a histogram plot by specifying the column that should be plotted:
+# Let's continue. Next thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot and the object-oriented approach we can easily make a histogram plot by specifying the column that should be plotted:
 
-# In[8]:
+# In[9]:
 
 
+# Make the framework and place in "fig" and "ax" variables
 fig, ax = plt.subplots()
-ax.hist(df_trim_blocks['response_time'])
+
+# Specify that the column "response_time" of dataframe "df" needs to be plotted in a histogram "hist". Place this in "ax"
+ax.hist(df['response_time'])
+
+# Show the plot
 plt.show()
-print(plt.style.available)
 
 
 # That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of object-oriented coding in matplotlib shows itself: you can customize virtually anything you want in these plots.
 
-# In[9]:
+# In[10]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
                        facecolor='grey', # Change background colour to grey
                        frameon=False)
 
-ax.grid(visible=None) # Remove the background grid lines
-
-ax.hist(df_trim_blocks['response_time'],
+ax.hist(df['response_time'],
          bins=30) # Bins defines the amount of bins you want to plot
 
 ax.set_xlabel("RT", size=14) # label on the x-axis, size defines font size
@@ -169,19 +168,18 @@ plt.show()
 
 # We can also make overlays to compare two distributions. Let's for example see how the distribution of correct versus incorrect trials look like.
 
-# In[10]:
+# In[11]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
            facecolor='grey', # Change background colour to grey
            frameon=False) # Remove background behind the bars
-ax.grid(visible=None) # Remove the background grid lines
 
 # Here we make two dataframes, one with only correct trials and another with only incorrect trials
-correct_trials = df_trim_blocks[df_trim_blocks['correct'] == 1]
-incorrect_trials = df_trim_blocks[df_trim_blocks['correct'] == 0]
+correct_trials = df[df['correct'] == 1]
+incorrect_trials = df[df['correct'] == 0]
 
-# Then we make two histograms. Matplotlib will automatically place items you make in the same figure.
+# Then we make two histograms. Matplotlib will place items you make in the same figure in the same "ax" if you define it so.
 ax.hist(correct_trials['response_time'],
          bins=20,
          alpha=0.5, # This defines opacity of the bars
@@ -201,11 +199,57 @@ ax.legend(loc='upper right') # This tells matplotlib to create a legend, and pla
 plt.show()
 
 
-# In[11]:
+# Three things to note here:
+# - Our data seems to be *right-skewed*, and not normally distributed
+# - There are some unrealistically quick responses (under 200 milliseconds)
+# - There is a big peak just at the end of the trial of wrong responses (in the last bin)
+# 
+# The first two points we will have to consider during our outlier analysis. The last point however, should get you alarmed. It could be that participants have amazing internal clocks that tell them that the maximum trial time is almost over, so they must just guess. However, what happened here is that our logger gave the maximum response time (1500ms) to trials where there was **no response**. Spotting anomalies like this is one of the key advantages of plotting as much as possible. Luckily, we have a column that shows which button was pressed called *response*. Let's fix this error:
+
+# In[12]:
+
+
+fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
+                       facecolor='grey', # Change background colour to grey
+                       frameon=False) # Remove background behind the bars
+
+# Here we make two dataframes, one with only correct trials and another with only incorrect trials
+correct_trials = df[(df['correct'] == 1)]
+
+# To fix the issue, we make a double conditional: not only should the trial be incorrect, the response also should not be 'None'
+incorrect_trials = df[(df['correct'] == 0) & (df['response'] != 'None')]
+
+# Then we make two histograms. Matplotlib will place items you make in the same figure in the same "ax" if you define it so.
+ax.hist(correct_trials['response_time'],
+        bins=20,
+        alpha=0.5, # This defines opacity of the bars
+        color='green',
+        label="correct trials") # This defines the label that the bar gets, for the legend
+
+ax.hist(incorrect_trials['response_time'],
+        bins=20,
+        alpha=0.5,
+        color='red',
+        label="incorrect trials")
+
+ax.set_xlabel("RT", size=14)
+ax.set_ylabel("Count", size=14)
+ax.set_title("Correct vs incorrect response time distributions")
+ax.legend(loc='upper right') # This tells matplotlib to create a legend, and place it on the upper right field of the plot
+plt.show()
+
+
+# The anomaly disappears!
+# 
+# The last thing we will show here is how to easily make a histogram plot for each subject/condition. Often the distribution of reaction times does not only differ depending on whether the trial is correct or not, but it also differs per condition or per subject. This is important to keep in mind when you want to do an outlier analysis later: what is an outlier for one subject/condition doesn't have to be an outlier for another subject/condition.
+# 
+# Below we make a so-called facet grid using seaborn. Later you will try to make this using the object-oriented approach, but this is one of the cases where using seaborn is just very convenient.
+
+# In[13]:
 
 
 sns.displot(
-    df_trim_blocks,
+    df,
     x="response_time", # What to code on the x-axis
     col="task_type", # Column of the grid
     row="subject_nr", # Rows of the grid
@@ -215,7 +259,7 @@ sns.displot(
 )
 
 
-# In[12]:
+# In[14]:
 
 
 
@@ -241,7 +285,7 @@ df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].trans
 print(df)
 
 
-# In[13]:
+# In[15]:
 
 
 plt.figure(figsize=(8,6));
@@ -249,7 +293,7 @@ plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=10
 plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[14]:
+# In[16]:
 
 
 import seaborn as sns
@@ -263,42 +307,46 @@ sns.displot(
 )
 
 
-# In[15]:
+# In[17]:
 
 
 df
 
 
-# In[16]:
+# In[18]:
 
 
 df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
 
 
-# In[17]:
+# In[19]:
 
 
 df_sum
 
 
-# In[ ]:
+# ## Exercise 1
+# In the first part of the tutorial, we plotted the switch cost using line plots. However, one could argue that bar plots would have been more suitable as we only have two participants. Change the line plot to a bar plot using the object-oriented approach.
+
+# In[20]:
 
 
+# your answer here
 
 
-
-# ### Exercise
+# ### Exercise 2
 # We made the facet grid plot in seaborn out of convenience. However, with a bit more code we can also reproduce that plot in the object-oriented approach of matplotlib. Reproduce the plot in this way.
 
-# In[18]:
+# In[21]:
 
 
+# A possible answer - REMOVE THIS IN THE FINAL BOOK
 fig, axs = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True, figsize=(5.5, 3.5))
 
-df_subj1_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 1)]
-df_subj2_parity = df_trim_blocks[(df_trim_blocks['task_type'] == 'parity') & (df_trim_blocks['subject_nr'] == 2)]
-df_subj1_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 1)]
-df_subj2_magnitude = df_trim_blocks[(df_trim_blocks['task_type'] == 'magnitude') & (df_trim_blocks['subject_nr'] == 2)]
+df_subj1_parity = df[(df['task_type'] == 'parity') & (df['subject_nr'] == 1)]
+df_subj2_parity = df[(df['task_type'] == 'parity') & (df['subject_nr'] == 2)]
+df_subj1_magnitude = df[(df['task_type'] == 'magnitude') & (df['subject_nr'] == 1)]
+df_subj2_magnitude = df[(df['task_type'] == 'magnitude') & (df['subject_nr'] == 2)]
 
 df_subj1_parity['response_time'].hist(ax=axs[0,0])
 df_subj2_parity['response_time'].hist(ax=axs[0,1])
@@ -313,4 +361,16 @@ axs[0,0].set_ylabel('Subject 1')
 axs[1,0].set_ylabel('Subject 2')
 
 plt.show()
+
+
+# ## Exercise 3
+# In the dataframes exercise from last session you made a dataframe where you identified a cut-off point for you outliers and also made a column which identified the exact trials to exclude. Import that dataframe, and make three plots:
+# - A histogram plot where you mark the bars above and below the cut-off point (e.g. with red)
+# - A facet grid plot with histograms where you do the same
+# - A scatter plot where you plot the response time per condition, and mark the outlier trials (e.g. with red)
+
+# In[ ]:
+
+
+
 

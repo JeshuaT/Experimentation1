@@ -95,7 +95,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Experimentation I 2022-2023
+   Programming Psychological Experiments using python and OpenSesame
   </a>
  </li>
 </ul>
@@ -284,7 +284,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_files/files_python_exercises.html">
-     Python exercises
+     Python exercises: Files
     </a>
    </li>
    <li class="toctree-l2">
@@ -305,11 +305,6 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08_lists/lists_python_lessons.html">
-     Python lessons: Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../08_lists/lists_python_exercises.html">
      Python exercises: Lists
     </a>
@@ -323,7 +318,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09_numbers/numbers_intro.html">
-   Session 9 - Numbers
+   Session 9 - Numbers and arrays
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -333,12 +328,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_lessons.html">
-     Python lessons: Numbers
+     Python lessons: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_numbers/numbers_python_exercises.html">
-     Python exercises: Numbers
+     Python exercises: Numbers and arrays
     </a>
    </li>
    <li class="toctree-l2">
@@ -359,8 +354,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../10_dataframes/dataframes_python_lessons.html">
+     Python lessons: Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../10_dataframes/dataframes_python_exercises.html">
-     Python exercises
+     Python exercises: Dataframes
     </a>
    </li>
    <li class="toctree-l2">
@@ -398,11 +398,38 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+  <a class="reference internal" href="../12_ques/ques_intro.html">
+   Session 12 - Canvas
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_lessons.html">
+     Python lessons: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/ques_python_exercises.html">
+     Python exercises: Canvas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_ques/questionnaires/questionnaire.html">
+     Questionnaires in OpenSesame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../13_input_output/io_intro.html">
+   Session 13 - Input/Output
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -428,8 +455,8 @@
   <a class="reference internal" href="../14_qa/qa_intro.html">
    Session 14 - Q&amp;A
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -689,22 +716,14 @@ If you like learning by reading along, follow <a class="reference external" href
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">f60de8a687eb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is your age? Type your age here: &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="p">:</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is your age? Type your age here: &quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow you are young!&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">elif</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">:</span>
 
-<span class="nn">c:\program files (x86)\python36-32\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">849</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">850</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">851</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;&#39;
 </pre></div>
 </div>
 </div>

@@ -220,16 +220,22 @@ df_correct['response_time'].describe()
 # 
 # > **Note:** The developers of OpenSesame have also created a Python package for working with column-based and continuous data, called [DataMatrix](http://pydatamatrix.eu/0.15/index/). It's similar to the Pandas package we've been working with in this tutorial, but has some crucial differences in syntax. We have opted for the more versatile and widely used Pandas package, but be aware that the OpenSesame website and tutorials can sometimes refer to DataMatrixes instead of DataFrames.
 
+# In[13]:
+
+
+df_trim_blocks.to_csv('../11_plotting/data/df_cleaned.csv', index=False)
+
+
 # ### Exercise 1
 # We've removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per task_transition_type using a pivot table. Then, show the mean reaction time of correct/incorrect trials per task_transition_type using a second pivot table
 
-# In[13]:
+# In[14]:
 
 
 # Pivot table count
 
 
-# In[14]:
+# In[15]:
 
 
 # Pivot table mean
@@ -240,7 +246,7 @@ df_correct['response_time'].describe()
 # 
 # From the dataframe with correct trials only, remove all trials that have a reaction time below 400ms and above 1000ms. Use a conditional selection of rows, and use only one line of code.
 
-# In[15]:
+# In[16]:
 
 
 # df_correct
@@ -258,17 +264,18 @@ df_correct['response_time'].describe()
 
 # ## Exercise 4
 # Apply the two outlier methods to the dataframe with the correct responses, and save the resulting dataframe. Do this by:
+# (1) Writing down what the cutoff values are for the outliers (you will need this later)
 # (1) Identifying the rows that fall out of your outlier range
 # (2) Making a new column called "outlier" where you mark the rows with outlier values with 1, and all the other rows with 0
 # (3) Saving the new dataframe. If you don't know the command to save, search on the internet for "save csv pandas" or something similar. You will need the dataframe in the next module!
 
-# In[16]:
+# In[17]:
 
 
 # Outlier method one
 
 
-# In[17]:
+# In[18]:
 
 
 # Outlier method two
