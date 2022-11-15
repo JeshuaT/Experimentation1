@@ -2,4 +2,4 @@
 
 TODO Acknowledgements
 
-TODO link to E-
+TODO link to E-Prime
