@@ -26,7 +26,7 @@
 # 
 # Note that you need the `range` function for this exercise that creates a list of numbers. You will learn more about `list` objects during a later session in this course.
 
-# In[19]:
+# In[1]:
 
 
 
