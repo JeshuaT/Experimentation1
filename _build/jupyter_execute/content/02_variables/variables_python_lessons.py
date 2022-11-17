@@ -5,37 +5,37 @@
 
 # > **Note** The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 
-# In[1]:
+# In[7]:
 
 
 from IPython.display import IFrame
 
 
-# In[2]:
+# In[8]:
 
 
 IFrame(src="https://www.youtube.com/embed/7KHdV6FSpo8", width="560", height="315")
 
 
-# In[3]:
+# In[9]:
 
 
 IFrame(src="https://www.youtube.com/embed/kefrGMAglGs", width="560", height="315")
 
 
-# In[4]:
+# In[10]:
 
 
 IFrame(src="https://www.youtube.com/embed/VQZTZsXk8sA", width="560", height="315")
 
 
-# In[5]:
+# In[11]:
 
 
 IFrame(src="https://www.youtube.com/embed/LLzFNlCjTSo", width="560", height="315")
 
 
-# In[6]:
+# In[12]:
 
 
 IFrame(src="https://www.youtube.com/embed/gsry2SYOFCw", width="560", height="315")

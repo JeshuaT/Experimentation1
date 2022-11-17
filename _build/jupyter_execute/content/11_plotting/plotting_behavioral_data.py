@@ -20,7 +20,7 @@ df = pd.read_csv('data/df_cleaned.csv')
 df.head(10)
 
 
-# In[2]:
+# In[5]:
 
 
 plt.style.use('default')
@@ -28,7 +28,7 @@ plt.style.use('default')
 
 # As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (also quick but a bit less rigid) and the object-oriented way (slowest but most flexible). Let's visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:
 
-# In[3]:
+# In[6]:
 
 
 # Here, the sns.lineplot function tells seaborn we want a line plot
@@ -40,7 +40,7 @@ sns.lineplot(data=df,
 
 # As you can see, with only one line of code we can visualize the switch cost difference. However, seaborn also does things we didn't ask for: it calculates the mean response time and gives us an error bar. We can explicitly change these settings of course, but it does illustrate a difference in coding philosophy: with the object-oriented way you build from the ground up, whilst in the seaborn (and the lesser extent the procedural way) you built from the top down. Let's see what happens with the procedural approach:
 
-# In[4]:
+# In[7]:
 
 
 # Because the procedural approach doesn't have the handy "hue" parameter, we first need to make the grouping ourselves
@@ -55,7 +55,7 @@ pivot.plot(kind="line")
 
 # Alright, we don't get the error bars, and no label for the y-axis, but other than that looks pretty similar to the seaborn plot. You can change the style to whatever you like most. See the styles available [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html). Below you can change the style and look at the new output right away:
 
-# In[5]:
+# In[9]:
 
 
 print(plt.style.available) # Print out all available styles
@@ -67,7 +67,7 @@ df.pivot_table("response_time", "subject_nr", "task_transition_type").plot(kind=
 
 # Alright, let's set it back to default:
 
-# In[6]:
+# In[10]:
 
 
 plt.style.use('default') # Set style for the rest of the script, change 'default' to something else
@@ -75,7 +75,7 @@ plt.style.use('default') # Set style for the rest of the script, change 'default
 
 # Some tweaking needs to be done now since the plots assume that "subject_nr" is a continuous variable, and in some styles not all the x-ticks are shown. But again, with a few lines of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
 
-# In[7]:
+# In[18]:
 
 
 # Group dataframe by both subject number and task_transition_type
@@ -99,7 +99,7 @@ plt.show()
 # 
 # It's important to be aware of the difference between these approaches, as when you google solutions for your matplotlib problems, you will often encounter solutions for all three approaches. However, when you are coding in an object-oriented matter, simply inputting procedural code will not work, and vice-versa! For the rest of the tutorial, we will continue with the object-oriented approach, unless it is really inconvenient to do so (as you will see at the end of the tutorial). For now, let's improve the plot we made above:
 
-# In[8]:
+# In[20]:
 
 
 # Group dataframe by both subject number and task_transition_type
@@ -135,7 +135,7 @@ plt.tight_layout()
 
 # Let's continue. Next thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot and the object-oriented approach we can easily make a histogram plot by specifying the column that should be plotted:
 
-# In[9]:
+# In[21]:
 
 
 # Make the framework and place in "fig" and "ax" variables
@@ -150,7 +150,7 @@ plt.show()
 
 # That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of object-oriented coding in matplotlib shows itself: you can customize virtually anything you want in these plots.
 
-# In[10]:
+# In[24]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -168,7 +168,7 @@ plt.show()
 
 # We can also make overlays to compare two distributions. Let's for example see how the distribution of correct versus incorrect trials look like.
 
-# In[11]:
+# In[25]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -206,7 +206,7 @@ plt.show()
 # 
 # The first two points we will have to consider during our outlier analysis. The last point however, should get you alarmed. It could be that participants have amazing internal clocks that tell them that the maximum trial time is almost over, so they must just guess. However, what happened here is that our logger gave the maximum response time (1500ms) to trials where there was **no response**. Spotting anomalies like this is one of the key advantages of plotting as much as possible. Luckily, we have a column that shows which button was pressed called *response*. Let's fix this error:
 
-# In[12]:
+# In[42]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -245,7 +245,7 @@ plt.show()
 # 
 # Below we make a so-called facet grid using seaborn. Later you will try to make this using the object-oriented approach, but this is one of the cases where using seaborn is just very convenient.
 
-# In[13]:
+# In[43]:
 
 
 sns.displot(
@@ -259,7 +259,7 @@ sns.displot(
 )
 
 
-# In[14]:
+# In[ ]:
 
 
 
@@ -285,7 +285,7 @@ df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].trans
 print(df)
 
 
-# In[15]:
+# In[ ]:
 
 
 plt.figure(figsize=(8,6));
@@ -293,7 +293,7 @@ plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=10
 plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[16]:
+# In[ ]:
 
 
 import seaborn as sns
@@ -307,19 +307,19 @@ sns.displot(
 )
 
 
-# In[17]:
+# In[ ]:
 
 
 df
 
 
-# In[18]:
+# In[ ]:
 
 
 df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
 
 
-# In[19]:
+# In[ ]:
 
 
 df_sum
@@ -328,7 +328,7 @@ df_sum
 # ## Exercise 1
 # In the first part of the tutorial, we plotted the switch cost using line plots. However, one could argue that bar plots would have been more suitable as we only have two participants. Change the line plot to a bar plot using the object-oriented approach.
 
-# In[20]:
+# In[ ]:
 
 
 # your answer here
@@ -337,7 +337,7 @@ df_sum
 # ### Exercise 2
 # We made the facet grid plot in seaborn out of convenience. However, with a bit more code we can also reproduce that plot in the object-oriented approach of matplotlib. Reproduce the plot in this way.
 
-# In[21]:
+# In[ ]:
 
 
 # A possible answer - REMOVE THIS IN THE FINAL BOOK

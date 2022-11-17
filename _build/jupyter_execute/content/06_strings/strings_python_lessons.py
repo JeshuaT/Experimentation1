@@ -3,19 +3,19 @@
 
 # # Python lessons: Strings
 
-# In[1]:
+# In[5]:
 
 
 from IPython.display import IFrame
 
 
-# In[2]:
+# In[6]:
 
 
 IFrame(src="https://www.youtube.com/embed/dr98iM4app8", width="560", height="315")
 
 
-# In[3]:
+# In[7]:
 
 
 IFrame(src="https://www.youtube.com/embed/bIFpJ-qZ3Cc", width="560", height="315")

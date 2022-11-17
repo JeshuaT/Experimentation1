@@ -5,7 +5,7 @@
 
 # TODO
 
-# In[1]:
+# In[2]:
 
 
 from matplotlib import pyplot as plt
@@ -20,20 +20,20 @@ import pandas as pd
 
 # Now a text here
 
-# In[2]:
+# In[3]:
 
 
 df = pd.read_csv('data/subject-0_CI.csv')
 print(df)
 
 
-# In[3]:
+# In[4]:
 
 
 df
 
 
-# In[4]:
+# In[5]:
 
 
 from datamatrix import io
@@ -42,7 +42,7 @@ dm = io.readtxt('data/subject-0_CI.csv')
 print(dm)
 
 
-# In[5]:
+# In[94]:
 
 
 #r"C:\Users\steenbergenhvan1\surfdrive\Virtual_P\My Documents\Teaching\2022-2023\Experimentation I nw style\Exp1Docs_Shared\07_Files\data"
@@ -111,7 +111,7 @@ plt.hist((dm.congruency == 'con').response_time, bins=100, alpha=0.5, label="dat
 plt.hist((dm.congruency == 'inc').response_time, bins=100, alpha=0.5, label="data2")
 
 
-# In[10]:
+# In[16]:
 
 
 #dataframe syntax
@@ -120,7 +120,7 @@ plt.hist(df.query("congruency == 'con'").response_time, bins=100, alpha=0.5, lab
 plt.hist(df.query("congruency == 'inc'").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[11]:
+# In[61]:
 
 
 
@@ -146,7 +146,7 @@ df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].trans
 print(df)
 
 
-# In[12]:
+# In[72]:
 
 
 plt.figure(figsize=(8,6));
@@ -154,7 +154,7 @@ plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=10
 plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
 
 
-# In[13]:
+# In[82]:
 
 
 import seaborn as sns
@@ -168,19 +168,19 @@ sns.displot(
 )
 
 
-# In[14]:
+# In[15]:
 
 
 df
 
 
-# In[15]:
+# In[87]:
 
 
 df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
 
 
-# In[16]:
+# In[88]:
 
 
 df_sum

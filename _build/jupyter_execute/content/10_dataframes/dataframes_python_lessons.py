@@ -4,7 +4,7 @@
 # # Python lessons: Dataframes
 # 
 
-# In[1]:
+# In[ ]:
 
 
 from IPython.display import IFrame
@@ -12,7 +12,7 @@ from IPython.display import IFrame
 
 # In this module you will learn how to work with OpenSesame datasets using the python package Pandas. The video and lesson we supply here were created by Todd M Gureckis, and released under [the creative commons license](http://teaching.gureckislab.org/fall22/labincp/LICENSE.html). First, watch this video:
 
-# In[2]:
+# In[1]:
 
 
 IFrame(src="https://player.vimeo.com/video/520946467", width="560", height="315")

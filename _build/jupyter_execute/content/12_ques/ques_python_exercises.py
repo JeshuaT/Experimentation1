@@ -6,7 +6,7 @@
 # ### Exercise 1. Reproduce the pokeball
 # Reproduce the pokeball as explained during the video in today's lessons.
 
-# In[1]:
+# In[68]:
 
 
 from tkinter import *
@@ -36,7 +36,7 @@ window.mainloop()
 # Ask the user how many seconds they want to wait and run the timer with this value. Check whether the value is not higher than fits in the display (59m:59s).
 # 
 
-# In[2]:
+# In[69]:
 
 
 from tkinter import *

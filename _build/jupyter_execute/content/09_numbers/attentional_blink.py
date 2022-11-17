@@ -3,7 +3,7 @@
 
 # # Attentional Blink paradigm in OpenSesame
 
-# In[1]:
+# In[3]:
 
 
 from IPython.display import IFrame
@@ -11,7 +11,7 @@ from IPython.display import IFrame
 
 # The tutorial can be found [here](https://osdoc.cogsci.nl/3.3/tutorials/advanced/)
 
-# In[2]:
+# In[4]:
 
 
 IFrame(src="https://osdoc.cogsci.nl/3.3/tutorials/advanced/", width="800", height="600")

@@ -9,7 +9,7 @@
 # 
 # A dataset we recommend exploring is the [dataset on global CO2 and greenhouse emission](https://github.com/owid/co2-data). However, you are free to choose any dataset you find interesting.
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd

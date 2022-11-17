@@ -12,7 +12,7 @@
 # Pick a dataset whereby something changes over time (e.g. the [dataset on global CO2 and greenhouse emission](https://github.com/owid/co2-data)). Import that dataset, and make sure the dataset is in a [tidy format](http://teaching.gureckislab.org/fall22/labincp/chapters/05/00-data.html#data-organization-tidy-and-wide-formats).
 # 
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
@@ -28,7 +28,7 @@ import pandas as pd
 # ## Exercise 2
 # Using a seaborn lineplot, plot the change over time. Add a title, an x-label, a y-label and a legend (if suitable).
 
-# In[2]:
+# In[ ]:
 
 
 import seaborn as sns
@@ -41,7 +41,7 @@ import seaborn as sns
 # 
 # > **Hint**: [This youtube video](https://www.youtube.com/watch?v=_LWjaAiKaf8&ab_channel=CoreySchafer) could be of help, as well as [this tutorial](https://machinelearningmastery.com/time-series-data-visualization-with-python/).
 
-# In[3]:
+# In[ ]:
 
 
 import matplotlib.pyplot as plt
@@ -54,7 +54,7 @@ import matplotlib.pyplot as plt
 # 
 # > **Hint:** [This tutorial](https://www.python-graph-gallery.com/basic-time-series-with-matplotlib) is useful for this approach
 
-# In[4]:
+# In[ ]:
 
 
 import matplotlib as plt

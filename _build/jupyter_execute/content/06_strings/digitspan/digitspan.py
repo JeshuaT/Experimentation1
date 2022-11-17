@@ -118,7 +118,7 @@ print(seq_presented)
 # Let's go back to the code in this tutorial.
 # 
 
-# In[6]:
+# In[ ]:
 
 
 response = "fcd"
@@ -130,7 +130,7 @@ else:
 
 # remove spaces and make all capitals
 
-# In[7]:
+# In[ ]:
 
 
 response = "fe"
@@ -147,7 +147,7 @@ print(fbtext)
 # get number of correctly retrieved items
 # 
 
-# In[8]:
+# In[ ]:
 
 
 num_correct = 0

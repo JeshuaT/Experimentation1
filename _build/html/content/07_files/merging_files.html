@@ -602,7 +602,7 @@
 <p>TODO</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -613,61 +613,394 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">53</span><span class="n">c3ab8b2d69</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">datamatrix</span> <span class="kn">import</span> <span class="n">DataMatrix</span><span class="p">,</span> <span class="n">io</span><span class="p">,</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;datamatrix&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now a text here</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/subject-0_CI.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/subject-0_CI.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="n">dfd68a8f945</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/subject-0_CI.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ID         acc accept_status    accuracy  age  average_response_time  \
+0     14  100.000000           yes  100.000000   23                  17079   
+1     34  100.000000           yes  100.000000   23                  13885   
+2     12  100.000000           yes  100.000000   23                  11807   
+3      5   85.714286           yes   85.714286   23                  10212   
+4     31   87.500000           yes   87.500000   23                   9018   
+..   ...         ...           ...         ...  ...                    ...   
+271    3   97.472924           yes   97.472924   23                    980   
+272   45   97.482014           yes   97.482014   23                    979   
+273  100   97.491039           yes   97.491039   23                    977   
+274  110   97.500000           yes   97.500000   23                    976   
+275   29   97.508897           yes   97.508897   23                    974   
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+     avg_rt background bidi     block  ... time_practice time_stroop  \
+0     17079    #ffffff   no  practice  ...        123799      123895   
+1     13885    #ffffff   no  practice  ...        123799      126701   
+2     11807    #ffffff   no  practice  ...        123799      129972   
+3     10212    #ffffff   no  practice  ...        123799      133556   
+4      9018    #ffffff   no  practice  ...        123799      136370   
+..      ...        ...  ...       ...  ...           ...         ...   
+271     980    #ffffff   no         I  ...        123799      917937   
+272     979    #ffffff   no         I  ...        123799      920705   
+273     977    #ffffff   no         I  ...        123799      923590   
+274     976    #ffffff   no         I  ...        123799      926349   
+275     974    #ffffff   no         I  ...        123799      929072   
+
+    time_target      title total_correct total_response_time  total_responses  \
+0        124469  Stroop CI             4               68319                4   
+1        127275  Stroop CI             5               69428                5   
+2        130547  Stroop CI             6               70842                6   
+3        134130  Stroop CI             6               71484                7   
+4        136944  Stroop CI             7               72150                8   
+..          ...        ...           ...                 ...              ...   
+271      918511  Stroop CI           270              271492              277   
+272      921279  Stroop CI           271              272211              278   
+273      924164  Stroop CI           272              272818              279   
+274      926925  Stroop CI           273              273312              280   
+275      929647  Stroop CI           274              273802              281   
+
+    uniform_coordinates width    word  
+0                   yes  1366     RED  
+1                   yes  1366     LOT  
+2                   yes  1366   GREEN  
+3                   yes  1366   GREEN  
+4                   yes  1366     LOT  
+..                  ...   ...     ...  
+271                 yes  1366    BLUE  
+272                 yes  1366  YELLOW  
+273                 yes  1366    BLUE  
+274                 yes  1366   KNIFE  
+275                 yes  1366     RED  
+
+[276 rows x 124 columns]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">00</span><span class="n">cf07b74dcd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>acc</th>
+      <th>accept_status</th>
+      <th>accuracy</th>
+      <th>age</th>
+      <th>average_response_time</th>
+      <th>avg_rt</th>
+      <th>background</th>
+      <th>bidi</th>
+      <th>block</th>
+      <th>...</th>
+      <th>time_practice</th>
+      <th>time_stroop</th>
+      <th>time_target</th>
+      <th>title</th>
+      <th>total_correct</th>
+      <th>total_response_time</th>
+      <th>total_responses</th>
+      <th>uniform_coordinates</th>
+      <th>width</th>
+      <th>word</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14</td>
+      <td>100.000000</td>
+      <td>yes</td>
+      <td>100.000000</td>
+      <td>23</td>
+      <td>17079</td>
+      <td>17079</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>123895</td>
+      <td>124469</td>
+      <td>Stroop CI</td>
+      <td>4</td>
+      <td>68319</td>
+      <td>4</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>RED</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34</td>
+      <td>100.000000</td>
+      <td>yes</td>
+      <td>100.000000</td>
+      <td>23</td>
+      <td>13885</td>
+      <td>13885</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>126701</td>
+      <td>127275</td>
+      <td>Stroop CI</td>
+      <td>5</td>
+      <td>69428</td>
+      <td>5</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>LOT</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>100.000000</td>
+      <td>yes</td>
+      <td>100.000000</td>
+      <td>23</td>
+      <td>11807</td>
+      <td>11807</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>129972</td>
+      <td>130547</td>
+      <td>Stroop CI</td>
+      <td>6</td>
+      <td>70842</td>
+      <td>6</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>GREEN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>85.714286</td>
+      <td>yes</td>
+      <td>85.714286</td>
+      <td>23</td>
+      <td>10212</td>
+      <td>10212</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>133556</td>
+      <td>134130</td>
+      <td>Stroop CI</td>
+      <td>6</td>
+      <td>71484</td>
+      <td>7</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>GREEN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>31</td>
+      <td>87.500000</td>
+      <td>yes</td>
+      <td>87.500000</td>
+      <td>23</td>
+      <td>9018</td>
+      <td>9018</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>136370</td>
+      <td>136944</td>
+      <td>Stroop CI</td>
+      <td>7</td>
+      <td>72150</td>
+      <td>8</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>LOT</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>3</td>
+      <td>97.472924</td>
+      <td>yes</td>
+      <td>97.472924</td>
+      <td>23</td>
+      <td>980</td>
+      <td>980</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>917937</td>
+      <td>918511</td>
+      <td>Stroop CI</td>
+      <td>270</td>
+      <td>271492</td>
+      <td>277</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>BLUE</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>45</td>
+      <td>97.482014</td>
+      <td>yes</td>
+      <td>97.482014</td>
+      <td>23</td>
+      <td>979</td>
+      <td>979</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>920705</td>
+      <td>921279</td>
+      <td>Stroop CI</td>
+      <td>271</td>
+      <td>272211</td>
+      <td>278</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>YELLOW</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>100</td>
+      <td>97.491039</td>
+      <td>yes</td>
+      <td>97.491039</td>
+      <td>23</td>
+      <td>977</td>
+      <td>977</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>923590</td>
+      <td>924164</td>
+      <td>Stroop CI</td>
+      <td>272</td>
+      <td>272818</td>
+      <td>279</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>BLUE</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>110</td>
+      <td>97.500000</td>
+      <td>yes</td>
+      <td>97.500000</td>
+      <td>23</td>
+      <td>976</td>
+      <td>976</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>926349</td>
+      <td>926925</td>
+      <td>Stroop CI</td>
+      <td>273</td>
+      <td>273312</td>
+      <td>280</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>KNIFE</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>29</td>
+      <td>97.508897</td>
+      <td>yes</td>
+      <td>97.508897</td>
+      <td>23</td>
+      <td>974</td>
+      <td>974</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>929072</td>
+      <td>929647</td>
+      <td>Stroop CI</td>
+      <td>274</td>
+      <td>273802</td>
+      <td>281</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>RED</td>
+    </tr>
+  </tbody>
+</table>
+<p>276 rows × 124 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamatrix</span> <span class="kn">import</span> <span class="n">io</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamatrix</span> <span class="kn">import</span> <span class="n">io</span>
 
 <span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="s1">&#39;data/subject-0_CI.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
@@ -675,22 +1008,39 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">23</span><span class="n">a0e0cb696f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">datamatrix</span> <span class="kn">import</span> <span class="n">io</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="s1">&#39;data/subject-0_CI.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;datamatrix&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+----+---------------+---------------+---------------+-----+-----------------------+
+| #  | ID |      acc      | accept_status |    accuracy   | age | average_response_time |
++----+----+---------------+---------------+---------------+-----+-----------------------+
+| 0  | 14 |      100      |      yes      |      100      |  23 |         17079         |
+| 1  | 34 |      100      |      yes      |      100      |  23 |         13885         |
+| 2  | 12 |      100      |      yes      |      100      |  23 |         11807         |
+| 3  | 5  | 85.7142857143 |      yes      | 85.7142857143 |  23 |         10212         |
+| 4  | 31 |      87.5     |      yes      |      87.5     |  23 |          9018         |
+| 5  | 25 | 88.8888888889 |      yes      | 88.8888888889 |  23 |          8104         |
+| 6  | 24 |       90      |      yes      |       90      |  23 |          7438         |
+| 7  | 2  | 90.9090909091 |      yes      | 90.9090909091 |  23 |          6844         |
+| 8  | 33 | 91.6666666667 |      yes      | 91.6666666667 |  23 |          6339         |
+| 9  | 9  | 92.3076923077 |      yes      | 92.3076923077 |  23 |          5933         |
+| 10 | 11 | 92.8571428571 |      yes      | 92.8571428571 |  23 |          5580         |
+| 11 | 20 | 93.3333333333 |      yes      | 93.3333333333 |  23 |          5267         |
+| 12 | 17 |     93.75     |      yes      |     93.75     |  23 |          4996         |
+| 13 | 16 | 94.1176470588 |      yes      | 94.1176470588 |  23 |          4739         |
+| 14 | 26 | 94.4444444444 |      yes      | 94.4444444444 |  23 |          4510         |
+| 15 | 22 | 94.7368421053 |      yes      | 94.7368421053 |  23 |          4314         |
+| 16 | 28 |       95      |      yes      |       95      |  23 |          4128         |
+| 17 | 29 | 95.2380952381 |      yes      | 95.2380952381 |  23 |          3966         |
+| 18 | 4  | 95.4545454545 |      yes      | 95.4545454545 |  23 |          3813         |
+| 19 | 13 |  95.652173913 |      yes      |  95.652173913 |  23 |          3671         |
++----+----+---------------+---------------+---------------+-----+-----------------------+
+(+ 118 columns not shown)
+(+ 256 rows not shown)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#r&quot;C:\Users\steenbergenhvan1\surfdrive\Virtual_P\My Documents\Teaching\2022-2023\Experimentation I nw style\Exp1Docs_Shared\07_Files\data&quot;</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#r&quot;C:\Users\steenbergenhvan1\surfdrive\Virtual_P\My Documents\Teaching\2022-2023\Experimentation I nw style\Exp1Docs_Shared\07_Files\data&quot;</span>
 
 <span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\steenbergenhvan1\surfdrive\Virtual_P\My Documents\Teaching\2022-2023\Experimentation I nw style\Exp1Docs_Shared\07_Files\data\subject-0_CI - copy.csv&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
@@ -698,22 +1048,39 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">b5f70de8e98b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#r&quot;C:\Users\steenbergenhvan1\surfdrive\Virtual_P\My Documents\Teaching\2022-2023\Experimentation I nw style\Exp1Docs_Shared\07_Files\data&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\steenbergenhvan1\surfdrive\Virtual_P\My Documents\Teaching\2022-2023\Experimentation I nw style\Exp1Docs_Shared\07_Files\data\subject-0_CI - copy.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;io&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+----+---------------+---------------+---------------+-----+-----------------------+
+| #  | ID |      acc      | accept_status |    accuracy   | age | average_response_time |
++----+----+---------------+---------------+---------------+-----+-----------------------+
+| 0  | 14 |      100      |      yes      |      100      |  23 |         17079         |
+| 1  | 34 |      100      |      yes      |      100      |  23 |         13885         |
+| 2  | 12 |      100      |      yes      |      100      |  23 |         11807         |
+| 3  | 5  | 85.7142857143 |      yes      | 85.7142857143 |  23 |         10212         |
+| 4  | 31 |      87.5     |      yes      |      87.5     |  23 |          9018         |
+| 5  | 25 | 88.8888888889 |      yes      | 88.8888888889 |  23 |          8104         |
+| 6  | 24 |       90      |      yes      |       90      |  23 |          7438         |
+| 7  | 2  | 90.9090909091 |      yes      | 90.9090909091 |  23 |          6844         |
+| 8  | 33 | 91.6666666667 |      yes      | 91.6666666667 |  23 |          6339         |
+| 9  | 9  | 92.3076923077 |      yes      | 92.3076923077 |  23 |          5933         |
+| 10 | 11 | 92.8571428571 |      yes      | 92.8571428571 |  23 |          5580         |
+| 11 | 20 | 93.3333333333 |      yes      | 93.3333333333 |  23 |          5267         |
+| 12 | 17 |     93.75     |      yes      |     93.75     |  23 |          4996         |
+| 13 | 16 | 94.1176470588 |      yes      | 94.1176470588 |  23 |          4739         |
+| 14 | 26 | 94.4444444444 |      yes      | 94.4444444444 |  23 |          4510         |
+| 15 | 22 | 94.7368421053 |      yes      | 94.7368421053 |  23 |          4314         |
+| 16 | 28 |       95      |      yes      |       95      |  23 |          4128         |
+| 17 | 29 | 95.2380952381 |      yes      | 95.2380952381 |  23 |          3966         |
+| 18 | 4  | 95.4545454545 |      yes      | 95.4545454545 |  23 |          3813         |
+| 19 | 13 |  95.652173913 |      yes      |  95.652173913 |  23 |          3671         |
++----+----+---------------+---------------+---------------+-----+-----------------------+
+(+ 118 columns not shown)
+(+ 256 rows not shown)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change this to the folder that contains the .csv files</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change this to the folder that contains the .csv files</span>
 <span class="n">SRC_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
 <span class="c1"># Change this to a list of column names that you want to keep</span>
 <span class="n">COLUMNS_TO_KEEP</span> <span class="o">=</span> <span class="p">[</span>
@@ -734,23 +1101,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">5</span><span class="n">d165967b4e4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">dm</span> <span class="o">=</span> <span class="n">DataMatrix</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">for</span> <span class="n">basename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">SRC_FOLDER</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">SRC_FOLDER</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;DataMatrix&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading data\CI_RSI2000_test.csv
+Reading data\subject-0_CI.csv
+Reading data\subject-11_CI.csv
+Reading data\subject-12_IC.csv
+Reading data\subject-13_CI.csv
+Reading data\subject-14_IC.csv
+Reading data\subject-1_IC.csv
+Reading data\subject-3_CI.csv
+Reading data\subject-4_IC.csv
+Reading data\subject-5_CI.csv
+Reading data\subject-6.csv
+Reading data\subject-7_IC.csv
+Reading data\subject-9_IC.csv
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="s1">&#39;merged-data.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="s1">&#39;merged-data.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;merged-data.csv&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">subject_nr</span><span class="p">,</span> <span class="n">dm</span><span class="o">.</span><span class="n">acc</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
@@ -758,22 +1128,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">3</span><span class="n">d8cc9ab54bd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dm</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">readtxt</span><span class="p">(</span><span class="s1">&#39;merged-data.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;merged-data.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">subject_nr</span><span class="p">,</span> <span class="n">dm</span><span class="o">.</span><span class="n">acc</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;io&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20a45fa4220&gt;]
 </pre></div>
 </div>
+<img alt="../../_images/merging_files_10_1.png" src="../../_images/merging_files_10_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check counts</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check counts</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
     <span class="n">dm</span><span class="p">,</span>
     <span class="n">values</span><span class="o">=</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span>
@@ -785,23 +1148,103 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">39964</span><span class="n">bea2c32</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#check counts</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">dm</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">values</span><span class="o">=</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subject_nr&quot;</span><span class="p">],</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>congruency</th>
+      <th>con</th>
+      <th>inc</th>
+      <th>neutral</th>
+    </tr>
+    <tr>
+      <th>subject_nr</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>480</td>
+      <td>480</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>120</td>
+      <td>120</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#datamatrix syntax</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#datamatrix syntax</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">((</span><span class="n">dm</span><span class="o">.</span><span class="n">congruency</span> <span class="o">==</span> <span class="s1">&#39;con&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">((</span><span class="n">dm</span><span class="o">.</span><span class="n">congruency</span> <span class="o">==</span> <span class="s1">&#39;inc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">)</span>
@@ -809,25 +1252,38 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">8</span><span class="n">a64a21792e8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#datamatrix syntax</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">((</span><span class="n">dm</span><span class="o">.</span><span class="n">congruency</span> <span class="o">==</span> <span class="s1">&#39;con&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">((</span><span class="n">dm</span><span class="o">.</span><span class="n">congruency</span> <span class="o">==</span> <span class="s1">&#39;inc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dm&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.,  0.,  2.,  7., 10., 10., 21., 17., 18., 21., 19., 31., 37.,
+        28., 35., 49., 43., 44., 51., 52., 46., 56., 45., 42., 44., 37.,
+        43., 47., 44., 30., 40., 26., 36., 28., 24., 17., 31., 25., 19.,
+        21., 21., 18., 19., 21., 15., 15., 11., 10., 13., 12.,  9., 12.,
+        11.,  7.,  8., 14.,  7.,  9.,  8.,  5.,  7.,  4.,  6.,  5.,  6.,
+         4.,  3.,  4.,  3.,  7.,  4.,  0.,  1.,  2.,  5.,  5.,  5.,  1.,
+         1.,  3.,  0.,  1.,  1.,  3.,  1.,  2.,  1.,  1.,  1.,  2.,  0.,
+         2.,  0.,  0.,  1.,  2.,  2.,  0.,  1., 19.]),
+ array([ 334.  ,  350.66,  367.32,  383.98,  400.64,  417.3 ,  433.96,
+         450.62,  467.28,  483.94,  500.6 ,  517.26,  533.92,  550.58,
+         567.24,  583.9 ,  600.56,  617.22,  633.88,  650.54,  667.2 ,
+         683.86,  700.52,  717.18,  733.84,  750.5 ,  767.16,  783.82,
+         800.48,  817.14,  833.8 ,  850.46,  867.12,  883.78,  900.44,
+         917.1 ,  933.76,  950.42,  967.08,  983.74, 1000.4 , 1017.06,
+        1033.72, 1050.38, 1067.04, 1083.7 , 1100.36, 1117.02, 1133.68,
+        1150.34, 1167.  , 1183.66, 1200.32, 1216.98, 1233.64, 1250.3 ,
+        1266.96, 1283.62, 1300.28, 1316.94, 1333.6 , 1350.26, 1366.92,
+        1383.58, 1400.24, 1416.9 , 1433.56, 1450.22, 1466.88, 1483.54,
+        1500.2 , 1516.86, 1533.52, 1550.18, 1566.84, 1583.5 , 1600.16,
+        1616.82, 1633.48, 1650.14, 1666.8 , 1683.46, 1700.12, 1716.78,
+        1733.44, 1750.1 , 1766.76, 1783.42, 1800.08, 1816.74, 1833.4 ,
+        1850.06, 1866.72, 1883.38, 1900.04, 1916.7 , 1933.36, 1950.02,
+        1966.68, 1983.34, 2000.  ]),
+ &lt;BarContainer object of 100 artists&gt;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 576x432 with 0 Axes&gt;
-</pre></div>
-</div>
+<img alt="../../_images/merging_files_12_1.png" src="../../_images/merging_files_12_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dataframe syntax</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dataframe syntax</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;con&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">);</span>
@@ -835,25 +1291,74 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">5</span><span class="n">eb89c966eb6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#dataframe syntax</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;con&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">);</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">);</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 576x432 with 0 Axes&gt;
-</pre></div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>acc</th>
+      <th>congruency</th>
+      <th>response_time</th>
+      <th>subject_nr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>75.000000</td>
+      <td>neutral</td>
+      <td>1988</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>80.000000</td>
+      <td>neutral</td>
+      <td>1060</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>83.333333</td>
+      <td>neutral</td>
+      <td>890</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>85.714286</td>
+      <td>inc</td>
+      <td>692</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>87.500000</td>
+      <td>neutral</td>
+      <td>1155</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../../_images/merging_files_13_1.png" src="../../_images/merging_files_13_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df.head()</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df.head()</span>
 
 <span class="c1">#df[&#39;acc&#39;]</span>
 <span class="c1">#df.acc</span>
@@ -877,47 +1382,39 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">5</span><span class="n">ded30cb53fd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> 
-<span class="g g-Whitespace">     </span><span class="mi">17</span> 
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;congruency&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> 
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            acc congruency  response_time  subject_nr  rt_zscore
+0     75.000000    neutral           1988           0   5.312859
+1     80.000000    neutral           1060           0   1.410521
+2     83.333333    neutral            890           0   0.695653
+3     85.714286        inc            692           0  -0.196640
+4     87.500000    neutral           1155           0   1.810006
+...         ...        ...            ...         ...        ...
+3583  88.447653        con            534           9  -0.717676
+3584  88.489209        con            566           9  -0.560422
+3585  88.530466        con            688           9   0.039109
+3586  88.571429    neutral            688           9  -0.311542
+3587  88.612100        con            617           9  -0.309799
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+[3588 rows x 5 columns]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &gt; 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">514</span><span class="n">f596ca88f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data1&quot;</span><span class="p">);</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;congruency == &#39;inc&#39; &amp; rt_zscore &gt; 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">response_time</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data2&quot;</span><span class="p">);</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 576x432 with 0 Axes&gt;
-</pre></div>
-</div>
+<img alt="../../_images/merging_files_15_0.png" src="../../_images/merging_files_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span>
 
@@ -930,67 +1427,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">81245387</span><span class="n">ed64</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rt_zscore&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x20a55c84a90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/merging_files_16_1.png" src="../../_images/merging_files_16_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>acc</th>
+      <th>congruency</th>
+      <th>response_time</th>
+      <th>subject_nr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>75.000000</td>
+      <td>neutral</td>
+      <td>1988</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>80.000000</td>
+      <td>neutral</td>
+      <td>1060</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>83.333333</td>
+      <td>neutral</td>
+      <td>890</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>85.714286</td>
+      <td>inc</td>
+      <td>692</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>87.500000</td>
+      <td>neutral</td>
+      <td>1155</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3583</th>
+      <td>88.447653</td>
+      <td>con</td>
+      <td>534</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3584</th>
+      <td>88.489209</td>
+      <td>con</td>
+      <td>566</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3585</th>
+      <td>88.530466</td>
+      <td>con</td>
+      <td>688</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3586</th>
+      <td>88.571429</td>
+      <td>neutral</td>
+      <td>688</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3587</th>
+      <td>88.612100</td>
+      <td>con</td>
+      <td>617</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+<p>3588 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;congruency&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sum</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">00</span><span class="n">cf07b74dcd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;congruency&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">27</span><span class="n">bd57070758</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rt_zscore &lt;= 3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span><span class="s1">&#39;congruency&#39;</span><span class="p">])[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sum</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">ad991e913f3b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_sum</span>
-
-<span class="ne">NameError</span>: name &#39;df_sum&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>subject_nr  congruency
+0           con            617.957447
+            inc            720.670213
+            neutral        702.872340
+1           con            704.855932
+            inc            862.016807
+            neutral        833.777778
+3           con            843.822034
+            inc           1108.733333
+            neutral       1039.571429
+4           con            893.084746
+            inc           1094.958333
+            neutral       1138.527778
+5           con            756.854701
+            inc            823.769231
+            neutral        813.694444
+6           con            715.529412
+            inc            833.491525
+            neutral        857.342857
+9           con            665.110169
+            inc            864.487179
+            neutral        735.714286
+11          con            650.593220
+            inc            684.445378
+            neutral        726.000000
+12          con            722.508475
+            inc            799.521368
+            neutral        724.944444
+13          con            627.431034
+            inc            775.016949
+            neutral        697.805556
+Name: response_time, dtype: float64
 </pre></div>
 </div>
 </div>

@@ -601,7 +601,7 @@
 <h1>Python lessons: Plotting<a class="headerlink" href="#python-lessons-plotting" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 </pre></div>
 </div>
 </div>
@@ -609,7 +609,7 @@
 <p>This module is all about making visualizations. We will use the python package matplotlib for our visualizations, but before we dive in it’s important to get a high-level feel for how matplotlib is built:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/IlKvEWXajJM&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/IlKvEWXajJM&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -621,44 +621,25 @@
     src="https://www.youtube.com/embed/IlKvEWXajJM"
     frameborder="0"
     allowfullscreen
+
 ></iframe>
 </div></div>
 </div>
 <p>Let’s now dive deeper into this difference between the <strong>state machine</strong> mode (procedural programming) and the <strong>figures and axes</strong> mode (object-oriented programming). If you prefer, <a class="reference external" href="https://neuraldatascience.io/4-viz/proc_vs_oo.html">here</a> you can read along with the jupyter notebook the author is discussing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/w6KUTf70avw&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/w6KUTf70avw&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/w6KUTf70avw"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <p>In this course we will focus on the <strong>object-oriented</strong> programming way of using matplotlib. This is what matplotlib recommends beginners to start with. Initially it may seem like more work for your simple plots, but soon enough you will need the object-oriented programming, and therefore it’s the best basis to build your matplotlib skills on. The next tutorial video is all about this object-oriented matplotlib programming (again, <a class="reference external" href="https://neuraldatascience.io/4-viz/subplots.html">here</a> is the accompanying notebook):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/sVekwr8t7jw&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/sVekwr8t7jw&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/sVekwr8t7jw"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <p>Alright, now you have a good high-level understanding of matplotlib. A good reference page is this <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/quick_start.html">quick start guide</a> by the developers of matplotlib. Especially the overview below (which is taken from the quick start guide) is very useful to keep close when you go through this module.</p>
 <p><img alt="image" src="../../_images/matplotlib_overview.PNG" /></p>

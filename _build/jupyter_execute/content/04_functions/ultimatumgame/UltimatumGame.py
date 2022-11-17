@@ -19,7 +19,7 @@ from IPython.display import IFrame
 # 
 # When real people were asked to play this *Ultimatum Game* (Güth, Schmittberger & Schwarze, 1982)*,* however, economics around the world were shocked and astonished to discover that people are not actually all that rational. In fact, responders will often decline unfair offers, even if they, in economic terms, are only shooting themselves in the foot! The players in Alex's position -- the proposers -- also tend to be much nicer and tend to make proposals that are only *slightly* unfair.
 
-# In[2]:
+# In[ ]:
 
 
 display_quiz("questions/question_1.json")
@@ -47,7 +47,7 @@ display_quiz("questions/question_1.json")
 # 
 # ![image info](./images/block_loop.PNG)
 
-# In[3]:
+# In[ ]:
 
 
 display_quiz("questions/question_2.json")
@@ -79,7 +79,7 @@ display_quiz("questions/question_2.json")
 # 
 # ![image info](./images/DecisionMe.PNG)
 
-# In[4]:
+# In[ ]:
 
 
 display_quiz("questions/question_3.json")
@@ -95,7 +95,7 @@ display_quiz("questions/question_3.json")
 # 
 # ![image info](./images/DecisionMe_feedback.PNG)
 
-# In[5]:
+# In[ ]:
 
 
 display_quiz("questions/question_4.json")
@@ -126,7 +126,7 @@ display_quiz("questions/question_4.json")
 # 
 # First, lets make a list of the possible decisions of Player 2, and store that list in a variable called "Decision". The possible decisions are "Accept" and "Reject". You can type in the chunk below to make the list. Don't look at the solution right away, try to solve it yourself first!
 
-# In[6]:
+# In[ ]:
 
 
 # decision = ...
@@ -137,7 +137,7 @@ display_quiz("questions/question_4.json")
 # 
 # For this kind of decision-making, we can make use of an *if...else statement*. This statement will only run part of the code if a certain test condition is met. Let's try it out. Write down a script that decides for you if you should or should not eat the banana based on its colour, and prints out the decision.
 
-# In[7]:
+# In[ ]:
 
 
 # banana = "green"
@@ -151,7 +151,7 @@ display_quiz("questions/question_4.json")
 # In our case we ofcourse don't decide between eating or not eating a banana, but between accepting or rejection the offer we got based on how fair the offer is. Lets start by programming an "if...else statement" that **always** accepts the offer if its fair, and **always** rejects the offer when its unfair. Call the decision "choice", and print out the choice made. Test your script by changing the "response" variable to "Fair" or "Unfair".
 # 
 
-# In[8]:
+# In[ ]:
 
 
 # response = "Fair"
@@ -163,7 +163,7 @@ display_quiz("questions/question_4.json")
 
 # This is a good start. Now, we need to add in the observation that humans in this game don't always make the same choice. Rather, there is a certain probability (instead of certainty) that a Player accepts or rejects the offer. We need some kind of way to throw a dice each time Player 2 gets an offer, and the probability of the dice landing on "Accept" or "Reject" should depend on the fairness of the offer. As dice-roller, we will make use of the Python module *Random*, and within that module we will use the *choices* method. This method picks a value from a list (our decision list in this case), and you can specify the "weights" (how likely it is that an element of a list is chosen) as well. So, let's build a decision-making *if...else statement* that accepts the offer 80% of the time when the offer is fair, and accepts the offer just 25% if the offer is unfair. To help yourself, check out [this link](https://www.w3schools.com/python/ref_random_choices.asp) for an explanation of the random.choices() method.
 
-# In[9]:
+# In[ ]:
 
 
 # from random import choices
@@ -196,7 +196,7 @@ display_quiz("questions/question_4.json")
 # 
 # ![image info](./images/trial_sequence_final.PNG)
 
-# In[10]:
+# In[ ]:
 
 
 display_quiz("questions/question_5.json")
@@ -204,7 +204,7 @@ display_quiz("questions/question_5.json")
 
 # As you saw in the question, something there is happening that we probably would not want to have. If there is no offer given, there shouldn't be a response from Player 2. Starting from our decision script for Player 2, can you find a solution so that, when no response is given, Player 2 simply doesn't do anything? In OpenSesame, if no response is made the "response" variable is set to "None". Furthermore, it's important to print out the choice made, only if there was a choice. Note that there are multiple solutions.
 
-# In[11]:
+# In[ ]:
 
 
 # from random import choices
@@ -230,7 +230,7 @@ display_quiz("questions/question_5.json")
 # 
 # The experiment should look something like this:
 
-# In[12]:
+# In[ ]:
 
 
 IFrame(src="https://www.youtube.com/embed/U6nB-WXZVQI", width="560", height="315")

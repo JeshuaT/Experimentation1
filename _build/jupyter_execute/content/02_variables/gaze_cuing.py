@@ -3,7 +3,7 @@
 
 # # Gaze cuing task in OpenSesame
 
-# In[1]:
+# In[10]:
 
 
 from IPython.display import IFrame
@@ -11,7 +11,7 @@ from IPython.display import IFrame
 
 # The tutorial can be found [here](https://osdoc.cogsci.nl/3.3/tutorials/beginner/)
 
-# In[2]:
+# In[11]:
 
 
 

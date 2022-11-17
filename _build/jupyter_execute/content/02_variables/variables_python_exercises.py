@@ -15,7 +15,7 @@
 # Hello Chuck
 # ```
 
-# In[1]:
+# In[29]:
 
 
 #your code here
@@ -36,7 +36,7 @@ print("Hello " + a)
 # We won’t worry about making sure our pay has exactly two digits after the decimal place for now. If you want, you can play with the built-in Python round function to properly round the resulting pay to two decimal places.
 # 
 
-# In[2]:
+# In[30]:
 
 
 #your code here
@@ -67,7 +67,7 @@ print("Pay: " + str(h*r))
 # Use the Python interpreter to check your answers.
 # 
 
-# In[3]:
+# In[ ]:
 
 
 #your code here
@@ -93,7 +93,7 @@ print(type(1 + 2 * 5))
 #  ```
 # 
 
-# In[4]:
+# In[ ]:
 
 
 #your code here
@@ -114,7 +114,7 @@ print("Temperature in Fahrenheit: " + str((c * 9/5) + 32))
 # ```
 # 
 
-# In[5]:
+# In[ ]:
 
 
 #your code here
@@ -138,7 +138,7 @@ print("Inverse RT is: " + str(RTinv) + "; Log RT is: " + str(RTlog) + ".")
 # When combining an RT of 652 ms and an ACC of 0.9449 (= 5.51% errors), the IES score is 690 ms.
 # ```
 
-# In[6]:
+# In[ ]:
 
 
 #your code here

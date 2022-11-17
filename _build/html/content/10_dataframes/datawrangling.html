@@ -701,7 +701,7 @@
 <p>OpenSesame outputs a <em>comma-separated values (csv)</em> file. This is a very widely used format, and you can painlessly import this file type in Python using the datafile package <strong>pandas</strong> (as we’ve seen in the exercises and lessons). Let’s import a datafile from two participants and merge those in one file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># disable chained assignments, you can ignore this line of code</span>
@@ -720,7 +720,7 @@
 <p>That’s a lot of columns. In your “logger” file in OpenSesame, the recommended thing to do is to check the box of “Log all variables”. This is the safest option, because it’s easy to remove columns and you would rather not have that you missed an essential variable after doing your experiment. Let’s pick the columns that we need:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a list of column names that we want to include</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a list of column names that we want to include</span>
 <span class="n">include_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">,</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_type&#39;</span><span class="p">,</span>
                    <span class="s1">&#39;correct&#39;</span><span class="p">,</span> <span class="s1">&#39;response_time&#39;</span><span class="p">,</span> <span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;task_type&#39;</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">]</span>
 
@@ -915,7 +915,7 @@
 <p>Before we make any changes to the dataframe, we must first be sure that all the columns are in the right <a class="reference external" href="https://pbpython.com/pandas_dtypes.html">type</a>. If we print the data types of each column, we can see that subject_nr is an integer. However, we don’t intend for the dataframe to interpret “3” and “4” as numbers, since it’s simply a categorization. Let’s change that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Column types BEFORE changing: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df_trim</span><span class="o">.</span><span class="n">dtypes</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Column types BEFORE changing: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df_trim</span><span class="o">.</span><span class="n">dtypes</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
 <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
@@ -957,7 +957,7 @@ dtype: object
 <p>Alright, it’s getting a bit more uncluttered now. The task-design is so that the last two blocks are different kind of blocks. We don’t have to go in details now, but for further analysis we will have to create a dataframe without block 11 and 12. There are <a class="reference external" href="https://www.geeksforgeeks.org/selecting-rows-in-pandas-dataframe-based-on-conditions/">many ways to conditional selection of rows</a>, but here we opt to use the information that we need all blocks with a value smaller than 11.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here the last blocks should be 12, lets check by printing the last 5 rows of the block column using the tail function</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here the last blocks should be 12, lets check by printing the last 5 rows of the block column using the tail function</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The last block here is 12: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df_trim</span><span class="p">[</span><span class="s2">&quot;block&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Conditionally select rows based on if the value in the &quot;block&quot; column is lower than 11</span>
@@ -991,7 +991,7 @@ Name: block, dtype: int64
 <p>Lastly, it’s a bit confusing that we have only two subjects, but they are called number 3 and 4, instead of 1 and 2. Let’s fix that by replacing subject 3 with subject 1, and subject 4 with subject 2. We can use the replace function of Pandas to achieve this. Then, with the pandas <em>unique</em> function we can verify that the subject numbers have been changed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace 3 with 1 in subject_nr column</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace 3 with 1 in subject_nr column</span>
 <span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Replace 4 with 2 in subject_nr column</span>
@@ -1015,7 +1015,7 @@ Categories (2, int64): [1, 2]
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_task_transition_exp</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_task_transition_exp</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;session&#39;</span><span class="p">],</span> <span class="c1"># Index on session</span>
     <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="c1"># Group on &#39;task_transition_type&#39;</span>
     <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
@@ -1078,7 +1078,7 @@ Categories (2, int64): [1, 2]
 This all whilst keeping into account that the first trial of each block does not count as either repetition or switch trial. In complex structures like this, sometimes you cannot aim for perfect counterbalancing, but you can aim for “as good as possible” (hence the slight discrepancy in the pivot table above). Let’s see if we can use a bit more complex pivot table to get a clearer picture if all of this worked out</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_cong</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_cong</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">],</span>
     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;congruency_type&#39;</span><span class="p">],</span>
     <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">)</span> <span class="c1"># Function to aggregate columns on, here we specify &quot;size&quot;</span>
@@ -1176,7 +1176,7 @@ This all whilst keeping into account that the first trial of each block does not
 <p>We are repeating quite a lot of code. Whenever you notice that happen, you can probably shorten the code. Let’s try it out:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the columns we want to check</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the columns we want to check</span>
 <span class="n">columns_to_check</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;task_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_type&#39;</span><span class="p">,</span>
                     <span class="s1">&#39;task_transition_type&#39;</span><span class="p">,</span> <span class="s1">&#39;congruency_transition_type&#39;</span><span class="p">]</span>
 
@@ -1269,7 +1269,7 @@ This all whilst keeping into account that the first trial of each block does not
 <p>Now we’ll do some first checks on whether the results are what we expect. Let’s first remove all the incorrect trials, we aren’t interested in those at the moment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="p">[</span><span class="n">df_trim_blocks</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">df_correct</span>
 </pre></div>
 </div>
@@ -1457,7 +1457,7 @@ This all whilst keeping into account that the first trial of each block does not
 <p>We expect people to be slower when they have to switch from task, in comparison to when they can do the same task as on the previous trial. This is what we call <strong>switch cost</strong>. To show this in a table-format, we can again use the pivot_table function from pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check switch costs</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check switch costs</span>
 <span class="n">switch_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
     <span class="n">df_correct</span><span class="p">,</span>
     <span class="n">values</span><span class="o">=</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="c1"># The value that will be summarized</span>
@@ -1517,7 +1517,7 @@ This all whilst keeping into account that the first trial of each block does not
 <p>It is pretty clear that task-switch trials are slower than task-repeat trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the task-switch trials and task-repeat trials:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;switch cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-switch&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-repetition&#39;</span><span class="p">]</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;switch cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-switch&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-repetition&#39;</span><span class="p">]</span>
 <span class="n">switch_table</span>
 </pre></div>
 </div>
@@ -1572,7 +1572,7 @@ This all whilst keeping into account that the first trial of each block does not
 <p>Lastly, you can use the handy function <em>describe</em> to get a quick peek at the response times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1596,7 +1596,7 @@ Name: response_time, dtype: float64
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../11_plotting/data/df_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../11_plotting/data/df_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1610,14 +1610,14 @@ Name: response_time, dtype: float64
 <p>We’ve removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per task_transition_type using a pivot table. Then, show the mean reaction time of correct/incorrect trials per task_transition_type using a second pivot table</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table count</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table count</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table mean</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot table mean</span>
 </pre></div>
 </div>
 </div>
@@ -1629,7 +1629,7 @@ Name: response_time, dtype: float64
 <p>From the dataframe with correct trials only, remove all trials that have a reaction time below 400ms and above 1000ms. Use a conditional selection of rows, and use only one line of code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_correct</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_correct</span>
 </pre></div>
 </div>
 </div>
@@ -1654,14 +1654,14 @@ Outlier method for normally distributed data:</p>
 (3) Saving the new dataframe. If you don’t know the command to save, search on the internet for “save csv pandas” or something similar. You will need the dataframe in the next session!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Outlier method one</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Outlier method one</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Outlier method two</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Outlier method two</span>
 </pre></div>
 </div>
 </div>

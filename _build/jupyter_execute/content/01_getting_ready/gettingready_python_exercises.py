@@ -17,7 +17,7 @@
 # 
 #  Correct the code and run it in the browser below:
 
-# In[1]:
+# In[4]:
 
 
 #enter your code here
@@ -37,7 +37,7 @@
 # print(myvar)
 # ```
 
-# In[2]:
+# In[5]:
 
 
 #enter your code here
@@ -68,7 +68,7 @@
 # Before running the experiment in windowed mode, open the `Variable Inspector` and search for `myvar`. Run the experiment and see whether the values are updated in the Variable Inspector and in the Console. Finish the experiment and check whether the values are properly saved into the logfile.
 # 
 
-# In[3]:
+# In[6]:
 
 
 #enter your code here
