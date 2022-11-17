@@ -3,7 +3,8 @@
 
 # # The Cyberball game in OpenSesame
 # 
-# > Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019).  Spapé M.M.\*, Verdonschot, R.G., & van Steenbergen, H.\* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press. http://www.e-primer.com. Copyright 2019 by the authors and LUP. Adapted with permission.
+# > **Note:** Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019). Spapé M.M.*, Verdonschot, R.G., & van Steenbergen, H.* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press. [www.e-primer.com](http://www.e-primer.com) Copyright 2019 by the authors and LUP. Adapted with permission.
+
 # 
 # ## Introduction
 # 
@@ -32,12 +33,12 @@
 # 
 # To program the game, you first need some movie clips that show a ball moving between the players. You need six of them depicting all possible directions:
 # 
-# From player 1 to player 2 ([1to2.wmv](files/1to2.wmv))\
-# From player 1 to player 3 ([1to3.wmv](files/1to3.wmv))\
-# From player 2 to player 1 ([2to1.wmv](files/2to1.wmv))\
-# From player 2 to player 3 ([2to3.wmv](files/2to3.wmv))\
-# From player 3 to player 1 ([3to1.wmv](files/3to1.wmv))\
-# From player 3 to player 2 ([3to2.wmv](files/3to2.wmv))
+# From player 1 to player 2 [1to2.wmv](files/1to2.wmv)
+# From player 1 to player 3 [1to3.wmv](files/1to3.wmv)
+# From player 2 to player 1 [2to1.wmv](files/2to1.wmv)
+# From player 2 to player 3 [2to3.wmv](files/2to3.wmv)
+# From player 3 to player 1 [3to1.wmv](files/3to1.wmv)
+# From player 3 to player 2 [3to2.wmv](files/3to2.wmv)
 # 
 # The six movie files can be downloaded using the links.
 # 
@@ -97,21 +98,17 @@
 # 
 # Finally, give the variable `movie_filename` the initial (temporary) file name "'1to2.wmv" in the `init_exp` script. So add the following line there:
 
-# In[1]:
-
-
-var.movie_filename = "1to2.wmv"
-
+# ```
+# var.movie_filename = "1to2.wmv"
+# ```
 
 # Now, add this code in PreparePlayer1:
 
-# In[2]:
-
-
-var.movie_filename = "1to" + str(var.target_player) + ".wmv"
-var.current_player = var.target_player # info for next trial
-items.prepare("media_player_mpy")
-
+# ```
+# var.movie_filename = "1to" + str(var.target_player) + ".wmv"
+# var.current_player = var.target_player # info for next trial
+# items.prepare("media_player_mpy")
+# ```
 
 # 
 # TODO difference single versus double quote when using indentation
@@ -120,13 +117,11 @@ items.prepare("media_player_mpy")
 # 
 # Almost the same code should be added to the PreparePlayer3 InLine:
 
-# In[3]:
-
-
-var.movie_filename = "3to" + str(var.target_player) + ".wmv"
-var.current_player = var.target_player # info for next trial
-items.prepare("media_player_mpy")
-
+# ```
+# var.movie_filename = "3to" + str(var.target_player) + ".wmv"
+# var.current_player = var.target_player # info for next trial
+# items.prepare("media_player_mpy")
+# ```
 
 # ### Step 3: Programming Player 2
 # 
@@ -138,12 +133,11 @@ items.prepare("media_player_mpy")
 # 
 # To show the correct movie after the response to the `wait_for_user`object, we need the following code in the `prepare_player2` script:
 
-# In[4]:
-
-
-var.movie_filename = "2to" + str(var.response) + ".wmv"var.current_player = var.response \# info for next trial
-items.prepare("media_player_mpy")
-
+# ```
+# var.movie_filename = "2to" + str(var.response) + ".wmv"\
+# var.current_player = var.response \# info for next trial
+# items.prepare("media_player_mpy")
+# ```
 
 # Done! Compare the structure of your experiment with the flowchart. You should now be able to play the Cyberball game. Use the "Run in window" feature and open the Variable inspector while your experiment runs. Check whether the variables `movie_filename` and `current_player` are properly updated.
 
@@ -157,18 +151,16 @@ items.prepare("media_player_mpy")
 # 
 # Let's first create a simple loop that presents something that moves on the screen. This code should be inserted into the `play_movie` inline script.
 
-# In[5]:
-
-
-my_canvas = Canvas()
-
-for i in range(-25,25):
-    my_canvas.text(var.movie_filename)
-    my_canvas.text("*",x = i*5,y = 50)
-    my_canvas.show()
-    clock.sleep(40)
-    my_canvas.clear()
-
+# ```
+# my_canvas = Canvas()
+# 
+# for i in range(-25,25):
+#     my_canvas.text(var.movie_filename)
+#     my_canvas.text("*",x = i*5,y = 50)
+#     my_canvas.show()
+#     clock.sleep(40)
+#     my_canvas.clear()
+# ```
 
 # 
 # Time to test the experiment. Do you see something moving on the screen? And do you see when it is your (player 2) turn?
@@ -187,45 +179,43 @@ for i in range(-25,25):
 # Of course, do not reinvent the wheel! Others have provided pieces of code we can recycle. Google is your friend. The example below is adapted from the [OpenSesame website](https://osdoc.cogsci.nl/3.3/manual/stimuli/video/).
 # 
 
-# In[6]:
-
-
-import cv2
-import numpy
-import pygame
-# Full path to the video file in file pool
-path = pool[var.movie_filename]
-# Open the video
-video = cv2.VideoCapture(path)
-# A loop to play the video file. This can also be a while loop until a key
-# is pressed. etc.
-for i in range(100):
-    # Get a frame
-    try:
-        retval, frame = video.read()
-        # Rotate it, because for some reason it otherwise appears flipped.
-        frame = numpy.rot90(frame)
-        # Flip it (vertically?!), because for some reason it otherwise appears horizontally (!) flipped.
-        frame = numpy.flipud(frame)
-        # The video uses BGR colors and PyGame needs RGB
-
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        # Create a PyGame surface
-        surf = pygame.surfarray.make_surface(frame)
-    except:
-        #end of movie
-        break
-
-    # Show the PyGame surface!
-    exp.surface.blit(surf, (0, 0))
-    pygame.display.flip()
-
+# ```
+# import cv2
+# import numpy
+# import pygame
+# # Full path to the video file in file pool
+# path = pool[var.movie_filename]
+# # Open the video
+# video = cv2.VideoCapture(path)
+# # A loop to play the video file. This can also be a while loop until a key
+# # is pressed. etc.
+# for i in range(100):
+#     # Get a frame
+#     try:
+#         retval, frame = video.read()
+#         # Rotate it, because for some reason it otherwise appears flipped.
+#         frame = numpy.rot90(frame)
+#         # Flip it (vertically?!), because for some reason it otherwise appears horizontally (!) flipped.
+#         frame = numpy.flipud(frame)
+#         # The video uses BGR colors and PyGame needs RGB
+# 
+#         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+#         # Create a PyGame surface
+#         surf = pygame.surfarray.make_surface(frame)
+#     except:
+#         #end of movie
+#         break
+# 
+#     # Show the PyGame surface!
+#     exp.surface.blit(surf, (0, 0))
+#     pygame.display.flip()
+# ```
 
 # Were all steps implemented correctly? Check whether the game works using this custom code.
 
 # ## Exercises
 # 
-# ### 1. Present the video at the center of the screen
+# ### Exercise 1. Present the video at the center of the screen
 # 
 # Let's move the video to the center of the screen. The upper-left corner is determined by the (x,y) coordinates we provide to `exp.surface.blit`
 # 
@@ -237,34 +227,28 @@ for i in range(100):
 # 
 # QUIZ: location
 
-# In[7]:
-
-
-videowidth = video.get(cv2.CAP_PROP_FRAME_WIDTH )
-videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT)
-
+# ```
+# videowidth = video.get(cv2.CAP_PROP_FRAME_WIDTH )
+# videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT)
+# ```
 
 # 
 # Now, combine the dimensions of the screen and the video to determine the upper-left corner position and feed this as coordinates into exp.surfdrive.blit.
 # 
 
-# In[8]:
+# ```
+# exp.surface.blit(surf, ((var.width - videowidth) / 2, (var.height - videoheight) / 2))
+# ```
 
-
-exp.surface.blit(surf, ((var.width - videowidth) / 2, (var.height - videoheight) / 2))
-
-
-# ### 2. Change the speed of the video
+# ### Exercise 2. Change the speed of the video
 # 
 # As you may have noticed, the speed of the video is currently determined by the speed of your cpu. If you have a very quick cpu the video is presented quicker than if you have a very slow cpu.
 # 
 # Let's change that. Actually, the wmv contains information about the supposed number of frames that have to be presented in a second (fps = frames per second). Let's save the `fps` information:
 
-# In[9]:
-
-
-fps =  video.get(cv2.CAP_PROP_FPS)
-
+# ```
+# fps =  video.get(cv2.CAP_PROP_FPS)
+# ```
 
 # 
 # Use the print method to determine the fps for our video's. Look in the console for the value.
@@ -274,11 +258,9 @@ fps =  video.get(cv2.CAP_PROP_FPS)
 # Now, we can simply delay the time between each look with `1000 / fps` ms within each loop to present the video at a slower rate. Add the following code in the loop that presents the frames:
 # 
 
-# In[10]:
-
-
-clock.sleep(1000/fps)
-
+# ```
+# clock.sleep(1000/fps)
+# ```
 
 # 
 # Try whether this works!
@@ -290,34 +272,30 @@ clock.sleep(1000/fps)
 # The function below mimics the functionality of the clock.tick method:
 # 
 
-# In[11]:
-
-
-def myclocktick(foo):
-  #inspired by clock.tick
-  #see https://stackoverflow.com/questions/34383559/pygame-clock-tick-vs-framerate-in-game-main-loop
-  if var.has(u'prevt'):
-        diff = ((1000/foo) - (clock.time() - var.prevt) ) - 10
-        if diff>0:
-            clock.sleep(diff)
-
-  var.prevt = clock.time()
-
+# ```
+# def myclocktick(foo):
+#   #inspired by clock.tick
+#   #see https://stackoverflow.com/questions/34383559/pygame-clock-tick-vs-framerate-in-game-main-loop
+#   if var.has(u'prevt'):
+#         diff = ((1000/foo) - (clock.time() - var.prevt) ) - 10
+#         if diff>0:
+#             clock.sleep(diff)
+# 
+#   var.prevt = clock.time()
+# ```
 
 # 
 # Paste this code in the `Prepare` tab of the `play_movie` inline script. Then, in the `Run` tab replace the clock.sleep code with the following line:
 # 
 # 
 
-# In[12]:
-
-
-myclocktick(fps)
-
+# ```
+# myclocktick(fps)
+# ```
 
 # Try whether you notice any differences. On slower computers the movie may play more smoothly now.
 
-# ### 3. Manipulate the level of social exclusion
+# ### Exercise 3. Manipulate the level of social exclusion
 # 
 # Add a `block_loop` around the trials_loop that runs two blocks. In one block (the exclusion block), player1 and player 3prefer to play with the other player in 8 out of 10 times. In the other block they have equal preference to play with you (player 2) or the other player.
 # 
@@ -332,7 +310,7 @@ myclocktick(fps)
 # 
 # Add a third block that includes you 8 out of 10 times. Does the inclusion make you feel better?
 
-# ### 4. Alternatives to manually prepare an OpenSesame object
+# ### Exercise 4. Alternatives to manually prepare an OpenSesame object
 # 
 # Experiment with two alternatives to the items.prepare() method:
 # #### 1. Dummy loop solution

@@ -20,7 +20,7 @@
 # ```
 # 
 # You can download the file [here](www.py4e.com/code3/mbox-short.txt)
-# 
+
 # ### Exercise 2. Parsing content of a text file
 # 
 # Write a program to prompt for a file name, and then read through the file and look for lines of the form:

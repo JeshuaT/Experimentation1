@@ -111,8 +111,9 @@ print(seq_presented)
 # 
 # Check: is your data correctly logged. TODO: why is it not in the CSV??
 # 
+
 # 
-# #### Step 3: Provide feedback
+# ### Step 3: Provide feedback
 # 
 # Let's go back to the code in this tutorial.
 # 
@@ -158,8 +159,9 @@ print(num_correct)
 
 
 # 
-# exercise:
+# # Exercises
 # 
-# 1.  stop presenting when more than four trials in a row were incorrect
+# TODO
+# 1. stop presenting when more than four trials in a row were incorrect
 # 
 # 2.  recollect in reverse orde

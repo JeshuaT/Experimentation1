@@ -9,6 +9,9 @@ from IPython.display import IFrame
 
 
 # # The Ultimatum Game in OpenSesame
+# 
+# > **Note:** Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019). Spapé M.M.*, Verdonschot, R.G., & van Steenbergen, H.* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press. [www.e-primer.com](http://www.e-primer.com) Copyright 2019 by the authors and LUP. Adapted with permission.
+# 
 # ## Introduction
 # Imagine the following scenario. Your friend (let's call her Alex) is given an amount of money (say, €10), and is told she should share it with you. Alex can decide how much money you get, and how much she gets. Whatever she apportions to herself is hers to keep, on one condition: *you* have to agree to her proposal*.* In other words, Alex can propose any division of the money she likes, but the ultimate power lies in your hands: you can accept (and each of you gets your share) or decline (and both of you go home with nothing). What kind of split do you think Alex would suggest?
 # 

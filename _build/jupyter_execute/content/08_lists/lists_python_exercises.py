@@ -64,6 +64,7 @@
 # Minimum: 2.0
 # ```
 # 
-# ### Exercise 4. TODO example of tuples
+# ### Exercise 4. Using tuples in the grade calculation
+# Go back to the grade calculation using a function exercise (python exercise session 4). Store the grades (A, B, C, D, E and F) and the associated cutoff scores in tuples. Use a loop that runs over all elements in the tuples to perform the grade calculation.
 # 
 # 
