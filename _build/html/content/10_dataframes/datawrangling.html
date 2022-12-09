@@ -537,7 +537,7 @@
             href="https://github.com/JeshuaT/Experimentation1/issues/new?title=Issue%20on%20page%20%2Fcontent/10_dataframes/datawrangling.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/JeshuaT/Experimentation1/edit/master/content/10_dataframes/datawrangling.ipynb"><button
+        <a class="edit-button" href="https://github.com/JeshuaT/Experimentation1/edit/main/content/10_dataframes/datawrangling.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -557,7 +557,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/JeshuaT/Experimentation1/master?urlpath=tree/content/10_dataframes/datawrangling.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/JeshuaT/Experimentation1/main?urlpath=tree/content/10_dataframes/datawrangling.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -565,7 +565,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/JeshuaT/Experimentation1/blob/master/content/10_dataframes/datawrangling.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/JeshuaT/Experimentation1/blob/main/content/10_dataframes/datawrangling.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -708,14 +708,325 @@
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="c1"># load the subject data</span>
-<span class="n">subj1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/subject-3.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-<span class="n">subj2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/subject-4.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">subj1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-3.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">subj2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-4.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 
 <span class="c1"># merge the subject data in one dataframe</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">subj1</span><span class="p">,</span> <span class="n">subj2</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EEG</th>
+      <th>ET</th>
+      <th>acc</th>
+      <th>accuracy</th>
+      <th>average_response_time</th>
+      <th>avg_rt</th>
+      <th>background</th>
+      <th>baseline_measurement</th>
+      <th>bidi</th>
+      <th>block</th>
+      <th>...</th>
+      <th>time_wrong_response_feedback</th>
+      <th>title</th>
+      <th>total_correct</th>
+      <th>total_response_time</th>
+      <th>total_responses</th>
+      <th>trialnr</th>
+      <th>uniform_coordinates</th>
+      <th>width</th>
+      <th>correct_summary_feedback_repeat_parity</th>
+      <th>correct_summary_feedback_repeat_paritymagnitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1482.973800</td>
+      <td>1482.973800</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>1</td>
+      <td>...</td>
+      <td>3.556749e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>0</td>
+      <td>1482.9738</td>
+      <td>1</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>50.000000</td>
+      <td>50.000000</td>
+      <td>1094.839750</td>
+      <td>1094.839750</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>1</td>
+      <td>...</td>
+      <td>3.556749e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>1</td>
+      <td>2189.6795</td>
+      <td>2</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>66.666667</td>
+      <td>66.666667</td>
+      <td>1015.096667</td>
+      <td>1015.096667</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>1</td>
+      <td>...</td>
+      <td>3.556749e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>2</td>
+      <td>3045.2900</td>
+      <td>3</td>
+      <td>3</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>75.000000</td>
+      <td>75.000000</td>
+      <td>978.296175</td>
+      <td>978.296175</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>1</td>
+      <td>...</td>
+      <td>3.556749e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>3</td>
+      <td>3913.1847</td>
+      <td>4</td>
+      <td>4</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>80.000000</td>
+      <td>80.000000</td>
+      <td>998.425180</td>
+      <td>998.425180</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>1</td>
+      <td>...</td>
+      <td>3.556749e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>4</td>
+      <td>4992.1259</td>
+      <td>5</td>
+      <td>5</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>947</th>
+      <td>1</td>
+      <td>1</td>
+      <td>79.358717</td>
+      <td>79.358717</td>
+      <td>1032.506916</td>
+      <td>1032.506916</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>12</td>
+      <td>...</td>
+      <td>3.080682e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>396</td>
+      <td>515220.9512</td>
+      <td>499</td>
+      <td>61</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>948</th>
+      <td>1</td>
+      <td>1</td>
+      <td>79.400000</td>
+      <td>79.400000</td>
+      <td>1031.607870</td>
+      <td>1031.607870</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>12</td>
+      <td>...</td>
+      <td>3.080682e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>397</td>
+      <td>515803.9349</td>
+      <td>500</td>
+      <td>62</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>949</th>
+      <td>1</td>
+      <td>1</td>
+      <td>79.441118</td>
+      <td>79.441118</td>
+      <td>1031.008570</td>
+      <td>1031.008570</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>12</td>
+      <td>...</td>
+      <td>3.080682e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>398</td>
+      <td>516535.2935</td>
+      <td>501</td>
+      <td>63</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>950</th>
+      <td>1</td>
+      <td>1</td>
+      <td>79.482072</td>
+      <td>79.482072</td>
+      <td>1029.826639</td>
+      <td>1029.826639</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>12</td>
+      <td>...</td>
+      <td>3.080682e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>399</td>
+      <td>516972.9729</td>
+      <td>502</td>
+      <td>64</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>951</th>
+      <td>1</td>
+      <td>1</td>
+      <td>79.324056</td>
+      <td>79.324056</td>
+      <td>1029.780260</td>
+      <td>1029.780260</td>
+      <td>#ABACB0</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>12</td>
+      <td>...</td>
+      <td>3.080682e+06</td>
+      <td>Parity-magnitude task with teufel colors</td>
+      <td>399</td>
+      <td>517979.4709</td>
+      <td>503</td>
+      <td>65</td>
+      <td>yes</td>
+      <td>1680</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>952 rows × 349 columns</p>
+</div></div></div>
 </div>
 <p>That’s a lot of columns. In your “logger” file in OpenSesame, the recommended thing to do is to check the box of “Log all variables”. This is the safest option, because it’s easy to remove columns and you would rather not have that you missed an essential variable after doing your experiment. Let’s pick the columns that we need:</p>
 <div class="cell docutils container">

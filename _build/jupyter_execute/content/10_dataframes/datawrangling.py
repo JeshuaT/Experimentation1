@@ -13,7 +13,7 @@
 # 
 # OpenSesame outputs a *comma-separated values (csv)* file. This is a very widely used format, and you can painlessly import this file type in Python using the datafile package **pandas** (as we've seen in the exercises and lessons). Let's import a datafile from two participants and merge those in one file:
 
-# In[1]:
+# In[2]:
 
 
 import pandas as pd
@@ -23,8 +23,8 @@ import numpy as np
 pd.options.mode.chained_assignment = None
 
 # load the subject data
-subj1 = pd.read_csv("data/subject-3.csv", sep=",")
-subj2 = pd.read_csv("data/subject-4.csv", sep=",")
+subj1 = pd.read_csv("https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-3.csv", sep=",")
+subj2 = pd.read_csv("https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-4.csv", sep=",")
 
 # merge the subject data in one dataframe
 df = pd.concat([subj1, subj2], ignore_index=True)
