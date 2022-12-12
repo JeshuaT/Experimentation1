@@ -19,8 +19,6 @@
 
 
 #your code here
-a = input("Enter your name: ")
-print("Hello " + a)
 
 
 # ### Exercise 2. Compute gross pay
@@ -36,13 +34,10 @@ print("Hello " + a)
 # We won’t worry about making sure our pay has exactly two digits after the decimal place for now. If you want, you can play with the built-in Python round function to properly round the resulting pay to two decimal places.
 # 
 
-# In[30]:
+# In[1]:
 
 
 #your code here
-h = float(input("Enter Hours: "))
-r = float(input("Enter Rate: "))
-print("Pay: " + str(h*r))
 
 
 # ### Exercise 3. Numeric calculations
@@ -71,16 +66,6 @@ print("Pay: " + str(h*r))
 
 
 #your code here
-width = 17
-height = 12.0
-print(width//2)
-print(type(width//2))
-print(width/2.0)
-print(type(width/2.0))
-print(height/3)
-print(type(height/3))
-print(1 + 2 * 5)
-print(type(1 + 2 * 5))
 
 
 # 
@@ -97,8 +82,6 @@ print(type(1 + 2 * 5))
 
 
 #your code here
-c = float(input("Enter temperature in Celsius: "))
-print("Temperature in Fahrenheit: " + str((c * 9/5) + 32))
 
 
 # ### Exercise 5. Convert reaction time
@@ -118,11 +101,6 @@ print("Temperature in Fahrenheit: " + str((c * 9/5) + 32))
 
 
 #your code here
-import math
-RT = int(input("Enter reaction time value in ms (between 1 and 2000 ms): "))
-RTinv = round(-1000 / RT,2)
-RTlog = round(math.log(RT),2)
-print("Inverse RT is: " + str(RTinv) + "; Log RT is: " + str(RTlog) + ".")
 
 
 # ### Exercise 6. Combine reaction time and accuracy information
@@ -142,19 +120,8 @@ print("Inverse RT is: " + str(RTinv) + "; Log RT is: " + str(RTlog) + ".")
 
 
 #your code here
-RT = int(input("Enter average reaction time value in ms (between 1 and 2000 ms): "))
-ACC = float(input("Enter average accuracy score as proportion (between 0 and 1): "))
-IES = round(RT/ACC)
-PEp = round((1-ACC)*100,2)
-print("When combining an RT of " + str(RT) + " ms and an ACC of " + str(ACC) + " (= " +  str(PEp) + "% errors), the IES score is " + str(IES) + " ms.")
 
 
 # # References
 # 
 # Bruyer, R., & Brysbaert, M. (2011). Combining speed and accuracy in cognitive psychology: Is the inverse efficiency score (IES) a better dependent variable than the mean reaction time (RT) and the percentage of errors (PE)?. Psychologica Belgica, 51(1), 5-13.
-
-# In[ ]:
-
-
-
-

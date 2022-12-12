@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Stroop and flanker tasks in OpenSesame
+# # Stroop, flanker, and go-nogo tasks in OpenSesame
 
 # > **Note:** The text below is adapted from the [OpenSesame guide](https://osf.io/awjcn/files/osfstorage/5c40682f7cf3f50019ba60b0/?pid=awjcn) by James E. Bartlett licensed under CC-By Attribution 4.0 International.
 
@@ -11,6 +11,7 @@
 # 
 # To get a look at OpenSesame, we will first create one of the simplest and most famous psychology experiments, the Stroop task. This demonstrates the automaticity of reading as identifying the font colour of a congruent word (e.g. blue) is faster than identifying the font colour of an incongruent word (e.g. blue). When the word and colour are incongruent, the interference causes a delay in identifying the colour of the font. We will create a single block of trials to demonstrate the task. As you go through the guide, I recommend **saving your experiment every time you reach a new sub-heading** like the next line.
 # 
+
 # ### Creating a new experiment
 # 
 # If you open OpenSesame on your computer, you should get a window that looks like this:
@@ -23,12 +24,14 @@
 # 
 # There are a few settings to explain here. Foreground and background refers to the colour of the screen and the elements displayed on it. We will keep the background black so the participant does not have to look at a dazzling white screen, and the foreground white to make it easy to read on a black background. I would also recommend increasing the default size of the font to 32, as 18 is too small to read and it saves you changing it every time you create a new component.
 # 
+
 # ### The building blocks of creating an experiment
 # 
 # Before making the Stroop task, we will go over some of the basics of structuring an experiment in OpenSesame. The design of your experiment will be shown in the Overview window, and it is displayed sequentially down the screen from the components at the start of the experiment to the components at the end of the experiment. The backbone of an experiment is created through loop and sequence components. A loop component  ![](images/image45.png) repeats what is inside it and defines any variables to use. A sequence component  ![](images/image1.png) contains other components such as a screen showing text that make up a single trial. Therefore, you would place a sequence component within a loop component to control how many times the sequence is repeated. Drag a loop component  ![](images/image45.png)and place it after welcome in the overview window, and drag a sequence component  ![](images/image1.png) and place it inside the loop. When you release the sequence, it will ask whether you want it placing into the loop or after the loop. Press into the loop and make sure they are both given informative names such as block_loop for the loop component and trial_sequence for the sequence component. For the names of components, there are a number of rules you need to follow. They cannot start with numbers, and you cannot include any spaces. If you need spaces to make it easier to read, use an underscore. You should now have a window that looks like this:
 # ![](images/image19.png)
 # Therefore, once we define our variables later, trial_sequence and everything in it will repeat for however many times you specify in block_loop. We will now create a single trial within trial_sequence. In most psychology experiments, you include a fixation cross to start a trial and focus the participant’s attention in the location where you will be presenting the stimulus.
 # 
+
 # ### Creating the fixation dot
 # 
 # This can be created using a sketchpad component
@@ -39,6 +42,7 @@
 # 
 #  ![](images/image8.png)
 # 
+
 # ### Creating the word component
 # 
 # In the Stroop task, participants are shown colour words and the font is either the same colour as the word (congruent) or a different colour to the word (incongruent). Therefore, the next thing we need to do is create another sketchpad component  ![](images/image82.png) to present the words. Drag a sketchpad component and place it after fixation in the trial sequence. Name it word to keep track of all the components. This time instead of inserting a fixation cross, we need a text element  ![](images/image15.png). After you have selected the text element, change the colour to green (all lowercase, it will say white by default). This will turn your mouse into a pen, and you need to click in the middle of the screen at 0,0 again to place it. When you click, it will ask you to enter some text. For now, just enter ‘Green’ as we want to show the participants colour words. This time, change Duration to 0. This does not mean that we never want it appearing on the screen, but we want it to only remain on the screen until a participant makes a response, which will require the next component keyboard_response. For the word component, you should have a window that looks like this:
@@ -185,7 +189,7 @@
 # 
 # Hopefully, you have also seen how it is good to think in advance how you will analyse the data. This last section is one of the most important tips when designing experiments. Design it with the analysis in mind. It is better to realise now that you have overlooked something than when you have already collected data from 20 participants. You will find that you are testing your experiments out several times before the participants in order to catch any mistakes in creating the experiment, and to ensure you have all the variables you need to analyse the data when you have finished.
 # 
-# 
+
 # # Tutorial 2. Eriksen Flanker task
 # 
 # The Stroop task is probably the most famous task in the whole of psychology. Without knowing the specific details, you might be able to have a go at creating a version of it yourself. However, what would you do if you came across an unfamiliar task that was described in a study you want to extend or replicate?
@@ -198,6 +202,7 @@
 # 
 # In the second part of this section, we will create the task on the top which is called the Eriksen Flanker task. This follows a similar principle to the Stroop task as it aims to measure the impact of interference on task performance. However, instead of looking at word colour, it uses distracting information. The aim of the task is to identify the middle letter in a five letter string. The four outer letters are distractors, and on some trials they are congruent, and on others they are incongruent. Studies usually find that response times are slower in the incongruent condition than the congruent condition.
 # 
+
 # ### What is the structure of each trial?
 # 
 # We will go through the diagram above step by step in order to decode how it is designed. In this experiment a trial consists of a central fixation cross which stays on the screen for a random interval between 150-250ms. This randomness is usually introduced to stop participants just mindlessly clicking buttons to predictable stimuli. A stimulus then appears on the screen for 80ms. This period is sometimes called the Stimulus Onset Asynchrony (SOA), or for how long the stimuli remain on the screen. There are two conditions for the stimuli: congruent (HHHHH or SSSSS) or incongruent (SSHSS or HHSHH). For this task, the participant has to identify the middle letter by pressing either the letter ‘s’ or ‘h’ on the keyboard. After the stimulus has disappeared, there is a blank screen where the participant has up to 800ms to provide a response. After the response, a blank screen is presented for 300ms. The participant is then provided feedback to let them know whether they pressed the correct button or not. A ‘+’ is shown for a correct response and a ‘-’ is shown for an incorrect response. Finally, an inter-trial interval (ITI; although confusingly this is called an inter-stimulus interval despite indicating the end of a trial) is shown on the screen for 500ms to indicate the end of a trial.
@@ -209,6 +214,7 @@
 #  ![](images/image80.png)
 # This is the amount of information you need from an article to enable you to recreate the task the authors used. This is a particularly good example with the only missing information being the duration of the breaks, a relatively minor detail. You should be prepared to come across substantially less helpful authors that do not provide sufficient details. This is usually the case when it comes to tasks that use images. These are not normally shared or even described. Hopefully this will also demonstrate the importance of fully describing your experiment in a report or dissertation. Try and imagine you are the other researcher trying to recreate the task from your instructions. Now that we know how the task is designed, the next step is to recreate it in OpenSesame.
 # 
+
 # ## Creating the Eriksen Flanker Task in OpenSesame
 # 
 # For this experiment, we will use the extended template rather than the default. This provides a helpful starting point by creating the basic outline of an experiment. This includes: instructions, a practice block, an experimental block, and an end of experiment message. The template should look like this when you first open it:
@@ -221,6 +227,7 @@
 # 
 # ![](images/image50.png)
 # 
+
 # ### Editing the fixation dot
 # 
 # In trial\_sequence, there is helpfully a sketchpad component that already includes a fixation dot called sketchpad. Rename this component to fixation. In the trial diagram, fixation is displayed for a random interval between 150ms and 250ms. In the Stroop task, we just set a static duration for 500ms. To create a variable duration, we will need to use our first bit of real Python code. Drag an inline\_script component ![](images/image55.png) into trial_sequence and place it before fixation. This component allows you to write Python code that can be used in your experiment. Rename it fix_duration as it will control how long our fixation dot is presented for. Within an inline script component, there are two tabs: Prepare and Run. The difference is not important here as we will only be creating a random number. However, if you were to create some complicated stimuli, it can take longer to prepare which affects the timing of the experiment. Therefore, it is better to prepare the stimuli in advance using the Prepare tab, and these can then be presented when necessary using the Run tab. For this example, we will just be writing two lines of code in the Prepare tab. On the first line, type:</p>
@@ -241,9 +248,11 @@
 # 
 #  ![](images/image28.png)
 # 
+
 # ### Creating a stimulus component
 # 
-# Drag a new sketchpad component ![](images/image82.png) in the centre of the stimulus screen at coordinates 0,0 and type ‘[stimulus]’. We have not created a stimulus variable in block_loop yet, but we are preempting doing it later. From the trial diagram, we need to change the Duration to 80ms. This displays the stimuli very briefly.
+# Drag a new sketchpad component ![](images/image82.png) called stimulus and place it after fixation. Create a text element in the centre of the stimulus screen at coordinates 0,0 and type ‘[stimulus]’. We have not created a stimulus variable in block_loop yet, but we are preempting doing it later. From the trial diagram, we need to change the Duration to 80ms. This displays the stimuli very briefly.
+
 # 
 # ### Creating a blank response screen and keyboard response
 # 
@@ -258,13 +267,15 @@
 # ### Creating another blank screen
 # 
 # Now we need another blank sketchpad component ![](images/image82.png) called blank_screen that has a duration of 300ms. This should be placed after keyboard_response. At this point in the trial, the participant is provided with feedback on whether they pressed the correct button or not.
+
 # 
 # ### Creating feedback screens
 # 
-# We need two more sketchpad components ![](images/image82.png) placed in the centre of both screens. In correct_response, we need a ‘+’ to denote a correct response, and in incorrect_response we need a ‘-’ to denote an incorrect response. If we left the components like this, OpenSesame would display one and then the other. We need to use a bit of Python trickery to control which component is displayed depending on the response. If you click on trial_sequence, you will see a list of all the components within it. There is a second column called Run if. By default, this is set to always, so each component is displayed on every trial. We can modify this and use the correct variable that is updated on every trial. So if the participant pressed the correct button, this would be recorded as a 1, and if they pressed the wrong button, this would be recorded as a 0. Where it says always, change it to [correct] == 1 next to correct_response, and [correct] == 0 next to incorrect_response. The square brackets means we want to access a variable, and 1 and 0 refers to a correct or incorrect response. We two equals signs compares the values either side of the ==. If they match, it is evaluated as true, and if they do not, it is evaluated as false. Therefore, when we have a correct response, correct_response is run, and when we have an incorrect response, incorrect_response is run. At this point, trial_sequence should look like this:
+# We need two more sketchpad components ![](images/image82.png) placed in the centre of both screens called correct_response and incorrect_response placed after blank_screen. Both components should have a Duration of 500ms. We need a text element placed in the centre of both screens. In correct_response, we need a ‘+’ to denote a correct response, and in incorrect_response we need a ‘-’ to denote an incorrect response. If we left the components like this, OpenSesame would display one and then the other. We need to use a bit of Python trickery to control which component is displayed depending on the response. If you click on trial_sequence, you will see a list of all the components within it. There is a second column called Run if. By default, this is set to always, so each component is displayed on every trial. We can modify this and use the correct variable that is updated on every trial. So if the participant pressed the correct button, this would be recorded as a 1, and if they pressed the wrong button, this would be recorded as a 0. Where it says always, change it to [correct] == 1 next to correct_response, and [correct] == 0 next to incorrect_response. The square brackets means we want to access a variable, and 1 and 0 refers to a correct or incorrect response. The two equals signs compares the values either side of the ==. If they match, it is evaluated as true, and if they do not, it is evaluated as false. Therefore, when we have a correct response, correct_response is run, and when we have an incorrect response, incorrect_response is run. At this point, trial_sequence should look like this:
 # 
 # ![](images/image69.png)
 # 
+
 # 
 # ### Creating one final blank screen
 # 
@@ -280,6 +291,7 @@
 # 
 # Now is the time to test out the task using quick run ![](images/image71.png). It should run through all of the components and present four trials. We do not need to modify the instruction components yet as it is only to make sure the trials are presenting as they should do. If you have copied all the instructions exactly, it should work. If you get an error message, try and track down the problem. If it crashes, it will try and provide you with instructions on where the error was. Look for any typos or if you forgot to follow any of the steps.
 # 
+
 # ### Editing practice\_loop
 # 
 # Before we duplicate practice\_loop to create a set of experimental trials, we will adapt the loop settings to create some variables for the data file. In practice\_loop, there is already one variable and row called practice and yes. We will change this slightly to say 1 instead of yes. Remember we usually use 1 to mean true. Practice trials are not included when you process the data, so this will make it easy to exclude them later on. We will then add a new variable called block with one row and a 0. We are using a 0 as we will be labelling each experimental block as 1-4. The practice\_loop component should now look like this:
@@ -606,18 +618,23 @@
 
 # # Exercises
 # 
-# ### Excercise 1. Change the number of trials in the flanker task
+# ### Excercise 1. Reuse trial sequence in the flanker task
+# Don't Repeat Yourself (DRY) is a principle of software development. Why? One main reason is that it helps to avoid redunancy in your code. Moreover, if you change information at one place and forget to do it another place this mistake will be very hard to detect and may get unnoticed for any future users too. Let's improve the experiment you created during the flanker task tutorial by applying this principle.
 # 
-# Brysbaert & Stevens (2018) have suggested that you need at least 1,600 observations per condition to observe RT effects of around 15 ms in a within-subject design. Assume for a moment that the flanker congruency effect is that small (typically it is larger) and you want to run 10 participants in your study. How many observations do you need for each subject and each congruency level? Use the corresponding number to adapt the number of trials presented in the flanker task you just created.
+# At the moment we do repeat ourselves by using a copy of the `trial_sequence` of the practice block in the test block. Moreover, all objects within the `trial_sequence_1`(except the logger) are copies too! This is not necessary because the trials in the practice block and the test block are identical. So `block_loop_1` can simply run the same sequence as `block_loop`. So, permanently remove `trial_sequence_1` and all the copied objects within it. Then, change the block_loop_1 and let it run `trial_sequence` instead.
 # 
-# ### Excercise 2. Stop practice block when performance is sufficient
+# ### Excercise 2. Change the number of trials in the flanker task
 # 
-# Open the flanker task you created during the tutorial. Change the number of trials in the practice phase to 100. Create a script that counts the number of practice trials. Stop the practice block if at least 10 trials have been presented and the accuracy is at least 80%. Abort the experiment if this criterion is still not met after 100 trials.
+# Brysbaert and Stevens (2018) have suggested that you need at least 1,600 observations per condition to observe RT effects of around 15 ms in a within-subject design. Assume for a moment that the flanker congruency effect is that small (typically it is larger) and you want to run 10 participants in your study. How many observations do you need for each subject and each congruency level? Use the corresponding number to adapt the number of trials presented in the flanker task you just created.
 # 
-# ### Excercise 3. Calculate average correct reaction time
-# Open the flanker task you created during the tutorial. Manually calculate the average reaction time of all correct responses and all incorrect responses. Compare you findings to the default `avg_rt` calculated by OpenSesame by showing them in the same object (use a feedback item!) at the end of each trial.
+# ### Excercise 3. Stop practice block when performance is sufficient
 # 
-# ### Excercise 4. Counterbalancing: Even or odd participant numbers
+# Change the number of trials in the practice phase to 100. Create a script that counts the number of practice trials. Stop the practice block if at least 10 trials have been presented and the accuracy is at least 80%. Abort the experiment if this criterion is still not met after 100 trials.
+# 
+# ### Excercise 4. Calculate average correct reaction time
+# Manually calculate the average reaction time of all correct responses and all incorrect responses. Compare you findings to the default `avg_rt` calculated by OpenSesame by showing them in the same object (use a feedback item!) at the end of each trial.
+# 
+# ### Excercise 5. Counterbalancing: Even or odd participant numbers
 # Advanced level! Open the Stroop task you created during the tutorial. Adapt the correct response by using the numeric button 1, 2, 3, and 4 of the keyboard. Use python code to generate the correct response for the four colors. For even-numbered participant numbers (version 1), use the following mapping:
 # 
 # red > 1

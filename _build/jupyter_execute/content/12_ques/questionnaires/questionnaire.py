@@ -409,20 +409,23 @@
 
 # ## Exercises
 # 
-# ### 1. Update the OK button earlier
+# ### Exercise 1. Update the OK button earlier
 # When you set all the PreSelections of all questions to 9 the OK button stays grey until you click somewhere. How would you change the code so that this refresh is done BEFORE the user clicks the mouse? Which branches in the flowchart have to move? Try this is in your own code.
 # 
-# ### 2. Create a striped color layout
+# ### Exercise 2. Create a striped color layout
 # Change the `qst01bg` to `qst10bg` objects to rectangles with height `opt_h` that are only present for odd-numbered items. This creates a striped color layout of your questionnaire as in the example below:
 # ![](images/ques_striped.png)
 # 
 # To avoid white rectangles around the options not selected, make sure you also set the color of unselected options to `whitesmoke` instead of `white` in the odd-numbered rows. Note that you have to change this in two places in your script. 
 
-# ### 3. Make the code more compact
+# ### Exercise 3. Make the code more compact
 # There might be places where the code could be written in a more compact way. For example, two nested if's could be replaced by one if that combines the conditional expressions with a logical AND-operator. However, you may run into the risk that your code is (even) more difficult to understand. ;) Experiment with replacing the if... nested in the `if ce.find("rb") == 0` conditional.
 
-# ### 4. Radio-button layout (advanced level!)
+# ### Exercise 4. Radio-button layout (advanced level!)
 # Change the layout of the questionnaire, replacing the squares with radio-buttons (e.g. a big circle with a smaller circle that can be filled or not) next to the text.
+
+# ### Exercise 5. Insert the countdown timer in the flanker task
+# Open your solution to Exercise 1 of the Eriksen flanker task tutorial (Session 3) in OpenSesame and replace the 30-seconds break between the test blocks by the animated countdown timer you created during today's python Exercise 2.
 
 # In[ ]:
 

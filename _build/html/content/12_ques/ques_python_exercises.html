@@ -176,7 +176,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03_conditionals/conflict_tasks.html">
-     Stroop and flanker tasks in OpenSesame
+     Stroop, flanker, and go-nogo tasks in OpenSesame
     </a>
    </li>
   </ul>
@@ -426,7 +426,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+   Session 13 - Using the parallel port
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -436,17 +436,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_lessons.html">
-     Python lessons: Input / Output
+     Lessons: How to send markers using the parallel port
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_exercises.html">
-     Python exercises: Input/Output
+     Python exercises: Decimal versus binary notation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/parallelport.html">
-     The parallel port in OpenSesame
+     Using the parallel port in OpenSesame
     </a>
    </li>
   </ul>
@@ -650,23 +650,7 @@
 <p>Reproduce the pokeball as explained during the video in today’s lessons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-
-<span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-<span class="c1">#canvas.create_line(0,0,500,500,fill=&quot;blue&quot;,width=5)</span>
-<span class="c1">#canvas.create_line(0,500,500,0,fill=&quot;red&quot;,width=5)</span>
-<span class="c1">#canvas.create_rectangle(50,50,250,250,fill=&quot;purple&quot;)</span>
-<span class="c1">#points = [250,0,500,500,0,500]</span>
-<span class="c1">#canvas.create_polygon(points,fill=&quot;yellow&quot;,outline=&quot;black&quot;,width=5)</span>
-<span class="c1">#canvas.create_arc(0,0,500,500,style=PIESLICE,start=270,width=5)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">create_arc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">create_arc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -676,66 +660,20 @@
 <h2>Exercise 2. Create a animated countdown timer<a class="headerlink" href="#exercise-2-create-a-animated-countdown-timer" title="Permalink to this headline">¶</a></h2>
 <p>Adapt he pokeball in such a way that you create an animated countdown timer that counts from 30 to 0 seconds and shows a red arc that become smaller with time.
 <img alt="" src="../../_images/countdowntimer.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="exercise-3-advanced-countdown-timer">
 <h2>Exercise 3. Advanced countdown timer<a class="headerlink" href="#exercise-3-advanced-countdown-timer" title="Permalink to this headline">¶</a></h2>
 <p>Ask the user how many seconds they want to wait and run the timer with this value. Check whether the value is not higher than fits in the display (59m:59s).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-
-<span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;white&quot;,extent=360,start=90,width=10)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;white&quot;,extent=360,width=10)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="c1">#canvas = Canvas(window,height=500,width=500)</span>
-    <span class="n">canvas</span><span class="o">.</span><span class="n">create_arc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="mi">30</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;00:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Helvetica 80 bold&#39;</span><span class="p">))</span>
-    
-    <span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;red&quot;,start=360/30*i,width=10)</span>
-    <span class="c1">#canvas.create_arc(0,0,500,500,fill=&quot;red&quot;,extent=360,width=10)</span>
-    <span class="c1">#canvas.pack()</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    
-<span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TclError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">Input In [69],</span> in <span class="ni">&lt;cell line: 14&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="c1">#canvas = Canvas(window,height=500,width=500)</span>
-<span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">canvas</span><span class="o">.</span><span class="n">create_arc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="mi">30</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;00:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Helvetica 80 bold&#39;</span><span class="p">))</span>
-
-<span class="nn">File ~\Anaconda3\lib\tkinter\__init__.py:2782,</span> in <span class="ni">Canvas.create_arc</span><span class="nt">(self, *args, **kw)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2780</span> <span class="k">def</span> <span class="nf">create_arc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2781</span>     <span class="sd">&quot;&quot;&quot;Create arc shaped region with coordinates x1,y1,x2,y2.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">2782</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="s1">&#39;arc&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\lib\tkinter\__init__.py:2776,</span> in <span class="ni">Canvas._create</span><span class="nt">(self, itemType, args, kw)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2774</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2775</span>     <span class="n">cnf</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">-&gt; </span><span class="mi">2776</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">call</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2777</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_w</span><span class="p">,</span> <span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="n">itemType</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2778</span>     <span class="o">*</span><span class="p">(</span><span class="n">args</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">(</span><span class="n">cnf</span><span class="p">,</span> <span class="n">kw</span><span class="p">))))</span>
-
-<span class="ne">TclError</span>: invalid command name &quot;.!canvas&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>

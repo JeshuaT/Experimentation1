@@ -29,6 +29,13 @@
 # 
 # Check your answer by running the code
 # 
+
+# In[2]:
+
+
+# your code here
+
+
 # ### Exercise 2. Pay computation with a function
 # 
 # Rewrite your pay computation with time-and-a-half for overtime and create a function called computepay which takes two parameters (hours and rate).
@@ -39,6 +46,13 @@
 # Pay: 475.0
 # ```
 # 
+
+# In[2]:
+
+
+# your code here
+
+
 # ### Exercise 3. Grade calculation using a function
 # 
 # Rewrite the grade program from the previous session using a function called computegrade that takes a score as its parameter and returns a grade as a string.
@@ -65,10 +79,19 @@
 # 
 # Run the program repeatedly to test the various different values for input.
 # 
+
+# In[2]:
+
+
+# your code here
+
+
 # ### Exercise 4. Check age of your participant
 # 
 # Rewrite the check age program from the previous session using a function that takes the age and the name and returns the message as a string.
-# 
-# 
-# 
-# 
+
+# In[2]:
+
+
+# your code here
+

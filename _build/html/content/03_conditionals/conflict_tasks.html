@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stroop and flanker tasks in OpenSesame &#8212; Experimentation 1</title>
+    <title>Stroop, flanker, and go-nogo tasks in OpenSesame &#8212; Experimentation 1</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -176,7 +176,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Stroop and flanker tasks in OpenSesame
+     Stroop, flanker, and go-nogo tasks in OpenSesame
     </a>
    </li>
   </ul>
@@ -426,7 +426,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+   Session 13 - Using the parallel port
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -436,17 +436,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_lessons.html">
-     Python lessons: Input / Output
+     Lessons: How to send markers using the parallel port
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_exercises.html">
-     Python exercises: Input/Output
+     Python exercises: Decimal versus binary notation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/parallelport.html">
-     The parallel port in OpenSesame
+     Using the parallel port in OpenSesame
     </a>
    </li>
   </ul>
@@ -586,7 +586,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Stroop and flanker tasks in OpenSesame
+   Stroop, flanker, and go-nogo tasks in OpenSesame
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1012,23 +1012,28 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-1-change-the-number-of-trials-in-the-flanker-task">
-     Excercise 1. Change the number of trials in the flanker task
+    <a class="reference internal nav-link" href="#excercise-1-reuse-trial-sequence-in-the-flanker-task">
+     Excercise 1. Reuse trial sequence in the flanker task
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-2-stop-practice-block-when-performance-is-sufficient">
-     Excercise 2. Stop practice block when performance is sufficient
+    <a class="reference internal nav-link" href="#excercise-2-change-the-number-of-trials-in-the-flanker-task">
+     Excercise 2. Change the number of trials in the flanker task
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-3-calculate-average-correct-reaction-time">
-     Excercise 3. Calculate average correct reaction time
+    <a class="reference internal nav-link" href="#excercise-3-stop-practice-block-when-performance-is-sufficient">
+     Excercise 3. Stop practice block when performance is sufficient
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-4-counterbalancing-even-or-odd-participant-numbers">
-     Excercise 4. Counterbalancing: Even or odd participant numbers
+    <a class="reference internal nav-link" href="#excercise-4-calculate-average-correct-reaction-time">
+     Excercise 4. Calculate average correct reaction time
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#excercise-5-counterbalancing-even-or-odd-participant-numbers">
+     Excercise 5. Counterbalancing: Even or odd participant numbers
     </a>
    </li>
   </ul>
@@ -1048,7 +1053,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Stroop and flanker tasks in OpenSesame</h1>
+                <h1>Stroop, flanker, and go-nogo tasks in OpenSesame</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1060,7 +1065,7 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Stroop and flanker tasks in OpenSesame
+   Stroop, flanker, and go-nogo tasks in OpenSesame
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1486,23 +1491,28 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-1-change-the-number-of-trials-in-the-flanker-task">
-     Excercise 1. Change the number of trials in the flanker task
+    <a class="reference internal nav-link" href="#excercise-1-reuse-trial-sequence-in-the-flanker-task">
+     Excercise 1. Reuse trial sequence in the flanker task
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-2-stop-practice-block-when-performance-is-sufficient">
-     Excercise 2. Stop practice block when performance is sufficient
+    <a class="reference internal nav-link" href="#excercise-2-change-the-number-of-trials-in-the-flanker-task">
+     Excercise 2. Change the number of trials in the flanker task
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-3-calculate-average-correct-reaction-time">
-     Excercise 3. Calculate average correct reaction time
+    <a class="reference internal nav-link" href="#excercise-3-stop-practice-block-when-performance-is-sufficient">
+     Excercise 3. Stop practice block when performance is sufficient
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-4-counterbalancing-even-or-odd-participant-numbers">
-     Excercise 4. Counterbalancing: Even or odd participant numbers
+    <a class="reference internal nav-link" href="#excercise-4-calculate-average-correct-reaction-time">
+     Excercise 4. Calculate average correct reaction time
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#excercise-5-counterbalancing-even-or-odd-participant-numbers">
+     Excercise 5. Counterbalancing: Even or odd participant numbers
     </a>
    </li>
   </ul>
@@ -1521,8 +1531,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="stroop-and-flanker-tasks-in-opensesame">
-<h1>Stroop and flanker tasks in OpenSesame<a class="headerlink" href="#stroop-and-flanker-tasks-in-opensesame" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="stroop-flanker-and-go-nogo-tasks-in-opensesame">
+<h1>Stroop, flanker, and go-nogo tasks in OpenSesame<a class="headerlink" href="#stroop-flanker-and-go-nogo-tasks-in-opensesame" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p><strong>Note:</strong> The text below is adapted from the <a class="reference external" href="https://osf.io/awjcn/files/osfstorage/5c40682f7cf3f50019ba60b0/?pid=awjcn">OpenSesame guide</a> by James E. Bartlett licensed under CC-By Attribution 4.0 International.</p>
 </div></blockquote>
@@ -1730,7 +1740,7 @@ This is the amount of information you need from an article to enable you to recr
 </div>
 <div class="section" id="creating-a-stimulus-component">
 <h3>Creating a stimulus component<a class="headerlink" href="#creating-a-stimulus-component" title="Permalink to this headline">¶</a></h3>
-<p>Drag a new sketchpad component <img alt="" src="../../_images/image82.png" /> in the centre of the stimulus screen at coordinates 0,0 and type ‘[stimulus]’. We have not created a stimulus variable in block_loop yet, but we are preempting doing it later. From the trial diagram, we need to change the Duration to 80ms. This displays the stimuli very briefly.</p>
+<p>Drag a new sketchpad component <img alt="" src="../../_images/image82.png" /> called stimulus and place it after fixation. Create a text element in the centre of the stimulus screen at coordinates 0,0 and type ‘[stimulus]’. We have not created a stimulus variable in block_loop yet, but we are preempting doing it later. From the trial diagram, we need to change the Duration to 80ms. This displays the stimuli very briefly.</p>
 </div>
 <div class="section" id="creating-a-blank-response-screen-and-keyboard-response">
 <h3>Creating a blank response screen and keyboard response<a class="headerlink" href="#creating-a-blank-response-screen-and-keyboard-response" title="Permalink to this headline">¶</a></h3>
@@ -1744,7 +1754,7 @@ This is the amount of information you need from an article to enable you to recr
 </div>
 <div class="section" id="creating-feedback-screens">
 <h3>Creating feedback screens<a class="headerlink" href="#creating-feedback-screens" title="Permalink to this headline">¶</a></h3>
-<p>We need two more sketchpad components <img alt="" src="../../_images/image82.png" /> placed in the centre of both screens. In correct_response, we need a ‘+’ to denote a correct response, and in incorrect_response we need a ‘-’ to denote an incorrect response. If we left the components like this, OpenSesame would display one and then the other. We need to use a bit of Python trickery to control which component is displayed depending on the response. If you click on trial_sequence, you will see a list of all the components within it. There is a second column called Run if. By default, this is set to always, so each component is displayed on every trial. We can modify this and use the correct variable that is updated on every trial. So if the participant pressed the correct button, this would be recorded as a 1, and if they pressed the wrong button, this would be recorded as a 0. Where it says always, change it to [correct] == 1 next to correct_response, and [correct] == 0 next to incorrect_response. The square brackets means we want to access a variable, and 1 and 0 refers to a correct or incorrect response. We two equals signs compares the values either side of the ==. If they match, it is evaluated as true, and if they do not, it is evaluated as false. Therefore, when we have a correct response, correct_response is run, and when we have an incorrect response, incorrect_response is run. At this point, trial_sequence should look like this:</p>
+<p>We need two more sketchpad components <img alt="" src="../../_images/image82.png" /> placed in the centre of both screens called correct_response and incorrect_response placed after blank_screen. Both components should have a Duration of 500ms. We need a text element placed in the centre of both screens. In correct_response, we need a ‘+’ to denote a correct response, and in incorrect_response we need a ‘-’ to denote an incorrect response. If we left the components like this, OpenSesame would display one and then the other. We need to use a bit of Python trickery to control which component is displayed depending on the response. If you click on trial_sequence, you will see a list of all the components within it. There is a second column called Run if. By default, this is set to always, so each component is displayed on every trial. We can modify this and use the correct variable that is updated on every trial. So if the participant pressed the correct button, this would be recorded as a 1, and if they pressed the wrong button, this would be recorded as a 0. Where it says always, change it to [correct] == 1 next to correct_response, and [correct] == 0 next to incorrect_response. The square brackets means we want to access a variable, and 1 and 0 refers to a correct or incorrect response. The two equals signs compares the values either side of the ==. If they match, it is evaluated as true, and if they do not, it is evaluated as false. Therefore, when we have a correct response, correct_response is run, and when we have an incorrect response, incorrect_response is run. At this point, trial_sequence should look like this:</p>
 <p><img alt="" src="../../_images/image69.png" /></p>
 </div>
 <div class="section" id="creating-one-final-blank-screen">
@@ -2073,20 +2083,25 @@ Presenting one or more stimuli and recording a response. Typically trials are re
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="excercise-1-change-the-number-of-trials-in-the-flanker-task">
-<h2>Excercise 1. Change the number of trials in the flanker task<a class="headerlink" href="#excercise-1-change-the-number-of-trials-in-the-flanker-task" title="Permalink to this headline">¶</a></h2>
-<p>Brysbaert &amp; Stevens (2018) have suggested that you need at least 1,600 observations per condition to observe RT effects of around 15 ms in a within-subject design. Assume for a moment that the flanker congruency effect is that small (typically it is larger) and you want to run 10 participants in your study. How many observations do you need for each subject and each congruency level? Use the corresponding number to adapt the number of trials presented in the flanker task you just created.</p>
+<div class="section" id="excercise-1-reuse-trial-sequence-in-the-flanker-task">
+<h2>Excercise 1. Reuse trial sequence in the flanker task<a class="headerlink" href="#excercise-1-reuse-trial-sequence-in-the-flanker-task" title="Permalink to this headline">¶</a></h2>
+<p>Don’t Repeat Yourself (DRY) is a principle of software development. Why? One main reason is that it helps to avoid redunancy in your code. Moreover, if you change information at one place and forget to do it another place this mistake will be very hard to detect and may get unnoticed for any future users too. Let’s improve the experiment you created during the flanker task tutorial by applying this principle.</p>
+<p>At the moment we do repeat ourselves by using a copy of the <code class="docutils literal notranslate"><span class="pre">trial_sequence</span></code> of the practice block in the test block. Moreover, all objects within the <code class="docutils literal notranslate"><span class="pre">trial_sequence_1</span></code>(except the logger) are copies too! This is not necessary because the trials in the practice block and the test block are identical. So <code class="docutils literal notranslate"><span class="pre">block_loop_1</span></code> can simply run the same sequence as <code class="docutils literal notranslate"><span class="pre">block_loop</span></code>. So, permanently remove <code class="docutils literal notranslate"><span class="pre">trial_sequence_1</span></code> and all the copied objects within it. Then, change the block_loop_1 and let it run <code class="docutils literal notranslate"><span class="pre">trial_sequence</span></code> instead.</p>
 </div>
-<div class="section" id="excercise-2-stop-practice-block-when-performance-is-sufficient">
-<h2>Excercise 2. Stop practice block when performance is sufficient<a class="headerlink" href="#excercise-2-stop-practice-block-when-performance-is-sufficient" title="Permalink to this headline">¶</a></h2>
-<p>Open the flanker task you created during the tutorial. Change the number of trials in the practice phase to 100. Create a script that counts the number of practice trials. Stop the practice block if at least 10 trials have been presented and the accuracy is at least 80%. Abort the experiment if this criterion is still not met after 100 trials.</p>
+<div class="section" id="excercise-2-change-the-number-of-trials-in-the-flanker-task">
+<h2>Excercise 2. Change the number of trials in the flanker task<a class="headerlink" href="#excercise-2-change-the-number-of-trials-in-the-flanker-task" title="Permalink to this headline">¶</a></h2>
+<p>Brysbaert and Stevens (2018) have suggested that you need at least 1,600 observations per condition to observe RT effects of around 15 ms in a within-subject design. Assume for a moment that the flanker congruency effect is that small (typically it is larger) and you want to run 10 participants in your study. How many observations do you need for each subject and each congruency level? Use the corresponding number to adapt the number of trials presented in the flanker task you just created.</p>
 </div>
-<div class="section" id="excercise-3-calculate-average-correct-reaction-time">
-<h2>Excercise 3. Calculate average correct reaction time<a class="headerlink" href="#excercise-3-calculate-average-correct-reaction-time" title="Permalink to this headline">¶</a></h2>
-<p>Open the flanker task you created during the tutorial. Manually calculate the average reaction time of all correct responses and all incorrect responses. Compare you findings to the default <code class="docutils literal notranslate"><span class="pre">avg_rt</span></code> calculated by OpenSesame by showing them in the same object (use a feedback item!) at the end of each trial.</p>
+<div class="section" id="excercise-3-stop-practice-block-when-performance-is-sufficient">
+<h2>Excercise 3. Stop practice block when performance is sufficient<a class="headerlink" href="#excercise-3-stop-practice-block-when-performance-is-sufficient" title="Permalink to this headline">¶</a></h2>
+<p>Change the number of trials in the practice phase to 100. Create a script that counts the number of practice trials. Stop the practice block if at least 10 trials have been presented and the accuracy is at least 80%. Abort the experiment if this criterion is still not met after 100 trials.</p>
 </div>
-<div class="section" id="excercise-4-counterbalancing-even-or-odd-participant-numbers">
-<h2>Excercise 4. Counterbalancing: Even or odd participant numbers<a class="headerlink" href="#excercise-4-counterbalancing-even-or-odd-participant-numbers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="excercise-4-calculate-average-correct-reaction-time">
+<h2>Excercise 4. Calculate average correct reaction time<a class="headerlink" href="#excercise-4-calculate-average-correct-reaction-time" title="Permalink to this headline">¶</a></h2>
+<p>Manually calculate the average reaction time of all correct responses and all incorrect responses. Compare you findings to the default <code class="docutils literal notranslate"><span class="pre">avg_rt</span></code> calculated by OpenSesame by showing them in the same object (use a feedback item!) at the end of each trial.</p>
+</div>
+<div class="section" id="excercise-5-counterbalancing-even-or-odd-participant-numbers">
+<h2>Excercise 5. Counterbalancing: Even or odd participant numbers<a class="headerlink" href="#excercise-5-counterbalancing-even-or-odd-participant-numbers" title="Permalink to this headline">¶</a></h2>
 <p>Advanced level! Open the Stroop task you created during the tutorial. Adapt the correct response by using the numeric button 1, 2, 3, and 4 of the keyboard. Use python code to generate the correct response for the four colors. For even-numbered participant numbers (version 1), use the following mapping:</p>
 <p>red &gt; 1
 green &gt; 2

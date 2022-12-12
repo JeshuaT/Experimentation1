@@ -176,7 +176,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03_conditionals/conflict_tasks.html">
-     Stroop and flanker tasks in OpenSesame
+     Stroop, flanker, and go-nogo tasks in OpenSesame
     </a>
    </li>
   </ul>
@@ -426,7 +426,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+   Session 13 - Using the parallel port
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -436,17 +436,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_lessons.html">
-     Python lessons: Input / Output
+     Lessons: How to send markers using the parallel port
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_exercises.html">
-     Python exercises: Input/Output
+     Python exercises: Decimal versus binary notation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/parallelport.html">
-     The parallel port in OpenSesame
+     Using the parallel port in OpenSesame
     </a>
    </li>
   </ul>
@@ -712,8 +712,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -736,22 +734,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
-<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Hours: &quot;</span><span class="p">))</span>
-<span class="n">r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Rate: &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pay: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">r</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">Input In [30],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#your code here</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Hours: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Rate: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pay: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">r</span><span class="p">))</span>
-
-<span class="ne">ValueError</span>: could not convert string to float: &#39;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pay: 360.0
 </pre></div>
 </div>
 </div>
@@ -773,16 +760,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
-<span class="n">width</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="n">height</span> <span class="o">=</span> <span class="mf">12.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">width</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">width</span><span class="o">//</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -798,8 +775,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter temperature in Celsius: &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature in Fahrenheit: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">c</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -820,11 +795,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="n">RT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter reaction time value in ms (between 1 and 2000 ms): &quot;</span><span class="p">))</span>
-<span class="n">RTinv</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span> <span class="o">/</span> <span class="n">RT</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">RTlog</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">RT</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inverse RT is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">RTinv</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;; Log RT is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">RTlog</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -846,11 +816,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
-<span class="n">RT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter average reaction time value in ms (between 1 and 2000 ms): &quot;</span><span class="p">))</span>
-<span class="n">ACC</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter average accuracy score as proportion (between 0 and 1): &quot;</span><span class="p">))</span>
-<span class="n">IES</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">RT</span><span class="o">/</span><span class="n">ACC</span><span class="p">)</span>
-<span class="n">PEp</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">ACC</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;When combining an RT of &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">RT</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ms and an ACC of &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ACC</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; (= &quot;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">PEp</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">% e</span><span class="s2">rrors), the IES score is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">IES</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ms.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

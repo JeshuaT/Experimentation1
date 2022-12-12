@@ -54,7 +54,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Session 13 - Input/Output" href="../../13_input_output/io_intro.html" />
+    <link rel="next" title="Session 13 - Using the parallel port" href="../../13_input_output/io_intro.html" />
     <link rel="prev" title="Python exercises: Canvas" href="../ques_python_exercises.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -176,7 +176,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../03_conditionals/conflict_tasks.html">
-     Stroop and flanker tasks in OpenSesame
+     Stroop, flanker, and go-nogo tasks in OpenSesame
     </a>
    </li>
   </ul>
@@ -426,7 +426,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+   Session 13 - Using the parallel port
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -436,17 +436,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../13_input_output/io_python_lessons.html">
-     Python lessons: Input / Output
+     Lessons: How to send markers using the parallel port
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../13_input_output/io_python_exercises.html">
-     Python exercises: Input/Output
+     Python exercises: Decimal versus binary notation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../13_input_output/parallelport.html">
-     The parallel port in OpenSesame
+     Using the parallel port in OpenSesame
     </a>
    </li>
   </ul>
@@ -667,23 +667,28 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-the-ok-button-earlier">
-     1. Update the OK button earlier
+    <a class="reference internal nav-link" href="#exercise-1-update-the-ok-button-earlier">
+     Exercise 1. Update the OK button earlier
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-striped-color-layout">
-     2. Create a striped color layout
+    <a class="reference internal nav-link" href="#exercise-2-create-a-striped-color-layout">
+     Exercise 2. Create a striped color layout
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-the-code-more-compact">
-     3. Make the code more compact
+    <a class="reference internal nav-link" href="#exercise-3-make-the-code-more-compact">
+     Exercise 3. Make the code more compact
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#radio-button-layout-advanced-level">
-     4. Radio-button layout (advanced level!)
+    <a class="reference internal nav-link" href="#exercise-4-radio-button-layout-advanced-level">
+     Exercise 4. Radio-button layout (advanced level!)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-insert-the-countdown-timer-in-the-flanker-task">
+     Exercise 5. Insert the countdown timer in the flanker task
     </a>
    </li>
   </ul>
@@ -791,23 +796,28 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-the-ok-button-earlier">
-     1. Update the OK button earlier
+    <a class="reference internal nav-link" href="#exercise-1-update-the-ok-button-earlier">
+     Exercise 1. Update the OK button earlier
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-striped-color-layout">
-     2. Create a striped color layout
+    <a class="reference internal nav-link" href="#exercise-2-create-a-striped-color-layout">
+     Exercise 2. Create a striped color layout
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-the-code-more-compact">
-     3. Make the code more compact
+    <a class="reference internal nav-link" href="#exercise-3-make-the-code-more-compact">
+     Exercise 3. Make the code more compact
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#radio-button-layout-advanced-level">
-     4. Radio-button layout (advanced level!)
+    <a class="reference internal nav-link" href="#exercise-4-radio-button-layout-advanced-level">
+     Exercise 4. Radio-button layout (advanced level!)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-insert-the-countdown-timer-in-the-flanker-task">
+     Exercise 5. Insert the countdown timer in the flanker task
     </a>
    </li>
   </ul>
@@ -1146,23 +1156,27 @@
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="update-the-ok-button-earlier">
-<h3>1. Update the OK button earlier<a class="headerlink" href="#update-the-ok-button-earlier" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-1-update-the-ok-button-earlier">
+<h3>Exercise 1. Update the OK button earlier<a class="headerlink" href="#exercise-1-update-the-ok-button-earlier" title="Permalink to this headline">¶</a></h3>
 <p>When you set all the PreSelections of all questions to 9 the OK button stays grey until you click somewhere. How would you change the code so that this refresh is done BEFORE the user clicks the mouse? Which branches in the flowchart have to move? Try this is in your own code.</p>
 </div>
-<div class="section" id="create-a-striped-color-layout">
-<h3>2. Create a striped color layout<a class="headerlink" href="#create-a-striped-color-layout" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-2-create-a-striped-color-layout">
+<h3>Exercise 2. Create a striped color layout<a class="headerlink" href="#exercise-2-create-a-striped-color-layout" title="Permalink to this headline">¶</a></h3>
 <p>Change the <code class="docutils literal notranslate"><span class="pre">qst01bg</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10bg</span></code> objects to rectangles with height <code class="docutils literal notranslate"><span class="pre">opt_h</span></code> that are only present for odd-numbered items. This creates a striped color layout of your questionnaire as in the example below:
 <img alt="" src="../../../_images/ques_striped.png" /></p>
 <p>To avoid white rectangles around the options not selected, make sure you also set the color of unselected options to <code class="docutils literal notranslate"><span class="pre">whitesmoke</span></code> instead of <code class="docutils literal notranslate"><span class="pre">white</span></code> in the odd-numbered rows. Note that you have to change this in two places in your script.</p>
 </div>
-<div class="section" id="make-the-code-more-compact">
-<h3>3. Make the code more compact<a class="headerlink" href="#make-the-code-more-compact" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-3-make-the-code-more-compact">
+<h3>Exercise 3. Make the code more compact<a class="headerlink" href="#exercise-3-make-the-code-more-compact" title="Permalink to this headline">¶</a></h3>
 <p>There might be places where the code could be written in a more compact way. For example, two nested if’s could be replaced by one if that combines the conditional expressions with a logical AND-operator. However, you may run into the risk that your code is (even) more difficult to understand. ;) Experiment with replacing the if… nested in the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">ce.find(&quot;rb&quot;)</span> <span class="pre">==</span> <span class="pre">0</span></code> conditional.</p>
 </div>
-<div class="section" id="radio-button-layout-advanced-level">
-<h3>4. Radio-button layout (advanced level!)<a class="headerlink" href="#radio-button-layout-advanced-level" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-4-radio-button-layout-advanced-level">
+<h3>Exercise 4. Radio-button layout (advanced level!)<a class="headerlink" href="#exercise-4-radio-button-layout-advanced-level" title="Permalink to this headline">¶</a></h3>
 <p>Change the layout of the questionnaire, replacing the squares with radio-buttons (e.g. a big circle with a smaller circle that can be filled or not) next to the text.</p>
+</div>
+<div class="section" id="exercise-5-insert-the-countdown-timer-in-the-flanker-task">
+<h3>Exercise 5. Insert the countdown timer in the flanker task<a class="headerlink" href="#exercise-5-insert-the-countdown-timer-in-the-flanker-task" title="Permalink to this headline">¶</a></h3>
+<p>Open your solution to Exercise 1 of the Eriksen flanker task tutorial (Session 3) in OpenSesame and replace the 30-seconds break between the test blocks by the animated countdown timer you created during today’s python Exercise 2.</p>
 </div>
 </div>
 </div>
@@ -1202,7 +1216,7 @@
     <a class='right-next' id="next-link" href="../../13_input_output/io_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Session 13 - Input/Output</p>
+        <p class="prev-next-title">Session 13 - Using the parallel port</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

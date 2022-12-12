@@ -18,24 +18,32 @@
 # Enter a number: done
 # 16 3 5.333333333333333
 # ```
+
+# In[2]:
+
+
+# your code here
+
+
 # ### Exercise 2. Print maximum and minimum
 # Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.
 # 
+
+# In[3]:
+
+
+# your code here
+
+
 # ### Exercise 3. Print moving text
 # Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~100 ms (0.1 seconds).
 # 
 # Note that you need the `range` function for this exercise that creates a list of numbers. You will learn more about `list` objects during a later session in this course.
 
-# In[19]:
+# In[4]:
 
 
-
-fill = ""
-import time
-for i in range(1,41):
-    fill = fill + " "
-    print(fill + 'Hello world',end="\r", flush=True)
-    time.sleep(0.1)
+# your code here
 
 
 # 

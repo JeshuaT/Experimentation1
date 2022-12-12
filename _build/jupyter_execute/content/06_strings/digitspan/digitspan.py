@@ -16,11 +16,13 @@
 # 2. Sort the entire table on the first row after having set the sort options to `left to right`.
 # 
 # See the screenshot below:
+# 
 # ![](images/resort_loop.png)
 # 
 # 3. Copy this table and paste it back into the OpenSesame loop after you have deleted all columns first (Ctrl-A > remove all columns).
 # 
 # Your loop should now look like:
+# 
 # ![](images/loop_resorted.png)
 # 
 # Please note that Nback indicates the span of the sequence presented in the corresponding trial.
