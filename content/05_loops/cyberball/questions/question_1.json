@@ -1,0 +1,34 @@
+[
+  {
+    "question": "Can you use the = sign also instead of the == sign?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Yes, = works identical to == inside and outside OpenSesame",
+        "correct": false,
+        "feedback": "Incorrect! In many programming languages (but not all!) = is reserved for assignment and == is reserved for comparison."
+      },
+      {
+        "answer": "Yes, = works identical to == but only when using OpenSesame syntax, not in python",
+        "correct": true,
+        "feedback": "Correct answer. This is a special feature in OpenSesame's own scripting language and only works in RunIf and in OpenSesame script (e.g. for the sketchpad). In many programming languages (but not all!) including python = is reserved for assignment and == is reserved for comparison."
+      }
+    ]
+  },
+  {
+    "question": "Could you also use =self.get('currentplayer')==1 as the first RunIf statement",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "No",
+        "correct": false,
+        "feedback": "Incorrect!"
+      },
+      {
+        "answer": "Yes",
+        "correct": true,
+        "feedback": "Correct. This is a third notation that works. It basically runs some python that returns True or False. However, it does not work in online experiments, so it is not a preferred notation."
+      }
+    ]
+  }
+]

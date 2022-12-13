@@ -1,0 +1,19 @@
+[
+  {
+    "question": "How many trials does the participant see if they complete the experiment?",
+    "type": "numeric",
+    "answers": [
+      {
+        "type": "value",
+        "value": 40,
+        "correct": true,
+        "feedback": "Correct! 40 trials. The first 10 (span 1 and 2) are not visible, so there are 40 trials left"
+      },
+      {
+        "type": "default",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      }
+    ]
+  }
+]
