@@ -1,0 +1,18 @@
+[
+  {
+    "question": "In the example above we used double quotes for string assignment. Is this correct?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Yes this is correct. Both double and single quotes do.",
+        "correct": true,
+        "feedback": "Correct. Python is case-sensitive and very strict with regard to indentation. However it does not care that much about the character you use to indicate the start and end of a string. However, sometimes you need double quotes, e.g. if you use single quotes in the string, like in this example: \"You've got an error!\""
+      },
+      {
+        "answer": "No",
+        "correct": false,
+        "feedback": "Incorrect"
+      }
+    ]
+  }
+]

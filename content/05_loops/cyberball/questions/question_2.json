@@ -1,0 +1,23 @@
+[
+  {
+    "question": "What value should we give the Break If field",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Keep it to default: never",
+        "correct": false,
+        "feedback": "Incorrect! In that case the ball will be magically thrown twice by the same person (violating the laws of physics). Try it yourself!"
+      },
+      {
+        "answer": "Set it to: always as in the example above",
+        "correct": true,
+        "feedback": "Correct answer. Combined with the disabled option Evaluate on first cycle, each time the loop is run it will only present one trial. Because Resume after break is enabled it will remember the history of samples and the order is preserved"
+      },
+      {
+        "answer": "Set it to: always, but enable Evaluate on first cycle",
+        "correct": false,
+        "feedback": "Incorrect answer. In this case the loop is already aborted before it can run a trial, so it will not show anything. Try it yourself!"
+      }
+    ]
+  }
+]

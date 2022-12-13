@@ -1,0 +1,28 @@
+[
+  {
+    "question": "Interestingly, if you run the program it always starts with span 3. Why is this the case?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Because num1 contains 7s",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      },
+      {
+        "answer": "Because of the Weight settings",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      },
+      {
+        "answer": "The trials are skipped because of the Run-If settings",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      },
+      {
+        "answer": "The trial is run but none of the visible components within the trial is run in this case, due to the Run-If settings",
+        "correct": true,
+        "feedback": "Correct! Check the conditionals in the Run-If settings of the trial sequence. The objects Seq0, blank, Seq1, blank, Dot, Recall, Answer, Logger, Next, SPACEBAR and its subsequent blank are only run if the value of Num2 is not 7."
+      }
+    ]
+  }
+]
