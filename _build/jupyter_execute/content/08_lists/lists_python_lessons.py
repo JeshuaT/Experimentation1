@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Python lessons: Lists
+# 
+# > **Note** The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0
+
 # In[19]:
 
 

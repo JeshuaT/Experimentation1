@@ -3,7 +3,7 @@
 
 # # Using the parallel port in OpenSesame
 
-# TODO tutorial plug-in provided by Iris Spruit SOLO?
+# TODO tutorial plug-in provided by Iris Spruit SOLO? / Selin Topel
 # 
 # based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in Session 3.
 # 
@@ -15,6 +15,8 @@
 # ## Exercise 1. Add block markers
 # 
 # It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.
+# 
+# Now let's think a moment about the length of the markers. How long do you present the markers before the signals goes back to 0? And how long does the signal stays 0 before you send a new marker? Make sure there is sufficient time between the onset of the start-block marker and the first stimulus marker of a block. Also make sure there is sufficient time after the end of the last trial and the onset of the end-block marker. What is the minimum duration of the marker and the period it is 0 when the device that records your parallel port signal samples at 500 Hz (i.e. 500 read-outs per second)? And what is the minimum duration when the sample frequency is 50 Hz?
 # 
 # ## Exercise 2. Recreate the incredible scanner beam emitted by KITT
 # 

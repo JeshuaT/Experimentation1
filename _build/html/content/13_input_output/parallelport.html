@@ -305,6 +305,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../08_lists/lists_python_lessons.html">
+     Python lessons: Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../08_lists/lists_python_exercises.html">
      Python exercises: Lists
     </a>
@@ -659,7 +664,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="using-the-parallel-port-in-opensesame">
 <h1>Using the parallel port in OpenSesame<a class="headerlink" href="#using-the-parallel-port-in-opensesame" title="Permalink to this headline">¶</a></h1>
-<p>TODO tutorial plug-in provided by Iris Spruit SOLO?</p>
+<p>TODO tutorial plug-in provided by Iris Spruit SOLO? / Selin Topel</p>
 <p>based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in Session 3.</p>
 <p><a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp">https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp</a></p>
 </div>
@@ -668,6 +673,7 @@
 <div class="section" id="exercise-1-add-block-markers">
 <h2>Exercise 1. Add block markers<a class="headerlink" href="#exercise-1-add-block-markers" title="Permalink to this headline">¶</a></h2>
 <p>It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.</p>
+<p>Now let’s think a moment about the length of the markers. How long do you present the markers before the signals goes back to 0? And how long does the signal stays 0 before you send a new marker? Make sure there is sufficient time between the onset of the start-block marker and the first stimulus marker of a block. Also make sure there is sufficient time after the end of the last trial and the onset of the end-block marker. What is the minimum duration of the marker and the period it is 0 when the device that records your parallel port signal samples at 500 Hz (i.e. 500 read-outs per second)? And what is the minimum duration when the sample frequency is 50 Hz?</p>
 </div>
 <div class="section" id="exercise-2-recreate-the-incredible-scanner-beam-emitted-by-kitt">
 <h2>Exercise 2. Recreate the incredible scanner beam emitted by KITT<a class="headerlink" href="#exercise-2-recreate-the-incredible-scanner-beam-emitted-by-kitt" title="Permalink to this headline">¶</a></h2>
