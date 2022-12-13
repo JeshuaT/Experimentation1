@@ -1,6 +1,6 @@
 [
   {
-    "question": "Let's say we made a silly mistake, and instead of defining $[O1_Me] we inserted $[FairOffer]. We run the experiment and $[O1_You] is presented on the left box. What will $[FairOffer] show?",
+    "question": "Let's say we made a silly mistake, and instead of defining \\$[O1_Me] we inserted \\$[FairOffer]. We run the experiment and \\$[O1_You] is presented on the left box. What will \\$[FairOffer] show?",
     "type": "numeric",
     "answers": [
       {
