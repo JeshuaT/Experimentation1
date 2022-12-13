@@ -14,7 +14,7 @@
 # 
 # In the figure below we present a possible outline of 10 questions (named `qst01` to `qst10`), a general header for this sheet (named `qhd`) and 9 options to choose from per question (named `rt011` to `rt019` for the first question, `rt021` to `rt029` for the second question, et cetera). 
 
-# ![images/overviewques.png]
+# ![](images/overviewques.png)
 
 # In addition, we add some shapes to the canvas. Above each question, we present a rectangle of height 1 pixel (basically a line) named `qst01bg` to `qst10bg`. We also create a "Continue" button to proceed to the next sheet. And around all 90 options there is rectangle that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected. These rectangles are named `rbxxx`  (`rb011` to `rb019` for the first question, `rb021` to `rb029` for the second question, et cetera).
 # 
@@ -426,9 +426,40 @@
 
 # ### Exercise 5. Insert the countdown timer in the flanker task
 # Open your solution to Exercise 1 of the Eriksen flanker task tutorial (Session 3) in OpenSesame and replace the 30-seconds break between the test blocks by the animated countdown timer you created during today's python Exercise 2.
+# 
+# Note that you have to use slightly different Canvas functions in OpenSesame. Also the coordinate system is different. The `arc` function is not available in OpenSesame and as a work-around we use a solution provided on the OpenSesame forum that uses the `Pie` function from `psychopy`. The code below gives you some basic code you can adapt yourself.
 
-# In[ ]:
-
-
-
-
+# ```
+# # arc solution from https://forum.cogsci.nl/discussion/7326/mixing-psychopy-and-canvas-elements
+# from openexp._canvas._element.psycho import PsychoElement
+# from openexp._canvas._element.element import Element
+# from psychopy.visual import Pie
+# 
+# class CustomElement(PsychoElement, Element):
+# 
+#     def __init__(self, canvas, extent=90):
+# 
+#         self._extent = extent
+#         super().__init__(canvas)
+# 
+#     def prepare(self):
+# 
+#         self._stim = [
+#             #fillColor in rgb values ranging from -1 to 1
+#             Pie(win, radius=252, fillColor=[-.5, -.5, -.5 ], start=0, end=0-self._extent),
+#         ]
+# 
+#     def show(self):
+# 
+#         if self.visible:
+#             for stim in self._stim:
+#                 stim.draw()
+# 
+# 
+# my_canvas = Canvas(penwidth = 1, fill = True, color = u'white')
+# 
+# my_canvas.ellipse(-250,-250,500,500,color=u'red')
+# my_canvas['arc'] = CustomElement(my_canvas, extent = 120)
+# my_canvas.ellipse(-200,-200,400,400,color=u'white')
+# my_canvas.show()
+# ```

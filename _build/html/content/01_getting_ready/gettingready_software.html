@@ -176,7 +176,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03_conditionals/conflict_tasks.html">
-     Stroop and flanker tasks in OpenSesame
+     Stroop, flanker, and go-nogo tasks in OpenSesame
     </a>
    </li>
   </ul>
@@ -305,6 +305,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../08_lists/lists_python_lessons.html">
+     Python lessons: Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../08_lists/lists_python_exercises.html">
      Python exercises: Lists
     </a>
@@ -426,7 +431,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../13_input_output/io_intro.html">
-   Session 13 - Input/Output
+   Session 13 - Using the parallel port
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -436,17 +441,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_lessons.html">
-     Python lessons: Input / Output
+     Lessons: How to send markers using the parallel port
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/io_python_exercises.html">
-     Python exercises: Input/Output
+     Python exercises: Decimal versus binary notation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../13_input_output/parallelport.html">
-     The parallel port in OpenSesame
+     Using the parallel port in OpenSesame
     </a>
    </li>
   </ul>
@@ -598,11 +603,30 @@
   <a class="reference internal nav-link" href="#python-ide">
    Python IDE
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-first-script">
+     Exercise 1. First script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-first-spyder-script">
+     Exercise 2. First Spyder script
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-this-website-jupyter-notebooks-and-google-colabs">
    Using this website (Jupyter Notebooks and Google Colabs)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-first-colab-script">
+     Exercise 3. First Colab script
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -638,11 +662,30 @@
   <a class="reference internal nav-link" href="#python-ide">
    Python IDE
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-first-script">
+     Exercise 1. First script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-first-spyder-script">
+     Exercise 2. First Spyder script
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-this-website-jupyter-notebooks-and-google-colabs">
    Using this website (Jupyter Notebooks and Google Colabs)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-first-colab-script">
+     Exercise 3. First Colab script
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -675,7 +718,9 @@
 <p>Just as you type words to make essays in either Word, Pages or Notepad, you can also have different software programs in which you can type Python code to make Python scripts. We call those software programs <em>integrated development environments (IDEs)</em>. Conveniently, your Anaconda installation comes with one such IDE: <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>. Just as Word and Pages have all kind of tools to help you write essays, Spyder comes with all kinds of tools to help you write Python code. However, just as you had to practice with Word to make the best use of the tool, so it is that you’ll need practice to make the best use of Spyder. So lets start right away with making your first script!</p>
 <p>If you like learning from video’s, follow <a class="reference external" href="https://docs.spyder-ide.org/current/videos/first-steps-with-spyder.html">these tutorials</a>
 If you like learning by reading along, follow <a class="reference external" href="https://medium.com/coderbyte/spyder-python-ide-for-absolute-beginners-89e4ea1832af">this tutorial</a></p>
-<p><strong>Exercise 1:</strong> Let’s make a first script! Open a new file in spyder, and paste in the following code:</p>
+<div class="section" id="exercise-1-first-script">
+<h3>Exercise 1. First script<a class="headerlink" href="#exercise-1-first-script" title="Permalink to this headline">¶</a></h3>
+<p>Let’s make a first script! Open a new file in spyder, and paste in the following code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is your age? Type your age here: &quot;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="p">:</span>
@@ -685,7 +730,11 @@ If you like learning by reading along, follow <a class="reference external" href
 </pre></div>
 </div>
 <p>Save the script as “age_judgement.py”. Then, run the script either by pressing F5 or clicking on the green arrow with “run script”. Type in your age. Do you agree with my judgements? If not, change the age and the response to the age.</p>
-<p><strong>Exercise 2:</strong> The script you made doesn’t have to be run from your Spyder IDE. In principle, you just need to have Python. To explore that, in your file explorer, navigate to where you saved “age_judgement.py”. Then, double click on that file. You will probably get a prompt how you want to open that file. Choose Python (doesn’t matter which version) and observe what happens.</p>
+</div>
+<div class="section" id="exercise-2-first-spyder-script">
+<h3>Exercise 2. First Spyder script<a class="headerlink" href="#exercise-2-first-spyder-script" title="Permalink to this headline">¶</a></h3>
+<p>The script you made doesn’t have to be run from your Spyder IDE. In principle, you just need to have Python. To explore that, in your file explorer, navigate to where you saved “age_judgement.py”. Then, double click on that file. You will probably get a prompt how you want to open that file. Choose Python (doesn’t matter which version) and observe what happens.</p>
+</div>
 </div>
 <div class="section" id="using-this-website-jupyter-notebooks-and-google-colabs">
 <h2>Using this website (Jupyter Notebooks and Google Colabs)<a class="headerlink" href="#using-this-website-jupyter-notebooks-and-google-colabs" title="Permalink to this headline">¶</a></h2>
@@ -730,8 +779,10 @@ If you like learning by reading along, follow <a class="reference external" href
 </div>
 <p>Hmmm…perhaps you are puzzled now since you are not able to edit this. To be able to interact with the code blocks, you will need to start your own <em>interactive server</em>. For that, click on the rocket on the top right of your screen and choose “Colab”.</p>
 <p><img alt="image info" src="../../_images/launcher_icons.PNG" /></p>
-<p>A server will start, and you are able to interact with all the code blocks.</p>
-<p><strong>Exercise 3:</strong> Now, change the piece of code above with the changes you made in assignment 1.1. What is the same with the Spyder implementation? What is different?</p>
+<p>A server will start, and you are able to interact with all the code blocks. Importantly, the changes you make <strong>will not be saved</strong>. The easiest way to save your changes is by saving a copy on your Google Drive. If for any reason you don’t want to store anything on Google Drive, you can also download your file as an .ipynb and store in on your computer. Whenever you are in a Google Colab environment, you can load in that file again.</p>
+<div class="section" id="exercise-3-first-colab-script">
+<h3>Exercise 3. First Colab script<a class="headerlink" href="#exercise-3-first-colab-script" title="Permalink to this headline">¶</a></h3>
+<p>Now, change the piece of code above with the changes you made in assignment 1.1. What is the same with the Spyder implementation? What is different?</p>
 <p>Whenever you need to start a Google Colab server, we will make it clear with a note like the following:</p>
 <blockquote>
 <div><p><strong>Note</strong>: For this part of the tutorial you will need to launch the script using Google Colab</p>
@@ -740,6 +791,7 @@ If you like learning by reading along, follow <a class="reference external" href
 <blockquote>
 <div><p><strong>Note</strong>: There are numerous links to other websites in this jupyter book. To navigate to one of those links without leaving this jupyter notebook, you can do <em>ctrl+click</em>. Try it out with <a class="reference external" href="https://www.computerhope.com/jargon/c/ctrl-click.htm">this link</a></p>
 </div></blockquote>
+</div>
 </div>
 </div>
 

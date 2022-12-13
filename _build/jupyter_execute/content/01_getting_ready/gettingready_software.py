@@ -23,7 +23,8 @@
 # If you like learning by reading along, follow [this tutorial](https://medium.com/coderbyte/spyder-python-ide-for-absolute-beginners-89e4ea1832af)
 # 
 # 
-# **Exercise 1:** Let's make a first script! Open a new file in spyder, and paste in the following code:
+# ### Exercise 1. First script
+# Let's make a first script! Open a new file in spyder, and paste in the following code:
 # 
 # ```
 # age = input("What is your age? Type your age here: ")
@@ -37,7 +38,8 @@
 # Save the script as "age_judgement.py". Then, run the script either by pressing F5 or clicking on the green arrow with "run script". Type in your age. Do you agree with my judgements? If not, change the age and the response to the age.
 # 
 
-# **Exercise 2:** The script you made doesn't have to be run from your Spyder IDE. In principle, you just need to have Python. To explore that, in your file explorer, navigate to where you saved "age_judgement.py". Then, double click on that file. You will probably get a prompt how you want to open that file. Choose Python (doesn't matter which version) and observe what happens.
+# ### Exercise 2. First Spyder script
+#  The script you made doesn't have to be run from your Spyder IDE. In principle, you just need to have Python. To explore that, in your file explorer, navigate to where you saved "age_judgement.py". Then, double click on that file. You will probably get a prompt how you want to open that file. Choose Python (doesn't matter which version) and observe what happens.
 
 # ## Using this website (Jupyter Notebooks and Google Colabs)
 # Lastly, some notes on how to use this website. This website is powered by Jupyter Notebook, a web-based IDE that allows script and text to be integrated in one file. This website is built using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which collects (amongst other things) Jupyter Notebooks in a nice book-like format. Thanks to this format, we can merge text ...
@@ -65,9 +67,10 @@ elif int(age) >= 25:
 # 
 # ![image info](./launcher_icons.PNG)
 # 
-# A server will start, and you are able to interact with all the code blocks.
+# A server will start, and you are able to interact with all the code blocks. Importantly, the changes you make **will not be saved**. The easiest way to save your changes is by saving a copy on your Google Drive. If for any reason you don't want to store anything on Google Drive, you can also download your file as an .ipynb and store in on your computer. Whenever you are in a Google Colab environment, you can load in that file again.
 
-# **Exercise 3:** Now, change the piece of code above with the changes you made in assignment 1.1. What is the same with the Spyder implementation? What is different?
+# ### Exercise 3. First Colab script
+#  Now, change the piece of code above with the changes you made in assignment 1.1. What is the same with the Spyder implementation? What is different?
 
 # Whenever you need to start a Google Colab server, we will make it clear with a note like the following:
 # 

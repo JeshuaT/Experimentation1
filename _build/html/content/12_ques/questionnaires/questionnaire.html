@@ -305,6 +305,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../08_lists/lists_python_lessons.html">
+     Python lessons: Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../08_lists/lists_python_exercises.html">
      Python exercises: Lists
     </a>
@@ -843,7 +848,7 @@
 <h2>Step 1. Sketch the basic outline of your questionnaire<a class="headerlink" href="#step-1-sketch-the-basic-outline-of-your-questionnaire" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we want to present 5 sheets (or pages) of questions with 10 questions of the IPIP per sheet. To do so, we can use Canvas commands to draw text and rectangles at particular locations.</p>
 <p>In the figure below we present a possible outline of 10 questions (named <code class="docutils literal notranslate"><span class="pre">qst01</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10</span></code>), a general header for this sheet (named <code class="docutils literal notranslate"><span class="pre">qhd</span></code>) and 9 options to choose from per question (named <code class="docutils literal notranslate"><span class="pre">rt011</span></code> to <code class="docutils literal notranslate"><span class="pre">rt019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rt021</span></code> to <code class="docutils literal notranslate"><span class="pre">rt029</span></code> for the second question, et cetera).</p>
-<p>![images/overviewques.png]</p>
+<p><img alt="" src="../../../_images/overviewques.png" /></p>
 <p>In addition, we add some shapes to the canvas. Above each question, we present a rectangle of height 1 pixel (basically a line) named <code class="docutils literal notranslate"><span class="pre">qst01bg</span></code> to <code class="docutils literal notranslate"><span class="pre">qst10bg</span></code>. We also create a “Continue” button to proceed to the next sheet. And around all 90 options there is rectangle that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected. These rectangles are named <code class="docutils literal notranslate"><span class="pre">rbxxx</span></code>  (<code class="docutils literal notranslate"><span class="pre">rb011</span></code> to <code class="docutils literal notranslate"><span class="pre">rb019</span></code> for the first question, <code class="docutils literal notranslate"><span class="pre">rb021</span></code> to <code class="docutils literal notranslate"><span class="pre">rb029</span></code> for the second question, et cetera).</p>
 <p>We first sketched this outline on a piece of paper and then played around with finding some nice coordinates at the screen. For each element in the Canvas we have to provide the position (x and y-coordinate in pixels relative to the center of the screen), and its size (width and height in pixels). This information can be hard-coded in the script. Or simply be stored in variables.</p>
 </div>
@@ -1177,6 +1182,41 @@
 <div class="section" id="exercise-5-insert-the-countdown-timer-in-the-flanker-task">
 <h3>Exercise 5. Insert the countdown timer in the flanker task<a class="headerlink" href="#exercise-5-insert-the-countdown-timer-in-the-flanker-task" title="Permalink to this headline">¶</a></h3>
 <p>Open your solution to Exercise 1 of the Eriksen flanker task tutorial (Session 3) in OpenSesame and replace the 30-seconds break between the test blocks by the animated countdown timer you created during today’s python Exercise 2.</p>
+<p>Note that you have to use slightly different Canvas functions in OpenSesame. Also the coordinate system is different. The <code class="docutils literal notranslate"><span class="pre">arc</span></code> function is not available in OpenSesame and as a work-around we use a solution provided on the OpenSesame forum that uses the <code class="docutils literal notranslate"><span class="pre">Pie</span></code> function from <code class="docutils literal notranslate"><span class="pre">psychopy</span></code>. The code below gives you some basic code you can adapt yourself.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># arc solution from https://forum.cogsci.nl/discussion/7326/mixing-psychopy-and-canvas-elements</span>
+<span class="kn">from</span> <span class="nn">openexp._canvas._element.psycho</span> <span class="kn">import</span> <span class="n">PsychoElement</span>
+<span class="kn">from</span> <span class="nn">openexp._canvas._element.element</span> <span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span> <span class="nn">psychopy.visual</span> <span class="kn">import</span> <span class="n">Pie</span>
+
+<span class="k">class</span> <span class="nc">CustomElement</span><span class="p">(</span><span class="n">PsychoElement</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span> <span class="o">=</span> <span class="n">extent</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">canvas</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stim</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="c1">#fillColor in rgb values ranging from -1 to 1</span>
+            <span class="n">Pie</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">252</span><span class="p">,</span> <span class="n">fillColor</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span> <span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">0</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">),</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">visible</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">stim</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stim</span><span class="p">:</span>
+                <span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="n">my_canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">penwidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="n">my_canvas</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">my_canvas</span><span class="p">[</span><span class="s1">&#39;arc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CustomElement</span><span class="p">(</span><span class="n">my_canvas</span><span class="p">,</span> <span class="n">extent</span> <span class="o">=</span> <span class="mi">120</span><span class="p">)</span>
+<span class="n">my_canvas</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">my_canvas</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

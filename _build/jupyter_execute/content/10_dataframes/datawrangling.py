@@ -228,7 +228,7 @@ df_trim_blocks.to_csv('../11_plotting/data/df_cleaned.csv', index=False)
 
 # # Exercises
 # 
-# ### Exercise 1. TODO title
+# ### Exercise 1. Correct versus incorrect trials
 # We've removed incorrect trials from our experiment, and looked at the switch cost effect after. However, we should be aware that there is a difference in how many incorrect trials there are per condition. Show the amount of correct/incorrect trials per task_transition_type using a pivot table. Then, show the mean reaction time of correct/incorrect trials per task_transition_type using a second pivot table
 
 # In[14]:
@@ -243,7 +243,7 @@ df_trim_blocks.to_csv('../11_plotting/data/df_cleaned.csv', index=False)
 # Pivot table mean
 
 
-# ### Exercise 2. TODO title
+# ### Exercise 2. Remove rows based on two conditions
 # Next to removing incorrect trials from a dataframe, an often done dataframe manipulation is to remove outliers from your dataframe. These can be trials where participants where unrealistically quick, or just too slow to test the effect you are interested in.
 # 
 # From the dataframe with correct trials only, remove all trials that have a reaction time below 400ms and above 1000ms. Use a conditional selection of rows, and use only one line of code.
@@ -254,7 +254,7 @@ df_trim_blocks.to_csv('../11_plotting/data/df_cleaned.csv', index=False)
 # df_correct
 
 
-# ### Exercise 3. TODO title
+# ### Exercise 3. Outlier removal methods
 # What we did in exercise 2 was an outlier removal, though it was a pretty arbitrary one. There are plenty of outlier removal methods that are more objective. Find two outlier methods, and specify them below with a short explanation. One outlier method should be suitable for *normally distributed data*, whilst the other method should be suitable for *non-normally distributed data*.
 # 
 # > **Hint:** In the next exercise you will have to apply the outlier methods. Therefore, search for outlier methods that you can easily implement in Python/Pandas (e.g. by simply searching for Python/Pandas implementations of outlier methods)
@@ -264,7 +264,7 @@ df_trim_blocks.to_csv('../11_plotting/data/df_cleaned.csv', index=False)
 # 
 # Outlier method for non-normally distributed data:
 
-# ### Exercise 4. TODO title
+# ### Exercise 4. Implementing the outlier removal methods
 # Apply the two outlier methods to the dataframe with the correct responses, and save the resulting dataframe. Do this by:
 # (1) Writing down what the cutoff values are for the outliers (you will need this later)
 # (1) Identifying the rows that fall out of your outlier range
