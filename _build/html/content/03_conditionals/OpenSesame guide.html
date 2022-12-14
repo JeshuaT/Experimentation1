@@ -1077,10 +1077,10 @@ on their website dedicated to it.</p>
 <p>To download OpenSesame on your own computer, visit their <a class="reference external" href="https://osdoc.cogsci.nl/"><span
 class="underline">website</span></a> and click on
 the green download button.</p>
-<img src="attachment:media/image65.png" style="width:4.65625in;height:0.39583in" />
+<img alt="content/03_conditionals/attachment:media/image65.png" src="content/03_conditionals/attachment:media/image65.png" />
 <p>At the top of the page, there will be a button that recommends which
 download option to select based on your operating system.</p>
-<img src="attachment:media/image3.png" style="width:2.375in;height:0.98958in" />
+<img alt="content/03_conditionals/attachment:media/image3.png" src="content/03_conditionals/attachment:media/image3.png" />
 <p>This will typically be either Windows or Mac. Click on either the
 Windows installer (.exe) or Mac OS package (.dmg), whichever is
 appropriate for your computer. Follow the download instructions. This
@@ -1159,7 +1159,7 @@ every time you reach a new sub-heading</strong> like the next line.</p>
 <h3>Creating a new experiment<a class="headerlink" href="#creating-a-new-experiment" title="Permalink to this headline">¶</a></h3>
 <p>If you open OpenSesame on your computer, you should get a window that
 looks like this:</p>
-<img src="attachment:media/image24.png" style="width:6.5in;height:3.51389in" />
+<img alt="content/03_conditionals/attachment:media/image24.png" src="content/03_conditionals/attachment:media/image24.png" />
 <p>To help you start an experiment, there are some templates that you can
 use. We are going to use the default template as we are going to make a
 single block of trials from scratch to demonstrate the building blocks
@@ -1172,7 +1172,7 @@ resolution to your monitor’s dimensions. If you are not sure what the
 resolution of your monitor is, you can look in the display settings of
 your computer. Once you have changed these, the general properties
 window should look like this:</p>
-<img src="attachment:media/image44.png" style="width:4.61979in;height:3.74618in" />
+<img alt="content/03_conditionals/attachment:media/image44.png" src="content/03_conditionals/attachment:media/image44.png" />
 <p>There are a few settings to explain here. Foreground and background
 refers to the colour of the screen and the elements displayed on it. We
 will keep the background black so the participant does not have to look
@@ -1190,18 +1190,18 @@ down the screen from the components at the start of the experiment to
 the components at the end of the experiment. The backbone of an
 experiment is created through loop and sequence components. A loop
 component
-<img src="attachment:media/image45.png" style="width:0.22222in;height:0.20833in" />
+<img alt="content/03_conditionals/attachment:media/image45.png" src="content/03_conditionals/attachment:media/image45.png" />
 repeats what is inside it and defines any variables to use. A sequence
 component
-<img src="attachment:media/image1.png" style="width:0.21552in;height:0.20833in" />
+<img alt="content/03_conditionals/attachment:media/image1.png" src="content/03_conditionals/attachment:media/image1.png" />
 contains other components such as a screen showing text that make up a
 single trial. Therefore, you would place a sequence component within a
 loop component to control how many times the sequence is repeated. Drag
 a loop component
-<img src="attachment:media/image45.png" style="width:0.2178in;height:0.20833in" />and
+<img alt="content/03_conditionals/attachment:media/image45.png" src="content/03_conditionals/attachment:media/image45.png" />and
 place it after welcome in the overview window, and drag a sequence
 component
-<img src="attachment:media/image1.png" style="width:0.21552in;height:0.20833in" />
+<img alt="content/03_conditionals/attachment:media/image1.png" src="content/03_conditionals/attachment:media/image1.png" />
 and place it inside the loop. When you release the sequence, it will ask
 whether you want it placing into the loop or after the loop. Press into
 the loop and make sure they are both given informative names such as
@@ -1210,7 +1210,7 @@ component. For the names of components, there are a number of rules you
 need to follow. They cannot start with numbers, and you cannot include
 any spaces. If you need spaces to make it easier to read, use an
 underscore. You should now have a window that looks like this:</p>
-<img src="attachment:media/image19.png" style="width:3.85417in;height:3.6875in" />
+<img alt="content/03_conditionals/attachment:media/image19.png" src="content/03_conditionals/attachment:media/image19.png" />
 <p>Therefore, once we define our variables later, trial_sequence and
 everything in it will repeat for however many times you specify in
 block_loop. We will now create a single trial within trial_sequence.
@@ -1221,13 +1221,13 @@ will be presenting the stimulus.</p>
 <div class="section" id="creating-the-fixation-dot">
 <h3>Creating the fixation dot<a class="headerlink" href="#creating-the-fixation-dot" title="Permalink to this headline">¶</a></h3>
 <p>This can be created using a sketchpad component
-<img src="attachment:media/image82.png" style="width:0.21667in;height:0.20833in" />.
+<img alt="content/03_conditionals/attachment:media/image82.png" src="content/03_conditionals/attachment:media/image82.png" />.
 This is a very flexible component where you can present text, shapes,
 and images. The sketchpad window has a list of elements on the left hand
 side and a black screen with green lines to show where on the screen the
 elements would be placed. OpenSesame has a very handy fixation cross
 element called fixdot
-<img src="attachment:media/image20.png" style="width:0.25568in;height:0.20833in" />.
+<img alt="content/03_conditionals/attachment:media/image20.png" src="content/03_conditionals/attachment:media/image20.png" />.
 Click on the fixdot element and this will turn your mouse into a pen
 icon. If you move the mouse around the black gridded screen, the
 coordinates are shown in the top right corner, and will change as you
@@ -1242,7 +1242,7 @@ OpenSesame, it is stated in milliseconds. Therefore, to present
 something for 1 second, we would need to write 1000. Finally, we can
 change the name of the component to something informative such as
 fixation. You should now have a screen that looks like this:</p>
-<img src="attachment:media/image8.png" style="width:5.99479in;height:4.27513in" />
+<img alt="content/03_conditionals/attachment:media/image8.png" src="content/03_conditionals/attachment:media/image8.png" />
 </div>
 <div class="section" id="creating-the-word-component">
 <h3>Creating the word component<a class="headerlink" href="#creating-the-word-component" title="Permalink to this headline">¶</a></h3>
@@ -1250,12 +1250,12 @@ fixation. You should now have a screen that looks like this:</p>
 either the same colour as the word (congruent) or a different colour to
 the word (incongruent). Therefore, the next thing we need to do is
 create another sketchpad component
-<img src="attachment:media/image82.png" style="width:0.20833in;height:0.20833in" />
+<img alt="content/03_conditionals/attachment:media/image82.png" src="content/03_conditionals/attachment:media/image82.png" />
 to present the words. Drag a sketchpad component and place it after
 fixation in the trial sequence. Name it word to keep track of all the
 components. This time instead of inserting a fixation cross, we need a
 text element
-<img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" />.
+<img alt="content/03_conditionals/attachment:media/image15.png" src="content/03_conditionals/attachment:media/image15.png" />.
 After you have selected the text element, change the colour to green
 (all lowercase, it will say white by default). This will turn your mouse
 into a pen, and you need to click in the middle of the screen at 0,0
@@ -1266,12 +1266,12 @@ want it appearing on the screen, but we want it to only remain on the
 screen until a participant makes a response, which will require the next
 component keyboard_response. For the word component, you should have a
 window that looks like this:</p>
-<img src="attachment:media/image78.png" style="width:6.375in;height:4.67708in" />
+<img alt="content/03_conditionals/attachment:media/image78.png" src="content/03_conditionals/attachment:media/image78.png" />
 </div>
 <div class="section" id="creating-the-keyboard-response-component">
 <h3>Creating the keyboard response component<a class="headerlink" href="#creating-the-keyboard-response-component" title="Permalink to this headline">¶</a></h3>
 <p>The next component is keyboard_response
-<img src="attachment:media/image2.png" style="width:0.24382in;height:0.21334in" />.
+<img alt="content/03_conditionals/attachment:media/image2.png" src="content/03_conditionals/attachment:media/image2.png" />.
 Drag this from the menu and place it after word. We need this to tell
 OpenSesame which keyboard responses are allowed and which responses are
 correct. For now, we only have one green word, so the only response we
@@ -1288,12 +1288,12 @@ the Duration of the word component has ended. This could really confuse
 participants as they would have to respond twice for the trial to end.
 You should now have a screen that looks like this for
 keyboard_response:</p>
-<img src="attachment:media/image72.png" style="width:5.14583in;height:2.63542in" />
+<img alt="content/03_conditionals/attachment:media/image72.png" src="content/03_conditionals/attachment:media/image72.png" />
 </div>
 <div class="section" id="creating-a-blank-screen">
 <h3>Creating a blank screen<a class="headerlink" href="#creating-a-blank-screen" title="Permalink to this headline">¶</a></h3>
 <p>After the keyboard response, we will place another sketchpad component
-<img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" />
+<img alt="content/03_conditionals/attachment:media/image82.png" src="content/03_conditionals/attachment:media/image82.png" />
 to signal the end of the trial. This time it will just be a blank screen
 presented for 200ms. You can do this yourself based on the previous
 sketchpad components and name it blank. We do not need to add any text
@@ -1302,7 +1302,7 @@ or fixdot elements.</p>
 <div class="section" id="creating-the-logger-component">
 <h3>Creating the logger component<a class="headerlink" href="#creating-the-logger-component" title="Permalink to this headline">¶</a></h3>
 <p>The next component that we need is a logger
-<img src="attachment:media/image81.png" style="width:0.20833in;height:0.22727in" />
+<img alt="content/03_conditionals/attachment:media/image81.png" src="content/03_conditionals/attachment:media/image81.png" />
 to save the data. OpenSesame does not save the responses by default, so
 you need to create a logger to save the data from each trial. Drag a
 logger component and place it after blank. For most experiments, you can
@@ -1315,18 +1315,18 @@ variable on each trial.</p>
 experiment has finished. Without this, the experiment just closes which
 can make the participant panic and think they have done something wrong.
 Create a new sketchpad component
-<img src="attachment:media/image82.png" style="width:0.21368in;height:0.20833in" />
+<img alt="content/03_conditionals/attachment:media/image82.png" src="content/03_conditionals/attachment:media/image82.png" />
 called end_experiment and place it after block_loop. Make sure it is
 not in trial_sequence. If you drop it on block_loop, you can select
 insert after block_loop. Here we just need a brief message saying ‘The
 experiment has now finished. Press any key to exit’. In order to create
 this, select a text element
-<img src="attachment:media/image15.png" style="width:0.23958in;height:0.19792in" />
+<img alt="content/03_conditionals/attachment:media/image15.png" src="content/03_conditionals/attachment:media/image15.png" />
 , click in the middle of the screen, and enter the message. Now the
 participant is fully aware that the experiment has finished
 successfully. Make sure Duration is set to keypress. You should now have
 an experiment that looks like this in the Overview window:</p>
-<img src="attachment:media/image67.png" style="width:2.54167in;height:3.05208in" />
+<img alt="content/03_conditionals/attachment:media/image67.png" src="content/03_conditionals/attachment:media/image67.png" />
 </div>
 <div class="section" id="modifying-the-welcome-message">
 <h3>Modifying the welcome message<a class="headerlink" href="#modifying-the-welcome-message" title="Permalink to this headline">¶</a></h3>
@@ -1344,7 +1344,7 @@ are ready.</p>
 <h3>Time to test the experiment<a class="headerlink" href="#time-to-test-the-experiment" title="Permalink to this headline">¶</a></h3>
 <p>Now it is time to make sure everything works! In the menu, there are
 three arrow buttons.
-<img src="attachment:media/image71.png" style="width:0.79688in;height:0.26563in" />
+<img alt="content/03_conditionals/attachment:media/image71.png" src="content/03_conditionals/attachment:media/image71.png" />
 If you were collecting data from a participant, you would press the big
 green triangle to run the experiment full screen. The two green
 triangles runs the experiment in a separate window. The two blue
@@ -1392,7 +1392,7 @@ incongruent trials, so write each colour twice in the word column. In
 the colour column, we will pair red with blue, and yellow with green. So
 for each word, you should have one congruent colour and one incongruent
 colour. The grid should look like this:</p>
-<img src="attachment:media/image30.png" style="width:1.57292in;height:2.64209in" />
+<img alt="content/03_conditionals/attachment:media/image30.png" src="content/03_conditionals/attachment:media/image30.png" />
 <p>We also need some additional variables that will be helpful for
 analysing the data later. We need a column called ‘congruent’ and a
 column called ‘correct_resp’. In the congruent column, write a 1 for
@@ -1404,7 +1404,7 @@ longer in the incongruent condition. We also need to specify what is the
 correct response in order to use it in keyboard_response. In the
 correct_resp column, write the first letter of the colour variable for
 that row, e.g. r for red. You should now have a full grid like this:</p>
-<img src="attachment:media/image18.png" style="width:3.42708in;height:2.78125in" />
+<img alt="content/03_conditionals/attachment:media/image18.png" src="content/03_conditionals/attachment:media/image18.png" />
 <p>This will create 8 trials, one for each row. Remember how it is the loop
 components that determine how many times the sequence component repeats.
 In other words, for every loop around trial_sequence, it will use one
@@ -1415,7 +1415,7 @@ new variables.</p>
 <h3>Editing the word component<a class="headerlink" href="#editing-the-word-component" title="Permalink to this headline">¶</a></h3>
 <p>If you click on the word component, Green is still in the middle of the
 screen with green font. We need to click on the settings icon
-<img src="attachment:media/image6.png" style="width:0.41667in;height:0.23958in" />
+<img alt="content/03_conditionals/attachment:media/image6.png" src="content/03_conditionals/attachment:media/image6.png" />
 in the top right corner and click on view script. We need to change two
 things here: the color and text arguments. At the moment, these are
 static and just present Green every time the component is called.
@@ -1429,7 +1429,7 @@ here as the variables are case sensitive. It should be typed exactly as
 it is in block_loop. One of the biggest causes of experiments not
 working is typos. You need an eagle eye to spot where you have made a
 mistake. The script should now look like this:</p>
-<img src="attachment:media/image79.png" style="width:6.84574in;height:0.51563in" />
+<img alt="content/03_conditionals/attachment:media/image79.png" src="content/03_conditionals/attachment:media/image79.png" />
 <p>Click on apply and close in the top right corner and we can move on to
 keyboard_response.</p>
 </div>
@@ -1444,7 +1444,7 @@ then need to specify the four different responses that are allowed (g;
 r; b; y) in the Allowed responses box. It is important that the letters
 are separated by a semicolon and not a comma. After this, you should
 have a window that looks like this:</p>
-<img src="attachment:media/image29.png" style="width:5.10417in;height:2.35577in" />
+<img alt="content/03_conditionals/attachment:media/image29.png" src="content/03_conditionals/attachment:media/image29.png" />
 </div>
 <div class="section" id="test-the-experiment">
 <h3>Test the experiment<a class="headerlink" href="#test-the-experiment" title="Permalink to this headline">¶</a></h3>
@@ -1496,7 +1496,7 @@ Excel or Openoffice on your computer, you should be able to double click
 on the file and open it. As we told the logger we want every variable
 saving, we get many columns. The file should have 32 rows of data and
 look similar to this:</p>
-<img src="attachment:media/image59.png" style="width:6.5in;height:1.41667in" />
+<img alt="content/03_conditionals/attachment:media/image59.png" src="content/03_conditionals/attachment:media/image59.png" />
 <p>We do not need every value here, but it is safer to save everything and
 use what we need. The key variables for analysing the data in this
 experiment are congruent, correct, and response_time. We can use SPSS
@@ -1514,7 +1514,7 @@ to open the data file, you will need to change Files of type to CSV
 data files. At the top of the box there is a drop-down menu called Look
 in. This is where you need to search to find where you saved the data on
 your computer. The window should look like this:</p>
-<img src="attachment:media/image54.png" style="width:5.83854in;height:3.80815in" />
+<img alt="content/03_conditionals/attachment:media/image54.png" src="content/03_conditionals/attachment:media/image54.png" />
 <p>Select the file you need, and click Open. This will open the Text Import
 Wizard which requires six steps. 1) We do not have a predefined format,
 so it should say no by default. Click Next. 2) How the variables are
@@ -1534,16 +1534,16 @@ available in the data view screen of SPSS. The whole process from above
 is shown in the following series of screenshots:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p><img src="attachment:media/image17.png" style="width:3.03646in;height:2.8021in" /></p></th>
-<th class="head"><p><img src="attachment:media/image62.png" style="width:3.05729in;height:2.79055in" /></p></th>
+<tr class="row-odd"><th class="head"><p><img alt="content/03_conditionals/attachment:media/image17.png" src="content/03_conditionals/attachment:media/image17.png" /></p></th>
+<th class="head"><p><img alt="content/03_conditionals/attachment:media/image62.png" src="content/03_conditionals/attachment:media/image62.png" /></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img src="attachment:media/image74.png" style="width:3.02604in;height:2.79163in" /></p></td>
-<td><p><img src="attachment:media/image70.png" style="width:3.03646in;height:2.79055in" /></p></td>
+<tr class="row-even"><td><p><img alt="content/03_conditionals/attachment:media/image74.png" src="content/03_conditionals/attachment:media/image74.png" /></p></td>
+<td><p><img alt="content/03_conditionals/attachment:media/image70.png" src="content/03_conditionals/attachment:media/image70.png" /></p></td>
 </tr>
-<tr class="row-odd"><td><p><img src="attachment:media/image7.png" style="width:2.98438in;height:2.7271in" /></p></td>
-<td><p><img src="attachment:media/image11.png" style="width:2.99479in;height:2.74171in" /></p></td>
+<tr class="row-odd"><td><p><img alt="content/03_conditionals/attachment:media/image7.png" src="content/03_conditionals/attachment:media/image7.png" /></p></td>
+<td><p><img alt="content/03_conditionals/attachment:media/image11.png" src="content/03_conditionals/attachment:media/image11.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1556,7 +1556,7 @@ streamlined option for importing data. Open SPSS and select new dataset.
 There is an option to import data if you click file &gt; Import Data &gt;
 CSV Data and select the experiment file from where you saved it on your
 computer. You should have a screen that looks similar to this:</p>
-<img src="attachment:media/image41.png" style="width:4.08333in;height:3.42762in" />
+<img alt="content/03_conditionals/attachment:media/image41.png" src="content/03_conditionals/attachment:media/image41.png" />
 <p>You should not have to change any of the default settings apart from if
 your data is saved in an international format. Some countries use a
 comma for a decimal symbol. If this is the case, you would need to
@@ -1600,7 +1600,7 @@ to create a new variable that defines any outliers beyond 100ms and
 Variables. Drag response_time into the white box, and type a new Output
 Variable Name called something like ‘extreme_responses’ and click
 Change. You should now have a screen that looks like this:</p>
-<img src="attachment:media/image73.png" style="width:4.96875in;height:2.74511in" />
+<img alt="content/03_conditionals/attachment:media/image73.png" src="content/03_conditionals/attachment:media/image73.png" />
 <p>Now click on Old and New Values. This allows us to recode response_time
 into several values by specifying individual values, or a range of
 values. Our acceptable response times are 100-1000ms, so we will define
@@ -1614,7 +1614,7 @@ range from the lowest value in response_time to 99, as above 100ms is
 OK. Select a New Value of 1, and click Add. 3) Click on Range, value
 through HIGHEST, and specify 1001. Select a New Value of 1, and click
 Add. You should have a window looking like this:</p>
-<img src="attachment:media/image60.png" style="width:5.85417in;height:3.34375in" />
+<img alt="content/03_conditionals/attachment:media/image60.png" src="content/03_conditionals/attachment:media/image60.png" />
 <p>Click Continue and OK, and SPSS will create a new column called
 extreme_responses. Any row with a 0 is fine, and any with a 1 is
 outside of our boundary and considered an extreme response.</p>
@@ -1631,7 +1631,7 @@ extreme responses, so write ‘&amp; extreme_responses = 0’. This means we
 only want to include responses within our boundary. It should now say
 ‘correct = 1 &amp; extreme_responses = 0’. The window should look like
 this:</p>
-<img src="attachment:media/image34.png" style="width:6.33854in;height:4.41343in" />
+<img alt="content/03_conditionals/attachment:media/image34.png" src="content/03_conditionals/attachment:media/image34.png" />
 <p>Click Continue and then OK, and any responses not meeting our criteria
 will be crossed out. For my data, there are four cases that are either
 incorrect or considered extreme. When we run any analyses, this will not
@@ -1643,7 +1643,7 @@ be included but does not delete them.</p>
 Analyze &gt; Descriptive Statistics &gt; Explore. Drag response_time into
 Dependent List and congruent into Factor List. Select Statistics under
 Display. The window should look like this:</p>
-<img src="attachment:media/image39.png" style="width:4.6875in;height:3.44792in" />
+<img alt="content/03_conditionals/attachment:media/image39.png" src="content/03_conditionals/attachment:media/image39.png" />
 <p>Press OK to produce the output. This will provide the descriptive
 statistics split by the congruent variable. For the average, we will
 look at the median response time. Response times tend not to be normally
@@ -1968,7 +1968,7 @@ I get the following message:</p>
 </div></blockquote>
 </li>
 </ol>
-<img src="attachment:media/image16.png" style="width:6.5in;height:2.54167in" />
+<img alt="content/03_conditionals/attachment:media/image16.png" src="content/03_conditionals/attachment:media/image16.png" />
 <blockquote>
 <div><p>OpenSesame provides us with a reason for the experiment crashing: the
 variable “cuetype” does not exist. At this point, you realise you

@@ -27,6 +27,7 @@ parse:
     - linkify
     - substitution
     - tasklist
+    - html_image
 
 # Online stuff
 repository:
