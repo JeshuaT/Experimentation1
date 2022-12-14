@@ -590,23 +590,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1">
-   Exercise 1
+  <a class="reference internal nav-link" href="#exercise-1-seaborn-plotting">
+   Exercise 1: Seaborn plotting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
+  <a class="reference internal nav-link" href="#exercise-2-matplotlib-procedural-plotting">
+   Exercise 2: Matplotlib Procedural Plotting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-3">
-   Exercise 3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-4">
-   Exercise 4
+  <a class="reference internal nav-link" href="#exercise-3-matplotlib-object-oriented-plotting">
+   Exercise 3: Matplotlib Object-Oriented Plotting
   </a>
  </li>
 </ul>
@@ -630,23 +625,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1">
-   Exercise 1
+  <a class="reference internal nav-link" href="#exercise-1-seaborn-plotting">
+   Exercise 1: Seaborn plotting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
+  <a class="reference internal nav-link" href="#exercise-2-matplotlib-procedural-plotting">
+   Exercise 2: Matplotlib Procedural Plotting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-3">
-   Exercise 3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-4">
-   Exercise 4
+  <a class="reference internal nav-link" href="#exercise-3-matplotlib-object-oriented-plotting">
+   Exercise 3: Matplotlib Object-Oriented Plotting
   </a>
  </li>
 </ul>
@@ -664,61 +654,42 @@
 (1) Seaborn plotting
 (2) Pyplot procedural plotting
 (3) Object-oriented plotting</p>
-<div class="section" id="exercise-1">
-<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
-<p>Pick a dataset whereby something changes over time (e.g. the <a class="reference external" href="https://github.com/owid/co2-data">dataset on global CO2 and greenhouse emission</a>). Import that dataset, and make sure the dataset is in a <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/05/00-data.html#data-organization-tidy-and-wide-formats">tidy format</a>.</p>
+<div class="section" id="exercise-1-seaborn-plotting">
+<h2>Exercise 1: Seaborn plotting<a class="headerlink" href="#exercise-1-seaborn-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Load in the same dataframe as you used in dataframe_exercises:
+<a class="reference external" href="https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-3.csv">https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-3.csv</a></p>
+<p>Now, using seaborn, make a bar plot of the response time of each value in ‘congruency’. Give the plot a title. Which value has the highest response times?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># import the csv here</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/data_exercises/subject-1_IC.csv&#39;</span><span class="p">)</span>
 
-<span class="c1"># do some data wrangling here if you need to get the dataframe in tidy format</span>
-
-<span class="c1"># print out the dataframe</span>
+<span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
-<p>Using a seaborn lineplot, plot the change over time. Add a title, an x-label, a y-label and a legend (if suitable).</p>
+<div class="section" id="exercise-2-matplotlib-procedural-plotting">
+<h2>Exercise 2: Matplotlib Procedural Plotting<a class="headerlink" href="#exercise-2-matplotlib-procedural-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Now, make the same plot using the matplotlib procedural plotting approach (don’t forget to include the title as well).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="c1"># your answer here</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer here</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
-<p>Now, make the same plot using the pyplot procedural plotting approach. Including the title, x-label and y-label.</p>
-<blockquote>
-<div><p><strong>Hint</strong>: <a class="reference external" href="https://www.youtube.com/watch?v=_LWjaAiKaf8&amp;ab_channel=CoreySchafer">This youtube video</a> could be of help, as well as <a class="reference external" href="https://machinelearningmastery.com/time-series-data-visualization-with-python/">this tutorial</a>.</p>
-</div></blockquote>
+<div class="section" id="exercise-3-matplotlib-object-oriented-plotting">
+<h2>Exercise 3: Matplotlib Object-Oriented Plotting<a class="headerlink" href="#exercise-3-matplotlib-object-oriented-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Yes, you guessed it: now plot the same plot using the object-oriented approach (again, title!).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># your answer here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="exercise-4">
-<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
-<p>Yes, you guessed it: now plot the same plot using the object-oriented approach. Again including the title, x-label and y-label.</p>
-<blockquote>
-<div><p><strong>Hint:</strong> <a class="reference external" href="https://www.python-graph-gallery.com/basic-time-series-with-matplotlib">This tutorial</a> is useful for this approach</p>
-</div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># your answer here</span>
 </pre></div>
