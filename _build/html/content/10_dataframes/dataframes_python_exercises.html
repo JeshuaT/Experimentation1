@@ -590,8 +590,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1-dataframe-wrangling">
-   Exercise 1: Dataframe wrangling
+  <a class="reference internal nav-link" href="#exercise-1-loading-in-and-inspecting-a-dataframe">
+   Exercise 1: Loading in and inspecting a dataframe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -620,8 +620,8 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1-dataframe-wrangling">
-   Exercise 1: Dataframe wrangling
+  <a class="reference internal nav-link" href="#exercise-1-loading-in-and-inspecting-a-dataframe">
+   Exercise 1: Loading in and inspecting a dataframe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -640,24 +640,341 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-exercises-dataframes">
 <h1>Python exercises: Dataframes<a class="headerlink" href="#python-exercises-dataframes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exercise-1-dataframe-wrangling">
-<h2>Exercise 1: Dataframe wrangling<a class="headerlink" href="#exercise-1-dataframe-wrangling" title="Permalink to this headline">¶</a></h2>
-<p>In the lessons you followed along an explanation using a open dataset with information on salary.  Below is the code to get you on your way.</p>
-<p>A dataset we recommend exploring is the <a class="reference external" href="https://github.com/owid/co2-data">dataset on global CO2 and greenhouse emission</a>. However, you are free to choose any dataset you find interesting.</p>
+<div class="section" id="exercise-1-loading-in-and-inspecting-a-dataframe">
+<h2>Exercise 1: Loading in and inspecting a dataframe<a class="headerlink" href="#exercise-1-loading-in-and-inspecting-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>In session 7, you learned how to load in data of a Stroop task. Furthermore, in the lesson of this session you learned many things about how to use dataframes. Here we are going to implement some of the things you learned in the lesson.</p>
+<p>(1) read a csv file and store it in a Pandas dataframe
+(2) look at top and bottom of the Pandas dataframe using the head and tail function
+(3) Access and remove individual columns and rows
+(4) Combine multiple dataframes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Change the link below to whatever csv you want to load in</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;filename.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/data_exercises/subject-0_CI.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>acc</th>
+      <th>accept_status</th>
+      <th>accuracy</th>
+      <th>age</th>
+      <th>average_response_time</th>
+      <th>avg_rt</th>
+      <th>background</th>
+      <th>bidi</th>
+      <th>block</th>
+      <th>...</th>
+      <th>time_practice</th>
+      <th>time_stroop</th>
+      <th>time_target</th>
+      <th>title</th>
+      <th>total_correct</th>
+      <th>total_response_time</th>
+      <th>total_responses</th>
+      <th>uniform_coordinates</th>
+      <th>width</th>
+      <th>word</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14</td>
+      <td>100.000000</td>
+      <td>yes</td>
+      <td>100.000000</td>
+      <td>23</td>
+      <td>17079</td>
+      <td>17079</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>123895</td>
+      <td>124469</td>
+      <td>Stroop CI</td>
+      <td>4</td>
+      <td>68319</td>
+      <td>4</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>RED</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34</td>
+      <td>100.000000</td>
+      <td>yes</td>
+      <td>100.000000</td>
+      <td>23</td>
+      <td>13885</td>
+      <td>13885</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>126701</td>
+      <td>127275</td>
+      <td>Stroop CI</td>
+      <td>5</td>
+      <td>69428</td>
+      <td>5</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>LOT</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>100.000000</td>
+      <td>yes</td>
+      <td>100.000000</td>
+      <td>23</td>
+      <td>11807</td>
+      <td>11807</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>129972</td>
+      <td>130547</td>
+      <td>Stroop CI</td>
+      <td>6</td>
+      <td>70842</td>
+      <td>6</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>GREEN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>85.714286</td>
+      <td>yes</td>
+      <td>85.714286</td>
+      <td>23</td>
+      <td>10212</td>
+      <td>10212</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>133556</td>
+      <td>134130</td>
+      <td>Stroop CI</td>
+      <td>6</td>
+      <td>71484</td>
+      <td>7</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>GREEN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>31</td>
+      <td>87.500000</td>
+      <td>yes</td>
+      <td>87.500000</td>
+      <td>23</td>
+      <td>9018</td>
+      <td>9018</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>practice</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>136370</td>
+      <td>136944</td>
+      <td>Stroop CI</td>
+      <td>7</td>
+      <td>72150</td>
+      <td>8</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>LOT</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>3</td>
+      <td>97.472924</td>
+      <td>yes</td>
+      <td>97.472924</td>
+      <td>23</td>
+      <td>980</td>
+      <td>980</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>917937</td>
+      <td>918511</td>
+      <td>Stroop CI</td>
+      <td>270</td>
+      <td>271492</td>
+      <td>277</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>BLUE</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>45</td>
+      <td>97.482014</td>
+      <td>yes</td>
+      <td>97.482014</td>
+      <td>23</td>
+      <td>979</td>
+      <td>979</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>920705</td>
+      <td>921279</td>
+      <td>Stroop CI</td>
+      <td>271</td>
+      <td>272211</td>
+      <td>278</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>YELLOW</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>100</td>
+      <td>97.491039</td>
+      <td>yes</td>
+      <td>97.491039</td>
+      <td>23</td>
+      <td>977</td>
+      <td>977</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>923590</td>
+      <td>924164</td>
+      <td>Stroop CI</td>
+      <td>272</td>
+      <td>272818</td>
+      <td>279</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>BLUE</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>110</td>
+      <td>97.500000</td>
+      <td>yes</td>
+      <td>97.500000</td>
+      <td>23</td>
+      <td>976</td>
+      <td>976</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>926349</td>
+      <td>926925</td>
+      <td>Stroop CI</td>
+      <td>273</td>
+      <td>273312</td>
+      <td>280</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>KNIFE</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>29</td>
+      <td>97.508897</td>
+      <td>yes</td>
+      <td>97.508897</td>
+      <td>23</td>
+      <td>974</td>
+      <td>974</td>
+      <td>#ffffff</td>
+      <td>no</td>
+      <td>I</td>
+      <td>...</td>
+      <td>123799</td>
+      <td>929072</td>
+      <td>929647</td>
+      <td>Stroop CI</td>
+      <td>274</td>
+      <td>273802</td>
+      <td>281</td>
+      <td>yes</td>
+      <td>1366</td>
+      <td>RED</td>
+    </tr>
+  </tbody>
+</table>
+<p>276 rows × 124 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="bonus-exercise-2-real-world-problems">
 <h2>BONUS Exercise 2: Real-world problems<a class="headerlink" href="#bonus-exercise-2-real-world-problems" title="Permalink to this headline">¶</a></h2>
 <p>There are many more publicly available datasets you can directly use. For this exercise, you can choose a dataset you find interesting. The website <a class="reference external" href="https://ourworldindata.org/">Our World in Data</a> has datasets on the most pressing world-problems, now you are learning the tools how to work with these datasets! Pretty cool right. In your own Python IDE, choose and download a dataset you find interesting (search for the .csv file) and replicate each step from the <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/05/00-data.html">the tutorial</a>, starting from subchapter 6.6.</p>
+<p>A dataset we recommend exploring is the <a class="reference external" href="https://github.com/owid/co2-data">dataset on global CO2 and greenhouse emission</a>. However, you are free to choose any dataset you find interesting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>

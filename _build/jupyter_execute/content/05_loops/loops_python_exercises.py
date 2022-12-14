@@ -36,9 +36,14 @@
 
 
 # ### Exercise 3. Print moving text
-# Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~100 ms (0.1 seconds).
+# Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~500 ms (0.5 seconds).
 # 
-# Note that you need the `range` function for this exercise that creates a list of numbers. You will learn more about `list` objects during a later session in this course.
+# Note that you need the `range` function for this exercise that creates a list of numbers you loop over. You will learn more about `list` objects during a later session in this course.
+# 
+# To make sure that the print replaces the previous print try this (running this in Spyder might give better results than Colab):
+# ```
+# print('\r','your text here',end='')
+# ```
 
 # In[4]:
 

@@ -686,8 +686,12 @@
 </div>
 <div class="section" id="exercise-3-print-moving-text">
 <h2>Exercise 3. Print moving text<a class="headerlink" href="#exercise-3-print-moving-text" title="Permalink to this headline">¶</a></h2>
-<p>Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~100 ms (0.1 seconds).</p>
-<p>Note that you need the <code class="docutils literal notranslate"><span class="pre">range</span></code> function for this exercise that creates a list of numbers. You will learn more about <code class="docutils literal notranslate"><span class="pre">list</span></code> objects during a later session in this course.</p>
+<p>Write a program that prints Hello world repeatedly (40 times) to the screen preceded by a string called fill that adds a space to itself each time the loop is repeated. You should see the text Hello world moving to the right of the screen. Refresh the loop each ~500 ms (0.5 seconds).</p>
+<p>Note that you need the <code class="docutils literal notranslate"><span class="pre">range</span></code> function for this exercise that creates a list of numbers you loop over. You will learn more about <code class="docutils literal notranslate"><span class="pre">list</span></code> objects during a later session in this course.</p>
+<p>To make sure that the print replaces the previous print try this (running this in Spyder might give better results than Colab):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;your text here&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
