@@ -712,326 +712,22 @@
 <span class="c1"># disable chained assignments, you can ignore this line of code</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="c1"># load the subject data</span>
-<span class="n">subj1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-3.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-<span class="n">subj2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-4.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="c1"># define all the subjects to load in</span>
+<span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
-<span class="c1"># merge the subject data in one dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">subj1</span><span class="p">,</span> <span class="n">subj2</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># make an empty list where we store each URL</span>
+<span class="n">url_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># loop over every raw file URL and store that URL in the url_list list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">subjects</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/subject-&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span>
+    <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># read the csv files from the URLs and append in a pandas dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">url_list</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>EEG</th>
-      <th>ET</th>
-      <th>acc</th>
-      <th>accuracy</th>
-      <th>average_response_time</th>
-      <th>avg_rt</th>
-      <th>background</th>
-      <th>baseline_measurement</th>
-      <th>bidi</th>
-      <th>block</th>
-      <th>...</th>
-      <th>time_wrong_response_feedback</th>
-      <th>title</th>
-      <th>total_correct</th>
-      <th>total_response_time</th>
-      <th>total_responses</th>
-      <th>trialnr</th>
-      <th>uniform_coordinates</th>
-      <th>width</th>
-      <th>correct_summary_feedback_repeat_parity</th>
-      <th>correct_summary_feedback_repeat_paritymagnitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1482.973800</td>
-      <td>1482.973800</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>3.556749e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>0</td>
-      <td>1482.9738</td>
-      <td>1</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>50.000000</td>
-      <td>50.000000</td>
-      <td>1094.839750</td>
-      <td>1094.839750</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>3.556749e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>1</td>
-      <td>2189.6795</td>
-      <td>2</td>
-      <td>2</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>1</td>
-      <td>66.666667</td>
-      <td>66.666667</td>
-      <td>1015.096667</td>
-      <td>1015.096667</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>3.556749e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>2</td>
-      <td>3045.2900</td>
-      <td>3</td>
-      <td>3</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>75.000000</td>
-      <td>75.000000</td>
-      <td>978.296175</td>
-      <td>978.296175</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>3.556749e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>3</td>
-      <td>3913.1847</td>
-      <td>4</td>
-      <td>4</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>1</td>
-      <td>80.000000</td>
-      <td>80.000000</td>
-      <td>998.425180</td>
-      <td>998.425180</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>3.556749e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>4</td>
-      <td>4992.1259</td>
-      <td>5</td>
-      <td>5</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>947</th>
-      <td>1</td>
-      <td>1</td>
-      <td>79.358717</td>
-      <td>79.358717</td>
-      <td>1032.506916</td>
-      <td>1032.506916</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>3.080682e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>396</td>
-      <td>515220.9512</td>
-      <td>499</td>
-      <td>61</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>948</th>
-      <td>1</td>
-      <td>1</td>
-      <td>79.400000</td>
-      <td>79.400000</td>
-      <td>1031.607870</td>
-      <td>1031.607870</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>3.080682e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>397</td>
-      <td>515803.9349</td>
-      <td>500</td>
-      <td>62</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>949</th>
-      <td>1</td>
-      <td>1</td>
-      <td>79.441118</td>
-      <td>79.441118</td>
-      <td>1031.008570</td>
-      <td>1031.008570</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>3.080682e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>398</td>
-      <td>516535.2935</td>
-      <td>501</td>
-      <td>63</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>950</th>
-      <td>1</td>
-      <td>1</td>
-      <td>79.482072</td>
-      <td>79.482072</td>
-      <td>1029.826639</td>
-      <td>1029.826639</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>3.080682e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>399</td>
-      <td>516972.9729</td>
-      <td>502</td>
-      <td>64</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>951</th>
-      <td>1</td>
-      <td>1</td>
-      <td>79.324056</td>
-      <td>79.324056</td>
-      <td>1029.780260</td>
-      <td>1029.780260</td>
-      <td>#ABACB0</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>12</td>
-      <td>...</td>
-      <td>3.080682e+06</td>
-      <td>Parity-magnitude task with teufel colors</td>
-      <td>399</td>
-      <td>517979.4709</td>
-      <td>503</td>
-      <td>65</td>
-      <td>yes</td>
-      <td>1680</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>952 rows × 349 columns</p>
-</div></div></div>
 </div>
 <p>That’s a lot of columns. In your “logger” file in OpenSesame, the recommended thing to do is to check the box of “Log all variables”. This is the safest option, because it’s easy to remove columns and you would rather not have that you missed an essential variable after doing your experiment. Let’s pick the columns that we need:</p>
 <div class="cell docutils container">
@@ -1043,190 +739,42 @@
 <span class="c1"># make a new df, called df_trim, that only included the columns that are in the &quot;include_columns&quot; list</span>
 <span class="n">df_trim</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">include_columns</span><span class="p">]</span>
 
-<span class="c1"># show the new df</span>
-<span class="n">df_trim</span>
+<span class="c1"># it&#39;s always good practice to check the head and tail of a dataframe after making/changing it</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_trim</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_trim</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   subject_nr  block    session congruency_transition_type congruency_type  \
+0           3      1  lowswitch                        NaN     incongruent   
+1           3      1  lowswitch          congruency-switch       congruent   
+2           3      1  lowswitch      congruency-repetition       congruent   
+3           3      1  lowswitch          congruency-switch     incongruent   
+4           3      1  lowswitch      congruency-repetition     incongruent   
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+   correct  response_time task_transition_type  task_type response  
+0        0      1482.9738                  NaN     parity     None  
+1        1       706.7057          task-switch  magnitude        a  
+2        1       855.6105          task-switch     parity        a  
+3        1       867.8947      task-repetition     parity        a  
+4        1      1078.9412          task-switch  magnitude        a  
+     subject_nr  block     session congruency_transition_type congruency_type  \
+947           4     12  highswitch      congruency-repetition       congruent   
+948           4     12  highswitch      congruency-repetition       congruent   
+949           4     12  highswitch      congruency-repetition       congruent   
+950           4     12  highswitch      congruency-repetition       congruent   
+951           4     12  highswitch      congruency-repetition       congruent   
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>subject_nr</th>
-      <th>block</th>
-      <th>session</th>
-      <th>congruency_transition_type</th>
-      <th>congruency_type</th>
-      <th>correct</th>
-      <th>response_time</th>
-      <th>task_transition_type</th>
-      <th>task_type</th>
-      <th>response</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3</td>
-      <td>1</td>
-      <td>lowswitch</td>
-      <td>NaN</td>
-      <td>incongruent</td>
-      <td>0</td>
-      <td>1482.9738</td>
-      <td>NaN</td>
-      <td>parity</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>1</td>
-      <td>lowswitch</td>
-      <td>congruency-switch</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>706.7057</td>
-      <td>task-switch</td>
-      <td>magnitude</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>lowswitch</td>
-      <td>congruency-repetition</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>855.6105</td>
-      <td>task-switch</td>
-      <td>parity</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>1</td>
-      <td>lowswitch</td>
-      <td>congruency-switch</td>
-      <td>incongruent</td>
-      <td>1</td>
-      <td>867.8947</td>
-      <td>task-repetition</td>
-      <td>parity</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3</td>
-      <td>1</td>
-      <td>lowswitch</td>
-      <td>congruency-repetition</td>
-      <td>incongruent</td>
-      <td>1</td>
-      <td>1078.9412</td>
-      <td>task-switch</td>
-      <td>magnitude</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>947</th>
-      <td>4</td>
-      <td>12</td>
-      <td>highswitch</td>
-      <td>congruency-repetition</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>699.0107</td>
-      <td>task-repetition</td>
-      <td>magnitude</td>
-      <td>num_6</td>
-    </tr>
-    <tr>
-      <th>948</th>
-      <td>4</td>
-      <td>12</td>
-      <td>highswitch</td>
-      <td>congruency-repetition</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>582.9837</td>
-      <td>task-repetition</td>
-      <td>magnitude</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>949</th>
-      <td>4</td>
-      <td>12</td>
-      <td>highswitch</td>
-      <td>congruency-repetition</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>731.3586</td>
-      <td>task-switch</td>
-      <td>parity</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>950</th>
-      <td>4</td>
-      <td>12</td>
-      <td>highswitch</td>
-      <td>congruency-repetition</td>
-      <td>congruent</td>
-      <td>1</td>
-      <td>437.6794</td>
-      <td>task-repetition</td>
-      <td>parity</td>
-      <td>num_6</td>
-    </tr>
-    <tr>
-      <th>951</th>
-      <td>4</td>
-      <td>12</td>
-      <td>highswitch</td>
-      <td>congruency-repetition</td>
-      <td>congruent</td>
-      <td>0</td>
-      <td>1006.4980</td>
-      <td>task-switch</td>
-      <td>magnitude</td>
-      <td>a</td>
-    </tr>
-  </tbody>
-</table>
-<p>952 rows × 10 columns</p>
-</div></div></div>
+     correct  response_time task_transition_type  task_type response  
+947        1       699.0107      task-repetition  magnitude    num_6  
+948        1       582.9837      task-repetition  magnitude        a  
+949        1       731.3586          task-switch     parity        a  
+950        1       437.6794      task-repetition     parity    num_6  
+951        0      1006.4980          task-switch  magnitude        a  
+</pre></div>
+</div>
+</div>
 </div>
 <p>Before we make any changes to the dataframe, we must first be sure that all the columns are in the right <a class="reference external" href="https://pbpython.com/pandas_dtypes.html">type</a>. If we print the data types of each column, we can see that subject_nr is an integer. However, we don’t intend for the dataframe to interpret “3” and “4” as numbers, since it’s simply a categorization. Let’s change that:</p>
 <div class="cell docutils container">
@@ -1391,7 +939,7 @@ Categories (2, int64): [1, 2]
 <li><p>Amount of congruent-switch/congruent-repetition trials</p></li>
 </ul>
 <p>All whilst keeping the task-repetition/task-switch rate to 25/75 or 75/25 (depending on the session).
-This all whilst keeping into account that the first trial of each block does not count as either repetition or switch trial. In complex structures like this, sometimes you cannot aim for perfect counterbalancing, but you can aim for “as good as possible” (hence the slight discrepancy in the pivot table above). Let’s see if we can use a bit more complex pivot table to get a clearer picture if all of this worked out</p>
+Thereby also keeping into account that the first trial of each block does not count as either repetition or switch trial. In complex structures like this, sometimes you cannot aim for perfect counterbalancing, but you can aim for “as good as possible” (hence the slight discrepancy in the pivot table above). Let’s see if we can use a bit more complex pivot table to get a clearer picture if all of this worked out</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">piv_cong</span> <span class="o">=</span> <span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
