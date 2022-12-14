@@ -11,7 +11,7 @@
 # ## Step 1. Get OpenSesame data from osf
 # Let's use some python code to download existing OpenSesame data of a Stroop task from [osf](https://osf.io/7ma4t/). Note that the code below creates a folder called `tutorial_data` in your current working directory. Run the code below.
 
-# In[10]:
+# In[1]:
 
 
 import requests
