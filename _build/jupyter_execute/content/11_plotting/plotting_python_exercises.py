@@ -14,7 +14,7 @@
 # 
 # Now, using seaborn, make a bar plot of the response time of each value in 'congruency'. Give the plot a title. Which value has the highest response times?
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
