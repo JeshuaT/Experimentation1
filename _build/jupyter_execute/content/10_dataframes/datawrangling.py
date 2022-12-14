@@ -45,7 +45,7 @@ df = pd.concat((pd.read_csv(url) for url in url_list), ignore_index=True)
 
 # make a list of column names that we want to include
 include_columns = ['subject_nr', 'block', 'session', 'congruency_transition_type', 'congruency_type',
-                   'correct', 'response_time', 'task_transition_type', 'task_type', "response"]
+                   'correct', 'response_time', 'task_transition_type', 'task_type', 'response']
 
 # make a new df, called df_trim, that only included the columns that are in the "include_columns" list
 df_trim = df[include_columns]

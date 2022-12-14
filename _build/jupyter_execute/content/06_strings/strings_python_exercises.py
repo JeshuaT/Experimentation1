@@ -15,7 +15,7 @@
 # Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
 # 
 
-# In[7]:
+# In[2]:
 
 
 str = 'X-DSPAM-Confidence:0.8475'
@@ -30,7 +30,7 @@ str = 'X-DSPAM-Confidence:0.8475'
 # 
 # Then use these commands to remove leading, trailing and double spaces (iteratively) in the string indicated below and replace the word "setece" with "sentence".
 
-# In[8]:
+# In[3]:
 
 
 str = "  This is a  setece      with  a typo and   too many  spaces "
@@ -39,9 +39,18 @@ str = "  This is a  setece      with  a typo and   too many  spaces "
 
 # ### Exercise 3. Create a looping text
 # 
-# Adapt the program you wrote in the previous session to present a moving text of 40 characters long that runs like a circle from left to right: when characters reach the end they starts to appear at the beginning again. Let the loop run from 1 to 80 so you can present a full circle.
+# Adapt the program you wrote in the previous session to present a moving text of 40 characters long that runs like a circle from left to right: when characters reach the end they starts to appear at the beginning again.
+# 
+# Work step by step!
+# - If you do not know where to start, assume you want to print the string "1234" and write out what should be the values (use a piece of paper!), like this sketch:
+# 
+# ![](images/loopingtext.png)
+# 
+# - If the script works for "1234", you can change the code to make it work for a string of any length e.g. "Look at this moving text!!!!!!!!!!!!!!!!" (40 characters long).
+# 
+# - If this works, repeat the loop for 3 cycles (add an outer loop that runs 3 times)
 
-# In[9]:
+# In[4]:
 
 
 # your code here
