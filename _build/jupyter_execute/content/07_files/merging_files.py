@@ -11,7 +11,7 @@
 # ## Step 1. Get OpenSesame data from osf
 # Let's use some python code to download existing OpenSesame data of a Stroop task from [osf](https://osf.io/7ma4t/). Note that the code below creates a folder called `tutorial_data` in your current working directory. Run the code below.
 
-# In[1]:
+# In[2]:
 
 
 import requests
@@ -33,10 +33,10 @@ open('./tutorial_data/data_pilot.zip', 'wb').write(r.content)
 # extract the zip file
 import zipfile
 with zipfile.ZipFile('./tutorial_data/data_pilot.zip', 'r') as zip_ref:
-    zip_ref.extractall('./tutorial_data/'
+    zip_ref.extractall('./tutorial_data/')
 
 #os.remove removes files! Always be careful!
-os.remove('./tutorial_data/CI_RSI2000_test.csv') # remove one file that is atypical
+os.remove('./tutorial_data/data/CI_RSI2000_test.csv') # remove one file that is atypical
 
 
 # Check whether the data is properly stored and extracted. Open a csv file to see it's content.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Wiconsin Card Sorting Task in OpenSesame
+# # The Wisconsin Card Sorting Task in OpenSesame
 
 # In[3]:
 

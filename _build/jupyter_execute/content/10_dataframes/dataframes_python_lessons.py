@@ -3,7 +3,7 @@
 
 # # Python lessons: Dataframes
 # 
-# > **Note** The materials below are  adapted from the [Lab in Cognition and Perspective Course](http://teaching.gureckislab.org/fall22/labincp/LICENSE.html)  by Todd M Gureckis licensed under Creative Commons Attribution 3.0
+# > **Note** The materials below are  adapted from [Chapter 6 of the Lab in Cognition and Perspective Course](http://teaching.gureckislab.org/fall22/labincp/chapters/05/00-data.html), authored by [Todd M. Gureckis](http://gureckislab.org/~gureckis) and [Kelsey Moty](http://kelseymoty.github.io). There materials are released under the [Creative Commons Attribution 3.0 license](http://teaching.gureckislab.org/fall22/labincp/LICENSE.html)
 # 
 # In this module you will learn how to work with OpenSesame datasets using the python package Pandas.  First, watch the video, then follow along with this explanation on dataframes and pandas:
 # 
@@ -16,21 +16,20 @@
 
 # ## The Format and Structure of Digital Data
 
-# ```{note}
-# This chapter authored by [Todd M. Gureckis](http://gureckislab.org/~gureckis) and [Kelsey Moty](http://kelseymoty.github.io) and is released under the [license for this book](../../LICENSE).
-# ```
-
 # ## Video Lecture
 # 
-# This video provides an complementary overview of this chapter.  There are things mentioned in the chapter not mentioned in the video and vice versa.  Together they give an overview of this unit so please read and watch.
-# 
-# <center>
-# <iframe src="https://player.vimeo.com/video/520946467" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-# </center>
+# This video provides a complementary overview of this chapter.  There are things mentioned in the chapter not mentioned in the video and vice versa.  Together they give an overview of this unit so please read and watch. You can watch the video [here](http://teaching.gureckislab.org/fall22/labincp/chapters/05/00-data.html#video-lecture).
 
 # ## How to think about data and organize it
 
 # Data is an important concept in science.  The first step is we measure something.   In a [previous chapter we discuss issues in measurement](http://teaching.gureckislab.org/fall22/labincp/chapters/04/00-researchdesign.html) including different types of scales, units, etc...  However the main thing is that data is born when a number is assigned to some observation we make.  Here is a lonely single number which maybe measures something:
+# 
+# ```{image} ../images/single_number.png
+# :alt: single_number
+# :class: bg-primary mb-1
+# :width: 200px
+# :align: center
+# ```
 # 
 # <div style="text-align: center">
 #     <img src="./images/single_number.png" width="150">

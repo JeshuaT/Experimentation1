@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Digital Span Task in OpenSesame
+# # Memory Span Task in OpenSesame
 
 # In[8]:
 
@@ -9,6 +9,10 @@
 from jupyterquiz import display_quiz
 
 
+# ## Introduction
+# 
+# In this tutorial was are going to adapt an existing memory span task, which can be used to measure one's working memory storage capacity. This task presents an incremental number of items in a block of trials. The longest list of items that a person can repeat back in a correct order reflects one's memory span.
+# 
 # ## Step 1: Download OpenSesame file and adapt it
 # 
 # Download the Digit Span task created by [Grant M. Berry](https://github.com/berrygrant/OpenSesame) using the following download [link](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fberrygrant%2FOpenSesame%2Fblob%2Fmaster%2FDigitSpan_Sequential.osexp).

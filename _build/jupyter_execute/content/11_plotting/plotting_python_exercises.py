@@ -42,7 +42,5 @@ df = pd.read_csv('https://raw.githubusercontent.com/JeshuaT/Experimentation1/mai
 # In[ ]:
 
 
-import matplotlib.pyplot as plt
-
 # your answer here
 

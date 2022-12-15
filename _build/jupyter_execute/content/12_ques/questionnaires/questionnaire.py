@@ -2,17 +2,24 @@
 # coding: utf-8
 
 # # Questionnaires in OpenSesame
+
+# In[3]:
+
+
+from jupyterquiz import display_quiz
+
+
 # ##  Introduction
 # In this tutorial we are going to show how you can administer long questionnaires in OpenSesame. The example is similar to a solution in E-Prime that can be downloaded [here](https://www.henkvansteenbergen.com/open-science#Questionnaire).
 # 
-# Assume you want to present the [50-item long International Personality Item Pool](https://ipip.ori.org/new_ipip-50-item-scale.htm), embedded in an OpenSesame experiment. 
+# Assume you want to present the [50-item long International Personality Item Pool](https://ipip.ori.org/new_ipip-50-item-scale.htm), embedded in an OpenSesame experiment.
 # 
-# One option is to create customs forms in OpenSesame as explained here TODO. In this tutorial we show step-by-step how you can also create a fully customizable questionnaire using the Canvas and mouse functionality.
+# One option is to create customs forms in OpenSesame as explained [here](https://osdoc.cogsci.nl/manual/forms/about/). In this tutorial we use Canvas functions instead. Below we show step-by-step how you can create a fully customizable and quite flexible questionnaire. This tutorial also allows you to apply a lot of coding knowledge you obtained earlier! Let's start!
 # 
 # ## Step 1. Sketch the basic outline of your questionnaire
-# Suppose we want to present 5 sheets (or pages) of questions with 10 questions of the IPIP per sheet. To do so, we can use Canvas commands to draw text and rectangles at particular locations. 
+# Suppose we want to present 5 sheets (or pages) of questions with 10 questions of the IPIP per sheet. To do so, we can use Canvas commands to draw text and rectangles at particular locations.
 # 
-# In the figure below we present a possible outline of 10 questions (named `qst01` to `qst10`), a general header for this sheet (named `qhd`) and 9 options to choose from per question (named `rt011` to `rt019` for the first question, `rt021` to `rt029` for the second question, et cetera). 
+# Actually, we need quite a lot of elements! In the figure below we present a possible outline of 10 questions (named `qst01` to `qst10`), a general header for this sheet (named `qhd`) and 9 options to choose from per question (named `rt011` to `rt019` for the first question, `rt021` to `rt029` for the second question, etcetera).
 
 # ![](images/overviewques.png)
 
@@ -23,11 +30,11 @@
 
 # ## Step 2. Create a Canvas and add the Continue button
 # 
-# Open the template provided here TODO. Note that the AllQuestionnaires loop already contains the [freely available](https://ipip.ori.org/new_ipip-50-item-scale.htm) 50 items of the IPIP. 
+# Open the template provided [here]( https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/Questionnaire_step0.osexp). Note that the AllQuestionnaires loop already contains the [freely available](https://ipip.ori.org/new_ipip-50-item-scale.htm) 50 items of the IPIP.
 # 
-# In the template the RunOneSheetOf10Items has to present sheet 1 (items 1 to 10) and 5 (items 41 to 50) of the IPIP. The column QuestStartRow provides information where to find these items in the AllQuestionnaires loop.
+# In the template the RunOneSheetOf10Items has to present sheet 1 (items 1 to 10) and 5 (items 41 to 50) of the IPIP. This is just an example for this tutorial and to make debugging easy. Of course, you can add/modify sheets later on by editing this list. The column QuestStartRow provides information where to find these items in the AllQuestionnaires loop.
 # 
-# The `sheet_seq` includes three python inline objects. Durign this tutorial you will write the code for these three objects.
+# The `sheet_seq` includes three python inline objects. During this tutorial you will write the code for these three objects. Make sure you reserve sufficient time for this tutorial, because there are quite some steps involved!
 # 
 # Open the `init_qcanvas` inline object, create a Canvas and show the Continue button using the code below
 
@@ -55,14 +62,14 @@
 # 
 # Let's go back to the `init_qcanvas` object and insert new code before the `my_canvas.show()` command.
 # 
-# We first retrieve information from the AllQuestionnaires loop by loading all information as in a `dm` datamatrix variable.
+# We first retrieve information from the AllQuestionnaires loop by loading all information as in a `dm` datamatrix variable. Note that a datamatrix is very similar to a dataframe, but has some features that are particular handy in OpenSesame (learn more [here](https://datamatrix.cogsci.nl/0.13/)) as it provides a direct interface to loop objects.
 
 #  ```
 # #get data from AllQuestionnaires loop
 # dm = items['AllQuestionnaires'].dm
 # ```
 
-# Now, we can use the `QuestStartRow` variable to find the correct row in the AllQuestionnaires datamatrix that contains the ItemDescription we want to show as header. Note that we use -1 because the datamatrix is zero-based whereas the loop shown in OpenSesame is one-based! Let's use a print statement to verify we have the right information.
+# Now, we can use the `QuestStartRow` variable to find the correct row in the AllQuestionnaires datamatrix that contains the ItemDescription we want to show as header. Note that we use -1 because the datamatrix is zero-based (first row is number 0) whereas the loop shown in OpenSesame is one-based (first row is number 1)! Let's use a print statement to verify we have the right information.
 
 # ```
 # #header
@@ -80,11 +87,11 @@
 # Check whether this works.
 
 # ## Step 4. Add the text of the questions
-# We now can start adding the text of all questions and all options, using the names described in the sketch above. The script we write allows to use 9 options per questionnaires. Later on we will make sure that options are only clickable if there is a text associated with that option. The IPIP example has only 5 possible answeres and uses options 3 to 7; o01, 02, 08, and 09 are left empty in this case. 
+# We now can start adding the text of all questions and all options, using the names described in the sketch above. The script we write allows to use 9 options per sheet. Later on we will make sure that options are only clickable if there is a text associated with that option. The IPIP example has only 5 possible answers and uses options 3 to 7; o01, 02, 08, and 09 will therefore be left empty in this case.
 # 
 # Because we have to print 10 questions and 10 lines above each questions (and later on 90 options) we use a loop instead of manually entering all x and y positions per text item. 
 # 
-# The vertical distance between each question is available in `qs_ydist`. The x and y position of `qst_01`, and the width and height are also stored as variables. The loop than runs from 1 to 10 and then print the text `qst_xx` and the horizontal line 2 pixels above it (`qst_xx_bg`). 
+# The vertical distance between each question is available in `qs_ydist`. The x and y position of `qst_01`, and the width and height are also stored as variables. The loop runs from 1 to 10 and then prints the text `qst_xx` and the horizontal line 2 pixels above it (`qst_xx_bg`).
 
 # ```
 # #define coordinates of questions
@@ -97,12 +104,16 @@
 #     my_canvas['qst' + str(i).zfill(2) + "bg"] = Rect(qs_x, qs_y+((i-1)*qs_ydist)-2, 990, 1, fill = True, color = u'whitesmoke')
 # ```
 
-# QUIZ. What is the zfill doing?
-# 
+# In[4]:
+
+
+display_quiz("questions/question_1.json")
+
+
 # Test your code. Do you see 10 questions presented per sheet?
 
 # ## Step 5. Add the options
-# Time to add the 90 options to the canvas. Actually we add 180 objects: 90 text objects (named `rtxxx`) and 90 'clickable' squares without fill (named `rbxxx`) around these text objects. 
+# Now it is time to add the 90 options to the canvas. Actually we add 180 objects: 90 text objects (named `rtxxx`) and 90 'clickable' squares without fill (named `rbxxx`) around these text objects.
 # 
 # We can nest a new loop into the `for i in` loop, using variable j that runs from 1 to 9.
 # 
@@ -130,8 +141,12 @@
 # ```
 
 # Run the file. Experiment with the location of the options and questionnares by changes the x and y values. Make sure you understand what the code is doing.
-# 
-# QUIZ: what is the name of the box for question 4, option position 5?
+
+# In[7]:
+
+
+display_quiz("questions/question_2.json")
+
 
 # ## Step 6. Mark preselected options
 # 
@@ -144,10 +159,14 @@
 # ```
 
 # Note that we will keep updating the variable RSelected when participants select an option with their mouse later in the script.
-# 
-# QUIZ: dimensions of RSelected
-# 
-# Around all 90 options there is a  rectangle object (named `rb011` to `rb019` for the first question, `rb021` to `rb029` for the second question, et cetera) that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected.
+
+# In[8]:
+
+
+display_quiz("questions/question_3.json")
+
+
+# Around all 90 options there is a rectangle object (named `rb011` to `rb019` for the first question, `rb021` to `rb029` for the second question, et cetera) that can get colors black (indicating it is selected) or the background color of the canvas (white), indicating it is not selected.
 # 
 # The code below updates the color of all 90 rectangles:
 
@@ -163,10 +182,12 @@
 # ```
 
 # Experiment with the PreSelection values in the loop. Do you see the correct options gets marked?
-# 
-# QUIZ: What happens if you PreSelect an options that does not contain text? A: this is actually a feature of the questionnaire. The questionnaire will be programmed in such a way that participants can only proceed if they have provided answers to all questionnaires (to avoid missing data). If you do not want to force a response, you can preselect a hidden option (e.g. option1 which does not contain text in the IPIP template) in case you do not want to force the participant to answer some questions.
-# 
-# 
+
+# In[9]:
+
+
+display_quiz("questions/question_4.json")
+
 
 # Congratulations! You have finished the first part of the experiment that presents the canvas. Hang on to do more cool stuff!
 
@@ -207,10 +228,11 @@
 #     
 # ```
 
-# QUIZ: assume you run this experiment. How long will the canvas been shown to the user?
-#     - until eternity
-#     - until the user clicks with the mouse
-#     - until the user clicks the OK button 
+# In[10]:
+
+
+display_quiz("questions/question_5.json")
+
 
 # ### Check what was clicked
 # To check whether something was clicked at we need the `elements_at(x,y)` function of the Canvas object (learn more [here](https://osdoc.cogsci.nl/manual/python/canvas/#Canvas-elements_at)). 
@@ -381,7 +403,12 @@
 # 
 # Check whether the questionnare works properly now and proceeds to the next sheet of questions after you click Proceed. Also experiment with the PreSelection feature. 
 # 
-# Quiz: What happens if you set the PreSelections of all questions to 9?
+
+# In[11]:
+
+
+display_quiz("questions/question_6.json")
+
 
 # ## Step 8. Logging all answers
 # 

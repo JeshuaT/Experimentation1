@@ -31,9 +31,13 @@ Last but not least, we are grateful to the board of the faculty of Social and Be
 
 **Leiden, January 2023**
 
-**Jeshua Brown, PhD student (author and workgroup instructor)**
+**Jeshua Brown, PhD student**
 
-**Dr. Henk van Steenbergen, Associate Professor and PI at the [Affect, Motivation and Action lab](http://www.henkvansteenbergen.com) (author and course coordinator)**
+*author and workgroup instructor*
+
+**Dr. Henk van Steenbergen, Associate Professor and PI at the [Affect, Motivation and Action lab](http://www.henkvansteenbergen.com)**
+
+*author and course coordinator*
 
 
 

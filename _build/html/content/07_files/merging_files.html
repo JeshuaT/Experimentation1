@@ -203,7 +203,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_functions/wcst.html">
-     The Wiconsin Card Sorting Task in OpenSesame
+     The Wisconsin Card Sorting Task in OpenSesame
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,7 +262,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_strings/digitspan/digitspan.html">
-     Digital Span Task in OpenSesame
+     Memory Span Task in OpenSesame
     </a>
    </li>
   </ul>
@@ -789,18 +789,10 @@
 <span class="c1"># extract the zip file</span>
 <span class="kn">import</span> <span class="nn">zipfile</span>
 <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;./tutorial_data/data_pilot.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
-    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;./tutorial_data/&#39;</span>
+    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;./tutorial_data/&#39;</span><span class="p">)</span>
 
 <span class="c1">#os.remove removes files! Always be careful!</span>
-<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;./tutorial_data/CI_RSI2000_test.csv&#39;</span><span class="p">)</span> <span class="c1"># remove one file that is atypical</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;./tutorial_data/&#39;</span>
-                      <span class="o">^</span>
-<span class="ne">SyntaxError</span>: &#39;(&#39; was never closed
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;./tutorial_data/data/CI_RSI2000_test.csv&#39;</span><span class="p">)</span> <span class="c1"># remove one file that is atypical</span>
 </pre></div>
 </div>
 </div>
