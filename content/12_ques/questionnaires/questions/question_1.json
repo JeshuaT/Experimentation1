@@ -1,0 +1,28 @@
+[
+  {
+    "question": "What is the zfill function doing in this script?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "It is not necessary, let's remove it",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      },
+      {
+        "answer": "It allows the strings to concatenate",
+        "correct": false,
+        "feedback": "Incorrect! The '+' does the concatenation. Try again."
+      },
+      {
+        "answer": "It adds spaces to the strings",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      },
+      {
+        "answer": "It fills the string with zeros until a particular number is reached",
+        "correct": true,
+        "feedback": "Correct! In this case it fills the content of variable i with zeros until 2 numbers are reached. So 1 becomes 01, 2 becomes 02 etc. When i equals 10, no zero is added because that value already consists of two characters. Numbers with preceding zeros also sort easier as strings (e.g. 001,002,003...,009,010,099,100) instead of the default (1,10,100,2,3,4,5,6... ) so use it frequently!"
+      }
+    ]
+  }
+]

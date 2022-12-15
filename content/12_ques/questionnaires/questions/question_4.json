@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What happens if you have set PreSelect to an option number in the AllQuestionnaires loop for which you do not provide text?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "This has no effect. The user first has to click a visible option (with text) before they can proceed",
+        "correct": false,
+        "feedback": "Incorrect."
+      },
+      {
+        "answer": "It will not force a response from the user for this particular question",
+        "correct": true,
+        "feedback": "Correct. This is actually a feature of the questionnaire. The questionnaire will be programmed in such a way that participants can only proceed if they have provided answers to all questionnaires (to avoid missing data). If you do not want to force a response, you can preselect a hidden option (e.g. option1 which does not contain text in the IPIP template) in case you do not want to force the participant to answer some questions."
+      }
+    ]
+  }
+]

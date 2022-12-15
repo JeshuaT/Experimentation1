@@ -1,0 +1,28 @@
+[
+  {
+    "question": "What is the name of the box for question number 4, option number 5?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": " rb045",
+        "correct": true,
+        "feedback": "Correct! rb = box, 04 = question number 4, 5 = option number."
+      },
+      {
+        "answer": "rt045",
+        "correct": false,
+        "feedback": "Incorrect! This is the text \"behind\" the box of question 04, option 5. A mouse click should change the appearance of the box, not the text."
+      },
+      {
+        "answer": "rt054",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      },
+      {
+        "answer": "rb054",
+        "correct": false,
+        "feedback": "Incorrect! Try again."
+      }
+    ]
+  }
+]

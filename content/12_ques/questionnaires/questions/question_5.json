@@ -1,0 +1,24 @@
+[
+  {
+    "question": "Assume you run this experiment. How long will the canvas been shown to the user?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Until eternity (unless there is hardware crash / fatal intervension by the operating system / user aborts experiment with ESC)",
+        "correct": true,
+        "feedback": "Correct. The value OK_pressed is set to False in the beginning of the script. If we do not change this value to True using another piece of script, the loop will run forever (infinitely)."
+      },
+      {
+        "answer": "Until the user clicks with the mouse",
+        "correct": false,
+        "feedback": "Incorrect. Look at the conditional expression in the while-loop"
+      }
+    ,
+      {
+        "answer": "Until the user clicks the OK button",
+        "correct": false,
+        "feedback": "Partially correct. This is indeed what we want. But we did not provide the code for it yet! Try another answer."
+      }
+    ]
+  }
+]

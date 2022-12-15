@@ -1,0 +1,28 @@
+[
+  {
+    "question": "How many elements does RSelected have, and how are they numbered?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "11 elements, numbered 0 to 10",
+        "correct": false,
+        "feedback": "Incorrect. Note that the number of the start:end in the range includes the start value but does not include the end value!"
+      },
+      {
+        "answer": "11 elements, numbered 1 to 11",
+        "correct": false,
+        "feedback": "Incorrect. Python code is zero-based!"
+      },
+      {
+        "answer": "10 elements, numbered 0 to 9",
+        "correct": true,
+        "feedback": "Correct. Python code is zero-based. The number of the start:end in the range includes the start value but does not include the end value, so in total 10 elements are assigned to RSelected."
+      },
+      {
+        "answer": "10 elements, numbered 1 to 10",
+        "correct": false,
+        "feedback": "Incorrect. Python code is zero-based!"
+      }
+    ]
+  }
+]

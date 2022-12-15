@@ -1,0 +1,24 @@
+[
+  {
+    "question": "What happens if you set the PreSelections of all questions to 9?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "The experiment will crash",
+        "correct": false,
+        "feedback": "Incorrect. Try another answer."
+      },
+      {
+        "answer": "No change in functionality",
+        "correct": false,
+        "feedback": "Incorrect. Try another answer."
+      }
+    ,
+      {
+        "answer": "No answer is required for any question",
+        "correct": true,
+        "feedback": "Correct. Under the hood you preselect a response for the participant for all questions so the continue button should be available immediately and you not force any answer, likely leading to missing data. Note though that we first have to fix one more thing (explained in Exercise 1)."
+      }
+    ]
+  }
+]
