@@ -5,22 +5,23 @@
 
 # In the data wrangling tutorial we covered how to import and manipulate a dataframe. We also saw some ways to get an idea how your data looks like by grouping the data. In this tutorial we will go a step further by also visualizing the data. Therefore, we will use python's most widely used visualization package: [matplotlib](https://matplotlib.org/). Let's first load the data. We will use the same data as in the data wrangling tutorial.
 
-# In[1]:
+# In[12]:
 
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from jupyterquiz import display_quiz
 
-# Import cleaned dataframe from the datawrangling module
+# Import cleaned dataframe from the data wrangling module
 df = pd.read_csv('data/df_cleaned.csv')
 
 # Print first 10 rows of the dataframe
 df.head(10)
 
 
-# In[5]:
+# In[9]:
 
 
 plt.style.use('default')
@@ -28,24 +29,33 @@ plt.style.use('default')
 
 # As you learned in the Python Lessons, there are three ways of using matplotlib: the seaborn way (quick, beautiful but limited options), the procedural way (also quick but a bit less rigid) and the object-oriented way (slowest but most flexible). Let's visualize switch costs using these three methods whilst minimizing the amount of code we use, so we can compare them:
 
-# In[6]:
+# In[11]:
 
 
 # Here, the sns.lineplot function tells seaborn we want a line plot
 sns.lineplot(data=df,
-             x='subject_nr',
+             x='session',
              y='response_time',
              hue='task_transition_type') # Which groups to separate and give different colors (hue stands for color)
 
 
-# As you can see, with only one line of code we can visualize the switch cost difference. However, seaborn also does things we didn't ask for: it calculates the mean response time and gives us an error bar. We can explicitly change these settings of course, but it does illustrate a difference in coding philosophy: with the object-oriented way you build from the ground up, whilst in the seaborn (and the lesser extent the procedural way) you built from the top down. Let's see what happens with the procedural approach:
+# As you can see, with only one line of code we can visualize the switch cost difference. In this graph we can clearly see that there are less switch costs for the high-switch condition as compared to the low-switch condition. Why do you think that is?
+# 
 
-# In[7]:
+# In[13]:
+
+
+display_quiz("questions/question_2.json")
+
+
+# However, seaborn also does things we didn't ask for: it calculates the mean response time and gives us an error bar. We can explicitly change these settings of course, but it does illustrate a difference in coding philosophy: with the object-oriented way you build from the ground up, whilst in the seaborn (and the lesser extent the procedural way) you built from the top down. Let's see what happens with the procedural approach:
+
+# In[15]:
 
 
 # Because the procedural approach doesn't have the handy "hue" parameter, we first need to make the grouping ourselves
 pivot = df.pivot_table(values = "response_time",
-                       index= "subject_nr",
+                       index= "session",
                        columns="task_transition_type",
                        aggfunc=np.mean)
 
@@ -53,9 +63,9 @@ pivot = df.pivot_table(values = "response_time",
 pivot.plot(kind="line")
 
 
-# Alright, we don't get the error bars, and no label for the y-axis, but other than that looks pretty similar to the seaborn plot. You can change the style to whatever you like most. See the styles available [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html). Below you can change the style and look at the new output right away:
+# Alright, we don't get the error bars, and no label for the y-axis, and the "lowswitch" tick is missing, but other than that looks pretty similar to the seaborn plot. You can change the style to whatever you like most. See the styles available [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html). Below you can change the style and look at the new output right away:
 
-# In[9]:
+# In[16]:
 
 
 print(plt.style.available) # Print out all available styles
@@ -67,7 +77,7 @@ df.pivot_table("response_time", "subject_nr", "task_transition_type").plot(kind=
 
 # Alright, let's set it back to default:
 
-# In[10]:
+# In[17]:
 
 
 plt.style.use('default') # Set style for the rest of the script, change 'default' to something else
@@ -75,11 +85,11 @@ plt.style.use('default') # Set style for the rest of the script, change 'default
 
 # Some tweaking needs to be done now since the plots assume that "subject_nr" is a continuous variable, and in some styles not all the x-ticks are shown. But again, with a few lines of code we get a pretty good idea of how the switch cost looks like between conditions. Let's now try the object-oriented approach:
 
-# In[18]:
+# In[19]:
 
 
 # Group dataframe by both subject number and task_transition_type
-df_group = df.groupby(['subject_nr','task_transition_type']).response_time.mean()
+df_group = df.groupby(['session','task_transition_type']).response_time.mean()
 print(df_group)
 
 # Unstack the `task_transition_type` index, to place it as columns
@@ -99,11 +109,11 @@ plt.show()
 # 
 # It's important to be aware of the difference between these approaches, as when you google solutions for your matplotlib problems, you will often encounter solutions for all three approaches. However, when you are coding in an object-oriented matter, simply inputting procedural code will not work, and vice-versa! For the rest of the tutorial, we will continue with the object-oriented approach, unless it is really inconvenient to do so (as you will see at the end of the tutorial). For now, let's improve the plot we made above:
 
-# In[20]:
+# In[23]:
 
 
 # Group dataframe by both subject number and task_transition_type
-df_group = df.groupby(['subject_nr','task_transition_type']).response_time.mean()
+df_group = df.groupby(['session','task_transition_type']).response_time.mean()
 
 # Unstack the `task_transition_type` index, to place it as columns
 df_oo = df_group.unstack(level='task_transition_type')
@@ -113,7 +123,7 @@ fig, ax = plt.subplots(figsize=(6, 4.5))
 ax.plot(df_oo)
 
 # Set axis labels on the "ax" variable
-ax.set_xlabel('subject')
+ax.set_xlabel('session')
 ax.set_ylabel('response time')
 
 # Set different markers for each group; "o" refers to "circle", "s" refers to "square", can you see what's going on here?
@@ -122,7 +132,7 @@ for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 
 # Explicitly state which xticks to use, here we only want "1" and "2" because those are our subject numbers
-ax.set_xticks(ticks=[1,2])
+ax.set_xticks(ticks=['lowswitch','highswitch'])
 
 # Update legend
 ax.legend(ax.get_lines(), ["task-switch", "task-repetition"], loc='best', ncol=2)
@@ -135,7 +145,7 @@ plt.tight_layout()
 
 # Let's continue. Next thing to check is how the response time distribution looks like. Many statistical tests assume a normal distribution, but is that the case in our response time distribution as well? Using matplotlib.pyplot and the object-oriented approach we can easily make a histogram plot by specifying the column that should be plotted:
 
-# In[21]:
+# In[24]:
 
 
 # Make the framework and place in "fig" and "ax" variables
@@ -150,7 +160,7 @@ plt.show()
 
 # That's a good start. However, we are still missing lots of things in this plot. There are no labels for the x- and y-axis, there is no title for the plot, I think we need a few more bins, the graph could be a bit wider, and I am also not happy about the background colour. This is where the real power of object-oriented coding in matplotlib shows itself: you can customize virtually anything you want in these plots.
 
-# In[24]:
+# In[25]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -168,7 +178,7 @@ plt.show()
 
 # We can also make overlays to compare two distributions. Let's for example see how the distribution of correct versus incorrect trials look like.
 
-# In[25]:
+# In[26]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -206,7 +216,7 @@ plt.show()
 # 
 # The first two points we will have to consider during our outlier analysis. The last point however, should get you alarmed. It could be that participants have amazing internal clocks that tell them that the maximum trial time is almost over, so they must just guess. However, what happened here is that our logger gave the maximum response time (1500ms) to trials where there was **no response**. Spotting anomalies like this is one of the key advantages of plotting as much as possible. Luckily, we have a column that shows which button was pressed called *response*. Let's fix this error:
 
-# In[42]:
+# In[27]:
 
 
 fig, ax = plt.subplots(figsize=(8,6), # Change size to width,height in inches
@@ -245,7 +255,7 @@ plt.show()
 # 
 # Below we make a so-called facet grid using seaborn. Later you will try to make this using the object-oriented approach, but this is one of the cases where using seaborn is just very convenient.
 
-# In[43]:
+# In[28]:
 
 
 sns.displot(
@@ -259,74 +269,10 @@ sns.displot(
 )
 
 
-# In[ ]:
+# This was the demonstration so far. In the exercises you will implement everything we discussed here yourself. Good luck!
 
-
-
-#df.head()
-
-#df['acc']
-#df.acc
-
-#df.iloc[1]
-
-#print(df['congruency'])
-
-#df.shape
-
-#dfg = df.groupby('subject_nr')
-#dfg.mean()
-
-#df.groupby('subject_nr').agg([np.sum, np.mean, np.std])
-
-
-df['rt_zscore'] = df.groupby(['subject_nr','congruency'])['response_time'].transform(lambda x: (x-x.mean())/x.std())
-
-print(df)
-
-
-# In[ ]:
-
-
-plt.figure(figsize=(8,6));
-plt.hist(df.query("congruency == 'inc' & rt_zscore <= 3").response_time, bins=100, alpha=0.5, label="data1");
-plt.hist(df.query("congruency == 'inc' & rt_zscore > 3").response_time, bins=100, alpha=0.5, label="data2");
-
-
-# In[ ]:
-
-
-import seaborn as sns
-
-df['is_outlier'] = df['rt_zscore'] > 3
-
-sns.set_theme(style="darkgrid")
-sns.displot(
-    df.query("subject_nr != 0"), x="response_time", col="congruency", row="subject_nr",
-    binwidth=10, height=3, facet_kws=dict(margin_titles=True), hue = "is_outlier",
-)
-
-
-# In[ ]:
-
-
-df
-
-
-# In[ ]:
-
-
-df_sum = df.query("rt_zscore <= 3").groupby(['subject_nr','congruency'])['response_time'].mean()
-
-
-# In[ ]:
-
-
-df_sum
-
-
-# ## Exercise 1
-# In the first part of the tutorial, we plotted the switch cost using line plots. However, one could argue that bar plots would have been more suitable as we only have two participants. Change the line plot to a bar plot using the object-oriented approach.
+# ## Exercise 1. Bar plots
+# In the first part of the tutorial, we plotted the switch cost using line plots. However, one could argue that bar plots would have been more suitable. Change the line plot to a bar plot using the object-oriented approach.
 
 # In[ ]:
 
@@ -334,36 +280,16 @@ df_sum
 # your answer here
 
 
-# ### Exercise 2
+# ### Exercise 2. Facet grid plot in the object-oriented approach
 # We made the facet grid plot in seaborn out of convenience. However, with a bit more code we can also reproduce that plot in the object-oriented approach of matplotlib. Reproduce the plot in this way.
 
 # In[ ]:
 
 
-# A possible answer - REMOVE THIS IN THE FINAL BOOK
-fig, axs = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True, figsize=(5.5, 3.5))
-
-df_subj1_parity = df[(df['task_type'] == 'parity') & (df['subject_nr'] == 1)]
-df_subj2_parity = df[(df['task_type'] == 'parity') & (df['subject_nr'] == 2)]
-df_subj1_magnitude = df[(df['task_type'] == 'magnitude') & (df['subject_nr'] == 1)]
-df_subj2_magnitude = df[(df['task_type'] == 'magnitude') & (df['subject_nr'] == 2)]
-
-df_subj1_parity['response_time'].hist(ax=axs[0,0])
-df_subj2_parity['response_time'].hist(ax=axs[0,1])
-df_subj1_magnitude['response_time'].hist(ax=axs[1,0])
-df_subj2_magnitude['response_time'].hist(ax=axs[1,1])
-
-# Set common labels
-fig.text(0.28, -0.03, 'Parity', ha='center', va='center')
-fig.text(0.75, -0.03, 'Magnitude', ha='center', va='center')
-
-axs[0,0].set_ylabel('Subject 1')
-axs[1,0].set_ylabel('Subject 2')
-
-plt.show()
+# your answer here
 
 
-# ## Exercise 3
+# ## Exercise 3. Marking outliers
 # In the dataframes exercise from last session you made a dataframe where you identified a cut-off point for you outliers and also made a column which identified the exact trials to exclude. Import that dataframe, and make three plots:
 # - A histogram plot where you mark the bars above and below the cut-off point (e.g. with red)
 # - A facet grid plot with histograms where you do the same

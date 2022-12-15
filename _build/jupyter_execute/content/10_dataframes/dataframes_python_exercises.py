@@ -3,7 +3,7 @@
 
 # # Python exercises: Dataframes
 
-# ## Exercise 1: Loading and inspecting a dataframe
+# ## Exercise 1. Loading and inspecting a dataframe
 
 # In session 7, you learned how to load in data of a Stroop task. Furthermore, in the lesson of this session you learned many things about how to use dataframes. Here we are going to implement some of the things you learned in the lesson.
 # 
@@ -24,7 +24,7 @@ import pandas as pd
 # your code here
 
 
-# ## Exercise 2: Removing rows and columns
+# ## Exercise 2. Removing rows and columns
 
 # OpenSesame dataframes are usually enormous, because it stores everything you want but also many things you don't need. In this exercise we are going to clean up the dataframe a bit from this clutter.
 # 
@@ -39,7 +39,7 @@ import pandas as pd
 # your code here
 
 
-# ## Exercise 3: Sorting
+# ## Exercise 3. Sorting
 # 
 # Sorting can help to give you an idea of the highest and lowest values in a dataframe, or can be just neat for cleanliness of the dataframe.
 # (1) You already have a dataframe with only correct trials. Now, make a dataframe with incorrect trials as well
@@ -52,7 +52,7 @@ import pandas as pd
 # your code here
 
 
-# ## BONUS Exercise: Real-world problems
+# ## BONUS Exercise 4. Real-world problems
 
 # There are many more publicly available datasets you can directly use. For this BONUS exercise, you can choose a dataset you find interesting. The website [Our World in Data](https://ourworldindata.org/) has datasets on the most pressing world-problems, now you are learning the tools how to work with these datasets! Pretty cool right. In your own Python IDE, choose and download a dataset you find interesting (search for the .csv file) and replicate each step from the [the tutorial](http://teaching.gureckislab.org/fall22/labincp/chapters/05/00-data.html), starting from subchapter 6.6.
 # 

@@ -1,0 +1,44 @@
+[
+  {
+    "question": "On which trial type will participants probably be the slowest",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Incongruent trials",
+        "correct": true,
+        "feedback": "Correct!"
+      },
+      {
+        "answer": "Neutral trials",
+        "correct": false,
+        "feedback": "Try again!"
+      },
+      {
+        "answer": "Congruent trials",
+        "correct": false,
+        "feedback": "Try the Stroop task for yourself, which trialtype is easier?"
+      }
+    ]
+  },
+  {
+    "question": "And on which trial type will participants be the quickest",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Incongruent trials",
+        "correct": false,
+        "feedback": "Try again!"
+      },
+      {
+        "answer": "Neutral trials",
+        "correct": false,
+        "feedback": "Try again!"
+      },
+      {
+        "answer": "Congruent trials",
+        "correct": true,
+        "feedback": "Correct!"
+      }
+    ]
+  }
+]

@@ -13,7 +13,7 @@
 # 
 # OpenSesame outputs a *comma-separated values (csv)* file. This is a very widely used format, and you can painlessly import this file type in Python using the datafile package **pandas** (as we've seen in the exercises and lessons). Let's import a datafile from two participants and merge those in one file:
 
-# In[ ]:
+# In[3]:
 
 
 import pandas as pd
@@ -40,7 +40,7 @@ df = pd.concat((pd.read_csv(url) for url in url_list), ignore_index=True)
 # That's a lot of columns. In your "logger" file in OpenSesame, the recommended thing to do is to check the box of "Log all variables". This is the safest option, because it's easy to remove columns and you would rather not have that you missed an essential variable after doing your experiment. Let's pick the columns that we need:
 # 
 
-# In[9]:
+# In[4]:
 
 
 # make a list of column names that we want to include
@@ -50,14 +50,13 @@ include_columns = ['subject_nr', 'block', 'session', 'congruency_transition_type
 # make a new df, called df_trim, that only included the columns that are in the "include_columns" list
 df_trim = df[include_columns]
 
-# it's always good practice to check the head and tail of a dataframe after making/changing it
+# it's always good practice to check the head and/or tail of a dataframe after making/changing it
 print(df_trim.head(5))
-print(df_trim.tail(5))
 
 
 # Before we make any changes to the dataframe, we must first be sure that all the columns are in the right [type](https://pbpython.com/pandas_dtypes.html). If we print the data types of each column, we can see that subject_nr is an integer. However, we don't intend for the dataframe to interpret "3" and "4" as numbers, since it's simply a categorization. Let's change that:
 
-# In[10]:
+# In[9]:
 
 
 print("Column types BEFORE changing: \n", df_trim.dtypes, "\n")
@@ -68,9 +67,24 @@ df_trim['correct'] = df_trim['correct'].astype('category')
 print("Column types AFTER changing: \n",df_trim.dtypes)
 
 
+# Furthermore, the response times are now rounded in the ten-thousandths (four decimal places) of milliseconds. That gives false confidence in our accuracy with measuring response times, which is more in the range of whole milliseconds. Let's change that using the pandas round function:
+
+# In[21]:
+
+
+# round the response time column and replace the unrounded column values with the rounded column values
+df_trim['response_time'] = df_trim['response_time'].round()
+
+# change type of the column to "int" instead of "float". "int" is for whole numbers, "float" is for numbers with decimals.
+df_trim['response_time'] = df_trim['response_time'].astype(int)
+
+# check if it worked
+df_trim['response_time']
+
+
 # Alright, it's getting a bit more uncluttered now. The task-design is so that the last two blocks are different kind of blocks. We don't have to go in details now, but for further analysis we will have to create a dataframe without block 11 and 12. There are [many ways to conditional selection of rows](https://www.geeksforgeeks.org/selecting-rows-in-pandas-dataframe-based-on-conditions/), but here we opt to use the information that we need all blocks with a value smaller than 11.
 
-# In[11]:
+# In[22]:
 
 
 # Here the last blocks should be 12, lets check by printing the last 5 rows of the block column using the tail function
@@ -85,7 +99,7 @@ print("Here the last block should be 10: \n", df_trim_blocks["block"].tail(5))
 
 # Lastly, it's a bit confusing that we have only two subjects, but they are called number 3 and 4, instead of 1 and 2. Let's fix that by replacing subject 3 with subject 1, and subject 4 with subject 2. We can use the replace function of Pandas to achieve this. Then, with the pandas *unique* function we can verify that the subject numbers have been changed.
 
-# In[12]:
+# In[23]:
 
 
 # Replace 3 with 1 in subject_nr column
@@ -102,7 +116,7 @@ df_trim_blocks['subject_nr'].unique()
 # 
 # > **Note**: We will be using the pandas pivot table for most of tutorial. Be aware however that all of this could also be accomplished with the pandas groupby function. Take a look [here](https://levelup.gitconnected.com/pivot-tables-in-pandas-7b672e6d8f47) for more information on the pivot table and the difference between pivot table and groupby
 
-# In[13]:
+# In[24]:
 
 
 piv_task_transition_exp = df_trim_blocks.pivot_table(
@@ -122,7 +136,7 @@ piv_task_transition_exp
 # All whilst keeping the task-repetition/task-switch rate to 25/75 or 75/25 (depending on the session).
 # Thereby also keeping into account that the first trial of each block does not count as either repetition or switch trial. In complex structures like this, sometimes you cannot aim for perfect counterbalancing, but you can aim for "as good as possible" (hence the slight discrepancy in the pivot table above). Let's see if we can use a bit more complex pivot table to get a clearer picture if all of this worked out
 
-# In[14]:
+# In[25]:
 
 
 piv_cong = df_trim_blocks.pivot_table(
@@ -154,7 +168,7 @@ pd.concat(dfs, axis=1)
 
 # We are repeating quite a lot of code. Whenever you notice that happen, you can probably shorten the code. Let's try it out:
 
-# In[15]:
+# In[26]:
 
 
 # Specify the columns we want to check
@@ -182,7 +196,7 @@ pd.concat(dfs, axis=1)
 # 
 # Now we'll do some first checks on whether the results are what we expect. Let's first remove all the incorrect trials, we aren't interested in those at the moment.
 
-# In[16]:
+# In[27]:
 
 
 df_correct = df_trim_blocks[df_trim_blocks['correct'] == 1]
@@ -191,7 +205,7 @@ df_correct
 
 #   We expect people to be slower when they have to switch from task, in comparison to when they can do the same task as on the previous trial. This is what we call **switch cost**. To show this in a table-format, we can again use the pivot_table function from pandas.
 
-# In[17]:
+# In[31]:
 
 
 # Check switch costs
@@ -203,32 +217,38 @@ switch_table = pd.pivot_table(
     aggfunc=np.mean, # Calculate the mean response time per subject per task type
 )
 
-# Print out the pivot table
-switch_table
+# Print out the pivot table, and change it to "int" so we only have whole numbers
+switch_table.astype(int)
 
 
 # It is pretty clear that task-switch trials are slower than task-repeat trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the task-switch trials and task-repeat trials:
 
-# In[18]:
+# In[32]:
 
 
+# Do some arithmetics: subtract task-repetition from the task-switch column
 switch_table['switch cost'] = switch_table['task-switch'] - switch_table['task-repetition']
-switch_table
+
+# Print out as int to get whole numbers
+switch_table.astype(int)
 
 
 # Lastly, you can use the handy function *describe* to get a quick peek at the response times.
 
-# In[19]:
+# In[37]:
 
 
-df_correct['response_time'].describe()
+# Use the "describe" function on the "response_time" column, and change the output to "int"
+df_correct['response_time'].describe().astype(int)
 
 
 # What we've done here is just a subset of the myriad of possibilities how you can change your dataframe in a way that is tidy and gives you a better overview of what you're dealing with. [This cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) gives a nice overview of the things we discussed and more! Use the cheat sheet for the following exercises.
 # 
 # > **Note:** The developers of OpenSesame have also created a Python package for working with column-based and continuous data, called [DataMatrix](http://pydatamatrix.eu/0.15/index/). It's similar to the Pandas package we've been working with in this tutorial, but has some crucial differences in syntax. We have opted for the more versatile and widely used Pandas package, but be aware that the OpenSesame website and tutorials can sometimes refer to DataMatrixes instead of DataFrames.
 
-# In[13]:
+# Lastly, it's important to know how to save your cleaned dataframe ofcourse! Here we save it as a csv file, using the pandas to_csv function:
+
+# In[38]:
 
 
 df_trim_blocks.to_csv('../11_plotting/data/df_cleaned.csv', index=False)

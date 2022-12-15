@@ -1,0 +1,23 @@
+[
+  {
+    "question": "Why are the switch-costs higher in the low-switch condition?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Participants are in a more flexible cognitive state in the high-switch condition (and thus can switch easier) because they expect they have to be",
+        "correct": true,
+        "feedback": "Probably correct (though this is still a hypothesis)!"
+      },
+      {
+        "answer": "The participants that got the low-switch condition were just more lazy",
+        "correct": false,
+        "feedback": "Each participant went through both conditions, so this can't explain it. Try again!"
+      },
+      {
+        "answer": "More switches means that the easier task also was present more frequently",
+        "correct": false,
+        "feedback": "In both conditions, both tasks were present just as much (and there shouldn't be an easier task). Try again!"
+      }
+    ]
+  }
+]

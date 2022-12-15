@@ -24,7 +24,6 @@
 
 # Data is an important concept in science.  The first step is we measure something.   In a [previous chapter we discuss issues in measurement](http://teaching.gureckislab.org/fall22/labincp/chapters/04/00-researchdesign.html) including different types of scales, units, etc...  However the main thing is that data is born when a number is assigned to some observation we make.  Here is a lonely single number which maybe measures something:
 # 
-# ![single_number](./images/single_number.png)
 # 
 # ```{image} ./images/single_number.png
 # :alt: single_number
@@ -32,10 +31,6 @@
 # :width: 200px
 # :align: center
 # ```
-# 
-# <div style="text-align: center">
-#     <img src="./images/single_number.png" width="150">
-# </div>
 
 # Things get more interesting when we make multiple observations and so we have many data.  In order to do anything with more than one number though we start running into the question of how to organize things.  How do we keep track of which number was collected first, second or third for instance?  If we have just a big jumble of numbers we can easily get lost. 
 # 
@@ -44,33 +39,43 @@
 # 
 # For instance if we measured a number repeatedly in time a list might be a useful way to organize them:
 # 
-# <div style="text-align: center">
-#     <img src="./images/list.png" width="400">
-# </div>
+# ```{image} ./images/list.png
+# :alt: list
+# :class: bg-primary mb-1
+# :width: 400px
+# :align: center
+# ```
 
 # Lets imagine the numbers above represent some measurement on a person on three different days (monday, tuesday, wednesday).  It might be their blood pressure or temperature.  Learning a lot about one person is nice and fits cleanly into a list.  However, more often it gets more complex.  What we if instead have multiple people we are recording information from and so the data starts looking two dimensional.  There is maybe 3 people in the study and each has 3 measurements.  In that case we might then organize the data as a list of lists (or a matrix):
 # 
-# <div style="text-align: center">
-#     <img src="./images/matrix.png" width="550">
-# </div>
+# ```{image} ./images/matrix.png
+# :alt: matrix
+# :class: bg-primary mb-1
+# :width: 550px
+# :align: center
+# ```
 
 # Although a matrix is a nice way to organize multiple observations made on multiple people it can get a little bit confusing.  Are the rows or the columns the subjects in the example above?  You have to remember to write that down otherwise you could easily get confused.  What is this data?  What does it describe? For this reason we might look beyond standard Python collections to more complex structures.  
 # 
 # For example, you are all likely familiar with the concept of a spreadsheet (e.g., Microsoft Excel or Google Sheets).  These are nicer than matricies because they have named rows and columns and so just by looking at the structure of the spreadsheet you can often learn more about the structure of the data.  Columns names are sometimes known as **metadata** because they are data themselves that *describe* other data.
 # 
-# 
-# <div style="text-align: center">
-#     <img src="./images/spreadsheet.png" width="550">
-# </div>
+# ```{image} ./images/spreadsheet.png
+# :alt: spreadsheet
+# :class: bg-primary mb-1
+# :width: 550px
+# :align: center
+# ```
 # 
 # This is much nicer because the columns names help us remember what each measurement records and also what is contained in the rows.
 
 # The two-dimensional structure of a spreadsheet is generally the most complex types of data that we will deal with.  However, just so you are aware, as data gets huge it can make sense to take other organizational approaches.  For instance, a website that had millions of users reviewing movies might not want to make a long spreadsheet recording each user and the rating they gave and the movie the rating was about.  Stop and think for a moment how you could do that in a spreadsheet.  Perhaps you could make each row a user and each column a movie.  However, as you know Netflix and other sites have a hundred of thousands of TV shows and movies and so the data would be really unwieldy.  Also, most of the data would be "missing" because people only provide a rating for a small subset of the total number of movies.  As a result, big websites adopt alternative ways of organizing data including the use of what are known as **relational databases**.
 # 
-# 
-# <div style="text-align: center">
-#     <img src="./images/database.png" width="550">
-# </div>
+# ```{image} ./images/database.png
+# :alt: database
+# :class: bg-primary mb-1
+# :width: 550px
+# :align: center
+# ```
 
 # Relational databases are made up of multiple spreadsheets (effectively) where each one represents only a smaller piece of the data.  In the figure above the green words are columns of a smaller spreadsheet. This database is thus organized into four separate spreadsheets (or "tables"). For instance the ratings table has a unique id number (i.e. row number) and then the rating a person gave, a user id of who gave it, and a movie id for which movie it was about.  Separately there is a movies table which had its own id (unique id for each movie), the title or name of the movie, and a description/summary of the movie.  The orange lines reflect links where the value in one column of one table connects with or refers to the entries of another one.  This can be a much more efficient way to organize the data.
 # 
@@ -83,16 +88,23 @@
 # #### Excel Workbooks (.xls, .xslx files)
 # XLSX file format (or XLS in older versions of Excel) is the default file format used in Excel. Under the hood, Excel Workbooks are built using a highly structured markup language called Extensible Markup Language (XML). Essentially what this means is while you are using Excel's graphic interface to edit your data, XML is adding a bunch of tags behind the scenes to the XLSX file so it knows how to properly format the data each time you open it up. All of these tags in XML are what allow you to change font colors and sizes, add graphs and images, and use formulas. 
 # 
-# This is what you see when you when you use Excel: 
-# <div style="text-align: center">
-#     <img src="./images/excel_worksheet.png" width="200">
-# </div>
+# This is what you see when you when you use Excel:
 # 
+# ```{image} ./images/excel_worksheet.png
+# :alt: excel_worksheet
+# :class: bg-primary mb-1
+# :width: 200px
+# :align: center
+# ```
 # 
 # And this is what the exact same Workbook looks like behind the scenes:
-# <div style="text-align: center">
-#     <img src="./images/excel_xml.png" width="550">
-# </div>
+# 
+# ```{image} ./images/excel_xml.png
+# :alt: excel_xml
+# :class: bg-primary mb-1
+# :width: 550px
+# :align: center
+# ```
 # 
 # But this complexity can also make it difficult to use XLSX files with any other software or programming language that isn't Excel. For one, not all programs can open XLSX files, so these data files can make your data inaccessible to other people. Two, all of this special formatting can sometimes lead to problems when you read in data from XLSX files (e.g., converting variables to weird formats). To avoid issues like these, it is preferable to store your data using plain-text formats (such as CSV and TSV files). 
 # 
@@ -102,9 +114,13 @@
 # 
 # 
 # Here's the same dataset as before but now as a CSV file:
-# <div style="text-align: center">
-#     <img src="./images/csv_sample.png" width="450">
-# </div>
+# 
+# ```{image} ./images/csv_sample.png
+# :alt: csv_sample
+# :class: bg-primary mb-1
+# :width: 450px
+# :align: center
+# ```
 # 
 # This means that what you can store within a CSV file is quite limited (no images or special formatting, for example). But it also means that this kind of file is great for storing and sharing data. CSV files can be opened by any software, making it accessible to others. Given that CSV files inherently have no formatting, some of the issues that come with using XLSX files never arise. 
 # 
@@ -121,7 +137,12 @@
 # 
 # To export a .csv file from Google Sheets, you click on File > Download > Comma-separated values (.csv). 
 # 
-# <div style="text-align: center"><img src="./images/export_csv_google.png" width="450"></div>
+# ```{image} ./images/export_csv_google.png
+# :alt: export_csv_google
+# :class: bg-primary mb-1
+# :width: 450px
+# :align: center
+# ```
 # 
 # If you created a Google Sheet with multiple sheets, you will have to save each individual sheet as a .csv file because .csv files do not support multiple sheets. To do this, you will have to click on each sheet and go through the save process for each sheet. 
 
@@ -129,11 +150,21 @@
 # 
 # To create a .csv file from Excel, click on File (found on the top left of the menu bar).
 # 
-# <div style="text-align: center"><img src="./images/excel_header.png" width="250"></div>
+# ```{image} ./images/excel_header.png
+# :alt: excel_header
+# :class: bg-primary mb-1
+# :width: 250px
+# :align: center
+# ```
 # 
 # A new menu will appear. From there, select "Save as" and then choose where on your computer you want to save the file. A pop-up window will open up, and from there, you can choose what to name the file and what kind of file type to save it as. To save it as a   will there will be a dropdown menu where you can select which kind of file type you would like to save the file as (labeled "Save as type"). 
 # 
-# <div style="text-align: center"><img src="./images/export_csv_excel.png" width="550"></div>
+# ```{image} ./images/export_csv_excel.png
+# :alt: export_csv_excel
+# :class: bg-primary mb-1
+# :width: 550px
+# :align: center
+# ```
 
 # ## Uploading csv files to JupyterHub
 
@@ -141,13 +172,21 @@
 # 
 # To do that, go to the "Files" tab on JupyterHub and use the "Upload" button. 
 # 
-# <div style="text-align: center"><img src="./images/jupyter_upload.png" width="450"></div>
+# ```{image} ./images/jupyter_upload.png
+# :alt: jupyter_upload
+# :class: bg-primary mb-1
+# :width: 450px
+# :align: center
+# ```
 
 # ## The Pandas library and the concept of a dataframe API
 
-# <div style="text-align: center">
-#     <img src="./images/pandaslogo.png" width="250">
-# </div>
+# ```{image} ./images/pandaslogo.png
+# :alt: pandaslogo
+# :class: bg-primary mb-1
+# :width: 250px
+# :align: center
+# ```
 # 
 # Throughout this class there are several libraries (i.e., tools which extend the capabilities of the core Python language) which we will use a lot.  One of those is [Pandas](https://pandas.pydata.org).  Pandas is a open-source project for Python that provides a data analysis and manipulation tool.  Pandas gives you a way to interact with a dataset organized like a spreadsheet (meaning columns and rows which are possibly named or labeled with meta data) in order to perform sophisticated data analyses.  Pandas is really the "backbone" of the Python data science and modeling environment.  Pandas could be thought of as a langauge (or [API](https://en.wikipedia.org/wiki/API)) for unlocking tabular data.  **If you want to become better at data analysis with Python there is no single package I can think of that is worth more of your time learning.**
 # 
@@ -936,9 +975,13 @@ df_tidy
 # 2. Each _variable_ must have its own column (variables are some kind of measurement: _gender_, _age_, _score_, etc.)
 # 3. Each _value_ must have its own cell (value are the actual measurement: _female_, _23 years_, _12 points_, etc.)
 # 
-# <div style="text-align: center">
-#     <img src="./images/tidy_data.png" width="600">
-# </div>
+# ```{image} ./images/tidy_data.png
+# :alt: tidy_data
+# :class: bg-primary mb-1
+# :width: 600px
+# :align: center
+# ```
+# 
 # Above, a visual representation of each of the three rules for tidy data: variables are in columns, observations are in rows, and values are in cells. Image borrowed from <a href="https://r4ds.had.co.nz/tidy-data.html"><i>R for Data Science</i></a>.
 # 
 # So going back to our dataset from before, we can see that it follows each of these three rules. Each person and each timepoint has their own rows (Rule 1). Every type of data measured (gender, age, etc.) has their own column (Rule 2), and each cell within the dataframe has only one value (Rule 3).

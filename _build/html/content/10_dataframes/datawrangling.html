@@ -203,7 +203,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_functions/wcst.html">
-     The Wiconsin Card Sorting Task in OpenSesame
+     The Wisconsin Card Sorting Task in OpenSesame
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,7 +262,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_strings/digitspan/digitspan.html">
-     Digital Span Task in OpenSesame
+     Memory Span Task in OpenSesame
     </a>
    </li>
   </ul>
@@ -739,9 +739,8 @@
 <span class="c1"># make a new df, called df_trim, that only included the columns that are in the &quot;include_columns&quot; list</span>
 <span class="n">df_trim</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">include_columns</span><span class="p">]</span>
 
-<span class="c1"># it&#39;s always good practice to check the head and tail of a dataframe after making/changing it</span>
+<span class="c1"># it&#39;s always good practice to check the head and/or tail of a dataframe after making/changing it</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_trim</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_trim</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -759,19 +758,6 @@
 2        1       855.6105          task-switch     parity        a  
 3        1       867.8947      task-repetition     parity        a  
 4        1      1078.9412          task-switch  magnitude        a  
-     subject_nr  block     session congruency_transition_type congruency_type  \
-947           4     12  highswitch      congruency-repetition       congruent   
-948           4     12  highswitch      congruency-repetition       congruent   
-949           4     12  highswitch      congruency-repetition       congruent   
-950           4     12  highswitch      congruency-repetition       congruent   
-951           4     12  highswitch      congruency-repetition       congruent   
-
-     correct  response_time task_transition_type  task_type response  
-947        1       699.0107      task-repetition  magnitude    num_6  
-948        1       582.9837      task-repetition  magnitude        a  
-949        1       731.3586          task-switch     parity        a  
-950        1       437.6794      task-repetition     parity    num_6  
-951        0      1006.4980          task-switch  magnitude        a  
 </pre></div>
 </div>
 </div>
@@ -790,16 +776,16 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column types BEFORE changing: 
- subject_nr                      int64
-block                           int64
-session                        object
-congruency_transition_type     object
-congruency_type                object
-correct                         int64
-response_time                 float64
-task_transition_type           object
-task_type                      object
-response                       object
+ subject_nr                    category
+block                            int64
+session                         object
+congruency_transition_type      object
+congruency_type                 object
+correct                       category
+response_time                  float64
+task_transition_type            object
+task_type                       object
+response                        object
 dtype: object 
 
 Column types AFTER changing: 
@@ -814,6 +800,37 @@ task_transition_type            object
 task_type                       object
 response                        object
 dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Furthermore, the response times are now rounded in the ten-thousandths (four decimal places) of milliseconds. That gives false confidence in our accuracy with measuring response times, which is more in the range of whole milliseconds. Let’s change that using the pandas round function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># round the response time column and replace the unrounded column values with the rounded column values</span>
+<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+
+<span class="c1"># change type of the column to &quot;int&quot; instead of &quot;float&quot;. &quot;int&quot; is for whole numbers, &quot;float&quot; is for numbers with decimals.</span>
+<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># check if it worked</span>
+<span class="n">df_trim</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      1483
+1       707
+2       856
+3       868
+4      1079
+       ... 
+947     699
+948     583
+949     731
+950     438
+951    1006
+Name: response_time, Length: 952, dtype: int32
 </pre></div>
 </div>
 </div>
@@ -1178,7 +1195,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-switch</td>
       <td>congruent</td>
       <td>1</td>
-      <td>706.7057</td>
+      <td>707</td>
       <td>task-switch</td>
       <td>magnitude</td>
       <td>a</td>
@@ -1191,7 +1208,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>855.6105</td>
+      <td>856</td>
       <td>task-switch</td>
       <td>parity</td>
       <td>a</td>
@@ -1204,7 +1221,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-switch</td>
       <td>incongruent</td>
       <td>1</td>
-      <td>867.8947</td>
+      <td>868</td>
       <td>task-repetition</td>
       <td>parity</td>
       <td>a</td>
@@ -1217,7 +1234,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-repetition</td>
       <td>incongruent</td>
       <td>1</td>
-      <td>1078.9412</td>
+      <td>1079</td>
       <td>task-switch</td>
       <td>magnitude</td>
       <td>a</td>
@@ -1230,7 +1247,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-repetition</td>
       <td>incongruent</td>
       <td>1</td>
-      <td>819.4645</td>
+      <td>819</td>
       <td>task-repetition</td>
       <td>magnitude</td>
       <td>a</td>
@@ -1256,7 +1273,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>321.1855</td>
+      <td>321</td>
       <td>task-switch</td>
       <td>parity</td>
       <td>num_6</td>
@@ -1269,7 +1286,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-switch</td>
       <td>incongruent</td>
       <td>1</td>
-      <td>844.0940</td>
+      <td>844</td>
       <td>task-switch</td>
       <td>magnitude</td>
       <td>a</td>
@@ -1282,7 +1299,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-repetition</td>
       <td>incongruent</td>
       <td>1</td>
-      <td>674.5391</td>
+      <td>675</td>
       <td>task-switch</td>
       <td>parity</td>
       <td>num_6</td>
@@ -1295,7 +1312,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-switch</td>
       <td>congruent</td>
       <td>1</td>
-      <td>1353.6886</td>
+      <td>1354</td>
       <td>task-switch</td>
       <td>magnitude</td>
       <td>a</td>
@@ -1308,7 +1325,7 @@ Thereby also keeping into account that the first trial of each block does not co
       <td>congruency-repetition</td>
       <td>congruent</td>
       <td>1</td>
-      <td>505.6633</td>
+      <td>506</td>
       <td>task-switch</td>
       <td>parity</td>
       <td>a</td>
@@ -1330,8 +1347,8 @@ Thereby also keeping into account that the first trial of each block does not co
     <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="c1"># Calculate the mean response time per subject per task type</span>
 <span class="p">)</span>
 
-<span class="c1"># Print out the pivot table</span>
-<span class="n">switch_table</span>
+<span class="c1"># Print out the pivot table, and change it to &quot;int&quot; so we only have whole numbers</span>
+<span class="n">switch_table</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1366,13 +1383,13 @@ Thereby also keeping into account that the first trial of each block does not co
   <tbody>
     <tr>
       <th>1</th>
-      <td>749.989603</td>
-      <td>888.007569</td>
+      <td>750</td>
+      <td>888</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>638.137917</td>
-      <td>675.488397</td>
+      <td>638</td>
+      <td>675</td>
     </tr>
   </tbody>
 </table>
@@ -1381,8 +1398,11 @@ Thereby also keeping into account that the first trial of each block does not co
 <p>It is pretty clear that task-switch trials are slower than task-repeat trials, but we can make it even clearer by showing the difference between the two columns. We can make a new column, and input in that column the difference between the task-switch trials and task-repeat trials:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;switch cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-switch&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-repetition&#39;</span><span class="p">]</span>
-<span class="n">switch_table</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do some arithmetics: subtract task-repetition from the task-switch column</span>
+<span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;switch cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-switch&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">switch_table</span><span class="p">[</span><span class="s1">&#39;task-repetition&#39;</span><span class="p">]</span>
+
+<span class="c1"># Print out as int to get whole numbers</span>
+<span class="n">switch_table</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1419,15 +1439,15 @@ Thereby also keeping into account that the first trial of each block does not co
   <tbody>
     <tr>
       <th>1</th>
-      <td>749.989603</td>
-      <td>888.007569</td>
-      <td>138.017966</td>
+      <td>750</td>
+      <td>888</td>
+      <td>138</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>638.137917</td>
-      <td>675.488397</td>
-      <td>37.350480</td>
+      <td>638</td>
+      <td>675</td>
+      <td>37</td>
     </tr>
   </tbody>
 </table>
@@ -1436,20 +1456,21 @@ Thereby also keeping into account that the first trial of each block does not co
 <p>Lastly, you can use the handy function <em>describe</em> to get a quick peek at the response times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the &quot;describe&quot; function on the &quot;response_time&quot; column, and change the output to &quot;int&quot;</span>
+<span class="n">df_correct</span><span class="p">[</span><span class="s1">&#39;response_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     599.000000
-mean      725.344337
-std       233.487524
-min       124.173900
-25%       550.588900
-50%       655.866000
-75%       876.164300
-max      1443.708500
-Name: response_time, dtype: float64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     599
+mean      725
+std       233
+min       124
+25%       550
+50%       656
+75%       876
+max      1444
+Name: response_time, dtype: int32
 </pre></div>
 </div>
 </div>
@@ -1458,6 +1479,7 @@ Name: response_time, dtype: float64
 <blockquote>
 <div><p><strong>Note:</strong> The developers of OpenSesame have also created a Python package for working with column-based and continuous data, called <a class="reference external" href="http://pydatamatrix.eu/0.15/index/">DataMatrix</a>. It’s similar to the Pandas package we’ve been working with in this tutorial, but has some crucial differences in syntax. We have opted for the more versatile and widely used Pandas package, but be aware that the OpenSesame website and tutorials can sometimes refer to DataMatrixes instead of DataFrames.</p>
 </div></blockquote>
+<p>Lastly, it’s important to know how to save your cleaned dataframe ofcourse! Here we save it as a csv file, using the pandas to_csv function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">df_trim_blocks</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../11_plotting/data/df_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>

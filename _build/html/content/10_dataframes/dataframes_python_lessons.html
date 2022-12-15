@@ -1086,28 +1086,20 @@
 <div class="section" id="how-to-think-about-data-and-organize-it">
 <h2>How to think about data and organize it<a class="headerlink" href="#how-to-think-about-data-and-organize-it" title="Permalink to this headline">¶</a></h2>
 <p>Data is an important concept in science.  The first step is we measure something.   In a <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/04/00-researchdesign.html">previous chapter we discuss issues in measurement</a> including different types of scales, units, etc…  However the main thing is that data is born when a number is assigned to some observation we make.  Here is a lonely single number which maybe measures something:</p>
-<p><img alt="single_number" src="../../_images/single_number.png" /></p>
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/single_number.png"><img alt="single_number" class="bg-primary mb-1 align-center" src="../../_images/single_number.png" style="width: 200px;" /></a>
-<div style="text-align: center">
-    <img src="./images/single_number.png" width="150">
-</div><p>Things get more interesting when we make multiple observations and so we have many data.  In order to do anything with more than one number though we start running into the question of how to organize things.  How do we keep track of which number was collected first, second or third for instance?  If we have just a big jumble of numbers we can easily get lost.</p>
+<p>Things get more interesting when we make multiple observations and so we have many data.  In order to do anything with more than one number though we start running into the question of how to organize things.  How do we keep track of which number was collected first, second or third for instance?  If we have just a big jumble of numbers we can easily get lost.</p>
 <p>Before we get too many numbers we need to start thinking abstractly about <strong>organzing</strong> our measurements into some type of collection.  In our previous chapter on the <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/03/00-python">basics of Python</a> we discussed the concept of <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/03/00-python.html#collections">collections</a>.  Collections are things in the native Python language space that organize multiple numbers, string, or even other collections.  This included <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/03/00-python.html#lists">lists</a> (which organize things in some order), <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/03/00-python.html#dictionaries">dictionaries</a> (which do not preseve order but allow “looking up” the value of a number by a special address known as a key), or <a class="reference external" href="http://teaching.gureckislab.org/fall22/labincp/chapters/03/00-python.html#sets">sets</a> (which are unordered collections of things useful for counting, and performing set operations like union, etc…).</p>
 <p>For instance if we measured a number repeatedly in time a list might be a useful way to organize them:</p>
-<div style="text-align: center">
-    <img src="./images/list.png" width="400">
-</div><p>Lets imagine the numbers above represent some measurement on a person on three different days (monday, tuesday, wednesday).  It might be their blood pressure or temperature.  Learning a lot about one person is nice and fits cleanly into a list.  However, more often it gets more complex.  What we if instead have multiple people we are recording information from and so the data starts looking two dimensional.  There is maybe 3 people in the study and each has 3 measurements.  In that case we might then organize the data as a list of lists (or a matrix):</p>
-<div style="text-align: center">
-    <img src="./images/matrix.png" width="550">
-</div><p>Although a matrix is a nice way to organize multiple observations made on multiple people it can get a little bit confusing.  Are the rows or the columns the subjects in the example above?  You have to remember to write that down otherwise you could easily get confused.  What is this data?  What does it describe? For this reason we might look beyond standard Python collections to more complex structures.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/list.png"><img alt="list" class="bg-primary mb-1 align-center" src="../../_images/list.png" style="width: 400px;" /></a>
+<p>Lets imagine the numbers above represent some measurement on a person on three different days (monday, tuesday, wednesday).  It might be their blood pressure or temperature.  Learning a lot about one person is nice and fits cleanly into a list.  However, more often it gets more complex.  What we if instead have multiple people we are recording information from and so the data starts looking two dimensional.  There is maybe 3 people in the study and each has 3 measurements.  In that case we might then organize the data as a list of lists (or a matrix):</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/matrix.png"><img alt="matrix" class="bg-primary mb-1 align-center" src="../../_images/matrix.png" style="width: 550px;" /></a>
+<p>Although a matrix is a nice way to organize multiple observations made on multiple people it can get a little bit confusing.  Are the rows or the columns the subjects in the example above?  You have to remember to write that down otherwise you could easily get confused.  What is this data?  What does it describe? For this reason we might look beyond standard Python collections to more complex structures.</p>
 <p>For example, you are all likely familiar with the concept of a spreadsheet (e.g., Microsoft Excel or Google Sheets).  These are nicer than matricies because they have named rows and columns and so just by looking at the structure of the spreadsheet you can often learn more about the structure of the data.  Columns names are sometimes known as <strong>metadata</strong> because they are data themselves that <em>describe</em> other data.</p>
-<div style="text-align: center">
-    <img src="./images/spreadsheet.png" width="550">
-</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/spreadsheet.png"><img alt="spreadsheet" class="bg-primary mb-1 align-center" src="../../_images/spreadsheet.png" style="width: 550px;" /></a>
 <p>This is much nicer because the columns names help us remember what each measurement records and also what is contained in the rows.</p>
 <p>The two-dimensional structure of a spreadsheet is generally the most complex types of data that we will deal with.  However, just so you are aware, as data gets huge it can make sense to take other organizational approaches.  For instance, a website that had millions of users reviewing movies might not want to make a long spreadsheet recording each user and the rating they gave and the movie the rating was about.  Stop and think for a moment how you could do that in a spreadsheet.  Perhaps you could make each row a user and each column a movie.  However, as you know Netflix and other sites have a hundred of thousands of TV shows and movies and so the data would be really unwieldy.  Also, most of the data would be “missing” because people only provide a rating for a small subset of the total number of movies.  As a result, big websites adopt alternative ways of organizing data including the use of what are known as <strong>relational databases</strong>.</p>
-<div style="text-align: center">
-    <img src="./images/database.png" width="550">
-</div><p>Relational databases are made up of multiple spreadsheets (effectively) where each one represents only a smaller piece of the data.  In the figure above the green words are columns of a smaller spreadsheet. This database is thus organized into four separate spreadsheets (or “tables”). For instance the ratings table has a unique id number (i.e. row number) and then the rating a person gave, a user id of who gave it, and a movie id for which movie it was about.  Separately there is a movies table which had its own id (unique id for each movie), the title or name of the movie, and a description/summary of the movie.  The orange lines reflect links where the value in one column of one table connects with or refers to the entries of another one.  This can be a much more efficient way to organize the data.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/database.png"><img alt="database" class="bg-primary mb-1 align-center" src="../../_images/database.png" style="width: 550px;" /></a>
+<p>Relational databases are made up of multiple spreadsheets (effectively) where each one represents only a smaller piece of the data.  In the figure above the green words are columns of a smaller spreadsheet. This database is thus organized into four separate spreadsheets (or “tables”). For instance the ratings table has a unique id number (i.e. row number) and then the rating a person gave, a user id of who gave it, and a movie id for which movie it was about.  Separately there is a movies table which had its own id (unique id for each movie), the title or name of the movie, and a description/summary of the movie.  The orange lines reflect links where the value in one column of one table connects with or refers to the entries of another one.  This can be a much more efficient way to organize the data.</p>
 <p>The main point this example brings forward is that the way you organize your data is something you really have to think about and plan to begin with.  I’ve found that this topic actually is intuitively interesting to many students.  The reason is that we love organizing our homes and offices.  It feels great.  When it comes to data taking the same mentality - the “fresh” feeling of being organized, is really key to making good scientific analyses that do not have bugs.  Problems with data organization can even be deadly (<a class="reference external" href="https://foreignpolicy.com/2020/10/08/uk-coronavirus-covid-spreadsheet-excel-error-outsourcing/">How not to kill people with spreadsheets</a>).  If you get really interested in organizing data, there are <a class="reference external" href="https://www.amazon.com/Discipline-Organizing-MIT-Press/dp/0262518503">entire books</a> <span id="id1">[]</span> and fields of study about how to best organize data (e.g., library and information sciences).  The choices you make in how to organize your data at one point in time really influence how easy it can be to do certain analyses later.  More on this later.</p>
 </div>
 <div class="section" id="common-file-formats-for-data">
@@ -1117,22 +1109,16 @@
 <h3>Excel Workbooks (.xls, .xslx files)<a class="headerlink" href="#excel-workbooks-xls-xslx-files" title="Permalink to this headline">¶</a></h3>
 <p>XLSX file format (or XLS in older versions of Excel) is the default file format used in Excel. Under the hood, Excel Workbooks are built using a highly structured markup language called Extensible Markup Language (XML). Essentially what this means is while you are using Excel’s graphic interface to edit your data, XML is adding a bunch of tags behind the scenes to the XLSX file so it knows how to properly format the data each time you open it up. All of these tags in XML are what allow you to change font colors and sizes, add graphs and images, and use formulas.</p>
 <p>This is what you see when you when you use Excel:</p>
-<div style="text-align: center">
-    <img src="./images/excel_worksheet.png" width="200">
-</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/excel_worksheet.png"><img alt="excel_worksheet" class="bg-primary mb-1 align-center" src="../../_images/excel_worksheet.png" style="width: 200px;" /></a>
 <p>And this is what the exact same Workbook looks like behind the scenes:</p>
-<div style="text-align: center">
-    <img src="./images/excel_xml.png" width="550">
-</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/excel_xml.png"><img alt="excel_xml" class="bg-primary mb-1 align-center" src="../../_images/excel_xml.png" style="width: 550px;" /></a>
 <p>But this complexity can also make it difficult to use XLSX files with any other software or programming language that isn’t Excel. For one, not all programs can open XLSX files, so these data files can make your data inaccessible to other people. Two, all of this special formatting can sometimes lead to problems when you read in data from XLSX files (e.g., converting variables to weird formats). To avoid issues like these, it is preferable to store your data using plain-text formats (such as CSV and TSV files).</p>
 </div>
 <div class="section" id="comma-separated-values-csv-files">
 <h3>Comma-separated Values (.csv files)<a class="headerlink" href="#comma-separated-values-csv-files" title="Permalink to this headline">¶</a></h3>
 <p>CSV, or Comma-separated value files, on the other hand, are written using a plain-text format. No special tags, just text. The only formatting in CSV files are the commas used to delimit different values for columns and new lines to indicate rows. You can see this if you open up a CSV file using Notepad (or other text editors).</p>
 <p>Here’s the same dataset as before but now as a CSV file:</p>
-<div style="text-align: center">
-    <img src="./images/csv_sample.png" width="450">
-</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/csv_sample.png"><img alt="csv_sample" class="bg-primary mb-1 align-center" src="../../_images/csv_sample.png" style="width: 450px;" /></a>
 <p>This means that what you can store within a CSV file is quite limited (no images or special formatting, for example). But it also means that this kind of file is great for storing and sharing data. CSV files can be opened by any software, making it accessible to others. Given that CSV files inherently have no formatting, some of the issues that come with using XLSX files never arise.</p>
 </div>
 <div class="section" id="tab-separated-values-tsv-files">
@@ -1149,26 +1135,26 @@
 <div class="section" id="google-sheets">
 <h3>Google Sheets<a class="headerlink" href="#google-sheets" title="Permalink to this headline">¶</a></h3>
 <p>To export a .csv file from Google Sheets, you click on File &gt; Download &gt; Comma-separated values (.csv).</p>
-<div style="text-align: center"><img src="./images/export_csv_google.png" width="450"></div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/export_csv_google.png"><img alt="export_csv_google" class="bg-primary mb-1 align-center" src="../../_images/export_csv_google.png" style="width: 450px;" /></a>
 <p>If you created a Google Sheet with multiple sheets, you will have to save each individual sheet as a .csv file because .csv files do not support multiple sheets. To do this, you will have to click on each sheet and go through the save process for each sheet.</p>
 </div>
 <div class="section" id="excel">
 <h3>Excel<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h3>
 <p>To create a .csv file from Excel, click on File (found on the top left of the menu bar).</p>
-<div style="text-align: center"><img src="./images/excel_header.png" width="250"></div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/excel_header.png"><img alt="excel_header" class="bg-primary mb-1 align-center" src="../../_images/excel_header.png" style="width: 250px;" /></a>
 <p>A new menu will appear. From there, select “Save as” and then choose where on your computer you want to save the file. A pop-up window will open up, and from there, you can choose what to name the file and what kind of file type to save it as. To save it as a   will there will be a dropdown menu where you can select which kind of file type you would like to save the file as (labeled “Save as type”).</p>
-<div style="text-align: center"><img src="./images/export_csv_excel.png" width="550"></div></div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/export_csv_excel.png"><img alt="export_csv_excel" class="bg-primary mb-1 align-center" src="../../_images/export_csv_excel.png" style="width: 550px;" /></a>
+</div>
 </div>
 <div class="section" id="uploading-csv-files-to-jupyterhub">
 <h2>Uploading csv files to JupyterHub<a class="headerlink" href="#uploading-csv-files-to-jupyterhub" title="Permalink to this headline">¶</a></h2>
 <p>Many of the datasets you will be working with this semester will already be available for you to use on JupyterHub. However, if you want to work with your own datasets, you will need to upload them yourselves to the cluster.</p>
 <p>To do that, go to the “Files” tab on JupyterHub and use the “Upload” button.</p>
-<div style="text-align: center"><img src="./images/jupyter_upload.png" width="450"></div></div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/jupyter_upload.png"><img alt="jupyter_upload" class="bg-primary mb-1 align-center" src="../../_images/jupyter_upload.png" style="width: 450px;" /></a>
+</div>
 <div class="section" id="the-pandas-library-and-the-concept-of-a-dataframe-api">
 <h2>The Pandas library and the concept of a dataframe API<a class="headerlink" href="#the-pandas-library-and-the-concept-of-a-dataframe-api" title="Permalink to this headline">¶</a></h2>
-<div style="text-align: center">
-    <img src="./images/pandaslogo.png" width="250">
-</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/pandaslogo.png"><img alt="pandaslogo" class="bg-primary mb-1 align-center" src="../../_images/pandaslogo.png" style="width: 250px;" /></a>
 <p>Throughout this class there are several libraries (i.e., tools which extend the capabilities of the core Python language) which we will use a lot.  One of those is <a class="reference external" href="https://pandas.pydata.org">Pandas</a>.  Pandas is a open-source project for Python that provides a data analysis and manipulation tool.  Pandas gives you a way to interact with a dataset organized like a spreadsheet (meaning columns and rows which are possibly named or labeled with meta data) in order to perform sophisticated data analyses.  Pandas is really the “backbone” of the Python data science and modeling environment.  Pandas could be thought of as a langauge (or <a class="reference external" href="https://en.wikipedia.org/wiki/API">API</a>) for unlocking tabular data.  <strong>If you want to become better at data analysis with Python there is no single package I can think of that is worth more of your time learning.</strong></p>
 <p>Although there is no required book for this class, “<a class="reference external" href="https://www.amazon.com/Learning-Pandas-Library-Munging-Analysis/dp/153359824X">Learning the Pandas Library: Python Tools for Data Munging, Analysis and Visualization</a>” by Matt Harrison <span id="id2">[]</span> is highly recommended both because it is short and to the point but also because it explains key Pandas concepts very clearly.  In addition, the Pandas project includes a very helpful <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">user guide</a> which explains many of the key concepts.</p>
 <div class="tip admonition">
@@ -6139,10 +6125,8 @@ Pandas(Index=76, salary=49542, gender=1, departm=&#39;math&#39;, years=3.0, age=
 <li><p>Each <em>variable</em> must have its own column (variables are some kind of measurement: <em>gender</em>, <em>age</em>, <em>score</em>, etc.)</p></li>
 <li><p>Each <em>value</em> must have its own cell (value are the actual measurement: <em>female</em>, <em>23 years</em>, <em>12 points</em>, etc.)</p></li>
 </ol>
-<div style="text-align: center">
-    <img src="./images/tidy_data.png" width="600">
-</div>
-Above, a visual representation of each of the three rules for tidy data: variables are in columns, observations are in rows, and values are in cells. Image borrowed from <a href="https://r4ds.had.co.nz/tidy-data.html"><i>R for Data Science</i></a>.
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/tidy_data.png"><img alt="tidy_data" class="bg-primary mb-1 align-center" src="../../_images/tidy_data.png" style="width: 600px;" /></a>
+<p>Above, a visual representation of each of the three rules for tidy data: variables are in columns, observations are in rows, and values are in cells. Image borrowed from <a href="https://r4ds.had.co.nz/tidy-data.html"><i>R for Data Science</i></a>.</p>
 <p>So going back to our dataset from before, we can see that it follows each of these three rules. Each person and each timepoint has their own rows (Rule 1). Every type of data measured (gender, age, etc.) has their own column (Rule 2), and each cell within the dataframe has only one value (Rule 3).</p>
 <p>Let’s look at some examples where one or more of these rules are being violated.</p>
 <div class="cell docutils container">
