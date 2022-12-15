@@ -24,7 +24,9 @@
 
 # Data is an important concept in science.  The first step is we measure something.   In a [previous chapter we discuss issues in measurement](http://teaching.gureckislab.org/fall22/labincp/chapters/04/00-researchdesign.html) including different types of scales, units, etc...  However the main thing is that data is born when a number is assigned to some observation we make.  Here is a lonely single number which maybe measures something:
 # 
-# ```{image} ../images/single_number.png
+# ![single_number](./images/single_number.png)
+# 
+# ```{image} ./images/single_number.png
 # :alt: single_number
 # :class: bg-primary mb-1
 # :width: 200px
