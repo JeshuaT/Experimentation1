@@ -31,7 +31,7 @@ Last but not least, we are grateful to the board of the faculty of Social and Be
 
 **Leiden, January 2023**
 
-**Jeshua Brown, PhD student**
+**Jeshua Tromp, PhD student**
 
 *author and workgroup instructor*
 
