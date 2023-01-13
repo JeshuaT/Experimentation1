@@ -12,7 +12,7 @@ from IPython.display import IFrame
 
 
 # 
-# > **Protip** When viewing YouTube videos on your desktop or laptop: use shortcut keys: JKL to quickly move backward, pause, forward; <> to change speed.
+# > **Tip:** When viewing YouTube videos on your desktop or laptop: use shortcut keys: JKL to quickly move backward, pause, forward; <> to change speed.
 # 
 
 # In[8]:
@@ -48,9 +48,3 @@ IFrame(src="https://www.youtube.com/embed/gsry2SYOFCw", width="560", height="315
 # ## Further reading
 # Are you familiar with another programming language such as matlab or R and want to know how syntax can be translated to python? Check out [this](http://mathesaurus.sourceforge.net/matlab-python-xref.pdf) handy resource that compares the syntax of matlab, R, and python.
 # 
-
-# In[12]:
-
-
-
-

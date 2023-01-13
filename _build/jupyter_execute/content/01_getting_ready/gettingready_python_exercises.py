@@ -3,9 +3,26 @@
 
 # # Python exercises: Getting Ready
 
+# ### Exercise 1. First script
+# Let's make a first script! Open a new file in spyder, and paste in the following code:
+# 
+# ```
+# age = input("What is your age? Type your age here: ")
+# 
+# if int(age) < 24:
+#     print("Wow you are young!")
+# elif int(age) >= 25:
+#     print("Nice, a real 90s kid")
+# ```
+# 
+# Save the script as "age_judgement.py". Then, run the script either by pressing F5 or clicking on the green arrow with "run script". Type in your age. Do you agree with my judgements? If not, change the age and the response to the age.
+
+# ### Exercise 2. First Spyder script
+#  The script you made doesn't have to be run from your Spyder IDE. In principle, you just need to have Python. To explore that, in your file explorer, navigate to where you saved "age_judgement.py". Then, double-click on that file. You will probably get a prompt how you want to open that file. Choose Python (doesn't matter which version) and observe what happens.
+
 # > **Note:** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/01-intro) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
-# ### Exercise 1. Printing "Hello world!"
+# ### Exercise 3. Printing "Hello world!"
 # What is wrong with the following code?
 # ```
 # primt 'Hello world!'
@@ -27,7 +44,7 @@
 # 
 # Finally, let's use the same code in OpenSesame. Open OpenSesame and click File > New > Extended Template. Drag a new `inline_script` object from the Toolbar after the `instructions` object and enter the same python code. Run the experiment in a Window (use the green >> button) and check whether the message is printed to the Console. Close the experiment (Escape) and move the inline script into the `trial_sequence`. When is the print executed? How often is the print executed?
 # 
-# ### Exercise 2. Incrementing value of numeric variable
+# ### Exercise 4. Incrementing value of numeric variable
 # 
 # Run the following code in the browser, in Spyder and in OpenSesame using the same method as described in Exercise 1. What value is printed out?
 # 
