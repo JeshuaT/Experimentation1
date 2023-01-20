@@ -5669,14 +5669,14 @@ if (typeof version == 'undefined') {
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clicked on elements: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">my_canvas</span><span class="o">.</span><span class="n">elements_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Now run the experiment in Windowed mode (&gt;&gt; button) and check whether the results you see in the output console. What names appear when you click the text belonging to an answer option? And what does appear when you click the OK button?</p>
+<p>Now run the experiment in Windowed mode (&gt;&gt; button) and check which results you see in the output console. What names appear when you click the text belonging to an answer option? And what does appear when you click the OK button?</p>
 <p>If you understand how the elements_at function work, you can comment out the print line (do not remove it, perhaps you need it again at a later stage when debugging your code).</p>
 <p>Given that the <code class="docutils literal notranslate"><span class="pre">elements_at</span></code> function returns a list (objects in a canvas can overlap spatially), we need a loop that runs over all object names in the list and check whether that object is a ‘clickable’ option or the OK button.</p>
 <p>The loop below assign the string <code class="docutils literal notranslate"><span class="pre">ce</span></code> (short for canvas element) sequentially to each element of the list.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="n">ce</span> <span class="ow">in</span> <span class="n">my_canvas</span><span class="o">.</span><span class="n">elements_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 </pre></div>
 </div>
-<p>Tip: at a print statement nested in the loop to show the content of ce while you run the experiment in Windowed mode if you do not yet understand the function of this loop.</p>
+<p>Tip: add a print statement nested in the loop to show the content of ce while you run the experiment in Windowed mode if you do not yet understand the function of this loop.</p>
 </div>
 <div class="section" id="check-whether-an-option-was-clicked">
 <h3>Check whether an option was clicked<a class="headerlink" href="#check-whether-an-option-was-clicked" title="Permalink to this headline">¶</a></h3>
@@ -5688,7 +5688,7 @@ if (typeof version == 'undefined') {
 
 </pre></div>
 </div>
-<p>If all these conditions are met we know the option that is clicked and we can save this as an interger into a variable we call <code class="docutils literal notranslate"><span class="pre">newsel</span></code>.</p>
+<p>If all these conditions are met we know the option that is clicked and we can save this as an integer into a variable we call <code class="docutils literal notranslate"><span class="pre">newsel</span></code>.</p>
 <p>We also retrieve the previous selection of this question which is available in <code class="docutils literal notranslate"><span class="pre">RSelected</span></code> and store it into the integer <code class="docutils literal notranslate"><span class="pre">oldsel</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                    <span class="n">newsel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
                     <span class="n">oldsel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">RSelected</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ce</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>

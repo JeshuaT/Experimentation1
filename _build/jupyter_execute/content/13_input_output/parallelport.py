@@ -10,11 +10,78 @@
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 
 
-# # Excercises
+# # Adding markers to an experiment
+# 
+# ## Step 1. Installing the OpenSesame plug-in for sending markers with Leiden University devices
+# 
+# To install the plug-in, open OpenSesame and use the following lines of code in the Python console (make sure that the console is visible by clicking on the "Show Jupyter/IPython console" icon):
+
+# In[ ]:
+
+
+get_ipython().system('pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers@develop')
+
+
+# After running this line of code, restart the OpenSesame and open the Eriksen Flanker task you programmed in Tutorial 2 of Session 3. 
+# Alternatively, you can download the solution for the Eriksen Flanker task and open it in OpenSesame:
+# https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
+# 
+# Under "flow control", you should now also see two new objects called `markers_init` and `markers_send`. 
+# ![](images/Markers_SS.png)
+
+# ## Step 2. Presenting stimulus markers
+# 
+# Recall that there are four types of stimulus in this task as a result of the combination of Congruency (congruent, incongruent) and Letter (H, S): HHHHH, SSSSS, SSHSS, HHSHH. Thus, we would like to present a unique marker for each of these stimuli. 
+# 
+# To do this, we first insert a `markers_init` object at the start of the main sequence of the experiment. We keep the default settings as shown in the figure below.
+# ![](images/Markers_init_SS.png)
+# 
+# Then we add a varible (column) called `stimmarker` in the `block_loop` and `block_loop_1`; and give unique values corresponding to each stimulus (e.g., 1, 2, 3, 4).
+# ![](images/Stimmarker_SS.png)
+# 
+# Stimulus markers will be sent when the stimuli are presented, thus we also need to insert a `markers_send` element right after the stimulus presentation in the trial sequence (both in the practice and experimental loops). Given that the marker values are determined by the `stimmarker` variable we created, we refer to this variable in the object as the marker value. 
+# ![](images/Markers_send_SS.png)
+
+# ## Step 3. Presenting response markers
+# 
+# We might be also interested in running analyses related to types of responses participants made (i.e., incorrect vs. correct). Thus, we would need to send unique markers for correct and incorrect responses. 
+# 
+# To do this, we first insert an in-line object, `setrespmarker`, under `keyboard_response` and write a conditional as follows in the Run tab:
+
+# In[ ]:
+
+
+if var.correct == 1:
+    var.respmarkervalue = 5 # correct
+else:
+    var.respmarkervalue = 6 # incorrect
+
+
+# This in-line should be then followed by another `markers_send` item we called `Respmarker_send` where the marker value is set to the value of the `respmarkervalue` variable.
+# ![](images/Respmarkers_send_SS.png)
+
+# ## Step 4. Presenting feedback markers
+# 
+# Additionally, we can also send markers defining the feedback participants received after their response. These could correspond to "correct", "incorrect", and "missing" trials. 
+# By now, you might have an idea on how we would implement this. Similar to our approach above for the response markers, we can write a conditional statement in an inline following feedback presentation. However, it is important to note that participants may have missed some trials which also means that they did not respond correctly in these trials.
+
+# In[ ]:
+
+
+if var.response == "None":
+    var.fbmarkervalue = 7 # missing
+elif var.correct == 1:
+    var.fbmarkervalue = 8 # correct
+else:
+    var.fbmarkervalue = 9 # incorrect
+
+
+# # Exercises
 # 
 # ## Exercise 1. Add block markers
 # 
-# It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.
+# It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to
+# exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.
 # 
 # Now let's think a moment about the length of the markers. How long do you present the markers before the signals goes back to 0? And how long does the signal stays 0 before you send a new marker? Make sure there is sufficient time between the onset of the start-block marker and the first stimulus marker of a block. Also make sure there is sufficient time after the end of the last trial and the onset of the end-block marker. What is the minimum duration of the marker and the period it is 0 when the device that records your parallel port signal samples at 500 Hz (i.e. 500 read-outs per second)? And what is the minimum duration when the sample frequency is 50 Hz?
 # 

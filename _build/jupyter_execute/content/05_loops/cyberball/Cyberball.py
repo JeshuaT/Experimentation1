@@ -14,7 +14,7 @@ from jupyterquiz import display_quiz
 # 
 # ## Introduction
 # 
-# The Cyberball game allows psychologists to investigate the effects of social exclu- sion (ostracism). Kipling D. Williams came up with this idea after a Frisbee rolled up and hit him in the back when relaxing in a park in 1983:
+# The Cyberball game allows psychologists to investigate the effects of social exclusion (ostracism). Kipling D. Williams came up with this idea after a Frisbee rolled up and hit him in the back when relaxing in a park in 1983:
 # 
 # > He turned around, saw two other guys looking at him expectantly, and threw the Frisbee back to them. He was a bit surprised when they threw the disk back to him; he walked toward them to form a triangle, and threw it back again. For about a minute, the three of them threw the Frisbee around in a spirited game of catch. What happened next sparked an idea as to how to study the effects of ostracism. For no apparent reason, the two original players started throwing the Frisbee only to each other, and never threw it to the newcomer again. After sheepishly back-stepping toward his dog, the author was amazed at how bad he felt. He was sad, embarrassed, and a bit angry. He wondered what he had done to warrant being ostracised by the other two players. He sought comfort from his faithful dog. Then, it occurred to him that something like this, adapted for the laboratory, would be an excellent means to study ostracism and social exclusion. (Williams & Jarvis, 2006, p.174).
 # 
@@ -39,12 +39,12 @@ from jupyterquiz import display_quiz
 # 
 # To program the game, you first need some movie clips that show a ball moving between the players. You need six of them depicting all possible directions:
 # 
-# From player 1 to player 2 [1to2.wmv](files/1to2.wmv)
-# From player 1 to player 3 [1to3.wmv](files/1to3.wmv)
-# From player 2 to player 1 [2to1.wmv](files/2to1.wmv)
-# From player 2 to player 3 [2to3.wmv](files/2to3.wmv)
-# From player 3 to player 1 [3to1.wmv](files/3to1.wmv)
-# From player 3 to player 2 [3to2.wmv](files/3to2.wmv)
+# From player 1 to player 2 [1to2.wmv](https://www.henkvansteenbergen.com/wp-content/uploads/E-Primer/1to2.wmv)
+# From player 1 to player 3 [1to3.wmv](https://www.henkvansteenbergen.com/wp-content/uploads/E-Primer/1to3.wmv)
+# From player 2 to player 1 [2to1.wmv](https://www.henkvansteenbergen.com/wp-content/uploads/E-Primer/2to1.wmv)
+# From player 2 to player 3 [2to3.wmv](https://www.henkvansteenbergen.com/wp-content/uploads/E-Primer/2to3.wmv)
+# From player 3 to player 1 [3to1.wmv](https://www.henkvansteenbergen.com/wp-content/uploads/E-Primer/3to1.wmv)
+# From player 3 to player 2 [3to2.wmv](https://www.henkvansteenbergen.com/wp-content/uploads/E-Primer/3to2.wmv)
 # 
 # The six movie files can be downloaded using the links.
 # 
@@ -87,7 +87,7 @@ display_quiz("questions/question_1.json")
 # 
 # ### Step 2: Programming the behaviour of Player 1 and Player 3
 # 
-# Let's now think about how to set up the `player1_loop` and `player2_loop`. These loops should retrieve the new destination that the virtual Players 1 and 3 will toss the ball to. So add a variable (column) in both loops named `target_player` and type in the possible destinations of that player (a player is not allowed to toss the ball to themselves! It would be an interesting extension of the paradigm, though...).
+# Let's now think about how to set up the `player1_loop` and `player3_loop`. These loops should retrieve the new destination that the virtual Players 1 and 3 will toss the ball to. So add a variable (column) in both loops named `target_player` and type in the possible destinations of that player (a player is not allowed to toss the ball to themselves! It would be an interesting extension of the paradigm, though...).
 # 
 # These loops fully determine the behaviour of Player 1 and Player 3. It's up to you whether you want to make this behaviour predictable (use sequential selection), fully random (use random selection), or preferential (increase the number of rows of specific target players).
 # 
@@ -148,15 +148,15 @@ display_quiz("questions/question_3.json")
 # 
 # Let's now add a Procedure named `play2_seq` to the `player2_loop`. We don't need any variables added to this loop. Just make sure the loop run only once.
 # 
-# Do the same for `play2_seq` as you did for `play1_seq` and `play3_seq` : add an inline script (name it `prepare_player2`) and insert the `play_movie` (again paste a linked copy from the clipboard).
+# Do the same for `play2_seq` as you did for `play1_seq` and `play3_seq` : add an inline script (name it `prepare_player2`) and insert the media player `media_player_mpy`(again paste a linked copy from the clipboard).
 # 
 # Now add a keyboard_response object to the beginning of the sequence (name it `wait_for_user`) and set it to log the responses 1 and 3. The keyboard_response object has an infinite timeout and will be terminated as soon as the user has decided which player they want to toss the ball to (i.e. Player 1 or 3).
 # 
 # To show the correct movie after the response to the `wait_for_user`object, we need the following code in the `prepare_player2` script:
 
 # ```
-# var.movie_filename = "2to" + str(var.response) + ".wmv"\
-# var.current_player = var.response \# info for next trial
+# var.movie_filename = "2to" + str(var.response) + ".wmv"
+# var.current_player = var.response # info for next trial
 # items.prepare("media_player_mpy")
 # ```
 
@@ -193,7 +193,7 @@ display_quiz("questions/question_3.json")
 # 
 # Okay, this was boring, right? Time to change the loop and present the movie itself.
 # 
-# First comment the code you just wrote (select everything and press `Ctrl+/` (see OpenSesame [keyboard shortcuts](https://osdoc.cogsci.nl/3.3/manual/interface/#keyboard-shortcuts))
+# First comment the code you just wrote (select everything and press `Ctrl + /` (see OpenSesame [keyboard shortcuts](https://osdoc.cogsci.nl/3.3/manual/interface/#keyboard-shortcuts))
 # 
 # Now we first need to load the correct movie file and then present the picture frame by frame in the loop.
 # 
@@ -310,6 +310,7 @@ display_quiz("questions/question_4.json")
 #   var.prevt = clock.time()
 # ```
 
+# Here, `foo` is used as a metasyntactic variable or a placeholder for a value that can change.
 # 
 # Paste this code in the `Prepare` tab of the `play_movie` inline script. Then, in the `Run` tab replace the clock.sleep code with the following line:
 # 
@@ -340,7 +341,7 @@ display_quiz("questions/question_4.json")
 # 
 # Experiment with two alternatives to the items.prepare() method:
 # #### 1. Dummy loop solution
-# Open the old experiment with the media_player you saved after Step 3. Replace the `media_player_mpy` with a dummy_loop that runs the media_player_mpy object. Add the column `my_movie_filename` to the dummy_loop and enter the value `[movie_filename]` in the first row. Change the Video file field of media_player_mpy to [my_movie_filename]. Remove any reference to the items.prepare() command in all inlines. Because the prepare-run strategy is repeated for each loop separately, the movie is updated automatically at the end of the trial. Try whether this solution works.
+# Open the old experiment with the media_player you saved after Step 3. Replace the `media_player_mpy` with a dummy_loop that runs the media_player_mpy object. Add the column `my_movie_filename` to the dummy_loop (loop object) and enter the value `[movie_filename]` in the first row. Change the Video file field of media_player_mpy to [my_movie_filename]. Remove any reference to the items.prepare() command in all inlines. Because the prepare-run strategy is repeated for each loop separately, the movie is updated automatically at the end of the trial. Try whether this solution works.
 # #### 2. Run-If solution
 # Because we have a limited number of videos to present (six combinations) it might be more elegant to preload all relevant movies in the beginning of the trial and use the Run If feature to only present the video that shows the correct target_player.  Open the old experiment with the media_player you saved after Step 3. Remove any reference to the items.prepare() command in all inlines. Use two media_players per trial with fixed filenames. Run only the relevant video depending on the value of target_player using the Run if feature in the `play1_seq`, `play2_seq`, and `play3_seq` sequences.
 

@@ -203,7 +203,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_functions/wcst.html">
-     The Wiconsin Card Sorting Task in OpenSesame
+     The Wisconsin Card Sorting Task in OpenSesame
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,7 +262,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_strings/digitspan/digitspan.html">
-     Digital Span Task in OpenSesame
+     Memory Span Task in OpenSesame
     </a>
    </li>
   </ul>
@@ -595,8 +595,35 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#excercises">
-   Excercises
+  <a class="reference internal nav-link" href="#adding-markers-to-an-experiment">
+   Adding markers to an experiment
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-installing-the-opensesame-plug-in-for-sending-markers-with-leiden-university-devices">
+     Step 1. Installing the OpenSesame plug-in for sending markers with Leiden University devices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-presenting-stimulus-markers">
+     Step 2. Presenting stimulus markers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-presenting-response-markers">
+     Step 3. Presenting response markers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-presenting-feedback-markers">
+     Step 4. Presenting feedback markers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -637,8 +664,35 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#excercises">
-   Excercises
+  <a class="reference internal nav-link" href="#adding-markers-to-an-experiment">
+   Adding markers to an experiment
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-installing-the-opensesame-plug-in-for-sending-markers-with-leiden-university-devices">
+     Step 1. Installing the OpenSesame plug-in for sending markers with Leiden University devices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-presenting-stimulus-markers">
+     Step 2. Presenting stimulus markers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-presenting-response-markers">
+     Step 3. Presenting response markers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-presenting-feedback-markers">
+     Step 4. Presenting feedback markers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -668,11 +722,75 @@
 <p>based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in Session 3.</p>
 <p><a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp">https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp</a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="excercises">
-<h1>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="adding-markers-to-an-experiment">
+<h1>Adding markers to an experiment<a class="headerlink" href="#adding-markers-to-an-experiment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-installing-the-opensesame-plug-in-for-sending-markers-with-leiden-university-devices">
+<h2>Step 1. Installing the OpenSesame plug-in for sending markers with Leiden University devices<a class="headerlink" href="#step-1-installing-the-opensesame-plug-in-for-sending-markers-with-leiden-university-devices" title="Permalink to this headline">¶</a></h2>
+<p>To install the plug-in, open OpenSesame and use the following lines of code in the Python console (make sure that the console is visible by clicking on the “Show Jupyter/IPython console” icon):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers@develop
+</pre></div>
+</div>
+</div>
+</div>
+<p>After running this line of code, restart the OpenSesame and open the Eriksen Flanker task you programmed in Tutorial 2 of Session 3.
+Alternatively, you can download the solution for the Eriksen Flanker task and open it in OpenSesame:
+<a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp">https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp</a></p>
+<p>Under “flow control”, you should now also see two new objects called <code class="docutils literal notranslate"><span class="pre">markers_init</span></code> and <code class="docutils literal notranslate"><span class="pre">markers_send</span></code>.
+<img alt="" src="../../_images/Markers_SS.png" /></p>
+</div>
+<div class="section" id="step-2-presenting-stimulus-markers">
+<h2>Step 2. Presenting stimulus markers<a class="headerlink" href="#step-2-presenting-stimulus-markers" title="Permalink to this headline">¶</a></h2>
+<p>Recall that there are four types of stimulus in this task as a result of the combination of Congruency (congruent, incongruent) and Letter (H, S): HHHHH, SSSSS, SSHSS, HHSHH. Thus, we would like to present a unique marker for each of these stimuli.</p>
+<p>To do this, we first insert a <code class="docutils literal notranslate"><span class="pre">markers_init</span></code> object at the start of the main sequence of the experiment. We keep the default settings as shown in the figure below.
+<img alt="" src="../../_images/Markers_init_SS.png" /></p>
+<p>Then we add a varible (column) called <code class="docutils literal notranslate"><span class="pre">stimmarker</span></code> in the <code class="docutils literal notranslate"><span class="pre">block_loop</span></code> and <code class="docutils literal notranslate"><span class="pre">block_loop_1</span></code>; and give unique values corresponding to each stimulus (e.g., 1, 2, 3, 4).
+<img alt="" src="../../_images/Stimmarker_SS.png" /></p>
+<p>Stimulus markers will be sent when the stimuli are presented, thus we also need to insert a <code class="docutils literal notranslate"><span class="pre">markers_send</span></code> element right after the stimulus presentation in the trial sequence (both in the practice and experimental loops). Given that the marker values are determined by the <code class="docutils literal notranslate"><span class="pre">stimmarker</span></code> variable we created, we refer to this variable in the object as the marker value.
+<img alt="" src="../../_images/Markers_send_SS.png" /></p>
+</div>
+<div class="section" id="step-3-presenting-response-markers">
+<h2>Step 3. Presenting response markers<a class="headerlink" href="#step-3-presenting-response-markers" title="Permalink to this headline">¶</a></h2>
+<p>We might be also interested in running analyses related to types of responses participants made (i.e., incorrect vs. correct). Thus, we would need to send unique markers for correct and incorrect responses.</p>
+<p>To do this, we first insert an in-line object, <code class="docutils literal notranslate"><span class="pre">setrespmarker</span></code>, under <code class="docutils literal notranslate"><span class="pre">keyboard_response</span></code> and write a conditional as follows in the Run tab:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">correct</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">respmarkervalue</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># correct</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">respmarkervalue</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># incorrect</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This in-line should be then followed by another <code class="docutils literal notranslate"><span class="pre">markers_send</span></code> item we called <code class="docutils literal notranslate"><span class="pre">Respmarker_send</span></code> where the marker value is set to the value of the <code class="docutils literal notranslate"><span class="pre">respmarkervalue</span></code> variable.
+<img alt="" src="../../_images/Respmarkers_send_SS.png" /></p>
+</div>
+<div class="section" id="step-4-presenting-feedback-markers">
+<h2>Step 4. Presenting feedback markers<a class="headerlink" href="#step-4-presenting-feedback-markers" title="Permalink to this headline">¶</a></h2>
+<p>Additionally, we can also send markers defining the feedback participants received after their response. These could correspond to “correct”, “incorrect”, and “missing” trials.
+By now, you might have an idea on how we would implement this. Similar to our approach above for the response markers, we can write a conditional statement in an inline following feedback presentation. However, it is important to note that participants may have missed some trials which also means that they did not respond correctly in these trials.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;None&quot;</span><span class="p">:</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">fbmarkervalue</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># missing</span>
+<span class="k">elif</span> <span class="n">var</span><span class="o">.</span><span class="n">correct</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">fbmarkervalue</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># correct</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">fbmarkervalue</span> <span class="o">=</span> <span class="mi">9</span> <span class="c1"># incorrect</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-1-add-block-markers">
 <h2>Exercise 1. Add block markers<a class="headerlink" href="#exercise-1-add-block-markers" title="Permalink to this headline">¶</a></h2>
-<p>It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.</p>
+<p>It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to
+exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.</p>
 <p>Now let’s think a moment about the length of the markers. How long do you present the markers before the signals goes back to 0? And how long does the signal stays 0 before you send a new marker? Make sure there is sufficient time between the onset of the start-block marker and the first stimulus marker of a block. Also make sure there is sufficient time after the end of the last trial and the onset of the end-block marker. What is the minimum duration of the marker and the period it is 0 when the device that records your parallel port signal samples at 500 Hz (i.e. 500 read-outs per second)? And what is the minimum duration when the sample frequency is 50 Hz?</p>
 </div>
 <div class="section" id="exercise-2-recreate-the-incredible-scanner-beam-emitted-by-kitt">
@@ -683,14 +801,14 @@
 <p>For our final exercise you will recreate the incredible scanner beam emitted by KITT from the Knight Rider television series (yes folks, dating back to the 1980s!).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/oNyXYPhnUIs&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/oNyXYPhnUIs&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

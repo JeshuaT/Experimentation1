@@ -249,7 +249,7 @@ display_quiz("questions/question_5.json")
 #         print('Clicked on elements: %s' % my_canvas.elements_at(x, y))
 # ```
 
-# Now run the experiment in Windowed mode (>> button) and check whether the results you see in the output console. What names appear when you click the text belonging to an answer option? And what does appear when you click the OK button?
+# Now run the experiment in Windowed mode (>> button) and check which results you see in the output console. What names appear when you click the text belonging to an answer option? And what does appear when you click the OK button?
 
 # If you understand how the elements_at function work, you can comment out the print line (do not remove it, perhaps you need it again at a later stage when debugging your code).
 # 
@@ -261,7 +261,7 @@ display_quiz("questions/question_5.json")
 #         for ce in my_canvas.elements_at(x, y):
 # ```
 
-# Tip: at a print statement nested in the loop to show the content of ce while you run the experiment in Windowed mode if you do not yet understand the function of this loop.
+# Tip: add a print statement nested in the loop to show the content of ce while you run the experiment in Windowed mode if you do not yet understand the function of this loop.
 
 # ### Check whether an option was clicked
 # To check whether an option was clicked (it has name `rbxxx`) we can simply check whether the name of the object contains `rb`. This can be done because `rb` is a unique substring that is not part of any other object names in the Canvas.
@@ -275,7 +275,7 @@ display_quiz("questions/question_5.json")
 # 
 # ```
 
-# If all these conditions are met we know the option that is clicked and we can save this as an interger into a variable we call `newsel`. 
+# If all these conditions are met we know the option that is clicked and we can save this as an integer into a variable we call `newsel`. 
 # 
 # We also retrieve the previous selection of this question which is available in `RSelected` and store it into the integer `oldsel`:
 # 
