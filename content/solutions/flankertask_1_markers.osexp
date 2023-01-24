@@ -26,7 +26,7 @@ set font_size 32
 set font_italic no
 set font_family mono
 set font_bold no
-set experiment_path "C:/Users/topels/Documents/GitHub/Experimentation1/content/solutions"
+set experiment_path "C:/Users/topels/surfdrive3/SVV team/Administrative/Teaching/2022_Experimentation_I"
 set disable_garbage_collection yes
 set description "A template containing a practice and an experimental phase"
 set coordinates uniform
@@ -37,7 +37,32 @@ set canvas_backend psycho
 set bidi yes
 set background black
 
+define markers_send FBmarker_send
+	set marker_value "[fbmarkervalue]"
+	set marker_reset_to_zero yes
+	set marker_object_duration 10
+	set marker_device_tag marker_device_1
+	set description "Handles communication with Leiden Univ marker devices"
+
+define markers_send Respmarker_send
+	set marker_value "[respmarkervalue]"
+	set marker_reset_to_zero yes
+	set marker_object_duration 10
+	set marker_device_tag marker_device_1
+	set description "Handles communication with Leiden Univ marker devices"
+
+define markers_send Stimmarker_send
+	set marker_value "[stimmarker]"
+	set marker_reset_to_zero yes
+	set marker_object_duration 10
+	set marker_device_tag marker_device_1
+	set description "Handles communication with Leiden Univ marker devices"
+
 define sketchpad blank_screen
+	set duration 300
+	set description "Displays stimuli"
+
+define sketchpad blank_screen_1
 	set duration 300
 	set description "Displays stimuli"
 
@@ -57,15 +82,19 @@ define loop block_loop
 	setcycle 0 stimulus HHHHH
 	setcycle 0 congruent 1
 	setcycle 0 correct_resp h
+	setcycle 0 stimmarker 1
 	setcycle 1 stimulus HHSHH
 	setcycle 1 congruent 0
 	setcycle 1 correct_resp s
+	setcycle 1 stimmarker 2
 	setcycle 2 stimulus SSSSS
 	setcycle 2 congruent 1
 	setcycle 2 correct_resp s
+	setcycle 2 stimmarker 3
 	setcycle 3 stimulus SSHSS
 	setcycle 3 congruent 0
 	setcycle 3 correct_resp h
+	setcycle 3 stimmarker 4
 	run trial_sequence
 
 define loop block_loop_1
@@ -84,16 +113,20 @@ define loop block_loop_1
 	setcycle 0 stimulus HHHHH
 	setcycle 0 congruent 1
 	setcycle 0 correct_resp h
+	setcycle 0 stimmarker 1
 	setcycle 1 stimulus HHSHH
 	setcycle 1 congruent 0
 	setcycle 1 correct_resp s
+	setcycle 1 stimmarker 2
 	setcycle 2 stimulus SSSSS
 	setcycle 2 congruent 1
 	setcycle 2 correct_resp s
+	setcycle 2 stimmarker 3
 	setcycle 3 stimulus SSHSS
 	setcycle 3 congruent 0
-	setcycle 3 correct_resp s
-	run trial_sequence
+	setcycle 3 correct_resp h
+	setcycle 3 stimmarker 4
+	run trial_sequence_1
 
 define sequence block_sequence
 	set flush_keyboard yes
@@ -115,6 +148,11 @@ define sketchpad correct_response
 	set description "Displays stimuli"
 	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="+" x=0 y=0 z_index=0
 
+define sketchpad correct_response_1
+	set duration 500
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="+" x=0 y=0 z_index=0
+
 define sketchpad end_break
 	set duration keypress
 	set description "Displays stimuli"
@@ -129,6 +167,7 @@ define sketchpad end_of_experiment
 define sequence experiment
 	set flush_keyboard yes
 	set description "The main sequence of the experiment"
+	run new_markers_init always
 	run instructions always
 	run practice_loop always
 	run experimental_loop always
@@ -178,13 +217,32 @@ define inline_script fix_duration
 	var.fix_duration = random.randint(150, 250)
 	__end__
 
+define inline_script fix_duration_1
+	set description "Executes Python code"
+	set _run ""
+	___prepare__
+	import random
+	var.fix_duration = random.randint(150, 250)
+	__end__
+
 define sketchpad fixation
 	set start_response_interval no
 	set duration "[fix_duration]"
 	set description "Displays stimuli"
 	draw fixdot color=white show_if=always style=default x=0 y=0 z_index=0
 
+define sketchpad fixation_1
+	set start_response_interval no
+	set duration "[fix_duration]"
+	set description "Displays stimuli"
+	draw fixdot color=white show_if=always style=default x=0 y=0 z_index=0
+
 define sketchpad incorrect_response
+	set duration 500
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="-" x=0 y=0 z_index=0
+
+define sketchpad incorrect_response_1
 	set duration 500
 	set description "Displays stimuli"
 	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="-" x=0 y=0 z_index=0
@@ -199,7 +257,20 @@ define sketchpad isi
 	set duration 500
 	set description "Displays stimuli"
 
+define sketchpad isi_1
+	set duration 500
+	set description "Displays stimuli"
+
 define keyboard_response keyboard_response
+	set timeout 800
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set correct_response "[correct_resp]"
+	set allowed_responses "s; h"
+
+define keyboard_response keyboard_response_1
 	set timeout 800
 	set flush yes
 	set event_type keypress
@@ -211,6 +282,17 @@ define keyboard_response keyboard_response
 define logger logger
 	set description "Logs experimental data"
 	set auto_log yes
+
+define markers_init new_markers_init
+	set marker_gen_mark_file yes
+	set marker_flash_255 no
+	set marker_dummy_mode yes
+	set marker_device_tag marker_device_1
+	set marker_device_serial ANY
+	set marker_device_addr ANY
+	set marker_device ANY
+	set marker_crash_on_mark_errors yes
+	set description "Handles communication with Leiden Univ marker devices"
 
 define loop practice_loop
 	set source_file ""
@@ -240,7 +322,44 @@ define sketchpad response_screen
 	set duration 0
 	set description "Displays stimuli"
 
+define sketchpad response_screen_1
+	set duration 0
+	set description "Displays stimuli"
+
+define inline_script setfbmarker
+	set description "Executes Python code"
+	___run__
+	if var.response == "None":
+	    var.fbmarkervalue = 7
+	elif var.correct == 1:
+	    var.fbmarkervalue = 8
+	else:
+	    var.fbmarkervalue = 9 
+	__end__
+	set _prepare ""
+
+define inline_script setrespmarker
+	set description "Executes Python code"
+	___run__
+	if var.correct == 1:
+	    var.respmarkervalue = 5
+	else:
+	    var.respmarkervalue = 6
+	__end__
+	set _prepare ""
+
+define feedback show_FBmarker
+	set reset_variables yes
+	set duration 1000
+	set description "Provides feedback to the participant"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="[fbmarkervalue]" x=0 y=0 z_index=0
+
 define sketchpad stimulus
+	set duration 80
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="[stimulus]" x=0 y=0 z_index=0
+
+define sketchpad stimulus_1
 	set duration 80
 	set description "Displays stimuli"
 	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="[stimulus]" x=0 y=0 z_index=0
@@ -251,11 +370,37 @@ define sequence trial_sequence
 	run fix_duration always
 	run fixation always
 	run stimulus always
+	run Stimmarker_send always
 	run response_screen always
 	run keyboard_response always
+	run setrespmarker always
+	run Respmarker_send always
 	run blank_screen always
 	run correct_response "[correct] == 1"
 	run incorrect_response "[correct] == 0"
+	run setfbmarker always
+	run FBmarker_send always
+	run show_FBmarker always
 	run isi always
+	run logger always
+
+define sequence trial_sequence_1
+	set flush_keyboard yes
+	set description "A single trial"
+	run fix_duration_1 always
+	run fixation_1 always
+	run stimulus_1 always
+	run Stimmarker_send always
+	run response_screen_1 always
+	run keyboard_response_1 always
+	run setrespmarker always
+	run Respmarker_send always
+	run blank_screen_1 always
+	run correct_response_1 "[correct] == 1"
+	run incorrect_response_1 "[correct] == 0"
+	run setfbmarker always
+	run FBmarker_send always
+	run show_FBmarker always
+	run isi_1 always
 	run logger always
 
