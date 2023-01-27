@@ -609,6 +609,11 @@
    Exercise 4. Incrementing value of numeric variable
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5-inline-scripts-in-opensesame">
+   Exercise 5. Inline scripts in OpenSesame
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -649,6 +654,11 @@
    Exercise 4. Incrementing value of numeric variable
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5-inline-scripts-in-opensesame">
+   Exercise 5. Inline scripts in OpenSesame
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -682,6 +692,9 @@
 </div>
 <div class="section" id="exercise-3-printing-hello-world">
 <h2>Exercise 3. Printing “Hello world!”<a class="headerlink" href="#exercise-3-printing-hello-world" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Note</strong>: For this part of the tutorial you will need to launch the script using Google Colab</p>
+</div></blockquote>
 <p>What is wrong with the following code?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primt</span> <span class="s1">&#39;Hello world!&#39;</span>
 <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
@@ -703,7 +716,7 @@
 </div>
 <div class="section" id="exercise-4-incrementing-value-of-numeric-variable">
 <h2>Exercise 4. Incrementing value of numeric variable<a class="headerlink" href="#exercise-4-incrementing-value-of-numeric-variable" title="Permalink to this headline">¶</a></h2>
-<p>Run the following code in the browser, in Spyder and in OpenSesame using the same method as described in Exercise 1. What value is printed out?</p>
+<p>Run the following code in the browser, in Spyder and in OpenSesame (as in the previous exercise). What value is printed out? Does it correspond between the programs?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myvar</span> <span class="o">=</span> <span class="mi">43</span>
 <span class="n">myvar</span> <span class="o">=</span> <span class="n">myvar</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">myvar</span><span class="p">)</span>
@@ -716,6 +729,9 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="exercise-5-inline-scripts-in-opensesame">
+<h2>Exercise 5. Inline scripts in OpenSesame<a class="headerlink" href="#exercise-5-inline-scripts-in-opensesame" title="Permalink to this headline">¶</a></h2>
 <p>Now, in OpenSesame, split the code into multiple <code class="docutils literal notranslate"><span class="pre">inline_scripts</span></code>. The inline after the  <code class="docutils literal notranslate"><span class="pre">instructions</span></code> object assigns the value 43 to x. The inline in the <code class="docutils literal notranslate"><span class="pre">trial_sequence</span></code> only increments x with 1 and prints x. What values are printed in the OpenSesame console when you run the experiment in windowed mode?</p>
 <p>Finally, let’s convert the python variable to an OpenSesame <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">variable</span></code> (we will learn more this in the next session, also see <a class="reference external" href="https://osdoc.cogsci.nl/3.3/manual/variables/">https://osdoc.cogsci.nl/3.3/manual/variables/</a>).</p>
 <p>The advance of experimental variables in OpenSesame are:</p>
@@ -735,13 +751,6 @@
 </div>
 <p>Note that this <code class="docutils literal notranslate"><span class="pre">var.</span></code> notation is specific to OpenSesame and does not work outside OpenSesame, e.g. in the browser or in Spyder.</p>
 <p>Before running the experiment in windowed mode, open the <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">Inspector</span></code> and search for <code class="docutils literal notranslate"><span class="pre">myvar</span></code>. Run the experiment and see whether the values are updated in the Variable Inspector and in the Console. Finish the experiment and check whether the values are properly saved into the logfile.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#enter your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 

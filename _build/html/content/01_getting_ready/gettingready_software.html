@@ -605,8 +605,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-notebooks-for-spyder">
-   Jupyter Notebooks for Spyder
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -650,8 +650,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-notebooks-for-spyder">
-   Jupyter Notebooks for Spyder
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -692,19 +692,20 @@
 <h2>Spyder: your Python IDE<a class="headerlink" href="#spyder-your-python-ide" title="Permalink to this headline">¶</a></h2>
 <p>Just as you type words to make essays in either Word, Pages or Notepad, you can also have different software programs in which you can type Python code to make Python scripts. We call those software programs <em>integrated development environments (IDEs)</em>. Conveniently, your Anaconda installation comes with one such IDE: <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>. Just as Word and Pages have all kind of tools to help you write essays, Spyder comes with all kinds of tools to help you write Python code. However, just as you had to practice with Word to make the best use of the tool, so it is that you’ll need practice to make the best use of Spyder. The best way to open Spyder is to search for the Anaconda Prompt program on your computer, and then to type in “spyder”. See the screenshot below for how it should look like.</p>
 <p><img alt="image info" src="../../_images/spyder_prompt.JPG" /></p>
-<p>If you are new with Spyder/Python IDES, follow the material below to get on your way:</p>
-<p>If you like learning from video’s, follow <a class="reference external" href="https://docs.spyder-ide.org/current/videos/first-steps-with-spyder.html">these tutorials</a>
+<p>If you are new with Spyder/Python IDES, follow the material below to get on your way:
+If you like learning from video’s, follow <a class="reference external" href="https://docs.spyder-ide.org/current/videos/first-steps-with-spyder.html">these tutorials</a>
 If you like learning by reading along, follow <a class="reference external" href="https://medium.com/coderbyte/spyder-python-ide-for-absolute-beginners-89e4ea1832af">this tutorial</a></p>
 </div>
-<div class="section" id="jupyter-notebooks-for-spyder">
-<h2>Jupyter Notebooks for Spyder<a class="headerlink" href="#jupyter-notebooks-for-spyder" title="Permalink to this headline">¶</a></h2>
-<p>We will often work with jupyter notebooks in this class. To be able to open and use Jupyter Notebooks (which you can recognize with the <strong>.ipynb</strong> extension), we will need to download an extra Spyder extension. Therefore, run the following command in your Anaconda Prompt:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">spyder</span><span class="o">-</span><span class="n">notebook</span> <span class="o">-</span><span class="n">c</span> <span class="n">spyder</span><span class="o">-</span><span class="n">ide</span>
+<div class="section" id="jupyter-notebooks">
+<h2>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>We will often work with jupyter notebooks in this class. To be able to open and use Jupyter Notebooks (which you can recognize with the <strong>.ipynb</strong> extension), we will need another program than Spyder. Luckily, your Anaconda distribution also comes with Jupyter Notebook: a way to view and edit jupyter notebooks. To open the software, run the following command in your Anaconda Prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
 <p>See below how it should look like:
-<img alt="image info" src="../../_images/spyder_notebook_prompt.JPG" /></p>
-<p>To know how to use the Spyder notebook, consult <a class="reference external" href="https://docs.spyder-ide.org/current/plugins/notebook.html#using-the-notebook">this website</a></p>
+<img alt="image info" src="../../_images/jupyter_notebook_prompt.JPG" /></p>
+<p>This will open a browser page, in which you can navigate to your .ipynb file and make changes. It should look something like this:</p>
+<p><img alt="image info" src="../../_images/jupyter_notebook_browser.JPG" /></p>
 </div>
 <div class="section" id="using-this-website-jupyter-notebooks-and-google-colabs">
 <h2>Using this website (Jupyter Notebooks and Google Colabs)<a class="headerlink" href="#using-this-website-jupyter-notebooks-and-google-colabs" title="Permalink to this headline">¶</a></h2>
@@ -749,7 +750,8 @@ If you like learning by reading along, follow <a class="reference external" href
 </div>
 <p>Hmmm…perhaps you are puzzled now since you are not able to run this. To be able to interact with the code blocks, you will need to start your own <em>interactive server</em>. For that, click on the rocket on the top right of your screen and choose “Colab”.</p>
 <p><img alt="image info" src="../../_images/launcher_icons.PNG" /></p>
-<p>A server will start, and you are able to interact with all the code blocks. Importantly, the changes you make <strong>will not be saved</strong>. The easiest way to save your changes is by saving a copy on your Google Drive. If for any reason you don’t want to store anything on Google Drive, you can also download your file as an .ipynb and store in on your computer. Whenever you are in a Google Colab environment, you can load in that file again.</p>
+<p>A server will start, and you are able to interact with all the code blocks. Go do it now if you are still reading from the non-interactive website!</p>
+<p>Now, try to run the code above, simply click on the arrow &gt;. Importantly, the changes you make in this interactive environment <strong>will not be automatically saved</strong>. The easiest way to save your changes is by saving a copy on your Google Drive. If for any reason you don’t want to store anything on Google Drive, you can also download your file as an .ipynb and store in on your computer. Whenever you are in a Google Colab environment, you can load in that file again. Alternatively, you can open the .ipynb file with the Jupyter Notebook software described above.</p>
 <p>Whenever you need to start a Google Colab server, we will make it clear with a note like the following:</p>
 <blockquote>
 <div><p><strong>Note</strong>: For this part of the tutorial you will need to launch the script using Google Colab</p>

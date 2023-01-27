@@ -23,6 +23,9 @@
 # > **Note:** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/01-intro) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
 # ### Exercise 3. Printing "Hello world!"
+# 
+# > **Note**: For this part of the tutorial you will need to launch the script using Google Colab
+# 
 # What is wrong with the following code?
 # ```
 # primt 'Hello world!'
@@ -46,7 +49,7 @@
 # 
 # ### Exercise 4. Incrementing value of numeric variable
 # 
-# Run the following code in the browser, in Spyder and in OpenSesame using the same method as described in Exercise 1. What value is printed out?
+# Run the following code in the browser, in Spyder and in OpenSesame (as in the previous exercise). What value is printed out? Does it correspond between the programs?
 # 
 # ```
 # myvar = 43
@@ -60,6 +63,7 @@
 #enter your code here
 
 
+# ### Exercise 5. Inline scripts in OpenSesame
 # Now, in OpenSesame, split the code into multiple `inline_scripts`. The inline after the  `instructions` object assigns the value 43 to x. The inline in the `trial_sequence` only increments x with 1 and prints x. What values are printed in the OpenSesame console when you run the experiment in windowed mode?
 # 
 # Finally, let's convert the python variable to an OpenSesame `experimental variable` (we will learn more this in the next session, also see https://osdoc.cogsci.nl/3.3/manual/variables/).
@@ -84,9 +88,3 @@
 # 
 # Before running the experiment in windowed mode, open the `Variable Inspector` and search for `myvar`. Run the experiment and see whether the values are updated in the Variable Inspector and in the Console. Finish the experiment and check whether the values are properly saved into the logfile.
 # 
-
-# In[6]:
-
-
-#enter your code here
-

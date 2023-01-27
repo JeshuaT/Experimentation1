@@ -24,22 +24,23 @@
 # ![image info](spyder_prompt.JPG)
 # 
 # If you are new with Spyder/Python IDES, follow the material below to get on your way:
-# 
 # If you like learning from video's, follow [these tutorials](https://docs.spyder-ide.org/current/videos/first-steps-with-spyder.html)
 # If you like learning by reading along, follow [this tutorial](https://medium.com/coderbyte/spyder-python-ide-for-absolute-beginners-89e4ea1832af)
 
-# ## Jupyter Notebooks for Spyder
+# ## Jupyter Notebooks
 # 
-# We will often work with jupyter notebooks in this class. To be able to open and use Jupyter Notebooks (which you can recognize with the **.ipynb** extension), we will need to download an extra Spyder extension. Therefore, run the following command in your Anaconda Prompt:
+# We will often work with jupyter notebooks in this class. To be able to open and use Jupyter Notebooks (which you can recognize with the **.ipynb** extension), we will need another program than Spyder. Luckily, your Anaconda distribution also comes with Jupyter Notebook: a way to view and edit jupyter notebooks. To open the software, run the following command in your Anaconda Prompt:
 # 
 # ```
-# conda install spyder-notebook -c spyder-ide
+# jupyter notebook
 # ```
 # 
 # See below how it should look like:
-# ![image info](spyder_notebook_prompt.JPG)
+# ![image info](jupyter_notebook_prompt.JPG)
 # 
-# To know how to use the Spyder notebook, consult [this website](https://docs.spyder-ide.org/current/plugins/notebook.html#using-the-notebook)
+# This will open a browser page, in which you can navigate to your .ipynb file and make changes. It should look something like this:
+# 
+# ![image info](jupyter_notebook_browser.JPG)
 
 # ## Using this website (Jupyter Notebooks and Google Colabs)
 # Lastly, some notes on how to use this website. This website is powered by Jupyter Notebook, a web-based IDE that allows script and text to be integrated in one file. This website is built using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which collects (amongst other things) Jupyter Notebooks in a nice book-like format. Thanks to this format, we can merge text ...
@@ -67,7 +68,9 @@ elif int(age) >= 25:
 # 
 # ![image info](./launcher_icons.PNG)
 # 
-# A server will start, and you are able to interact with all the code blocks. Importantly, the changes you make **will not be saved**. The easiest way to save your changes is by saving a copy on your Google Drive. If for any reason you don't want to store anything on Google Drive, you can also download your file as an .ipynb and store in on your computer. Whenever you are in a Google Colab environment, you can load in that file again.
+# A server will start, and you are able to interact with all the code blocks. Go do it now if you are still reading from the non-interactive website!
+# 
+# Now, try to run the code above, simply click on the arrow >. Importantly, the changes you make in this interactive environment **will not be automatically saved**. The easiest way to save your changes is by saving a copy on your Google Drive. If for any reason you don't want to store anything on Google Drive, you can also download your file as an .ipynb and store in on your computer. Whenever you are in a Google Colab environment, you can load in that file again. Alternatively, you can open the .ipynb file with the Jupyter Notebook software described above.
 
 # Whenever you need to start a Google Colab server, we will make it clear with a note like the following:
 # 
