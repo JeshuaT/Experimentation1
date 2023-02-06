@@ -64,8 +64,9 @@
 
 
 # ### Exercise 5. Inline scripts in OpenSesame
-# Now, in OpenSesame, split the code into multiple `inline_scripts`. The inline after the  `instructions` object assigns the value 43 to x. The inline in the `trial_sequence` only increments x with 1 and prints x. What values are printed in the OpenSesame console when you run the experiment in windowed mode?
+# Now, in OpenSesame create a new experiment using the Extended template. Now split the code shown above into multiple `inline_scripts`. The inline after the  `instructions` object assigns the value 43 to myvar. The inline in the `trial_sequence` only increments myvar with 1 and prints myvar. What values are printed in the OpenSesame console when you run the experiment in windowed mode? Why?
 # 
+# ### Exercise 6. Inline scripts in OpenSesame using experimental variables
 # Finally, let's convert the python variable to an OpenSesame `experimental variable` (we will learn more this in the next session, also see https://osdoc.cogsci.nl/3.3/manual/variables/).
 # 
 # The advance of experimental variables in OpenSesame are:
