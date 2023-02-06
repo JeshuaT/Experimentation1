@@ -17,22 +17,15 @@
 # 
 # Save the script as "age_judgement.py". Then, run the script either by pressing F5 or clicking on the green arrow with "run script". Type in your age. Do you agree with my judgements? If not, change the age and the response to the age.
 
-# ### Exercise 2. First Spyder script
-#  The script you made doesn't have to be run from your Spyder IDE. In principle, you just need to have Python. To explore that, in your file explorer, navigate to where you saved "age_judgement.py". Then, double-click on that file. You will probably get a prompt how you want to open that file. Choose Python (doesn't matter which version) and observe what happens.
-
 # > **Note:** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/01-intro) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
-# ### Exercise 3. Printing "Hello world!"
+# ### Exercise 2. Printing "Hello world!"
 # 
 # > **Note**: For this part of the tutorial you will need to launch the script using Google Colab
 # 
 # What is wrong with the following code?
 # ```
 # primt 'Hello world!'
-# File "<stdin>", line 1
-#   primt 'Hello world!'
-#                      ^
-# SyntaxError: invalid syntax
 # ```
 # 
 #  Correct the code and run it in the browser below:
@@ -47,7 +40,7 @@
 # 
 # Finally, let's use the same code in OpenSesame. Open OpenSesame and click File > New > Extended Template. Drag a new `inline_script` object from the Toolbar after the `instructions` object and enter the same python code. Run the experiment in a Window (use the green >> button) and check whether the message is printed to the Console. Close the experiment (Escape) and move the inline script into the `trial_sequence`. When is the print executed? How often is the print executed?
 # 
-# ### Exercise 4. Incrementing value of numeric variable
+# ### Exercise 3. Incrementing value of numeric variable
 # 
 # Run the following code in the browser, in Spyder and in OpenSesame (as in the previous exercise). What value is printed out? Does it correspond between the programs?
 # 
@@ -63,10 +56,10 @@
 #enter your code here
 
 
-# ### Exercise 5. Inline scripts in OpenSesame
+# ### Exercise 4. Inline scripts in OpenSesame
 # Now, in OpenSesame create a new experiment using the Extended template. Now split the code shown above into multiple `inline_scripts`. The inline after the  `instructions` object assigns the value 43 to myvar. The inline in the `trial_sequence` only increments myvar with 1 and prints myvar. What values are printed in the OpenSesame console when you run the experiment in windowed mode? Why?
 # 
-# ### Exercise 6. Inline scripts in OpenSesame using experimental variables
+# ### Exercise 5. Inline scripts in OpenSesame using experimental variables
 # Finally, let's convert the python variable to an OpenSesame `experimental variable` (we will learn more this in the next session, also see https://osdoc.cogsci.nl/3.3/manual/variables/).
 # 
 # The advance of experimental variables in OpenSesame are:
