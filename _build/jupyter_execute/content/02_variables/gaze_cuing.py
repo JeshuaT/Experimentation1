@@ -23,7 +23,7 @@ IFrame(src="https://osdoc.cogsci.nl/3.3/tutorials/beginner/", width="800", heigh
 # ## Exercises
 # 
 # ### Exercise 1. Express the location of the cues in relative terms
-# Let's now adapt the gaze cuing experiment you created in the tutorial. Change the 300 and -300 values into percentages (e.g. 10% and -10%) and calculate the x positions based on the resolution (width) of the screen.
+# Let's now adapt the gaze cuing experiment you created in the tutorial. Change the 300 and -300 values into percentages (e.g. 10% and -10%) and calculate the x-coordinates of both the target and the distractor based on the resolution (width) of the screen.
 # 
 # Test whether the location is updated when you change the resolution of the screen.
 # 
