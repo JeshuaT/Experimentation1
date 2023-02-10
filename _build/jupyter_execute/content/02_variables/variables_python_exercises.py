@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python Exercises: Variables
+# # Python exercises: Variables
 # 
 # > **Note:** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/02-variables) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
@@ -97,11 +97,13 @@
 # Inverse RT is: -1.01; Log RT is: 6.89.
 # ```
 # 
+# For the log transformation, you will need the in-built mathematics package called "math". We import math in the code below for you. To log-transform a numeric variable, you can call the **math.log(variable)** function.
 
 # In[ ]:
 
 
 #your code here
+import math
 
 
 # ### Exercise 6. Combine reaction time and accuracy information
@@ -122,6 +124,10 @@
 
 #your code here
 
+
+# ### Exercise 7. Saving and loading the jupyter notebook
+# 
+# Now, save your work and store the .ipynb file in a designated folder. Close this window, and re-open the Google colab. Reload your work. Is everything still there?
 
 # # References
 # 

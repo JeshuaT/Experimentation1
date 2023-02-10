@@ -556,63 +556,64 @@
 # 
 # The aim of this guide is to provide you with support to create experiments on your own. However, there will be times where you do not know how to put your idea into practice, or you cannot figure out what is wrong with your experiment. If you are asking for help, the person you are asking will not be very happy if you just say “it doesn’t work”. They will be very grateful if you can break it down and say “I have tried these steps, but it does not work”, or “I have narrowed it down to X, but I cannot work out what is wrong with it”. In my experience, the act of writing down the steps you have taken to solve the problem can often lead you to the solution yourself as you see the bigger picture.
 # 
+
 # # Glossary
 # 
-#  - 	Argument
+# *Argument*
 # A value, setting, or piece of information provided by the user in computer programming, normally in a function. This may also be called a parameter.
 # 
-#  - 	Block
+# *Block*
 # A collection of trials. Blocks group the trials together with a particular theme (e.g. a unique cue is presented or a different response is required in each block). Alternatively, it justs helps to organise the trials and allow the participant to have a break in between.
 # 
-#  - 	Boolean operator
+# *Boolean operator*
 # A system of algebra used to represent logical propositions, and can provide a binary response of either true or false. For example, whether two words are the same which could be true (dog == dog) or false (dog == cat).
 # 
-#  - 	Cue
+# *Cue*
 # A stimulus that elicits or signals a particular behaviour. This has quite a broad definition. In one experiment, it could be a picture of a cigarette to elicit craving in a smoker, and in the next it could be a shape on a screen that requires a particular response.
 # 
-#  - 	Debugging
+# *Debugging*
 # The process of finding and removing errors from your experiment or script. It is an exercise in problem solving.
 # 
-#  - 	Fixation cross / dot
+# *Fixation cross / dot*
 # A small cross or dot (e.g. +) in the centre of the screen to attract the participant’s attention at the start of a trial.
 # 
-#  - 	Function
+# *Function*
 # A section or unit of a programme that performs a specific task. You can consider it to be a procedure or routine.
 # 
-#  - 	Graphical User Interface (GUI)
+# *Graphical User Interface (GUI)*
 # An interface that allows users to interact with the programme using icons and visual indicators. For example, being able to select options through a menu by clicking your mouse on the screen.
 # 
-#  - 	Integer
+# *Integer*
 # A whole number (e.g. 1), not a decimal (e.g. 1.3).
 # 
-#  - 	Inter-Stimulus Interval (ISI)
+# *Inter-Stimulus Interval (ISI)*
 # The amount of time between two or more separate stimuli.
 # 
-#  - 	Inter-Trial Interval (ITI)
+# *Inter-Trial Interval (ITI)*
 # The amount of time between separate trials.
 # 
-#  - 	Loop
+# *Loop*
 # Controls the repetition of several trials and allows things to vary on each repetition.
 # 
-#  - 	Python
+# *Python*
 # A “high-level general purpose” programming language. See https://www.python.org/ for more details.
 # 
-#  - 	Response
+# *Response*
 # The action of a participant, e.g. the time it takes to press a button (reaction/response time), when presented with a stimulus.
 # 
-#  - 	Script
+# *Script*
 # A list of commands/code that is executed by the programme, in this case Python.
 # 
-#  - 	Stimulus
+# *Stimulus*
 # An object or event that signals a response.
 # 
-#  - 	Stimulus Onset Asynchrony (SOA)
+# *Stimulus Onset Asynchrony (SOA)*
 # The amount of time between the onset of one stimulus and the onset of the next stimulus.
 # 
-#  - 	Syntax
+# *Syntax*
 # A set of rules that defines the combinations of symbols that are considered to be a correctly structured document in a particular programming language.
 # 
-#  - 	Trial
+# *Trial*
 # Presenting one or more stimuli and recording a response. Typically trials are repeated many times to calculate the average response.
 # 
 
