@@ -17,7 +17,7 @@
 # 16 3 5.333333333333333
 # ```
 
-# In[1]:
+# In[4]:
 
 
 # your code here
@@ -35,12 +35,18 @@
 # Enter a number: done
 # 16 3 5.333333333333333
 # ```
-# 
+
+# In[5]:
+
+
+# your code here
+
+
 # ### Exercise 3. Print maximum and minimum
 # Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.
 # 
 
-# In[2]:
+# In[6]:
 
 
 # your code here
@@ -56,7 +62,7 @@
 # print('\r','your text here',end='')
 # ```
 
-# In[3]:
+# In[7]:
 
 
 # your code here
