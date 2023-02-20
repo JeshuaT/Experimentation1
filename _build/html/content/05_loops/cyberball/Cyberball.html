@@ -144,7 +144,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_variables/variables_python_exercises.html">
-     Python Exercises: Variables
+     Python exercises: Variables
     </a>
    </li>
    <li class="toctree-l2">
@@ -622,23 +622,28 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-present-the-video-at-the-center-of-the-screen">
-     Exercise 1. Present the video at the center of the screen
+    <a class="reference internal nav-link" href="#exercise-1-fixing-the-issue-of-incorrect-number-of-trials">
+     Exercise 1. Fixing the issue of incorrect number of trials
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-change-the-speed-of-the-video">
-     Exercise 2. Change the speed of the video
+    <a class="reference internal nav-link" href="#exercise-2-present-the-video-at-the-center-of-the-screen">
+     Exercise 2. Present the video at the center of the screen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-manipulate-the-level-of-social-exclusion">
-     Exercise 3. Manipulate the level of social exclusion
+    <a class="reference internal nav-link" href="#exercise-3-change-the-speed-of-the-video">
+     Exercise 3. Change the speed of the video
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-alternatives-to-manually-prepare-an-opensesame-object">
-     Exercise 4. Alternatives to manually prepare an OpenSesame object
+    <a class="reference internal nav-link" href="#exercise-4-manipulate-the-level-of-social-exclusion">
+     Exercise 4. Manipulate the level of social exclusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-alternatives-to-manually-prepare-an-opensesame-object">
+     Exercise 5. Alternatives to manually prepare an OpenSesame object
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -708,23 +713,28 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-present-the-video-at-the-center-of-the-screen">
-     Exercise 1. Present the video at the center of the screen
+    <a class="reference internal nav-link" href="#exercise-1-fixing-the-issue-of-incorrect-number-of-trials">
+     Exercise 1. Fixing the issue of incorrect number of trials
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-change-the-speed-of-the-video">
-     Exercise 2. Change the speed of the video
+    <a class="reference internal nav-link" href="#exercise-2-present-the-video-at-the-center-of-the-screen">
+     Exercise 2. Present the video at the center of the screen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-manipulate-the-level-of-social-exclusion">
-     Exercise 3. Manipulate the level of social exclusion
+    <a class="reference internal nav-link" href="#exercise-3-change-the-speed-of-the-video">
+     Exercise 3. Change the speed of the video
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-alternatives-to-manually-prepare-an-opensesame-object">
-     Exercise 4. Alternatives to manually prepare an OpenSesame object
+    <a class="reference internal nav-link" href="#exercise-4-manipulate-the-level-of-social-exclusion">
+     Exercise 4. Manipulate the level of social exclusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-alternatives-to-manually-prepare-an-opensesame-object">
+     Exercise 5. Alternatives to manually prepare an OpenSesame object
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -799,7 +809,7 @@ From player 3 to player 2 <a class="reference external" href="https://www.henkva
 </pre></div>
 </div>
 <p>Now you can implement the basic branching structure using conditional via the <a class="reference external" href="https://osdoc.cogsci.nl/3.2/manual/variables/#using-conditional-if-statements">run-if statement of the sequence</a>.</p>
-<p>Depending on the value in current_player, the script may run one single trial in either <code class="docutils literal notranslate"><span class="pre">player1_loop</span></code>, <code class="docutils literal notranslate"><span class="pre">player2_loop</span></code>, or <code class="docutils literal notranslate"><span class="pre">player3_loop</span></code>. In order to do so, we make use of a combination of loops run in a <code class="docutils literal notranslate"><span class="pre">trial_seq</span></code>. Build a basic setup running 60 trials, as in the example below:</p>
+<p>Depending on the value in current_player, the script may run one single trial in either <code class="docutils literal notranslate"><span class="pre">player1_loop</span></code>, <code class="docutils literal notranslate"><span class="pre">player2_loop</span></code>, or <code class="docutils literal notranslate"><span class="pre">player3_loop</span></code>. In order to do so, we make use of a combination of loops run in a <code class="docutils literal notranslate"><span class="pre">trial_seq</span></code>. Build a basic setup running 60 trials, as in the example below. Some of you may realize already that with this solution there can be multiple throws in one trial; let’s forget about this issue for now and fix it later, i.e. in Exercise 1).</p>
 <p><img alt="" src="../../../_images/Cyberball_condif.png" /></p>
 <p>Note that we used the Python syntax for the conditional statements. You can also use the OpenSesame syntax again in which case you omit the <code class="docutils literal notranslate"><span class="pre">=var.</span></code> and instead use square brackets around the variable name.</p>
 <div class="cell docutils container">
@@ -809,7 +819,7 @@ From player 3 to player 2 <a class="reference external" href="https://www.henkva
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="AtxAVvckRtMI" data-shufflequestions="False"
+<div class="output text_html"><div id="GTRiXaYfOYhr" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -971,7 +981,7 @@ From player 3 to player 2 <a class="reference external" href="https://www.henkva
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsAtxAVvckRtMI=[
+}</style></div><script type="application/javascript">var questionsGTRiXaYfOYhr=[
   {
     "question": "Can you use the = sign also instead of the == sign?",
     "type": "multiple_choice",
@@ -1738,7 +1748,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsAtxAVvckRtMI,  AtxAVvckRtMI);
+        show_questions(questionsGTRiXaYfOYhr,  GTRiXaYfOYhr);
         }
         </script></div>
 </div>
@@ -1756,7 +1766,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="xmPCzLyWtIRc" data-shufflequestions="False"
+<div class="output text_html"><div id="iyOeLElWgVfg" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -1918,7 +1928,7 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsxmPCzLyWtIRc=[
+}</style></div><script type="application/javascript">var questionsiyOeLElWgVfg=[
   {
     "question": "What value should we give the Break If field",
     "type": "multiple_choice",
@@ -2674,7 +2684,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsxmPCzLyWtIRc,  xmPCzLyWtIRc);
+        show_questions(questionsiyOeLElWgVfg,  iyOeLElWgVfg);
         }
         </script></div>
 </div>
@@ -2703,7 +2713,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="yJYuaweQcEMr" data-shufflequestions="False"
+<div class="output text_html"><div id="mKhYHjALWXev" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -2865,15 +2875,15 @@ if (typeof version == 'undefined') {
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsyJYuaweQcEMr=[
+}</style></div><script type="application/javascript">var questionsmKhYHjALWXev=[
   {
-    "question": "In the example below we use double quotes for string assignment. Is this correct?",
+    "question": "In the example above we used double quotes for string assignment. Is this correct?",
     "type": "multiple_choice",
     "answers": [
       {
         "answer": "Yes this is correct. Both double and single quotes do.",
         "correct": true,
-        "feedback": "Correct. Python is case-sensitive and very strict with regard to indentation. However it does not care that much about the character you use to indicate the start and end of a string. However, sometimes you need double quotes, e.g. if you need single quotes in the string, like in this example: \"You've got an error!\""
+        "feedback": "Correct. Python is case-sensitive and very strict with regard to indentation. However it does not care that much about the character you use to indicate the start and end of a string. However, sometimes you need double quotes, e.g. if you use single quotes in the string, like in this example: \"You've got an error!\""
       },
       {
         "answer": "No",
@@ -3616,7 +3626,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsyJYuaweQcEMr,  yJYuaweQcEMr);
+        show_questions(questionsmKhYHjALWXev,  mKhYHjALWXev);
         }
         </script></div>
 </div>
@@ -3697,12 +3707,30 @@ y = i**2 - 200</p>
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Were all steps implemented correctly? Check whether the game works using this custom code.</p>
+<p>Were all steps implemented correctly? Check whether the game works using this custom code. Insert a blank <code class="docutils literal notranslate"><span class="pre">sketchpad</span></code> with duration 0 after the instructions <code class="docutils literal notranslate"><span class="pre">sketchpad</span></code>  to make sure the canvas is not drawn on the previous instruction screen.</p>
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1-present-the-video-at-the-center-of-the-screen">
-<h3>Exercise 1. Present the video at the center of the screen<a class="headerlink" href="#exercise-1-present-the-video-at-the-center-of-the-screen" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-1-fixing-the-issue-of-incorrect-number-of-trials">
+<h3>Exercise 1. Fixing the issue of incorrect number of trials<a class="headerlink" href="#exercise-1-fixing-the-issue-of-incorrect-number-of-trials" title="Permalink to this headline">¶</a></h3>
+<p>Change the number of trials in <code class="docutils literal notranslate"><span class="pre">trial_loop</span></code> to 1. How many throws do you see? Why are there multiple throws in one trial?</p>
+<p>To fix this issue, we have to make sure of value of current_player (for the next trial) is assigned after all three player_loop’s have run. To do so, save the new value of the current_player first in another (temporary) variable, and add a new <code class="docutils literal notranslate"><span class="pre">inline_script</span></code> object at the end (!) of <code class="docutils literal notranslate"><span class="pre">trial_seq</span></code> that assigns the new value to current_player.</p>
+<p>For example, in the <code class="docutils literal notranslate"><span class="pre">prepare_player1</span></code> <code class="docutils literal notranslate"><span class="pre">inline_script</span></code> change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="o">.</span><span class="n">current_player</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">target_player</span> <span class="c1"># info for next trial</span>
+</pre></div>
+</div>
+<p>into</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="o">.</span><span class="n">tempcurrent_player</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">target_player</span> <span class="c1"># info for next trial</span>
+</pre></div>
+</div>
+<p>Also modify the other two <code class="docutils literal notranslate"><span class="pre">inline_scripts</span></code>. Finally, the new <code class="docutils literal notranslate"><span class="pre">inline_script</span></code> at the end of the trial (i.e., after player3_loop) simply says:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="o">.</span><span class="n">current_player</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">tempcurrent_player</span>
+</pre></div>
+</div>
+<p>Check whether each trial now only contains a single throw.</p>
+</div>
+<div class="section" id="exercise-2-present-the-video-at-the-center-of-the-screen">
+<h3>Exercise 2. Present the video at the center of the screen<a class="headerlink" href="#exercise-2-present-the-video-at-the-center-of-the-screen" title="Permalink to this headline">¶</a></h3>
 <p>Let’s move the video to the center of the screen. The upper-left corner is determined by the (x,y) coordinates we provide to <code class="docutils literal notranslate"><span class="pre">exp.surface.blit</span></code></p>
 <p>In order to determine the correct coordinates we need to know the width and height of the screen resolution currently used in the experiment. For this we can use Open Sesame’s <a class="reference external" href="https://osdoc.cogsci.nl/3.3/manual/variables/#built-in-variables">built-in variables</a> <code class="docutils literal notranslate"><span class="pre">var.width</span></code> and <code class="docutils literal notranslate"><span class="pre">var.height</span></code>.</p>
 <p>To determine the width and height of the video file presented (units are pixels) we need some functionality provided by the cv2 package. Nobody knows this by heart, so let’s google it. When I searched “cv2 height of video”, I found some useful information <a class="reference external" href="https://stackoverflow.com/questions/39953263/get-video-dimension-in-python-opencv">here</a>.</p>
@@ -3716,8 +3744,8 @@ y = i**2 - 200</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercise-2-change-the-speed-of-the-video">
-<h3>Exercise 2. Change the speed of the video<a class="headerlink" href="#exercise-2-change-the-speed-of-the-video" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-3-change-the-speed-of-the-video">
+<h3>Exercise 3. Change the speed of the video<a class="headerlink" href="#exercise-3-change-the-speed-of-the-video" title="Permalink to this headline">¶</a></h3>
 <p>As you may have noticed, the speed of the video is currently determined by the speed of your cpu. If you have a very quick cpu the video is presented quicker than if you have a very slow cpu.</p>
 <p>Let’s change that. Actually, the wmv contains information about the supposed number of frames that have to be presented in a second (fps = frames per second). Let’s save the <code class="docutils literal notranslate"><span class="pre">fps</span></code> information:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fps</span> <span class="o">=</span>  <span class="n">video</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">)</span>
@@ -3731,7 +3759,7 @@ y = i**2 - 200</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="BEvFTlxzwais" data-shufflequestions="False"
+<div class="output text_html"><div id="vvlzIrUyDcGI" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"> <style>:root {
@@ -3893,7 +3921,7 @@ y = i**2 - 200</p>
     100% {
         background-color: var(--correct-green);
     }
-}</style></div><script type="application/javascript">var questionsBEvFTlxzwais=[
+}</style></div><script type="application/javascript">var questionsvvlzIrUyDcGI=[
   {
     "question": "How many frames per seconds are stored in the videofile?",
     "type": "numeric",
@@ -3907,7 +3935,7 @@ y = i**2 - 200</p>
       {
         "type": "default",
         "correct": false,
-        "feedback": "False! Try again."
+        "feedback": "Incorrect! Try again."
       }
     ]
   }
@@ -4645,7 +4673,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsBEvFTlxzwais,  BEvFTlxzwais);
+        show_questions(questionsvvlzIrUyDcGI,  vvlzIrUyDcGI);
         }
         </script></div>
 </div>
@@ -4675,8 +4703,8 @@ if (typeof version == 'undefined') {
 </div>
 <p>Try whether you notice any differences. On slower computers the movie may play more smoothly now.</p>
 </div>
-<div class="section" id="exercise-3-manipulate-the-level-of-social-exclusion">
-<h3>Exercise 3. Manipulate the level of social exclusion<a class="headerlink" href="#exercise-3-manipulate-the-level-of-social-exclusion" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-4-manipulate-the-level-of-social-exclusion">
+<h3>Exercise 4. Manipulate the level of social exclusion<a class="headerlink" href="#exercise-4-manipulate-the-level-of-social-exclusion" title="Permalink to this headline">¶</a></h3>
 <p>Add a <code class="docutils literal notranslate"><span class="pre">block_loop</span></code> around the trials_loop that runs two blocks. In one block (the exclusion block), player1 and player 3prefer to play with the other player in 8 out of 10 times. In the other block they have equal preference to play with you (player 2) or the other player.</p>
 <p>Hint: you need to set the weight of the rows in player1_loop and player2_loop (see the <a class="reference external" href="https://osdoc.cogsci.nl/3.3/manual/structure/loop/#advanced-loop-operations">advanced loop</a> documentation). Make sure you shuffle after the weight command, otherwise the repeats are presented after each other (behavior that is different in E-Prime)!</p>
 <p>The figure below illustrates how you can set the weight of the <code class="docutils literal notranslate"><span class="pre">player1_loop</span></code> (do the same for <code class="docutils literal notranslate"><span class="pre">player3_loop</span></code>!) by referring to a variable that is defined one level higher in the hierarchy, i.e. in the <code class="docutils literal notranslate"><span class="pre">block_loop</span></code>. Do not press the Preview button though (it will crash because we do not refer to fixed values for the weighting).</p>
@@ -4685,8 +4713,8 @@ if (typeof version == 'undefined') {
 <p>Test whether this works. Do you feel more excluded in the first block then in the second block?</p>
 <p>Add a third block that includes you 8 out of 10 times. Does the inclusion make you feel better?</p>
 </div>
-<div class="section" id="exercise-4-alternatives-to-manually-prepare-an-opensesame-object">
-<h3>Exercise 4. Alternatives to manually prepare an OpenSesame object<a class="headerlink" href="#exercise-4-alternatives-to-manually-prepare-an-opensesame-object" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-5-alternatives-to-manually-prepare-an-opensesame-object">
+<h3>Exercise 5. Alternatives to manually prepare an OpenSesame object<a class="headerlink" href="#exercise-5-alternatives-to-manually-prepare-an-opensesame-object" title="Permalink to this headline">¶</a></h3>
 <p>Experiment with two alternatives to the items.prepare() method:</p>
 <div class="section" id="dummy-loop-solution">
 <h4>1. Dummy loop solution<a class="headerlink" href="#dummy-loop-solution" title="Permalink to this headline">¶</a></h4>

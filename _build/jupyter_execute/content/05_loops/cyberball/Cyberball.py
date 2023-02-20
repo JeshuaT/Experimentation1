@@ -5,7 +5,7 @@
 # 
 # > **Note:** Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019). Spapé M.M.*, Verdonschot, R.G., & van Steenbergen, H.* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press. [www.e-primer.com](http://www.e-primer.com) Copyright 2019 by the authors and LUP. Adapted with permission.
 
-# In[5]:
+# In[1]:
 
 
 from jupyterquiz import display_quiz
@@ -68,14 +68,14 @@ from jupyterquiz import display_quiz
 
 # Now you can implement the basic branching structure using conditional via the [run-if statement of the sequence](https://osdoc.cogsci.nl/3.2/manual/variables/#using-conditional-if-statements).
 # 
-# Depending on the value in current_player, the script may run one single trial in either `player1_loop`, `player2_loop`, or `player3_loop`. In order to do so, we make use of a combination of loops run in a `trial_seq`. Build a basic setup running 60 trials, as in the example below:
+# Depending on the value in current_player, the script may run one single trial in either `player1_loop`, `player2_loop`, or `player3_loop`. In order to do so, we make use of a combination of loops run in a `trial_seq`. Build a basic setup running 60 trials, as in the example below. Some of you may realize already that with this solution there can be multiple throws in one trial; let's forget about this issue for now and fix it later, i.e. in Exercise 1).
 # 
 # ![](images/Cyberball_condif.png)
 # 
 # Note that we used the Python syntax for the conditional statements. You can also use the OpenSesame syntax again in which case you omit the `=var.` and instead use square brackets around the variable name.
 # 
 
-# In[9]:
+# In[2]:
 
 
 display_quiz("questions/question_1.json")
@@ -97,7 +97,7 @@ display_quiz("questions/question_1.json")
 # ![](images/Cyberball_player1+3.png)
 # 
 
-# In[10]:
+# In[3]:
 
 
 display_quiz("questions/question_2.json")
@@ -127,7 +127,7 @@ display_quiz("questions/question_2.json")
 # items.prepare("media_player_mpy")
 # ```
 
-# In[11]:
+# In[4]:
 
 
 display_quiz("questions/question_3.json")
@@ -232,11 +232,38 @@ display_quiz("questions/question_3.json")
 #     pygame.display.flip()
 # ```
 
-# Were all steps implemented correctly? Check whether the game works using this custom code.
+# Were all steps implemented correctly? Check whether the game works using this custom code. Insert a blank `sketchpad` with duration 0 after the instructions `sketchpad`  to make sure the canvas is not drawn on the previous instruction screen.
 
 # ## Exercises
 # 
-# ### Exercise 1. Present the video at the center of the screen
+# ### Exercise 1. Fixing the issue of incorrect number of trials
+# 
+# Change the number of trials in `trial_loop` to 1. How many throws do you see? Why are there multiple throws in one trial?
+# 
+# To fix this issue, we have to make sure of value of current_player (for the next trial) is assigned after all three player_loop's have run. To do so, save the new value of the current_player first in another (temporary) variable, and add a new `inline_script` object at the end (!) of `trial_seq` that assigns the new value to current_player.
+# 
+# For example, in the `prepare_player1` `inline_script` change:
+
+# ```
+# var.current_player = var.target_player # info for next trial
+# ```
+
+# into
+
+# ```
+# var.tempcurrent_player = var.target_player # info for next trial
+# ```
+
+# Also modify the other two `inline_scripts`. Finally, the new `inline_script` at the end of the trial (i.e., after player3_loop) simply says:
+
+# ```
+# var.current_player = var.tempcurrent_player
+# ```
+
+# Check whether each trial now only contains a single throw.
+
+# 
+# ### Exercise 2. Present the video at the center of the screen
 # 
 # Let's move the video to the center of the screen. The upper-left corner is determined by the (x,y) coordinates we provide to `exp.surface.blit`
 # 
@@ -259,7 +286,7 @@ display_quiz("questions/question_3.json")
 # exp.surface.blit(surf, ((var.width - videowidth) / 2, (var.height - videoheight) / 2))
 # ```
 
-# ### Exercise 2. Change the speed of the video
+# ### Exercise 3. Change the speed of the video
 # 
 # As you may have noticed, the speed of the video is currently determined by the speed of your cpu. If you have a very quick cpu the video is presented quicker than if you have a very slow cpu.
 # 
@@ -273,7 +300,7 @@ display_quiz("questions/question_3.json")
 # Use the print method to determine the fps for our video's. Look in the console for the value.
 # 
 
-# In[13]:
+# In[5]:
 
 
 display_quiz("questions/question_4.json")
@@ -322,7 +349,7 @@ display_quiz("questions/question_4.json")
 
 # Try whether you notice any differences. On slower computers the movie may play more smoothly now.
 
-# ### Exercise 3. Manipulate the level of social exclusion
+# ### Exercise 4. Manipulate the level of social exclusion
 # 
 # Add a `block_loop` around the trials_loop that runs two blocks. In one block (the exclusion block), player1 and player 3prefer to play with the other player in 8 out of 10 times. In the other block they have equal preference to play with you (player 2) or the other player.
 # 
@@ -337,7 +364,7 @@ display_quiz("questions/question_4.json")
 # 
 # Add a third block that includes you 8 out of 10 times. Does the inclusion make you feel better?
 
-# ### Exercise 4. Alternatives to manually prepare an OpenSesame object
+# ### Exercise 5. Alternatives to manually prepare an OpenSesame object
 # 
 # Experiment with two alternatives to the items.prepare() method:
 # #### 1. Dummy loop solution
@@ -345,7 +372,7 @@ display_quiz("questions/question_4.json")
 # #### 2. Run-If solution
 # Because we have a limited number of videos to present (six combinations) it might be more elegant to preload all relevant movies in the beginning of the trial and use the Run If feature to only present the video that shows the correct target_player.  Open the old experiment with the media_player you saved after Step 3. Remove any reference to the items.prepare() command in all inlines. Use two media_players per trial with fixed filenames. Run only the relevant video depending on the value of target_player using the Run if feature in the `play1_seq`, `play2_seq`, and `play3_seq` sequences.
 
-# In[ ]:
+# In[5]:
 
 
 
