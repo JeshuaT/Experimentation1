@@ -1,0 +1,176 @@
+---
+API: 2.1
+OpenSesame: 3.3.12
+Platform: nt
+---
+set width 1024
+set uniform_coordinates yes
+set title "The Ultimatum Game"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend psycho
+set round_decimals 2
+set mouse_backend psycho
+set keyboard_backend psycho
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 18
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "C:/Users/trompjj/surfdrive/PC/Projects/Teaching_Experimentation1"
+set disable_garbage_collection yes
+set description "The main experiment item"
+set coordinates uniform
+set compensation 0
+set color_backend psycho
+set clock_backend psycho
+set canvas_backend psycho
+set background "#b8b8b8"
+
+define sketchpad AcceptOffer
+	set duration 3000
+	set description AcceptOffer
+	draw rect color=green fill=1 h=192 penwidth=1 show_if=always w=512 x=-256 y=-96 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="The other player accepted your offer!<br />" x=0 y=0 z_index=0
+
+define sketchpad DecisionMe
+	set duration 0
+	set description "Displays stimuli"
+	draw rect color=yellow fill=1 h=256 penwidth=1 show_if=always w=320 x=-416 y=-128 z_index=0
+	draw rect color=yellow fill=1 h=256 penwidth=1 show_if=always w=320 x=96 y=-128 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Offer 1: <br />[O1_Me] for me<br />[O1_You] for the other player" x=-256 y=0 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Offer 2: <br />[O2_Me] for me<br />[O2_You] for the other player" x=256 y=0 z_index=0
+	draw rect color=black fill=0 h=256 penwidth=5 show_if=always w=320 x=-416 y=-128 z_index=0
+	draw rect color=black fill=0 h=256 penwidth=5 show_if=always w=320 x=96 y=-128 z_index=0
+	draw rect color=white fill=1 h=64 penwidth=5 show_if=always w=500 x=-256 y=-256 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Please choose your offer (press key 1 or 2)" x=0 y=-224 z_index=0
+
+define sketchpad DecisionMe_feedback1
+	set duration 1000
+	set description "Displays stimuli"
+	draw rect color=yellow fill=1 h=256 penwidth=1 show_if=always w=320 x=-416 y=-128 z_index=0
+	draw rect color=yellow fill=1 h=256 penwidth=1 show_if=always w=320 x=96 y=-128 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Offer 1: <br />[O1_Me] for me<br />[O1_You] for the other player" x=-256 y=0 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Offer 2: <br />[O2_Me] for me<br />[O2_You] for the other player" x=256 y=0 z_index=0
+	draw rect color=red fill=0 h=256 penwidth=5 show_if=always w=320 x=-416 y=-128 z_index=0
+	draw rect color=black fill=0 h=256 penwidth=5 show_if=always w=320 x=96 y=-128 z_index=0
+	draw rect color=white fill=1 h=64 penwidth=5 show_if=always w=500 x=-256 y=-256 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Please choose your offer (press key 1 or 2)" x=0 y=-224 z_index=0
+
+define sketchpad DecisionMe_feedback2
+	set duration 1000
+	set description "Displays stimuli"
+	draw rect color=yellow fill=1 h=256 penwidth=1 show_if=always w=320 x=-416 y=-128 z_index=0
+	draw rect color=yellow fill=1 h=256 penwidth=1 show_if=always w=320 x=96 y=-128 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Offer 1: <br />[O1_Me] for me<br />[O1_You] for the other player" x=-256 y=0 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Offer 2: <br />[O2_Me] for me<br />[O2_You] for the other player" x=256 y=0 z_index=0
+	draw rect color=black fill=0 h=256 penwidth=5 show_if=always w=320 x=-416 y=-128 z_index=0
+	draw rect color=red fill=0 h=256 penwidth=5 show_if=always w=320 x=96 y=-128 z_index=0
+	draw rect color=white fill=1 h=64 penwidth=5 show_if=always w=500 x=-256 y=-256 z_index=0
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Please choose your offer (press key 1 or 2)" x=0 y=-224 z_index=0
+
+define logger LogTrials
+	set description "Logs experimental data"
+	set auto_log yes
+
+define keyboard_response OfferChoice
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses "1;2"
+
+define inline_script OtherDecision
+	set description "Executes Python code"
+	___run__
+	if var.response == var.Fair_Offer:
+	    var.choice = choices(decision, weights=(80, 20), k=1)
+	else:
+	    var.choice = choices(decision, weights=(25,75), k=1)
+	__end__
+	___prepare__
+	from random import choices
+	
+	decision = ["Accept", "Reject"]
+	__end__
+
+define sketchpad RejectOffer
+	set duration 3000
+	set description RejectOffer
+	draw rect color=red fill=1 h=192 penwidth=1 show_if=always w=512 x=-256 y=-96 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="The other player rejected your offer. <br />Neither of you get anything.<br />" x=0 y=0 z_index=0
+
+define sketchpad WaitingForOther
+	set start_response_interval no
+	set reset_variables no
+	set duration 4500
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Waiting for the response from the other player" x=0 y=0 z_index=0
+
+define loop block_loop
+	set source table
+	set repeat 5
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 2
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 O1_Me 5
+	setcycle 0 O1_You 5
+	setcycle 0 O2_Me 7
+	setcycle 0 O2_You 3
+	setcycle 0 Fair_Offer 1
+	setcycle 1 O1_Me 7
+	setcycle 1 O1_You 3
+	setcycle 1 O2_Me 5
+	setcycle 1 O2_You 5
+	setcycle 1 Fair_Offer 2
+	run trial_sequence
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run welcome always
+	run instructions always
+	run block_loop always
+
+define sketchpad instructions
+	set start_response_interval no
+	set reset_variables no
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="In this game, you have to decide how to share 10 euro's between you and another participant who participates over the internet. <br /><br />You will be presented with two choices: you can make a fair offer (both get 5 euro) or you can make an unfair offer (you get 7 euro's, the other participant gets 3 euro's. <br /><br />Importantly, the other participant then decides whether to accept or reject the offer. If the other participant rejects the offer, you both get nothing. If the other participant accepts the offer, you will get the money in the way that you proposed in the offer. " x=0 y=0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=20 html=yes show_if=always text="Press space to continue" x=0 y=320 z_index=0
+
+define sequence trial_sequence
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run DecisionMe always
+	run OfferChoice always
+	run DecisionMe_feedback1 "[response] = 1"
+	run DecisionMe_feedback2 "[response] = 2"
+	run WaitingForOther always
+	run OtherDecision always
+	run AcceptOffer "[choice] = ['Accept']"
+	run RejectOffer "[choice] = ['Reject']"
+	run LogTrials always
+
+define sketchpad welcome
+	set start_response_interval no
+	set reset_variables no
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Welcome to the Ultimatum Game. " x=0 y=0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=20 html=yes show_if=always text="Press space to continue" x=0 y=320 z_index=0
+
