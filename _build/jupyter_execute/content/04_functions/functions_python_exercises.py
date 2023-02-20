@@ -22,15 +22,20 @@
 # ```
 # 
 # a) Zap ABC jane fred jane
+# 
 # b) Zap ABC Zap
+# 
 # c) ABC Zap jane
+# 
 # d) ABC Zap ABC
+# 
 # e) Zap Zap Zap
+# 
 # 
 # Check your answer by running the code
 # 
 
-# In[2]:
+# In[ ]:
 
 
 # your code here

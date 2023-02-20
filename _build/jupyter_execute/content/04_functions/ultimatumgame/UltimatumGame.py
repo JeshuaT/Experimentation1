@@ -75,7 +75,7 @@ display_quiz("questions/question_2.json")
 # 
 # #### 1: Sketchpad item for presenting Player 1 with two options
 # 
-# Add in a Sketchpad item, and call it "DecisionMe". The DecisionMe should present two offers and wait until the participant decides to press either the numerical key 1 or the numerical key 2. Now you can see why we have two rows of trial defined in the block_loop. We can now simply define the variables O1_Me, O1_You, O2_Me and O2_You and the block_loop makes sure that the O1 offer isn't always the fair or unfair offer. You can call variables defined in the block_loop by using the dollar sign followed by brackets (\$[variable]). Here is the Sketchitem how we designed it:
+# Add in a Sketchpad item, and call it "DecisionMe". The DecisionMe should present two offers and wait until the participant decides to press either the numerical key 1 or the numerical key 2. Now you can see why we have two rows of trial defined in the block_loop. We can now simply call the variables O1_Me, O1_You, O2_Me and O2_You. The block_loop makes sure that the O1 offer isn't always the fair or unfair offer. You can call variables defined in the block_loop by calling the variable name surrounded by brackets ([variable]). Here is the Sketchitem how we designed it:
 # 
 # ![image info](./images/DecisionMe.PNG)
 
@@ -107,7 +107,7 @@ display_quiz("questions/question_4.json")
 
 # #### 3: A sketchpad item that is presented for the duration that Player 1 "waits" for the response of Player 2
 # 
-# This one is easy. Just add a sketchpad that is presented for a certain duration of time, and shows Player 1 that we are waiting for the "response" of Player 2 (using a Textbox). We call it "WaitingForOther".
+# This one is easy. Just add a sketchpad that is presented for a certain duration of time (e.g. 5000ms), and shows Player 1 that we are waiting for the "response" of Player 2 (using a Textbox). We call it "WaitingForOther".
 # 
 # ![image info](./images/WaitingForOther.PNG)
 
@@ -124,7 +124,7 @@ display_quiz("questions/question_4.json")
 # 
 # Now comes a trickier part. Since we don't actually have a Player 2, we will now add some artificial intelligence to the experiment that determines Player 2's decision. Therefore, we will use the feature of OpenSesame to use Python scripts in the trial sequence. The decision of Player 2 should be based on whether the offer of Player 1 is fair or not. If it's fair, there is a high acceptance rate. If its not fair, there is a low acceptance rate.
 # 
-# First, lets make a list of the possible decisions of Player 2, and store that list in a variable called "Decision". The possible decisions are "Accept" and "Reject". You can type in the chunk below to make the list. Don't look at the solution right away, try to solve it yourself first!
+# First, lets make a list of the possible decisions of Player 2, and store that list in a variable called "Decision". The possible decisions are "Accept" and "Reject". You can type in the chunk below to make the list.
 
 # In[ ]:
 

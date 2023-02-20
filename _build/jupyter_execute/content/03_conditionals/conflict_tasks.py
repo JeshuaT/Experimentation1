@@ -629,8 +629,7 @@
 # Brysbaert and Stevens (2018) have suggested that you need at least 1,600 observations per condition to observe RT effects of around 15 ms in a within-subject design. Assume for a moment that the flanker congruency effect is that small (typically it is larger) and you want to run 10 participants in your study. How many observations do you need for each subject and each congruency level? Use the corresponding number to adapt the number of trials presented in the flanker task you just created.
 # 
 # ### Excercise 3. Stop practice block when performance is sufficient
-# 
-# Change the number of trials in the practice phase to 100. Create a script that counts the number of practice trials. Stop the practice block if at least 10 trials have been presented and the accuracy is at least 80%. Abort the experiment if this criterion is still not met after 100 trials.
+# Change the number of trials in the practice phase to 100. Create a script that counts the number of practice trials. Stop the practice block if at least 10 trials have been presented and the accuracy is at least 50%. Abort the experiment if this criterion is still not met after 100 trials. Tip: to debug your script, use lower trial numbers first.
 # 
 # ### Excercise 4. Calculate average correct reaction time
 # Manually calculate the average reaction time of all correct responses and all incorrect responses. Compare you findings to the default `avg_rt` calculated by OpenSesame by showing them in the same object (use a feedback item!) at the end of each trial.
@@ -639,15 +638,21 @@
 # Advanced level! Open the Stroop task you created during the tutorial. Adapt the correct response by using the numeric button 1, 2, 3, and 4 of the keyboard. Use python code to generate the correct response for the four colors. For even-numbered participant numbers (version 1), use the following mapping:
 # 
 # red > 1
+# 
 # green > 2
+# 
 # blue > 3
+# 
 # yellow > 4
 # 
 # For odd-numbered participant numbers (version 2), use the following mapping:
 # 
 # red > 3
+# 
 # green > 4
+# 
 # blue > 1
+# 
 # yellow > 2
 # 
 # Indicate the correct mapping in the instructions.
