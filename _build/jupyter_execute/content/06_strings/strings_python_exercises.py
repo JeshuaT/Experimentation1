@@ -9,7 +9,7 @@
 # Take the following Python code that stores a string:
 # 
 # ```
-# str = 'X-DSPAM-Confidence:0.8475'
+# text1 = 'X-DSPAM-Confidence:0.8475'
 # ```
 # 
 # Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
@@ -18,7 +18,7 @@
 # In[2]:
 
 
-str = 'X-DSPAM-Confidence:0.8475'
+text1 = 'X-DSPAM-Confidence:0.8475'
 # your code here
 
 
@@ -33,7 +33,7 @@ str = 'X-DSPAM-Confidence:0.8475'
 # In[3]:
 
 
-str = "  This is a  setece      with  a typo and   too many  spaces "
+text2 = "  This is a  setece      with  a typo and   too many  spaces "
 # your code here
 
 
