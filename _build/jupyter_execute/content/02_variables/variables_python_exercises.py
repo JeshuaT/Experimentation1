@@ -16,7 +16,7 @@
 # Hello Chuck
 # ```
 
-# In[ ]:
+# In[1]:
 
 
 #your code here
@@ -35,7 +35,7 @@
 # We won’t worry about making sure our pay has exactly two digits after the decimal place for now. If you want, you can play with the built-in Python round function to properly round the resulting pay to two decimal places.
 # 
 
-# In[ ]:
+# In[2]:
 
 
 #your code here
@@ -63,7 +63,7 @@
 # Use the Python interpreter to check your answers.
 # 
 
-# In[ ]:
+# In[3]:
 
 
 #your code here
@@ -79,7 +79,7 @@
 #  ```
 # 
 
-# In[ ]:
+# In[4]:
 
 
 #your code here
@@ -99,7 +99,7 @@
 # 
 # For the log transformation, you will need the in-built mathematics package called "math". We import math in the code below for you. To log-transform a numeric variable, you can call the **math.log(variable)** function.
 
-# In[ ]:
+# In[5]:
 
 
 #your code here
@@ -119,7 +119,7 @@ import math
 # When combining an RT of 652 ms and an ACC of 0.9449 (= 5.51% errors), the IES score is 690 ms.
 # ```
 
-# In[ ]:
+# In[6]:
 
 
 #your code here
