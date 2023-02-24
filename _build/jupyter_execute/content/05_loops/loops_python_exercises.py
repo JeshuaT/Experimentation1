@@ -17,7 +17,7 @@
 # 16 3 5.333333333333333
 # ```
 
-# In[4]:
+# In[1]:
 
 
 # your code here
@@ -36,7 +36,7 @@
 # 16 3 5.333333333333333
 # ```
 
-# In[5]:
+# In[2]:
 
 
 # your code here
@@ -46,7 +46,7 @@
 # Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.
 # 
 
-# In[6]:
+# In[3]:
 
 
 # your code here
@@ -62,10 +62,56 @@
 # print('\r','your text here',end='')
 # ```
 
-# In[7]:
+# In[4]:
 
 
 # your code here
 
 
+# ### Exercise 5. Printing a Christmas tree
 # 
+# Complete the print_tree() function below to print a Christmas tree made out of asterisks. The function takes a single parameter, height, which represents the height of the tree. Print spaces before the asterisks to center the tree.
+# 
+# Test the function with different values for the height.
+# 
+# E.g. print_tree(5) should return:
+# 
+# ```
+#     *
+#    ***
+#   *****
+#  *******
+# *********
+# ```
+# 
+# and print_tree(10) should return:
+# 
+# ```
+#          *
+#         ***
+#        *****
+#       *******
+#      *********
+#     ***********
+#    *************
+#   ***************
+#  *****************
+# *******************
+# ```
+# 
+
+# In[6]:
+
+
+def print_tree(height):
+    # Loop through the rows of the tree
+    for row in range(height):
+        # your code here
+        print("something to edit by you")
+
+
+# In[ ]:
+
+
+
+

@@ -216,3 +216,7 @@ print(num_correct)
 # ### Exercise 2. Recollect the sequence in reversed order
 # Ask participants to recollect the sequence in reversed order. Change your script so that it check whether the answer matches the sequence in reversed order.
 # 
+# ### Exercise 3. Ignore duplicates in the answer
+# If the participant provides duplicates in the answer, the number of correctly retrieved items is incorrect. Adapt your script so that duplicates in the response are not considered. Hint: google how to remove duplicate characters in a string
+# 
+# 
