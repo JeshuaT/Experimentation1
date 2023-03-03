@@ -604,6 +604,11 @@
    Exercise 3. Add an Easter Egg
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-read-files-until-you-are-done">
+   Exercise 4. Read files until you are done
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -639,6 +644,11 @@
    Exercise 3. Add an Easter Egg
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-read-files-until-you-are-done">
+   Exercise 4. Read files until you are done
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -656,8 +666,7 @@
 <div class="section" id="exercise-1-print-content-of-text-file-line-by-line">
 <h2>Exercise 1. Print content of text file line by line<a class="headerlink" href="#exercise-1-print-content-of-text-file-line-by-line" title="Permalink to this headline">¶</a></h2>
 <p>Write a program to read through a file and print the contents of the file (line by line) all in upper case. Executing the program will look as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">shout</span><span class="o">.</span><span class="n">py</span>
-<span class="n">Enter</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">-</span><span class="n">short</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">-</span><span class="n">short</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">FROM</span> <span class="n">STEPHEN</span><span class="o">.</span><span class="n">MARQUARD</span><span class="nd">@UCT</span><span class="o">.</span><span class="n">AC</span><span class="o">.</span><span class="n">ZA</span> <span class="n">SAT</span> <span class="n">JAN</span>  <span class="mi">5</span> <span class="mi">09</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span> <span class="mi">2008</span>
 <span class="n">RETURN</span><span class="o">-</span><span class="n">PATH</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">POSTMASTER</span><span class="nd">@COLLAB</span><span class="o">.</span><span class="n">SAKAIPROJECT</span><span class="o">.</span><span class="n">ORG</span><span class="o">&gt;</span>
 <span class="n">RECEIVED</span><span class="p">:</span> <span class="n">FROM</span> <span class="n">MURDER</span> <span class="p">(</span><span class="n">MAIL</span><span class="o">.</span><span class="n">UMICH</span><span class="o">.</span><span class="n">EDU</span> <span class="p">[</span><span class="mf">141.211.14.90</span><span class="p">])</span>
@@ -697,21 +706,47 @@ When you encounter a line that starts with “X-DSPAM-Confidence:” pull apart 
 </div>
 <div class="section" id="exercise-3-add-an-easter-egg">
 <h2>Exercise 3. Add an Easter Egg<a class="headerlink" href="#exercise-3-add-an-easter-egg" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes when programmers get bored or want to have a bit of fun, they add a harmless Easter Egg to their program. Modify the program that prompts the user for the file name so that it prints a funny message when the user types in the exact file name “na na boo boo”. The program should behave normally for all other files which exist and don’t exist. Here is a sample execution of the program:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">egg</span><span class="o">.</span><span class="n">py</span>
-<span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">.</span><span class="n">txt</span>
+<p>The following code was provided in the <a class="reference external" href="https://www.py4e.com/html3/07-files">material belonging to today’s python for everyone lesson</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>```
+fname = input(&#39;Enter the file name: &#39;)
+fhand = open(fname)
+count = 0
+for line in fhand:
+    if line.startswith(&#39;Subject:&#39;):
+        count = count + 1
+print(&#39;There were&#39;, count, &#39;subject lines in&#39;, fname)
+
+# Code: http://www.py4e.com/code3/search6.py
+```
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes when programmers get bored or want to have a bit of fun, they add a harmless Easter Egg to their program. Modify the code above that prompts the user for the file name so that it prints a funny message when the user types in the exact file name “na na boo boo”. The program should behave normally for all other files which exist and don’t exist. Here are three sample of the expected behavior when executing your code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">mbox</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">There</span> <span class="n">were</span> <span class="mi">1797</span> <span class="n">subject</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">mbox</span><span class="o">.</span><span class="n">txt</span>
 
-<span class="n">python</span> <span class="n">egg</span><span class="o">.</span><span class="n">py</span>
 <span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">missing</span><span class="o">.</span><span class="n">tyxt</span>
 <span class="n">File</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">opened</span><span class="p">:</span> <span class="n">missing</span><span class="o">.</span><span class="n">tyxt</span>
 
-<span class="n">python</span> <span class="n">egg</span><span class="o">.</span><span class="n">py</span>
 <span class="n">Enter</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">na</span> <span class="n">na</span> <span class="n">boo</span> <span class="n">boo</span>
 <span class="n">NA</span> <span class="n">NA</span> <span class="n">BOO</span> <span class="n">BOO</span> <span class="n">TO</span> <span class="n">YOU</span> <span class="o">-</span> <span class="n">You</span> <span class="n">have</span> <span class="n">been</span> <span class="n">punk</span><span class="s1">&#39;d!</span>
 </pre></div>
 </div>
 <p>We are not encouraging you to put Easter Eggs in your programs; this is just an exercise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-4-read-files-until-you-are-done">
+<h2>Exercise 4. Read files until you are done<a class="headerlink" href="#exercise-4-read-files-until-you-are-done" title="Permalink to this headline">¶</a></h2>
+<p>Add an outer loop to the code in exercise 3 that repeatedly prompts the user to enter a file name until they type ‘Done’ (case insensitive). Within the loop, the existing code should execute for each file name entered.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
