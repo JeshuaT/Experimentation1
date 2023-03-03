@@ -18,7 +18,7 @@
 #      SAT, 05 JAN 2008 09:14:16 -0500
 # ```
 # 
-# You can download the file [here](www.py4e.com/code3/mbox-short.txt)
+# You can download the file [here](https://www.py4e.com/code3/mbox-short.txt)
 
 # In[1]:
 
@@ -40,7 +40,7 @@
 # Enter the file name: mbox-short.txt
 # Average spam confidence: 0.750718518519
 # ```
-# Test your file on the [mbox.txt](https://www.py4e.com/code3/mbox.txt) and [mbox-short.txt](www.py4e.com/code3/mbox-short.txt) files.
+# Test your file on the [mbox.txt](https://www.py4e.com/code3/mbox.txt) and [mbox-short.txt](https://www.py4e.com/code3/mbox-short.txt) files.
 
 # In[2]:
 
