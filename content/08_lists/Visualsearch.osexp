@@ -1,0 +1,372 @@
+---
+API: 2.1
+OpenSesame: 3.3.12
+Platform: nt
+---
+set width 1024
+set uniform_coordinates yes
+set title "Visual search"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend psycho
+set round_decimals 2
+set mouse_backend psycho
+set keyboard_backend psycho
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 18
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "C:\\Users\\Gebruiker\\Documents\\Teaching_AY2223_S2\\Experimentation\\OpenSesame_Exercises\\s8_visual_search"
+set disable_garbage_collection yes
+set description "A template containing a practice and an experimental phase"
+set coordinates uniform
+set compensation 0
+set color_backend psycho
+set clock_backend psycho
+set canvas_backend psycho
+set bidi yes
+set background black
+
+define loop block_loop
+	set source_file ""
+	set source table
+	set skip 0
+	set repeat 1
+	set order random
+	set offset no
+	set item trial_sequence
+	set description "A single block of trials"
+	set cycles 18
+	set continuous no
+	set column_order ""
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 condition conjunction
+	setcycle 0 set_size 1
+	setcycle 0 target_present present
+	setcycle 1 condition feature_shape
+	setcycle 1 set_size 1
+	setcycle 1 target_present present
+	setcycle 2 condition feature_color
+	setcycle 2 set_size 1
+	setcycle 2 target_present present
+	setcycle 3 condition conjunction
+	setcycle 3 set_size 5
+	setcycle 3 target_present present
+	setcycle 4 condition feature_shape
+	setcycle 4 set_size 5
+	setcycle 4 target_present present
+	setcycle 5 condition feature_color
+	setcycle 5 set_size 5
+	setcycle 5 target_present present
+	setcycle 6 condition conjunction
+	setcycle 6 set_size 15
+	setcycle 6 target_present present
+	setcycle 7 condition feature_shape
+	setcycle 7 set_size 15
+	setcycle 7 target_present present
+	setcycle 8 condition feature_color
+	setcycle 8 set_size 15
+	setcycle 8 target_present present
+	setcycle 9 condition conjunction
+	setcycle 9 set_size 1
+	setcycle 9 target_present absent
+	setcycle 10 condition feature_shape
+	setcycle 10 set_size 1
+	setcycle 10 target_present absent
+	setcycle 11 condition feature_color
+	setcycle 11 set_size 1
+	setcycle 11 target_present absent
+	setcycle 12 condition conjunction
+	setcycle 12 set_size 5
+	setcycle 12 target_present absent
+	setcycle 13 condition feature_shape
+	setcycle 13 set_size 5
+	setcycle 13 target_present absent
+	setcycle 14 condition feature_color
+	setcycle 14 set_size 5
+	setcycle 14 target_present absent
+	setcycle 15 condition conjunction
+	setcycle 15 set_size 15
+	setcycle 15 target_present absent
+	setcycle 16 condition feature_shape
+	setcycle 16 set_size 15
+	setcycle 16 target_present absent
+	setcycle 17 condition feature_color
+	setcycle 17 set_size 15
+	setcycle 17 target_present absent
+	run trial_sequence
+
+define sequence block_sequence
+	set flush_keyboard yes
+	set description "A sequence containing a single block of trials followed by feedback to the participant"
+	run instructions always
+	run reset_feedback always
+	run block_loop always
+	run feedback always
+
+define inline_script correct_response_script
+	set description "Executes Python code"
+	set _run ""
+	___prepare__
+	if var.target_present == 'present':
+	    var.correct_response = 'right'
+	elif var.target_present == 'absent':
+	    var.correct_response = 'left'
+	else:
+	    raise Exception('target_present should be absent or present, not %s' % var.target)
+	__end__
+
+define sketchpad end_of_experiment
+	set start_response_interval no
+	set duration keypress
+	set description "A sketchpad notifying the participant that the experiment is finished"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Press any key to exit" x=0 y=0 z_index=0
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "The main sequence of the experiment"
+	run experimental_loop always
+	run end_of_experiment always
+
+define loop experimental_loop
+	set source_file ""
+	set source table
+	set skip 0
+	set repeat 1
+	set order random
+	set offset no
+	set item block_sequence
+	set description "A loop containing one or more experimental blocks"
+	set cycles 4
+	set continuous no
+	set column_order practice
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 target_shape square
+	setcycle 0 target_color yellow
+	setcycle 1 target_shape circle
+	setcycle 1 target_color yellow
+	setcycle 2 target_shape square
+	setcycle 2 target_color blue
+	setcycle 3 target_shape circle
+	setcycle 3 target_color blue
+	run block_sequence
+
+define feedback feedback
+	set reset_variables yes
+	set duration keypress
+	set description "Provides feedback to the participant"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Your average response time was [avg_rt]ms<br /><br />Your accuracy was [acc]%<br /><br />Press any key to continue" x=0 y=0 z_index=0
+
+define sketchpad fixation_dot
+	set start_response_interval no
+	set duration 500
+	set description "Displays stimuli"
+	draw fixdot color=white show_if=always style=default x=0 y=0 z_index=0
+
+define sketchpad green_dot
+	set duration 500
+	set description "Displays stimuli"
+	draw fixdot color=green show_if=always style=default x=0 y=0 z_index=0
+
+define sketchpad instructions
+	set start_response_interval no
+	set duration keypress
+	set description "A sketchpad containing the instructions for the participant"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="INSTRUCTIONS<br /><br />Search for the [target_color] [target_shape]" x=-32 y=-160 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Press the right-arrow key if you find it<br />Press the left-arrow key if you don't<br /><br />Press any key to begin" x=0 y=160 z_index=0
+	draw rect color="[target_color]" fill=1 h=120 penwidth=1 show_if="[target_shape] = square" w=120 x=-64.0 y=-64.0 z_index=0
+	draw circle color="[target_color]" fill=1 penwidth=1 r=60 show_if="[target_shape] = circle" x=0.0 y=0.0 z_index=0
+
+define keyboard_response keyboard_response
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+
+define logger logger
+	set description "Logs experimental data"
+	set auto_log yes
+
+define sketchpad red_dot
+	set duration 500
+	set description "Displays stimuli"
+	draw fixdot color=red show_if=always style=default x=0 y=0 z_index=0
+
+define reset_feedback reset_feedback
+	set description "Resets the feedback variables, such as 'avg_rt' and 'acc'"
+
+define inline_script search_display_script
+	set description "Executes Python code"
+	set _run "c.show()"
+	___prepare__
+	import random
+	
+	def draw_shape(c, x, y, color, shape):
+	
+	    """
+	    Draws a single shape.
+	
+	    Arguments:
+	    c:      A Canvas.
+	    x:      An x coordinate.
+	    y:      A y coordinate.
+	    color:  A color (yellow or blue)
+	    shape:  A shape (square or circle)
+	    """     
+	
+	    if shape == 'square':
+	        c += Rect(x=x-25, y=y-25, w=50, h=50, color=color, fill=True)
+	    elif shape == 'circle':
+	        c += Circle(x=x, y=y, r=25, color=color, fill=True)
+	    else:
+	        raise Exception('Invalid shape: %s' % shape)
+	    if color not in ['yellow', 'blue']:
+	        raise Exception('Invalid color: %s' % color)
+	
+	def draw_feature_color_distractor(c, x, y):
+	
+	    """
+	    Draws a single distractor in the feature-color condition: an object that
+	    has a different color from the target, but can have any shape.
+	
+	    Arguments:
+	    c:  A Canvas.
+	    x:  An x coordinate.
+	    y:  A y coordinate.
+	    """
+	
+	    shapes = ['circle', 'square']
+	    shape = random.choice(shapes)
+	    if var.target_color == 'yellow':
+	        color = 'blue'
+	    elif var.target_color == 'blue':
+	        color = 'yellow'
+	    else:
+	        raise Exception('Invalid target_color: %s' % var.target_color)
+	    draw_shape(c, x, y, color=color, shape=shape)
+	    
+	def draw_feature_shape_distractor(c, x, y):
+	
+	    """
+	    Draws a single distractor in the feature-shape condition: an object that
+	    has a different shape from the target, but can have any color.
+	
+	    Arguments:
+	    c:  A Canvas.
+	    x:  An x coordinate.
+	    y:  A y coordinate.
+	    """     
+	
+	    colors = ['yellow', 'blue']
+	    color = random.choice(colors)
+	    if var.target_shape == 'circle':
+	        shape = 'square'
+	    elif var.target_shape == 'square':
+	        shape = 'circle'
+	    else:
+	        raise Exception('Invalid target_shape: %s' % var.target_shape)
+	    draw_shape(c, x, y, color=color, shape=shape)
+	
+	def draw_conjunction_distractor(c, x, y):
+	
+	    """
+	    Draws a single distractor in the conjunction condition: an object that
+	    can have any shape and color, but cannot be identical to the target.
+	
+	    arguments:
+	    c:  A Canvas.
+	    x:  An x coordinate.
+	    y:  A y coordinate.
+	    """
+	
+	    conjunctions = [
+	        ('yellow', 'circle'),
+	        ('blue', 'circle'),
+	        ('yellow', 'square'),
+	        ('blue', 'square'),
+	        ]
+	    conjunctions.remove( (var.target_color, var.target_shape) )
+	    color, shape = random.choice(conjunctions)
+	    draw_shape(c, x, y, color=color, shape=shape)
+	
+	def draw_distractor(c, x, y):
+	
+	    """
+	    Draws a single distractor.
+	
+	    Arguments:
+	    c:  A Canvas.
+	    x:  An x coordinate.
+	    y:  A y coordinate.
+	    """
+	
+	    if var.condition == 'conjunction':
+	        draw_conjunction_distractor(c, x, y)
+	    elif var.condition == 'feature_shape':
+	        draw_feature_shape_distractor(c, x, y)
+	    elif var.condition == 'feature_color':
+	        draw_feature_color_distractor(c, x, y)
+	    else:
+	        raise Exception('Invalid condition: %s' % var.condition)
+	
+	def draw_target(c, x, y):
+	
+	    """
+	    Draws the target.
+	
+	    arguments:
+	    c:  A Canvas.
+	    x:  An x coordinate.
+	    y:  A y coordinate.
+	    """
+	
+	    draw_shape(c, x, y, color=var.target_color, shape=var.target_shape)
+	
+	def draw_canvas():
+	
+	    """
+	    Draws the search canvas.
+	
+	    Returns:
+	    A Canvas.
+	    """
+	
+	    c = Canvas()
+	    xy_list = xy_random(n=var.set_size, width=500, height=500, min_dist=75)
+	    if var.target_present == 'present':
+	        x, y = xy_list.pop()
+	        draw_target(c, x, y)
+	    elif var.target_present != 'absent':
+	        raise Exception(
+	            'Invalid value for target_present %s' % var.target_present)     
+	    for x, y in xy_list:
+	        draw_distractor(c, x, y)
+	    return c
+	
+	c = draw_canvas()
+	__end__
+
+define sequence trial_sequence
+	set flush_keyboard yes
+	set description "A single trial"
+	run correct_response_script always
+	run fixation_dot always
+	run search_display_script always
+	run keyboard_response always
+	run green_dot "[correct] = 1"
+	run red_dot "[correct] = 0"
+	run logger always
+
