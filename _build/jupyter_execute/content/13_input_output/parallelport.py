@@ -5,7 +5,7 @@
 
 # TODO tutorial plug-in provided by Iris Spruit SOLO? / Selin Topel
 # 
-# based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in Session 3.
+# based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in chapter 3.
 # 
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 
@@ -22,7 +22,7 @@
 get_ipython().system('pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers@develop')
 
 
-# After running this line of code, restart the OpenSesame and open the Eriksen Flanker task you programmed in Tutorial 2 of Session 3. 
+# After running this line of code, restart the OpenSesame and open the Eriksen Flanker task you programmed in Tutorial 2 of chapter 3. 
 # Alternatively, you can download the solution for the Eriksen Flanker task and open it in OpenSesame:
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 

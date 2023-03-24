@@ -3,7 +3,7 @@
 
 # # OpenSesame, Anaconda and using this website
 
-# This course makes use of several software programs and tools. In this session we will guide you through how to use the tools, and how to install the right programs. You will need all these programs in this course, so download them right away.
+# This course makes use of several software programs and tools. In this chapter we will guide you through how to use the tools, and how to install the right programs. You will need all these programs in this course, so download them right away.
 # 
 # > **Tip:** There are numerous links to other websites in this jupyter book. To navigate to one of those links without leaving this jupyter notebook, you can do *ctrl+click*. Try it out with [this link](https://www.computerhope.com/jargon/c/ctrl-click.htm)
 

@@ -633,7 +633,7 @@
 # 
 # ### Excercise 4. Calculate average correct reaction time
 # Manually calculate the average reaction time of all correct responses and all incorrect responses. Compare you findings to the default `avg_rt` calculated by OpenSesame by showing them in the same object (use a feedback item!) at the end of each trial.
-# 
+
 # ### Excercise 5. Counterbalancing: Even or odd participant numbers
 # Advanced level! Open the Stroop task you created during the tutorial. Adapt the correct response by using the numeric button 1, 2, 3, and 4 of the keyboard. Use python code to generate the correct response for the four colors. For even-numbered participant numbers (version 1), use the following mapping:
 # 
@@ -658,6 +658,8 @@
 # Indicate the correct mapping in the instructions.
 # 
 # Note: do not create two versions of the same experiment, just program the counterbalancing in one file. Do not forget to log the version number. Check whether your solution works properly.
+# 
+# When writing the script, try two different methods: 1) using the experimental variable `subject_parity` (see  https://osdoc.cogsci.nl/3.3/manual/variables/) and 2) using the modulus operator `% 2` on `subject_nr`.
 # 
 
 # # References

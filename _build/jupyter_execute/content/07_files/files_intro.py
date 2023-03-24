@@ -1,4 +1,4 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 7 - Files
+# # Chapter 7 - Files

@@ -86,7 +86,7 @@
 
 
 # ### Exercise 5. Convert reaction time
-#  Write a program which prompts the user for a certain reaction time value in milliseconds (between 1 and 2000 ms). Assume we want to apply a transformation of this value to correct for the skewed distribution of reaction time (in later sessions you will learn how to transform multiple values at once). Calculate the following two measures:
+#  Write a program which prompts the user for a certain reaction time value in milliseconds (between 1 and 2000 ms). Assume we want to apply a transformation of this value to correct for the skewed distribution of reaction time (in later chapters you will learn how to transform multiple values at once). Calculate the following two measures:
 # 
 # - Inverse RT: RTinv = -1000 / RT
 # - Logarithm of RT: RTlog = log(RT)

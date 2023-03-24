@@ -1,4 +1,4 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 10 - Dataframes
+# # Chapter 10 - Dataframes

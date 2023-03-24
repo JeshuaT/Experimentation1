@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 14 - Q&A
+# # Chapter 14 - Q&A
 
 # In[ ]:
 
