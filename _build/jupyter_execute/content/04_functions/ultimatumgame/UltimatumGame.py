@@ -39,7 +39,7 @@ display_quiz("questions/question_1.json")
 # 
 # ![image info](./images/DefaultOverview.PNG)
 
-# We will start with building the framework of our experiment. Since we want to get multiple trials for each testing session, we start with the outer most layer: the **block loop**. Insert a block loop after "experiment", and you should see the following:
+# We will start with building the framework of our experiment. Since we want to get multiple trials for each testing chapter, we start with the outer most layer: the **block loop**. Insert a block loop after "experiment", and you should see the following:
 # 
 # ![image info](./images/block_loop_empty.PNG)
 

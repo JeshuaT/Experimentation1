@@ -452,7 +452,7 @@ display_quiz("questions/question_6.json")
 # Change the layout of the questionnaire, replacing the squares with radio-buttons (e.g. a big circle with a smaller circle that can be filled or not) next to the text.
 
 # ### Exercise 5. Insert the countdown timer in the flanker task
-# Open your solution to Exercise 1 of the Eriksen flanker task tutorial (Session 3) in OpenSesame and replace the 30-seconds break between the test blocks by the animated countdown timer you created during today's python Exercise 2.
+# Open your solution to Exercise 1 of the Eriksen flanker task tutorial (chapter 3) in OpenSesame and replace the 30-seconds break between the test blocks by the animated countdown timer you created during today's python Exercise 2.
 # 
 # Note that you have to use slightly different Canvas functions in OpenSesame. Also the coordinate system is different. The `arc` function is not available in OpenSesame and as a work-around we use a solution provided on the OpenSesame forum that uses the `Pie` function from `psychopy`. The code below gives you some basic code you can adapt yourself.
 

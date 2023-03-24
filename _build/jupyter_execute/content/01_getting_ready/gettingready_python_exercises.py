@@ -60,10 +60,10 @@
 # Now, in OpenSesame create a new experiment using the Extended template. Now split the code shown above into multiple `inline_scripts`. The inline after the  `instructions` object assigns the value 43 to myvar. The inline in the `trial_sequence` only increments myvar with 1 and prints myvar. What values are printed in the OpenSesame console when you run the experiment in windowed mode? Why?
 # 
 # ### Exercise 5. Inline scripts in OpenSesame using experimental variables
-# Finally, let's convert the python variable to an OpenSesame `experimental variable` (we will learn more this in the next session, also see https://osdoc.cogsci.nl/3.3/manual/variables/).
+# Finally, let's convert the python variable to an OpenSesame `experimental variable` (we will learn more this in the next Chapter, also see https://osdoc.cogsci.nl/3.3/manual/variables/).
 # 
 # The advance of experimental variables in OpenSesame are:
-# - They can be referred to in other objects (using the [] notation, to be discussed next session);
+# - They can be referred to in other objects (using the [] notation, to be discussed next chapter);
 # - The value can be inspected during runtime using the Variable Inspector;
 # - They can be logged in the textfile via the logger object.
 # 

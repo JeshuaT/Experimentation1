@@ -1,5 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 9 - Numbers and arrays
+# # Chapter 9 - Numbers and arrays
 # 

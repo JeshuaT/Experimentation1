@@ -39,7 +39,7 @@ text2 = "  This is a  setece      with  a typo and   too many  spaces "
 
 # ### Exercise 3. Create a looping text
 # 
-# Adapt the program you wrote in the previous session to present a moving text of 40 characters long that runs like a circle from left to right: when characters reach the end they starts to appear at the beginning again.
+# Adapt the program you wrote in the previous chapter to present a moving text of 40 characters long that runs like a circle from left to right: when characters reach the end they starts to appear at the beginning again.
 # 
 # Work step by step!
 # - If you do not know where to start, assume you want to print the string "1234" and write out what should be the values (use a piece of paper!), like this sketch:

@@ -1,4 +1,4 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Session 6 - Strings
+# # Chapter 6 - Strings

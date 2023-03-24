@@ -60,7 +60,7 @@
 
 # ### Exercise 3. Grade calculation using a function
 # 
-# Rewrite the grade program from the previous session using a function called computegrade that takes a score as its parameter and returns a grade as a string.
+# Rewrite the grade program from the previous chapter using a function called computegrade that takes a score as its parameter and returns a grade as a string.
 # 
 #  Score   Grade
 # \>= 0.9     A
@@ -93,7 +93,7 @@
 
 # ### Exercise 4. Check age of your participant
 # 
-# Rewrite the check age program from the previous session using a function that takes the age and the name and returns the message as a string.
+# Rewrite the check age program from the previous chapter using a function that takes the age and the name and returns the message as a string.
 
 # In[2]:
 

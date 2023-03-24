@@ -5,7 +5,7 @@
 
 # ## Exercise 1. Loading and inspecting a dataframe
 
-# In session 7, you learned how to load in data of a Stroop task. Furthermore, in the lesson of this session you learned many things about how to use dataframes. Here we are going to implement some of the things you learned in the lesson.
+# In Chapter 7, you learned how to load in data of a Stroop task. Furthermore, in the lesson of this chapter you learned many things about how to use dataframes. Here we are going to implement some of the things you learned in the lesson.
 # 
 # The following URL contains the datafile that we will work with:
 # ```https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/data_exercises/subject-1_IC.csv```

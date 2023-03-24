@@ -290,7 +290,7 @@ sns.displot(
 
 
 # ## Exercise 3. Marking outliers
-# In the dataframes exercise from last session you made a dataframe where you identified a cut-off point for you outliers and also made a column which identified the exact trials to exclude. Import that dataframe, and make three plots:
+# In the dataframes exercise from last chapter you made a dataframe where you identified a cut-off point for you outliers and also made a column which identified the exact trials to exclude. Import that dataframe, and make three plots:
 # - A histogram plot where you mark the bars above and below the cut-off point (e.g. with red)
 # - A facet grid plot with histograms where you do the same
 # - A scatter plot where you plot the response time per condition, and mark the outlier trials (e.g. with red)

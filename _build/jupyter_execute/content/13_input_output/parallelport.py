@@ -5,7 +5,7 @@
 
 # TODO tutorial plug-in provided by Iris Spruit SOLO? / Selin Topel
 # 
-# based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in Session 3.
+# based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in chapter 3.
 # 
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 
@@ -19,28 +19,28 @@
 # In[ ]:
 
 
-get_ipython().system('pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers@develop')
+get_ipython().system('pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers')
 
 
-# After running this line of code, restart the OpenSesame and open the Eriksen Flanker task you programmed in Tutorial 2 of Session 3. 
+# After running this line of code, restart the OpenSesame and open the Eriksen Flanker task you programmed in Tutorial 2 of chapter 3. 
 # Alternatively, you can download the solution for the Eriksen Flanker task and open it in OpenSesame:
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 
 # Under "flow control", you should now also see two new objects called `markers_init` and `markers_send`. 
-# ![](images/Markers_SS.png)
+# ![](images/Markers_symbols.png)
 
 # ## Step 2. Presenting stimulus markers
 # 
 # Recall that there are four types of stimulus in this task as a result of the combination of Congruency (congruent, incongruent) and Letter (H, S): HHHHH, SSSSS, SSHSS, HHSHH. Thus, we would like to present a unique marker for each of these stimuli. 
 # 
 # To do this, we first insert a `markers_init` object at the start of the main sequence of the experiment. We keep the default settings as shown in the figure below.
-# ![](images/Markers_init_SS.png)
+# ![](images/Markers_New1.png)
 # 
 # Then we add a varible (column) called `stimmarker` in the `block_loop` and `block_loop_1`; and give unique values corresponding to each stimulus (e.g., 1, 2, 3, 4).
-# ![](images/Stimmarker_SS.png)
+# ![](images/Markers_New2.png)
 # 
 # Stimulus markers will be sent when the stimuli are presented, thus we also need to insert a `markers_send` element right after the stimulus presentation in the trial sequence (both in the practice and experimental loops). Given that the marker values are determined by the `stimmarker` variable we created, we refer to this variable in the object as the marker value. 
-# ![](images/Markers_send_SS.png)
+# ![](images/Markers_New3.png)
 
 # ## Step 3. Presenting response markers
 # 
@@ -58,7 +58,7 @@ else:
 
 
 # This in-line should be then followed by another `markers_send` item we called `Respmarker_send` where the marker value is set to the value of the `respmarkervalue` variable.
-# ![](images/Respmarkers_send_SS.png)
+# ![](images/Markers_New4.png)
 
 # ## Step 4. Presenting feedback markers
 # 
