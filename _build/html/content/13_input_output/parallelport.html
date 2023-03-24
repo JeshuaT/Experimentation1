@@ -706,7 +706,7 @@
 <p>To install the plug-in, open OpenSesame and use the following lines of code in the Python console (make sure that the console is visible by clicking on the “Show Jupyter/IPython console” icon):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers@develop
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --user git+https://github.com/solo-fsw/opensesame_plugin_markers
 </pre></div>
 </div>
 </div>
@@ -715,17 +715,17 @@
 Alternatively, you can download the solution for the Eriksen Flanker task and open it in OpenSesame:
 <a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp">https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp</a></p>
 <p>Under “flow control”, you should now also see two new objects called <code class="docutils literal notranslate"><span class="pre">markers_init</span></code> and <code class="docutils literal notranslate"><span class="pre">markers_send</span></code>.
-<img alt="" src="../../_images/Markers_SS.png" /></p>
+<img alt="" src="content/13_input_output/images/Markers_symbols.png" /></p>
 </div>
 <div class="section" id="step-2-presenting-stimulus-markers">
 <h2>Step 2. Presenting stimulus markers<a class="headerlink" href="#step-2-presenting-stimulus-markers" title="Permalink to this headline">¶</a></h2>
 <p>Recall that there are four types of stimulus in this task as a result of the combination of Congruency (congruent, incongruent) and Letter (H, S): HHHHH, SSSSS, SSHSS, HHSHH. Thus, we would like to present a unique marker for each of these stimuli.</p>
 <p>To do this, we first insert a <code class="docutils literal notranslate"><span class="pre">markers_init</span></code> object at the start of the main sequence of the experiment. We keep the default settings as shown in the figure below.
-<img alt="" src="../../_images/Markers_init_SS.png" /></p>
+<img alt="" src="../../_images/Markers_New1.png" /></p>
 <p>Then we add a varible (column) called <code class="docutils literal notranslate"><span class="pre">stimmarker</span></code> in the <code class="docutils literal notranslate"><span class="pre">block_loop</span></code> and <code class="docutils literal notranslate"><span class="pre">block_loop_1</span></code>; and give unique values corresponding to each stimulus (e.g., 1, 2, 3, 4).
-<img alt="" src="../../_images/Stimmarker_SS.png" /></p>
+<img alt="" src="../../_images/Markers_New2.png" /></p>
 <p>Stimulus markers will be sent when the stimuli are presented, thus we also need to insert a <code class="docutils literal notranslate"><span class="pre">markers_send</span></code> element right after the stimulus presentation in the trial sequence (both in the practice and experimental loops). Given that the marker values are determined by the <code class="docutils literal notranslate"><span class="pre">stimmarker</span></code> variable we created, we refer to this variable in the object as the marker value.
-<img alt="" src="../../_images/Markers_send_SS.png" /></p>
+<img alt="" src="../../_images/Markers_New3.png" /></p>
 </div>
 <div class="section" id="step-3-presenting-response-markers">
 <h2>Step 3. Presenting response markers<a class="headerlink" href="#step-3-presenting-response-markers" title="Permalink to this headline">¶</a></h2>
@@ -742,7 +742,7 @@ Alternatively, you can download the solution for the Eriksen Flanker task and op
 </div>
 </div>
 <p>This in-line should be then followed by another <code class="docutils literal notranslate"><span class="pre">markers_send</span></code> item we called <code class="docutils literal notranslate"><span class="pre">Respmarker_send</span></code> where the marker value is set to the value of the <code class="docutils literal notranslate"><span class="pre">respmarkervalue</span></code> variable.
-<img alt="" src="../../_images/Respmarkers_send_SS.png" /></p>
+<img alt="" src="../../_images/Markers_New4.png" /></p>
 </div>
 <div class="section" id="step-4-presenting-feedback-markers">
 <h2>Step 4. Presenting feedback markers<a class="headerlink" href="#step-4-presenting-feedback-markers" title="Permalink to this headline">¶</a></h2>
