@@ -363,6 +363,7 @@
 # ### Recreating the Go-NoGo task
 # 
 # Dedandt et al. (2017) were interested in comparing smokers and non-smokers on their ability to inhibit a response. They were also interested if different backgrounds would influence the smokers’ ability to inhibit a response. Therefore, three different backgrounds were used: a smoking cue, a non-smoking cue, and a neutral cue. If we look in the method section of Dedandt et al. (2017), there is a task diagram and a description of the task. We will go through the design of each trial, and how the whole task is structured.
+
 # 
 # ### What is the structure of one trial?
 # 
@@ -383,12 +384,14 @@
 # 
 # To start this task, we will use the extended template to create the general structure of the experiment. Click on Extended template in the Overview window. Begin by changing the title of the experiment to “Smoking Go-NoGo” by clicking on the blue main title. The resolution will need changing to your monitor’s dimensions, and the default text size should be 32 px. Permanently delete the experimental\_loop so we can change the number of trials later without having to change all the blocks.
 # 
+
 # ### Adding images to the file pool
 # 
-# This task will use images as the background in order to manipulate the type of cues the participant is viewing. If we want to use images in OpenSesame, we need to make them accessible. To do this, we need to add them to the file pool ![](images/image66.png), and click the small green add symbol. This will allow you to browse your computer and select the files. When you have added all four images, the file pool should look like this:
+# This task will use images (these can be downloaded [here](https://osf.io/awjcn)) as the background in order to manipulate the type of cues the participant is viewing. If we want to use images in OpenSesame, we need to make them accessible. To do this, we need to add them to the file pool ![](images/image66.png), and click the small green add symbol. This will allow you to browse your computer and select the files. When you have added all four images, the file pool should look like this:
 # 
 # ![](images/image38.png)
 # 
+
 # ### Creating the background screen
 # 
 # We will create a single trial in trial\_sequence using three different components. The first component will be a blank background and we can rename sketchpad to background. The start of each trial is just the background which is presented for 500ms. For each block, the background will be an image we added to the file pool or a plain black screen. This means we need to insert an image ![](images/image56.png)element into the centre of the screen at coordinate 0,0. When you click where you want the image, you will be prompted to select an image from the file pool. Select any image as we will be changing it to a variable later.
