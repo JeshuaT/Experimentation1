@@ -1,0 +1,144 @@
+---
+API: 2.1
+OpenSesame: 3.3.12
+Platform: nt
+---
+set width 1024
+set uniform_coordinates yes
+set title "Stroop task"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend psycho
+set round_decimals 2
+set mouse_backend psycho
+set keyboard_backend psycho
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 32
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "C:\\Users\\Gebruiker\\Documents\\Teaching_AY2223_S2\\Experimentation\\OpenSesame_Exercises\\s3_stroop_flanker_gng\\stroop"
+set disable_garbage_collection yes
+set description "The main experiment item"
+set coordinates uniform
+set compensation 0
+set color_backend psycho
+set clock_backend psycho
+set canvas_backend psycho
+set background black
+
+define sketchpad blank
+	set duration 200
+	set description "Displays stimuli"
+
+define loop block_loop
+	set source_file ""
+	set source table
+	set repeat 4
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 8
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 word red
+	setcycle 0 colour blue
+	setcycle 0 congruent 0
+	setcycle 0 correct_resp b
+	setcycle 1 word red
+	setcycle 1 colour red
+	setcycle 1 congruent 1
+	setcycle 1 correct_resp r
+	setcycle 2 word blue
+	setcycle 2 colour red
+	setcycle 2 congruent 0
+	setcycle 2 correct_resp r
+	setcycle 3 word blue
+	setcycle 3 colour blue
+	setcycle 3 congruent 1
+	setcycle 3 correct_resp b
+	setcycle 4 word yellow
+	setcycle 4 colour yellow
+	setcycle 4 congruent 1
+	setcycle 4 correct_resp y
+	setcycle 5 word yellow
+	setcycle 5 colour green
+	setcycle 5 congruent 0
+	setcycle 5 correct_resp g
+	setcycle 6 word green
+	setcycle 6 colour yellow
+	setcycle 6 congruent 0
+	setcycle 6 correct_resp y
+	setcycle 7 word green
+	setcycle 7 colour green
+	setcycle 7 congruent 1
+	setcycle 7 correct_resp g
+	run trial_sequence
+
+define sketchpad end_experiment
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="The experiment has now finished. Press any key to exit." x=0 y=0 z_index=0
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run welcome always
+	run instructions always
+	run block_loop always
+	run end_experiment always
+
+define sketchpad fixation
+	set duration 500
+	set description "Displays stimuli"
+	draw fixdot color=white show_if=always style=default x=0 y=0 z_index=0
+
+define sketchpad instructions
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=yes font_family=mono font_italic=no font_size=32 html=yes show_if=always text="Instructions:" x=0 y=-288 z_index=0
+	draw textline center=1 color=white font_bold=yes font_family=mono font_italic=no font_size=25 html=yes show_if=always text="In this task, you have to identify <br />the color of the font of the word presented.<br /><br />Press the following buttons <br />that correspond to the following colors:<br /><br />'r' for red<br /><br />'b' for blue<br /><br />'g' for green<br /><br />'y' for yellow<br /><br />Respond as fast and as accurate as possible.<br /><br />Press any key to start the task." x=0 y=32 z_index=0
+
+define keyboard_response keyboard_response
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set correct_response "[correct_resp]"
+	set allowed_responses "g;r;b;y"
+
+define logger logger
+	set description "Logs experimental data"
+	set auto_log yes
+
+define sequence trial_sequence
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run fixation always
+	run word always
+	run keyboard_response always
+	run blank always
+	run logger always
+
+define sketchpad welcome
+	set start_response_interval no
+	set reset_variables no
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="Welcome to the experiment!<br /><br />Press any key to begin." x=0 y=0 z_index=0
+
+define sketchpad word
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color="[colour]" font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="[word]" x=0 y=0 z_index=0
+

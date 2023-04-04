@@ -15,7 +15,7 @@
 #     print("Nice, a real 90s kid")
 # ```
 # 
-# Save the script as "age_judgement.py". Then, run the script either by pressing F5 or clicking on the green arrow with "run script". Type in your age. Do you agree with my judgements? If not, change the age and the response to the age.
+# Save the script as "age_judgement.py". Then, run the script either by pressing F5 or clicking on the green arrow with "run script". Type in your age. Do you agree with my judgements? If not, change the age and the response to the age!
 
 # > **Note:** Some of the exercises below are adapted from the [Python for Everyone Course](https://www.py4e.com/html3/01-intro) by Charles R. Severance licensed under Creative Commons Attribution 3.0
 # 
