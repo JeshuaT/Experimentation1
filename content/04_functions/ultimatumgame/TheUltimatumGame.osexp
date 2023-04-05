@@ -78,12 +78,28 @@ define sketchpad DecisionMe_feedback2
 	draw rect color=white fill=1 h=64 penwidth=5 show_if=always w=500 x=-256 y=-256 z_index=0
 	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Please choose your offer (press key 1 or 2)" x=0 y=-224 z_index=0
 
+define inline_script JitteredWaitingTime
+	set description "Executes Python code"
+	set _run ""
+	___prepare__
+	import random
+	
+	var.jitteredWaiting = random.randint(2500, 10000)
+	print(var.jitteredWaiting)
+	__end__
+
 define logger LogTrials
 	set description "Logs experimental data"
 	set auto_log yes
 
+define sketchpad NoResponse
+	set duration 3000
+	set description RejectOffer
+	draw rect color=grey fill=1 h=192 penwidth=1 show_if=always w=512 x=-256 y=-96 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Please respond within the time-limit<br />of 2 seconds. " x=0 y=0 z_index=0
+
 define keyboard_response OfferChoice
-	set timeout infinite
+	set timeout 2000
 	set flush yes
 	set event_type keypress
 	set duration keypress
@@ -95,8 +111,12 @@ define inline_script OtherDecision
 	___run__
 	if var.response == var.Fair_Offer:
 	    var.choice = choices(decision, weights=(80, 20), k=1)
+	elif var.response == "None":
+	    var.choice = "None"
 	else:
 	    var.choice = choices(decision, weights=(25,75), k=1)
+	
+	print(var.choice)
 	__end__
 	___prepare__
 	from random import choices
@@ -113,7 +133,7 @@ define sketchpad RejectOffer
 define sketchpad WaitingForOther
 	set start_response_interval no
 	set reset_variables no
-	set duration 4500
+	set duration "[jitteredWaiting]"
 	set description "Displays stimuli"
 	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Waiting for the response from the other player" x=0 y=0 z_index=0
 
@@ -160,10 +180,12 @@ define sequence trial_sequence
 	run OfferChoice always
 	run DecisionMe_feedback1 "[response] = 1"
 	run DecisionMe_feedback2 "[response] = 2"
-	run WaitingForOther always
 	run OtherDecision always
+	run JitteredWaitingTime always
+	run WaitingForOther "[choice] != 'None'"
 	run AcceptOffer "[choice] = ['Accept']"
 	run RejectOffer "[choice] = ['Reject']"
+	run NoResponse "[choice] = 'None'"
 	run LogTrials always
 
 define sketchpad welcome
