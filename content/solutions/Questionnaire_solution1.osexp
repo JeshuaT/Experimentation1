@@ -1,0 +1,1002 @@
+---
+API: 2.1
+OpenSesame: 3.3.10
+Platform: nt
+---
+set width 1024
+set uniform_coordinates yes
+set title "Form template"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set round_decimals 2
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground black
+set font_underline no
+set font_size 24
+set font_italic no
+set font_family sans
+set font_bold no
+set experiment_path "C:/Users/steenbergenhvan1/surfdrive/Virtual_P/My Documents/Teaching/2022-2023/Experimentation I nw style/Exp1Docs_Shared/12_Ques"
+set disable_garbage_collection yes
+set description "A simple template for form-based questionnaires"
+set coordinates relative
+set compensation 0
+set canvas_backend legacy
+set bidi yes
+set background white
+
+define loop AllQuestionnaires
+	set source table
+	set repeat 0
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 55
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 ItID IPIP50_Hd1
+	setcycle 0 ItemDescription "Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence."
+	setcycle 0 o01 ""
+	setcycle 0 o02 ""
+	setcycle 0 o03 ""
+	setcycle 0 o04 ""
+	setcycle 0 o05 ""
+	setcycle 0 o06 ""
+	setcycle 0 o07 ""
+	setcycle 0 o08 ""
+	setcycle 0 o09 ""
+	setcycle 0 PreSelection 0
+	setcycle 0 Comment 0
+	setcycle 1 ItID IPIP50_It01
+	setcycle 1 ItemDescription "1. Am the life of the party."
+	setcycle 1 o01 ""
+	setcycle 1 o02 ""
+	setcycle 1 o03 "Very Inaccurate"
+	setcycle 1 o04 "Moderately Inaccurate"
+	setcycle 1 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 1 o06 "Moderately Accurate"
+	setcycle 1 o07 "Very Accurate"
+	setcycle 1 o08 ""
+	setcycle 1 o09 ""
+	setcycle 1 PreSelection 0
+	setcycle 1 Comment 1
+	setcycle 2 ItID IPIP50_It02
+	setcycle 2 ItemDescription "2. Feel little concern for others."
+	setcycle 2 o01 ""
+	setcycle 2 o02 ""
+	setcycle 2 o03 "Very Inaccurate"
+	setcycle 2 o04 "Moderately Inaccurate"
+	setcycle 2 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 2 o06 "Moderately Accurate"
+	setcycle 2 o07 "Very Accurate"
+	setcycle 2 o08 ""
+	setcycle 2 o09 ""
+	setcycle 2 PreSelection 0
+	setcycle 2 Comment 2
+	setcycle 3 ItID IPIP50_It03
+	setcycle 3 ItemDescription "3. Am always prepared."
+	setcycle 3 o01 ""
+	setcycle 3 o02 ""
+	setcycle 3 o03 "Very Inaccurate"
+	setcycle 3 o04 "Moderately Inaccurate"
+	setcycle 3 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 3 o06 "Moderately Accurate"
+	setcycle 3 o07 "Very Accurate"
+	setcycle 3 o08 ""
+	setcycle 3 o09 ""
+	setcycle 3 PreSelection 0
+	setcycle 3 Comment 3
+	setcycle 4 ItID IPIP50_It04
+	setcycle 4 ItemDescription "4. Get stressed out easily."
+	setcycle 4 o01 ""
+	setcycle 4 o02 ""
+	setcycle 4 o03 "Very Inaccurate"
+	setcycle 4 o04 "Moderately Inaccurate"
+	setcycle 4 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 4 o06 "Moderately Accurate"
+	setcycle 4 o07 "Very Accurate"
+	setcycle 4 o08 ""
+	setcycle 4 o09 ""
+	setcycle 4 PreSelection 0
+	setcycle 4 Comment 4
+	setcycle 5 ItID IPIP50_It05
+	setcycle 5 ItemDescription "5. Have a rich vocabulary."
+	setcycle 5 o01 ""
+	setcycle 5 o02 ""
+	setcycle 5 o03 "Very Inaccurate"
+	setcycle 5 o04 "Moderately Inaccurate"
+	setcycle 5 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 5 o06 "Moderately Accurate"
+	setcycle 5 o07 "Very Accurate"
+	setcycle 5 o08 ""
+	setcycle 5 o09 ""
+	setcycle 5 PreSelection 0
+	setcycle 5 Comment 5
+	setcycle 6 ItID IPIP50_It06
+	setcycle 6 ItemDescription "6. Don't talk a lot."
+	setcycle 6 o01 ""
+	setcycle 6 o02 ""
+	setcycle 6 o03 "Very Inaccurate"
+	setcycle 6 o04 "Moderately Inaccurate"
+	setcycle 6 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 6 o06 "Moderately Accurate"
+	setcycle 6 o07 "Very Accurate"
+	setcycle 6 o08 ""
+	setcycle 6 o09 ""
+	setcycle 6 PreSelection 0
+	setcycle 6 Comment 6
+	setcycle 7 ItID IPIP50_It07
+	setcycle 7 ItemDescription "7. Am interested in people."
+	setcycle 7 o01 ""
+	setcycle 7 o02 ""
+	setcycle 7 o03 "Very Inaccurate"
+	setcycle 7 o04 "Moderately Inaccurate"
+	setcycle 7 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 7 o06 "Moderately Accurate"
+	setcycle 7 o07 "Very Accurate"
+	setcycle 7 o08 ""
+	setcycle 7 o09 ""
+	setcycle 7 PreSelection 0
+	setcycle 7 Comment 7
+	setcycle 8 ItID IPIP50_It08
+	setcycle 8 ItemDescription "8. Leave my belongings around."
+	setcycle 8 o01 ""
+	setcycle 8 o02 ""
+	setcycle 8 o03 "Very Inaccurate"
+	setcycle 8 o04 "Moderately Inaccurate"
+	setcycle 8 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 8 o06 "Moderately Accurate"
+	setcycle 8 o07 "Very Accurate"
+	setcycle 8 o08 ""
+	setcycle 8 o09 ""
+	setcycle 8 PreSelection 0
+	setcycle 8 Comment 8
+	setcycle 9 ItID IPIP50_It09
+	setcycle 9 ItemDescription "9. Am relaxed most of the time."
+	setcycle 9 o01 ""
+	setcycle 9 o02 ""
+	setcycle 9 o03 "Very Inaccurate"
+	setcycle 9 o04 "Moderately Inaccurate"
+	setcycle 9 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 9 o06 "Moderately Accurate"
+	setcycle 9 o07 "Very Accurate"
+	setcycle 9 o08 ""
+	setcycle 9 o09 ""
+	setcycle 9 PreSelection 0
+	setcycle 9 Comment 9
+	setcycle 10 ItID IPIP50_It10
+	setcycle 10 ItemDescription "10. Have difficulty understanding abstract ideas."
+	setcycle 10 o01 ""
+	setcycle 10 o02 ""
+	setcycle 10 o03 "Very Inaccurate"
+	setcycle 10 o04 "Moderately Inaccurate"
+	setcycle 10 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 10 o06 "Moderately Accurate"
+	setcycle 10 o07 "Very Accurate"
+	setcycle 10 o08 ""
+	setcycle 10 o09 ""
+	setcycle 10 PreSelection 0
+	setcycle 10 Comment 10
+	setcycle 11 ItID IPIP50_Hd1
+	setcycle 11 ItemDescription "Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence."
+	setcycle 11 o01 ""
+	setcycle 11 o02 ""
+	setcycle 11 o03 ""
+	setcycle 11 o04 ""
+	setcycle 11 o05 ""
+	setcycle 11 o06 ""
+	setcycle 11 o07 ""
+	setcycle 11 o08 ""
+	setcycle 11 o09 ""
+	setcycle 11 PreSelection 0
+	setcycle 11 Comment 0
+	setcycle 12 ItID IPIP50_It11
+	setcycle 12 ItemDescription "11. Feel comfortable around people."
+	setcycle 12 o01 ""
+	setcycle 12 o02 ""
+	setcycle 12 o03 "Very Inaccurate"
+	setcycle 12 o04 "Moderately Inaccurate"
+	setcycle 12 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 12 o06 "Moderately Accurate"
+	setcycle 12 o07 "Very Accurate"
+	setcycle 12 o08 ""
+	setcycle 12 o09 ""
+	setcycle 12 PreSelection 0
+	setcycle 12 Comment 1
+	setcycle 13 ItID IPIP50_It12
+	setcycle 13 ItemDescription "12. Insult people."
+	setcycle 13 o01 ""
+	setcycle 13 o02 ""
+	setcycle 13 o03 "Very Inaccurate"
+	setcycle 13 o04 "Moderately Inaccurate"
+	setcycle 13 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 13 o06 "Moderately Accurate"
+	setcycle 13 o07 "Very Accurate"
+	setcycle 13 o08 ""
+	setcycle 13 o09 ""
+	setcycle 13 PreSelection 0
+	setcycle 13 Comment 2
+	setcycle 14 ItID IPIP50_It13
+	setcycle 14 ItemDescription "13. Pay attention to details."
+	setcycle 14 o01 ""
+	setcycle 14 o02 ""
+	setcycle 14 o03 "Very Inaccurate"
+	setcycle 14 o04 "Moderately Inaccurate"
+	setcycle 14 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 14 o06 "Moderately Accurate"
+	setcycle 14 o07 "Very Accurate"
+	setcycle 14 o08 ""
+	setcycle 14 o09 ""
+	setcycle 14 PreSelection 0
+	setcycle 14 Comment 3
+	setcycle 15 ItID IPIP50_It14
+	setcycle 15 ItemDescription "14. Worry about things."
+	setcycle 15 o01 ""
+	setcycle 15 o02 ""
+	setcycle 15 o03 "Very Inaccurate"
+	setcycle 15 o04 "Moderately Inaccurate"
+	setcycle 15 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 15 o06 "Moderately Accurate"
+	setcycle 15 o07 "Very Accurate"
+	setcycle 15 o08 ""
+	setcycle 15 o09 ""
+	setcycle 15 PreSelection 0
+	setcycle 15 Comment 4
+	setcycle 16 ItID IPIP50_It15
+	setcycle 16 ItemDescription "15. Have a vivid imagination."
+	setcycle 16 o01 ""
+	setcycle 16 o02 ""
+	setcycle 16 o03 "Very Inaccurate"
+	setcycle 16 o04 "Moderately Inaccurate"
+	setcycle 16 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 16 o06 "Moderately Accurate"
+	setcycle 16 o07 "Very Accurate"
+	setcycle 16 o08 ""
+	setcycle 16 o09 ""
+	setcycle 16 PreSelection 0
+	setcycle 16 Comment 5
+	setcycle 17 ItID IPIP50_It16
+	setcycle 17 ItemDescription "16. Keep in the background."
+	setcycle 17 o01 ""
+	setcycle 17 o02 ""
+	setcycle 17 o03 "Very Inaccurate"
+	setcycle 17 o04 "Moderately Inaccurate"
+	setcycle 17 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 17 o06 "Moderately Accurate"
+	setcycle 17 o07 "Very Accurate"
+	setcycle 17 o08 ""
+	setcycle 17 o09 ""
+	setcycle 17 PreSelection 0
+	setcycle 17 Comment 6
+	setcycle 18 ItID IPIP50_It17
+	setcycle 18 ItemDescription "17. Sympathize with others' feelings."
+	setcycle 18 o01 ""
+	setcycle 18 o02 ""
+	setcycle 18 o03 "Very Inaccurate"
+	setcycle 18 o04 "Moderately Inaccurate"
+	setcycle 18 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 18 o06 "Moderately Accurate"
+	setcycle 18 o07 "Very Accurate"
+	setcycle 18 o08 ""
+	setcycle 18 o09 ""
+	setcycle 18 PreSelection 0
+	setcycle 18 Comment 7
+	setcycle 19 ItID IPIP50_It18
+	setcycle 19 ItemDescription "18. Make a mess of things."
+	setcycle 19 o01 ""
+	setcycle 19 o02 ""
+	setcycle 19 o03 "Very Inaccurate"
+	setcycle 19 o04 "Moderately Inaccurate"
+	setcycle 19 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 19 o06 "Moderately Accurate"
+	setcycle 19 o07 "Very Accurate"
+	setcycle 19 o08 ""
+	setcycle 19 o09 ""
+	setcycle 19 PreSelection 0
+	setcycle 19 Comment 8
+	setcycle 20 ItID IPIP50_It19
+	setcycle 20 ItemDescription "19. Seldom feel blue."
+	setcycle 20 o01 ""
+	setcycle 20 o02 ""
+	setcycle 20 o03 "Very Inaccurate"
+	setcycle 20 o04 "Moderately Inaccurate"
+	setcycle 20 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 20 o06 "Moderately Accurate"
+	setcycle 20 o07 "Very Accurate"
+	setcycle 20 o08 ""
+	setcycle 20 o09 ""
+	setcycle 20 PreSelection 0
+	setcycle 20 Comment 9
+	setcycle 21 ItID IPIP50_It20
+	setcycle 21 ItemDescription "20. Am not interested in abstract ideas."
+	setcycle 21 o01 ""
+	setcycle 21 o02 ""
+	setcycle 21 o03 "Very Inaccurate"
+	setcycle 21 o04 "Moderately Inaccurate"
+	setcycle 21 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 21 o06 "Moderately Accurate"
+	setcycle 21 o07 "Very Accurate"
+	setcycle 21 o08 ""
+	setcycle 21 o09 ""
+	setcycle 21 PreSelection 0
+	setcycle 21 Comment 10
+	setcycle 22 ItID IPIP50_Hd1
+	setcycle 22 ItemDescription "Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence."
+	setcycle 22 o01 ""
+	setcycle 22 o02 ""
+	setcycle 22 o03 ""
+	setcycle 22 o04 ""
+	setcycle 22 o05 ""
+	setcycle 22 o06 ""
+	setcycle 22 o07 ""
+	setcycle 22 o08 ""
+	setcycle 22 o09 ""
+	setcycle 22 PreSelection 0
+	setcycle 22 Comment 0
+	setcycle 23 ItID IPIP50_It21
+	setcycle 23 ItemDescription "21. Start conversations."
+	setcycle 23 o01 ""
+	setcycle 23 o02 ""
+	setcycle 23 o03 "Very Inaccurate"
+	setcycle 23 o04 "Moderately Inaccurate"
+	setcycle 23 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 23 o06 "Moderately Accurate"
+	setcycle 23 o07 "Very Accurate"
+	setcycle 23 o08 ""
+	setcycle 23 o09 ""
+	setcycle 23 PreSelection 0
+	setcycle 23 Comment 1
+	setcycle 24 ItID IPIP50_It22
+	setcycle 24 ItemDescription "22. Am not interested in other people's problems."
+	setcycle 24 o01 ""
+	setcycle 24 o02 ""
+	setcycle 24 o03 "Very Inaccurate"
+	setcycle 24 o04 "Moderately Inaccurate"
+	setcycle 24 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 24 o06 "Moderately Accurate"
+	setcycle 24 o07 "Very Accurate"
+	setcycle 24 o08 ""
+	setcycle 24 o09 ""
+	setcycle 24 PreSelection 0
+	setcycle 24 Comment 2
+	setcycle 25 ItID IPIP50_It23
+	setcycle 25 ItemDescription "23. Get chores done right away."
+	setcycle 25 o01 ""
+	setcycle 25 o02 ""
+	setcycle 25 o03 "Very Inaccurate"
+	setcycle 25 o04 "Moderately Inaccurate"
+	setcycle 25 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 25 o06 "Moderately Accurate"
+	setcycle 25 o07 "Very Accurate"
+	setcycle 25 o08 ""
+	setcycle 25 o09 ""
+	setcycle 25 PreSelection 0
+	setcycle 25 Comment 3
+	setcycle 26 ItID IPIP50_It24
+	setcycle 26 ItemDescription "24. Am easily disturbed."
+	setcycle 26 o01 ""
+	setcycle 26 o02 ""
+	setcycle 26 o03 "Very Inaccurate"
+	setcycle 26 o04 "Moderately Inaccurate"
+	setcycle 26 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 26 o06 "Moderately Accurate"
+	setcycle 26 o07 "Very Accurate"
+	setcycle 26 o08 ""
+	setcycle 26 o09 ""
+	setcycle 26 PreSelection 0
+	setcycle 26 Comment 4
+	setcycle 27 ItID IPIP50_It25
+	setcycle 27 ItemDescription "25. Have excellent ideas."
+	setcycle 27 o01 ""
+	setcycle 27 o02 ""
+	setcycle 27 o03 "Very Inaccurate"
+	setcycle 27 o04 "Moderately Inaccurate"
+	setcycle 27 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 27 o06 "Moderately Accurate"
+	setcycle 27 o07 "Very Accurate"
+	setcycle 27 o08 ""
+	setcycle 27 o09 ""
+	setcycle 27 PreSelection 0
+	setcycle 27 Comment 5
+	setcycle 28 ItID IPIP50_It26
+	setcycle 28 ItemDescription "26. Have little to say."
+	setcycle 28 o01 ""
+	setcycle 28 o02 ""
+	setcycle 28 o03 "Very Inaccurate"
+	setcycle 28 o04 "Moderately Inaccurate"
+	setcycle 28 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 28 o06 "Moderately Accurate"
+	setcycle 28 o07 "Very Accurate"
+	setcycle 28 o08 ""
+	setcycle 28 o09 ""
+	setcycle 28 PreSelection 0
+	setcycle 28 Comment 6
+	setcycle 29 ItID IPIP50_It27
+	setcycle 29 ItemDescription "27. Have a soft heart."
+	setcycle 29 o01 ""
+	setcycle 29 o02 ""
+	setcycle 29 o03 "Very Inaccurate"
+	setcycle 29 o04 "Moderately Inaccurate"
+	setcycle 29 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 29 o06 "Moderately Accurate"
+	setcycle 29 o07 "Very Accurate"
+	setcycle 29 o08 ""
+	setcycle 29 o09 ""
+	setcycle 29 PreSelection 0
+	setcycle 29 Comment 7
+	setcycle 30 ItID IPIP50_It28
+	setcycle 30 ItemDescription "28. Often forget to put things back in their proper place."
+	setcycle 30 o01 ""
+	setcycle 30 o02 ""
+	setcycle 30 o03 "Very Inaccurate"
+	setcycle 30 o04 "Moderately Inaccurate"
+	setcycle 30 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 30 o06 "Moderately Accurate"
+	setcycle 30 o07 "Very Accurate"
+	setcycle 30 o08 ""
+	setcycle 30 o09 ""
+	setcycle 30 PreSelection 0
+	setcycle 30 Comment 8
+	setcycle 31 ItID IPIP50_It29
+	setcycle 31 ItemDescription "29. Get upset easily."
+	setcycle 31 o01 ""
+	setcycle 31 o02 ""
+	setcycle 31 o03 "Very Inaccurate"
+	setcycle 31 o04 "Moderately Inaccurate"
+	setcycle 31 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 31 o06 "Moderately Accurate"
+	setcycle 31 o07 "Very Accurate"
+	setcycle 31 o08 ""
+	setcycle 31 o09 ""
+	setcycle 31 PreSelection 0
+	setcycle 31 Comment 9
+	setcycle 32 ItID IPIP50_It30
+	setcycle 32 ItemDescription "30. Do not have a good imagination."
+	setcycle 32 o01 ""
+	setcycle 32 o02 ""
+	setcycle 32 o03 "Very Inaccurate"
+	setcycle 32 o04 "Moderately Inaccurate"
+	setcycle 32 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 32 o06 "Moderately Accurate"
+	setcycle 32 o07 "Very Accurate"
+	setcycle 32 o08 ""
+	setcycle 32 o09 ""
+	setcycle 32 PreSelection 0
+	setcycle 32 Comment 10
+	setcycle 33 ItID IPIP50_Hd1
+	setcycle 33 ItemDescription "Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence."
+	setcycle 33 o01 ""
+	setcycle 33 o02 ""
+	setcycle 33 o03 ""
+	setcycle 33 o04 ""
+	setcycle 33 o05 ""
+	setcycle 33 o06 ""
+	setcycle 33 o07 ""
+	setcycle 33 o08 ""
+	setcycle 33 o09 ""
+	setcycle 33 PreSelection 0
+	setcycle 33 Comment 0
+	setcycle 34 ItID IPIP50_It31
+	setcycle 34 ItemDescription "31. Talk to a lot of different people at parties."
+	setcycle 34 o01 ""
+	setcycle 34 o02 ""
+	setcycle 34 o03 "Very Inaccurate"
+	setcycle 34 o04 "Moderately Inaccurate"
+	setcycle 34 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 34 o06 "Moderately Accurate"
+	setcycle 34 o07 "Very Accurate"
+	setcycle 34 o08 ""
+	setcycle 34 o09 ""
+	setcycle 34 PreSelection 0
+	setcycle 34 Comment 1
+	setcycle 35 ItID IPIP50_It32
+	setcycle 35 ItemDescription "32. Am not really interested in others."
+	setcycle 35 o01 ""
+	setcycle 35 o02 ""
+	setcycle 35 o03 "Very Inaccurate"
+	setcycle 35 o04 "Moderately Inaccurate"
+	setcycle 35 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 35 o06 "Moderately Accurate"
+	setcycle 35 o07 "Very Accurate"
+	setcycle 35 o08 ""
+	setcycle 35 o09 ""
+	setcycle 35 PreSelection 0
+	setcycle 35 Comment 2
+	setcycle 36 ItID IPIP50_It33
+	setcycle 36 ItemDescription "33. Like order."
+	setcycle 36 o01 ""
+	setcycle 36 o02 ""
+	setcycle 36 o03 "Very Inaccurate"
+	setcycle 36 o04 "Moderately Inaccurate"
+	setcycle 36 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 36 o06 "Moderately Accurate"
+	setcycle 36 o07 "Very Accurate"
+	setcycle 36 o08 ""
+	setcycle 36 o09 ""
+	setcycle 36 PreSelection 0
+	setcycle 36 Comment 3
+	setcycle 37 ItID IPIP50_It34
+	setcycle 37 ItemDescription "34. Change my mood a lot."
+	setcycle 37 o01 ""
+	setcycle 37 o02 ""
+	setcycle 37 o03 "Very Inaccurate"
+	setcycle 37 o04 "Moderately Inaccurate"
+	setcycle 37 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 37 o06 "Moderately Accurate"
+	setcycle 37 o07 "Very Accurate"
+	setcycle 37 o08 ""
+	setcycle 37 o09 ""
+	setcycle 37 PreSelection 0
+	setcycle 37 Comment 4
+	setcycle 38 ItID IPIP50_It35
+	setcycle 38 ItemDescription "35. Am quick to understand things."
+	setcycle 38 o01 ""
+	setcycle 38 o02 ""
+	setcycle 38 o03 "Very Inaccurate"
+	setcycle 38 o04 "Moderately Inaccurate"
+	setcycle 38 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 38 o06 "Moderately Accurate"
+	setcycle 38 o07 "Very Accurate"
+	setcycle 38 o08 ""
+	setcycle 38 o09 ""
+	setcycle 38 PreSelection 0
+	setcycle 38 Comment 5
+	setcycle 39 ItID IPIP50_It36
+	setcycle 39 ItemDescription "36. Don't like to draw attention to myself."
+	setcycle 39 o01 ""
+	setcycle 39 o02 ""
+	setcycle 39 o03 "Very Inaccurate"
+	setcycle 39 o04 "Moderately Inaccurate"
+	setcycle 39 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 39 o06 "Moderately Accurate"
+	setcycle 39 o07 "Very Accurate"
+	setcycle 39 o08 ""
+	setcycle 39 o09 ""
+	setcycle 39 PreSelection 0
+	setcycle 39 Comment 6
+	setcycle 40 ItID IPIP50_It37
+	setcycle 40 ItemDescription "37. Take time out for others."
+	setcycle 40 o01 ""
+	setcycle 40 o02 ""
+	setcycle 40 o03 "Very Inaccurate"
+	setcycle 40 o04 "Moderately Inaccurate"
+	setcycle 40 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 40 o06 "Moderately Accurate"
+	setcycle 40 o07 "Very Accurate"
+	setcycle 40 o08 ""
+	setcycle 40 o09 ""
+	setcycle 40 PreSelection 0
+	setcycle 40 Comment 7
+	setcycle 41 ItID IPIP50_It38
+	setcycle 41 ItemDescription "38. Shirk my duties."
+	setcycle 41 o01 ""
+	setcycle 41 o02 ""
+	setcycle 41 o03 "Very Inaccurate"
+	setcycle 41 o04 "Moderately Inaccurate"
+	setcycle 41 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 41 o06 "Moderately Accurate"
+	setcycle 41 o07 "Very Accurate"
+	setcycle 41 o08 ""
+	setcycle 41 o09 ""
+	setcycle 41 PreSelection 0
+	setcycle 41 Comment 8
+	setcycle 42 ItID IPIP50_It39
+	setcycle 42 ItemDescription "39. Have frequent mood swings."
+	setcycle 42 o01 ""
+	setcycle 42 o02 ""
+	setcycle 42 o03 "Very Inaccurate"
+	setcycle 42 o04 "Moderately Inaccurate"
+	setcycle 42 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 42 o06 "Moderately Accurate"
+	setcycle 42 o07 "Very Accurate"
+	setcycle 42 o08 ""
+	setcycle 42 o09 ""
+	setcycle 42 PreSelection 0
+	setcycle 42 Comment 9
+	setcycle 43 ItID IPIP50_It40
+	setcycle 43 ItemDescription "40. Use difficult words."
+	setcycle 43 o01 ""
+	setcycle 43 o02 ""
+	setcycle 43 o03 "Very Inaccurate"
+	setcycle 43 o04 "Moderately Inaccurate"
+	setcycle 43 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 43 o06 "Moderately Accurate"
+	setcycle 43 o07 "Very Accurate"
+	setcycle 43 o08 ""
+	setcycle 43 o09 ""
+	setcycle 43 PreSelection 0
+	setcycle 43 Comment 10
+	setcycle 44 ItID IPIP50_Hd1
+	setcycle 44 ItemDescription "Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence."
+	setcycle 44 o01 ""
+	setcycle 44 o02 ""
+	setcycle 44 o03 ""
+	setcycle 44 o04 ""
+	setcycle 44 o05 ""
+	setcycle 44 o06 ""
+	setcycle 44 o07 ""
+	setcycle 44 o08 ""
+	setcycle 44 o09 ""
+	setcycle 44 PreSelection 0
+	setcycle 44 Comment 0
+	setcycle 45 ItID IPIP50_It41
+	setcycle 45 ItemDescription "41. Don't mind being the center of attention."
+	setcycle 45 o01 ""
+	setcycle 45 o02 ""
+	setcycle 45 o03 "Very Inaccurate"
+	setcycle 45 o04 "Moderately Inaccurate"
+	setcycle 45 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 45 o06 "Moderately Accurate"
+	setcycle 45 o07 "Very Accurate"
+	setcycle 45 o08 ""
+	setcycle 45 o09 ""
+	setcycle 45 PreSelection 0
+	setcycle 45 Comment 1
+	setcycle 46 ItID IPIP50_It42
+	setcycle 46 ItemDescription "42. Feel others' emotions."
+	setcycle 46 o01 ""
+	setcycle 46 o02 ""
+	setcycle 46 o03 "Very Inaccurate"
+	setcycle 46 o04 "Moderately Inaccurate"
+	setcycle 46 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 46 o06 "Moderately Accurate"
+	setcycle 46 o07 "Very Accurate"
+	setcycle 46 o08 ""
+	setcycle 46 o09 ""
+	setcycle 46 PreSelection 0
+	setcycle 46 Comment 2
+	setcycle 47 ItID IPIP50_It43
+	setcycle 47 ItemDescription "43. Follow a schedule."
+	setcycle 47 o01 ""
+	setcycle 47 o02 ""
+	setcycle 47 o03 "Very Inaccurate"
+	setcycle 47 o04 "Moderately Inaccurate"
+	setcycle 47 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 47 o06 "Moderately Accurate"
+	setcycle 47 o07 "Very Accurate"
+	setcycle 47 o08 ""
+	setcycle 47 o09 ""
+	setcycle 47 PreSelection 0
+	setcycle 47 Comment 3
+	setcycle 48 ItID IPIP50_It44
+	setcycle 48 ItemDescription "44. Get irritated easily."
+	setcycle 48 o01 ""
+	setcycle 48 o02 ""
+	setcycle 48 o03 "Very Inaccurate"
+	setcycle 48 o04 "Moderately Inaccurate"
+	setcycle 48 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 48 o06 "Moderately Accurate"
+	setcycle 48 o07 "Very Accurate"
+	setcycle 48 o08 ""
+	setcycle 48 o09 ""
+	setcycle 48 PreSelection 0
+	setcycle 48 Comment 4
+	setcycle 49 ItID IPIP50_It45
+	setcycle 49 ItemDescription "45. Spend time reflecting on things."
+	setcycle 49 o01 ""
+	setcycle 49 o02 ""
+	setcycle 49 o03 "Very Inaccurate"
+	setcycle 49 o04 "Moderately Inaccurate"
+	setcycle 49 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 49 o06 "Moderately Accurate"
+	setcycle 49 o07 "Very Accurate"
+	setcycle 49 o08 ""
+	setcycle 49 o09 ""
+	setcycle 49 PreSelection 0
+	setcycle 49 Comment 5
+	setcycle 50 ItID IPIP50_It46
+	setcycle 50 ItemDescription "46. Am quiet around strangers."
+	setcycle 50 o01 ""
+	setcycle 50 o02 ""
+	setcycle 50 o03 "Very Inaccurate"
+	setcycle 50 o04 "Moderately Inaccurate"
+	setcycle 50 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 50 o06 "Moderately Accurate"
+	setcycle 50 o07 "Very Accurate"
+	setcycle 50 o08 ""
+	setcycle 50 o09 ""
+	setcycle 50 PreSelection 0
+	setcycle 50 Comment 6
+	setcycle 51 ItID IPIP50_It47
+	setcycle 51 ItemDescription "47. Make people feel at ease."
+	setcycle 51 o01 ""
+	setcycle 51 o02 ""
+	setcycle 51 o03 "Very Inaccurate"
+	setcycle 51 o04 "Moderately Inaccurate"
+	setcycle 51 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 51 o06 "Moderately Accurate"
+	setcycle 51 o07 "Very Accurate"
+	setcycle 51 o08 ""
+	setcycle 51 o09 ""
+	setcycle 51 PreSelection 0
+	setcycle 51 Comment 7
+	setcycle 52 ItID IPIP50_It48
+	setcycle 52 ItemDescription "48. Am exacting in my work."
+	setcycle 52 o01 ""
+	setcycle 52 o02 ""
+	setcycle 52 o03 "Very Inaccurate"
+	setcycle 52 o04 "Moderately Inaccurate"
+	setcycle 52 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 52 o06 "Moderately Accurate"
+	setcycle 52 o07 "Very Accurate"
+	setcycle 52 o08 ""
+	setcycle 52 o09 ""
+	setcycle 52 PreSelection 0
+	setcycle 52 Comment 8
+	setcycle 53 ItID IPIP50_It49
+	setcycle 53 ItemDescription "49. Often feel blue."
+	setcycle 53 o01 ""
+	setcycle 53 o02 ""
+	setcycle 53 o03 "Very Inaccurate"
+	setcycle 53 o04 "Moderately Inaccurate"
+	setcycle 53 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 53 o06 "Moderately Accurate"
+	setcycle 53 o07 "Very Accurate"
+	setcycle 53 o08 ""
+	setcycle 53 o09 ""
+	setcycle 53 PreSelection 0
+	setcycle 53 Comment 9
+	setcycle 54 ItID IPIP50_It50
+	setcycle 54 ItemDescription "50. Am full of ideas."
+	setcycle 54 o01 ""
+	setcycle 54 o02 ""
+	setcycle 54 o03 "Very Inaccurate"
+	setcycle 54 o04 "Moderately Inaccurate"
+	setcycle 54 o05 "Neither Accurate Nor Inaccurate"
+	setcycle 54 o06 "Moderately Accurate"
+	setcycle 54 o07 "Very Accurate"
+	setcycle 54 o08 ""
+	setcycle 54 o09 ""
+	setcycle 54 PreSelection 0
+	setcycle 54 Comment 10
+	run dummyseq
+
+define loop RunOneSheetOf10Items
+	set source_file ""
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 2
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 QuestSheet IPIP50_1of5
+	setcycle 0 QuestStartRow 1
+	setcycle 1 QuestSheet IPIP50_5of5
+	setcycle 1 QuestStartRow 45
+	run sheet_seq
+
+define notepad about_this_template
+	__note__
+	This template already contains the basic structure of a typical questionnaire,
+	consisting of open and multiple-choice questions.
+	For more information, please visit:
+	- <http://osdoc.cogsci.nl/>
+	Have fun with OpenSesame!
+	__end__
+	set description "Some pointers to help you get started!"
+
+define sequence dummyseq
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run about_this_template always
+	run AllQuestionnaires always
+	run RunOneSheetOf10Items always
+	run goodbye always
+
+define form_text_display goodbye
+	set timeout infinite
+	set spacing 10
+	set rows "1;4;1"
+	set only_render no
+	set ok_text Quit
+	set margins "50;50;50;50"
+	set form_title Finished
+	set form_text "Thank you for your participation!"
+	set description "A simple text display form"
+	set cols "1;1;1"
+	set _theme gray
+	widget 0 0 3 1 label text="[form_title]"
+	widget 0 1 3 1 label center=no text="[form_text]"
+	widget 1 2 1 1 button text="[ok_text]"
+
+
+define inline_script init_qcanvas
+	set description "Executes Python code"
+	___run__
+	my_canvas = Canvas(penwidth = 1, fill = False, color = u'white')
+	
+	#OK button
+	my_canvas["OKbutton"] = Rect(290, 345, 205, 34, color = u'silver', fill = True)
+	my_canvas["OKbutton_t"] = Text("Continue", center=True, x=393, y=360, max_width=205, color = u'gray', font_size=18, font_bold=True)
+	
+	#get data from AllQuestionnaires loop
+	dm = items['AllQuestionnaires'].dm
+	
+	#header
+	print(dm[var.QuestStartRow-1].ItemDescription)
+	my_canvas['qhd'] = Text(dm[var.QuestStartRow-1].ItemDescription, center=False, x=-490, y=-372, max_width=983, color = u'black', font_size=13, font_bold=True)
+	
+	#define coordinates of questions
+	qs_ydist = 64; qs_w = 400; qs_h = 60; qs_x = -488; qs_y = -294
+	#define coordinates of options
+	opt_xdist = 64; opt_ydist = 64; opt_w = 60; opt_h = 60; opt_x = -71; opt_y = -294
+	
+	
+	#loop questions (y)
+	for i in range(1,10+1):
+	    #questions
+	    my_canvas['qst' + str(i).zfill(2) + "bg"] = Rect(qs_x, qs_y+((i-1)*qs_ydist)-2, 990, 1, fill = True, color = u'whitesmoke')
+	    my_canvas['qst' + str(i).zfill(2)] = Text(dm[var.QuestStartRow+i-1].ItemDescription, center=False, x=qs_x, y=qs_y+((i-1)*qs_ydist), max_width=qs_w, color = u'black', font_size=12)
+	    
+	    #loop options (x)
+	    for j in range(1,9+1):
+	        #options
+	        my_canvas['rb' + str(i).zfill(2) + str(j)] = Rect(opt_x+((j-1)*opt_xdist), opt_y+((i-1)*opt_ydist), opt_w, opt_h)
+	        my_canvas['rt' + str(i).zfill(2) + str(j)] = Text(getattr(dm[var.QuestStartRow+i-1],"o0" + str(j)), center=False, x=opt_x+((j-1)*opt_xdist), y=opt_y+((i-1)*opt_ydist), max_width=opt_w, color = u'black', font_size=10.5)
+	
+	
+	RSelected = dm[var.QuestStartRow-1+1:var.QuestStartRow-1+11].PreSelection
+	#update selection of all options depending on values in RSelected
+	for i in range(1,10+1):
+	    for j in range(1,9+1):
+	        if (RSelected[i-1]==j) & (my_canvas['rt' + str(i).zfill(2) + str(j)].text != ""):
+	            my_canvas['rb' + str(i).zfill(2) + str(j)].color = u'black'
+	        else:
+	            my_canvas['rb' + str(i).zfill(2) + str(j)].color = u'white'
+	
+	
+	my_canvas.show()
+	__end__
+	set _prepare ""
+
+define inline_script log_answers
+	set description "Executes Python code"
+	___run__
+	# All questions are answered. Now save all the information from this sheet to the question_log so that all information is logged in a LONG (not WIDE) format
+	for i in range(1,11+1):
+	    items['queslog_loop'].dm[i-1].ItemID = dm[var.QuestStartRow+i-2].ItID
+	    items['queslog_loop'].dm[i-1].ItemDescr = dm[var.QuestStartRow+i-2].ItemDescription
+	    if i > 1: #not a header
+	        items['queslog_loop'].dm[i-1].ChosenOption = RSelected[i-2]
+	        items['queslog_loop'].dm[i-1].ChosenOptDes = my_canvas['rt' + str(i-1).zfill(2) + str(RSelected[i-2])].text
+	__end__
+	set _prepare ""
+
+define logger new_logger
+	set description "Logs experimental data"
+	set auto_log yes
+
+define loop queslog_loop
+	set source_file ""
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 11
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 ItemID "<byscript>"
+	setcycle 0 ItemDescr "<byscript>"
+	setcycle 0 ChosenOption "N/A (header)"
+	setcycle 0 ChosenOptDes "N/A (header)"
+	setcycle 1 ItemID "<byscript>"
+	setcycle 1 ItemDescr "<byscript>"
+	setcycle 1 ChosenOption "<byscript>"
+	setcycle 1 ChosenOptDes "<byscript>"
+	setcycle 2 ItemID "<byscript>"
+	setcycle 2 ItemDescr "<byscript>"
+	setcycle 2 ChosenOption "<byscript>"
+	setcycle 2 ChosenOptDes "<byscript>"
+	setcycle 3 ItemID "<byscript>"
+	setcycle 3 ItemDescr "<byscript>"
+	setcycle 3 ChosenOption "<byscript>"
+	setcycle 3 ChosenOptDes "<byscript>"
+	setcycle 4 ItemID "<byscript>"
+	setcycle 4 ItemDescr "<byscript>"
+	setcycle 4 ChosenOption "<byscript>"
+	setcycle 4 ChosenOptDes "<byscript>"
+	setcycle 5 ItemID "<byscript>"
+	setcycle 5 ItemDescr "<byscript>"
+	setcycle 5 ChosenOption "<byscript>"
+	setcycle 5 ChosenOptDes "<byscript>"
+	setcycle 6 ItemID "<byscript>"
+	setcycle 6 ItemDescr "<byscript>"
+	setcycle 6 ChosenOption "<byscript>"
+	setcycle 6 ChosenOptDes "<byscript>"
+	setcycle 7 ItemID "<byscript>"
+	setcycle 7 ItemDescr "<byscript>"
+	setcycle 7 ChosenOption "<byscript>"
+	setcycle 7 ChosenOptDes "<byscript>"
+	setcycle 8 ItemID "<byscript>"
+	setcycle 8 ItemDescr "<byscript>"
+	setcycle 8 ChosenOption "<byscript>"
+	setcycle 8 ChosenOptDes "<byscript>"
+	setcycle 9 ItemID "<byscript>"
+	setcycle 9 ItemDescr "<byscript>"
+	setcycle 9 ChosenOption "<byscript>"
+	setcycle 9 ChosenOptDes "<byscript>"
+	setcycle 10 ItemID "<byscript>"
+	setcycle 10 ItemDescr "<byscript>"
+	setcycle 10 ChosenOption "<byscript>"
+	setcycle 10 ChosenOptDes "<byscript>"
+	run queslog_seq
+
+define sequence queslog_seq
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run new_logger always
+
+define inline_script refr_qcanvas
+	set description "Executes Python code"
+	___run__
+	OK_pressed = False
+	refresh_needed = True
+	
+	#big loop: refreshes questionnaire until all options are answered
+	while not (OK_pressed):
+	    my_mouse = Mouse(visible=True)
+	    #wait for mouse click
+	    button, pos, time = my_mouse.get_click()
+	    
+	    if pos is not None:
+	        x, y = pos
+	        print('Clicked on elements: %s' % my_canvas.elements_at(x, y))
+	        for ce in my_canvas.elements_at(x, y):
+	            if ce.find("rb") == 0:
+	                #check if the associated text at this position is not empty (only clickable if there is text)
+	                if my_canvas["rt"+str(ce[2::])].text != "":            
+	                    newsel = int(ce[4:5])
+	                    oldsel = int(RSelected[int(ce[2:4])-1])
+	                    if newsel != oldsel:
+	                        refresh_needed = True
+	                        RSelected[int(ce[2:4])-1] = newsel
+	                        #remove border old selection
+	                        if oldsel != 0:
+	                            my_canvas['rb' + str(ce[2:4]) + str(oldsel)].color = u'white'
+	
+	                        #add border new selection
+	                        my_canvas['rb' + str(ce[2:4]) + str(newsel)].color = u'black'
+	            # check if OK button was clicked
+	            if (ce == "OKbutton"):
+	                if (str(my_canvas["OKbutton_t"].color) == "black"):
+	                    OK_pressed = True
+	
+	    #check if all selections are made already
+	    allselected = True
+	    for i in range(1,10+1):
+	        if (RSelected[i-1] == 0) & (my_canvas['qst' + str(i).zfill(2)].text != ""):
+	            allselected = False
+	
+	    if allselected:
+	        #enable OK button
+	        my_canvas["OKbutton_t"].color = u'black'
+	            
+	    #check if refresh is needed
+	    if refresh_needed:
+	        my_canvas.show()
+	        refresh_needed = False
+	__end__
+	set _prepare ""
+
+define sequence sheet_seq
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run init_qcanvas always
+	run refr_qcanvas always
+	run log_answers always
+	run queslog_loop always
+
