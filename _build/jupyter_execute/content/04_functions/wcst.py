@@ -9,7 +9,7 @@
 from IPython.display import IFrame
 
 
-# The tutorial can be found [here](https://osdoc.cogsci.nl/3.3/tutorials/wcst-python/)
+# The tutorial can be found [here](https://osdoc.cogsci.nl/3.3/tutorials/wcst-python/). You can skip Extra assignments 4 to 6.
 
 # In[4]:
 

@@ -69,3 +69,4 @@ chapters:
       - file: content/13_input_output/io_python_lessons
       - file: content/13_input_output/io_python_exercises
       - file: content/13_input_output/parallelport
+  - file: content/solutions_book/solutions

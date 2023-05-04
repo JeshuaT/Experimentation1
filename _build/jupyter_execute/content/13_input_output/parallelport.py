@@ -27,7 +27,8 @@ get_ipython().system('pip install --user git+https://github.com/solo-fsw/openses
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 
 # Under "flow control", you should now also see two new objects called `markers_init` and `markers_send`. 
-# ![](images/Markers_symbols.png)
+# ![](images/Marker_symbols.png)
+# 
 
 # ## Step 2. Presenting stimulus markers
 # 
