@@ -1,6 +1,4 @@
-# Programming Psychological Experiments using python and OpenSesame 
-
-**NOTE: we are in the process of completing this course material. All material will be formally released in April 2023** 
+# Programming Psychological Experiments using python and OpenSesame (academic year 2022-2023) 
 
 Welcome to this JupyterBook, which provides the course material covered partially in the course [Experimentation I: Programming Psychological Experiments](https://studiegids.universiteitleiden.nl/en/courses/114580/experimentation-i-programming-psychological-experiments). This course is part of the [research master program in Psychology](https://www.universiteitleiden.nl/en/education/study-programmes/master/psychology-research) at [Leiden University](http://leidenuniv.nl/) in the Netherlands.
 
@@ -10,7 +8,7 @@ Using this material, you can learn how to code in python, build experiments usin
 
 Make sure you save your work in a well-organized folder structure. Some of the later exercises build on work you did earlier during the course.
 
-We have provided solutions to all exercises [here](TODO). Just keep in mind that there are often multiple ways to solve a problem, so if you come up with a different solution, that doesn't necessarily mean you're wrong. Don't forget that figuring out how to solve a problem on your own is an important part of the learning process and can be incredibly fulfilling. Embrace the challenge and take pride in your ability to find solutions independently!
+We have provided solutions to all exercises [here](https://jeshuat.github.io/Experimentation1/content/solutions_book/solutions.html). Just keep in mind that there are often multiple ways to solve a problem, so if you come up with a different solution, that doesn't necessarily mean you're wrong. Don't forget that figuring out how to solve a problem on your own is an important part of the learning process and can be incredibly fulfilling. Embrace the challenge and take pride in your ability to find solutions independently!
 
 - If you're taking this course in-person at Leiden University: This course material is partially covered in an intensive eight-week course at Leiden University, where you will participate in practical sessions to receive live feedback and help. No prior programming knowledge is assumed. We expect that you have read/watched the lessons at home. During the practical sessions, you will then work through the python exercises, the OpenSesame tutorials, and the subsequent exercises in class.
 
