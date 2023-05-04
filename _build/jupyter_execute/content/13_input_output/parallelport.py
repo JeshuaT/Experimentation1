@@ -2,17 +2,9 @@
 # coding: utf-8
 
 # # Using the parallel port in OpenSesame
-
-# TODO tutorial plug-in provided by Iris Spruit SOLO? / Selin Topel
 # 
-# based on the flanker task created in excercise 1 of the Eriksen flanker tutorial in chapter 3.
-# 
-# https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
-# 
-
-# # Adding markers to an experiment
-# 
-# ## Step 1. Installing the OpenSesame plug-in for sending markers with Leiden University devices
+# ## Adding markers to an experiment
+# ##  Step 1. Installing the OpenSesame plug-in for sending markers with Leiden University devices
 # 
 # To install the plug-in, open OpenSesame and use the following lines of code in the Python console (make sure that the console is visible by clicking on the "Show Jupyter/IPython console" icon):
 
@@ -27,8 +19,7 @@ get_ipython().system('pip install --user git+https://github.com/solo-fsw/openses
 # https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/flankertask_1_exercise1.osexp
 # 
 # Under "flow control", you should now also see two new objects called `markers_init` and `markers_send`. 
-# ![](images/Marker_symbols.png)
-# 
+# ![](images/Markers_symbols.png)
 
 # ## Step 2. Presenting stimulus markers
 # 
@@ -40,8 +31,19 @@ get_ipython().system('pip install --user git+https://github.com/solo-fsw/openses
 # Then we add a varible (column) called `stimmarker` in the `block_loop` and `block_loop_1`; and give unique values corresponding to each stimulus (e.g., 1, 2, 3, 4).
 # ![](images/Markers_New2.png)
 # 
-# Stimulus markers will be sent when the stimuli are presented, thus we also need to insert a `markers_send` element right after the stimulus presentation in the trial sequence (both in the practice and experimental loops). Given that the marker values are determined by the `stimmarker` variable we created, we refer to this variable in the object as the marker value. 
+# Stimulus markers will be sent when the stimuli are presented, thus we also need to insert a `markers_send` element right after the stimulus presentation in the trial sequence (both in the practice and experimental loops). Given that the marker values are determined by the `stimmarker` variable we created, we refer to this variable in the object as the marker value.
+# 
+# Important!! Here, we change the duration of `stimulus` to be 0 ms (before it was 80 ms) and instead make the "Object duration" attribute of the 80 ms. This will ensure that the stimulus will remain on the screen for 80 ms but will also send the markers right when the stimulus started to be displayed on the screen (see the Figure below).
+# 
+# ![](images/markervalueopensesame.png)
+# 
+# First step:
+# 
 # ![](images/Markers_New3.png)
+# 
+# Second step:
+# 
+# ![](images/Markers_New4.png)
 
 # ## Step 3. Presenting response markers
 # 
@@ -59,9 +61,17 @@ else:
 
 
 # This in-line should be then followed by another `markers_send` item we called `Respmarker_send` where the marker value is set to the value of the `respmarkervalue` variable.
-# ![](images/Markers_New4.png)
+# ![](images/Markers_New5.png)
 
-# ## Step 4. Presenting feedback markers
+# ## Step 4. Running the experiment
+# 
+# Now you can run the experiment and test whether all markers are sent!
+# In case you have a UsbParMarker device you can check whether you see the corresponding binary code in the LEDs.To see the LEDs lighting up, change the duration of the markers to 200 ms.
+# You can also check the log file to see if they are logged correctly.
+
+# # Exercises
+# 
+# ## Exercise 1. Presenting feedback markers
 # 
 # Additionally, we can also send markers defining the feedback participants received after their response. These could correspond to "correct", "incorrect", and "missing" trials. 
 # By now, you might have an idea on how we would implement this. Similar to our approach above for the response markers, we can write a conditional statement in an inline following feedback presentation. However, it is important to note that participants may have missed some trials which also means that they did not respond correctly in these trials.
@@ -77,21 +87,18 @@ else:
     var.fbmarkervalue = 9 # incorrect
 
 
-# # Exercises
-# 
-# ## Exercise 1. Add block markers
+# ## Exercise 2. Add block markers
 # 
 # It is often convenient to have markers that indicate the start and the end of each block of trials, for example if you want to
 # exclude EEG or other physiological data collected during the breaks when analyzing your data. Add the markers 101 and 102 to indicate the start and the end of the practice block, respectively. Add the markers 111 and 112 for test block 1, 121 and 122 for test block 2, etc.
 # 
 # Now let's think a moment about the length of the markers. How long do you present the markers before the signals goes back to 0? And how long does the signal stays 0 before you send a new marker? Make sure there is sufficient time between the onset of the start-block marker and the first stimulus marker of a block. Also make sure there is sufficient time after the end of the last trial and the onset of the end-block marker. What is the minimum duration of the marker and the period it is 0 when the device that records your parallel port signal samples at 500 Hz (i.e. 500 read-outs per second)? And what is the minimum duration when the sample frequency is 50 Hz?
 # 
-# ## Exercise 2. Recreate the incredible scanner beam emitted by KITT
+# ## Exercise 3. Recreate the incredible scanner beam emitted by KITT
 # 
 # > **Note:** Part of the text below is adapted from The E-Primer (Spapé, Verdonschot, & van Steenbergen, 2019). Spapé M.M.*, Verdonschot, R.G., & van Steenbergen, H.* (2019) The E-Primer: An introduction to creating psychological experiments in E-Prime. Second edition updated for E-Prime 3. Leiden: Leiden University Press. [www.e-primer.com](http://www.e-primer.com) Copyright 2019 by the authors and LUP. Adapted with permission.
 # 
 # For our final exercise you will recreate the incredible scanner beam emitted by KITT from the Knight Rider television series (yes folks, dating back to the 1980s!).
-# 
 
 # In[8]:
 
