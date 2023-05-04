@@ -3,7 +3,7 @@
 
 # # Python lessons: Getting Ready
 # 
-# > **Note** The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0. The main content of the lessons is also covered in the text provided [here](https://www.py4e.com/html3/01-intro).
+# > **Note** The videos below origin from the [Python for Everyone Course](https://www.py4e.com) by Charles R. Severance licensed under Creative Commons Attribution 3.0. The main content of the lessons is also covered as chapter of the book "Python for Everbody: Exploring Data in Python 3" provided [here](https://www.py4e.com/html3/01-intro).
 
 # In[1]:
 
