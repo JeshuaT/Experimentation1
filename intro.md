@@ -4,7 +4,7 @@ Welcome to this JupyterBook, which provides the course material covered partiall
 
 Using this material, you can learn how to code in python, build experiments using OpenSesame, and do basic data preprocessing in python. Like the software packages we will be using, all of the material in this course is open and freely available. Please note that the compiled JupyterBook is a collection of teaching material from various sources, and it heavily relies on and integrates earlier work generously provided by others online. We always acknowledge the work of these contributors whenever we use their material. The major contributors are mentioned below.
 
-**How to use this material?**
+## How to use this material?
 
 Make sure you save your work in a well-organized folder structure. Some of the later exercises build on work you did earlier during the course.
 
@@ -15,7 +15,7 @@ We have provided solutions to all exercises [here](https://jeshuat.github.io/Exp
 
 - If you're teaching yourself: We understand that it can be challenging to self-teach python and OpenSesame, and you may need help from a more experienced classmate or colleague, particularly during the exercises. If you are interested in having a similar course organized by us at your institute, please feel free to [contact us](mailto:HvanSteenbergen@fsw.leidenuniv.nl) to discuss possibilities.
 
-**Acknowledgements**
+## Acknowledgements
 
 Our course is a renewed version of an [earlier course](https://studiegids.universiteitleiden.nl/en/courses/110025/experimentation-i-programming-psychological-experiments) that Henk led at Leiden University for over a decade. This course focused on E-Prime and accompanied the book [The E-Primer](https://www.e-primer.com/), which was written together with Michiel Spape, Rinus Verdonschot, and Saskia van Dantzig, my esteemed colleagues at Leiden University in the early days. Although the current course is much more focused on coding than the previous course, we still owe a lot of inspiration from the earlier book and even have reused parts of this book in the current course. Our initial discussions with Dirk van Morselaar (VU Amsterdam) were also really influential and helped us to make python coding a central part of this course.
 
@@ -38,6 +38,4 @@ Last but not least, we are grateful to the board of the faculty of Social and Be
 **Dr. Henk van Steenbergen, Associate Professor and PI at the [Affect, Motivation and Action lab](http://www.henkvansteenbergen.com)**
 
 *author and course coordinator*
-
-
 
