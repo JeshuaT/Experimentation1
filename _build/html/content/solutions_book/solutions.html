@@ -94,7 +94,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Programming Psychological Experiments using python and OpenSesame
+   Programming Psychological Experiments using python and OpenSesame (academic year 2022-2023)
   </a>
  </li>
 </ul>
@@ -3993,50 +3993,32 @@ Your score is 83.33333333333334%</p>
 <p>Solution Exercise 3 <a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/Extra_OS_ex3.osexp">link</a></p>
 <p>Solution Exercise 4 <a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/Extra_OS_ex4.osexp">link</a></p>
 <p>Solution Exercise 5 <a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/JeshuaT/Experimentation1/blob/main/content/solutions/Extra_OS_ex5.osexp">link</a></p>
-<hr class="docutils" />
-<blockquote>
-<div><p>Below is an <strong>Alternative</strong> approach to “performance_contingent_smiley” script in Exercises 3-5. The objective of the script is:</p>
-</div></blockquote>
+<p>Below is an <strong>Alternative</strong> approach to “performance_contingent_smiley” script in Exercises 3-5. The objective of the script is:</p>
 <ol class="simple">
 <li><p>Show Pos smiley when response is correct and &lt;=500ms.</p></li>
 <li><p>Show Neutral smiley when response is correct but slow (&gt;500ms).</p></li>
 <li><p>Show Negative stimuli when response is incorrect, or in the absense of a response (‘too late’ as written in the PDF).</p></li>
 </ol>
-<blockquote>
-<div><p>Unlike in the solution uploaded above, it is usually <strong>better to avoid comparisons with RTs</strong> to look for missing responses.</p>
-</div></blockquote>
-<blockquote>
-<div><ul class="simple">
-<li><p>Always go for checking missed responses directly like <code class="docutils literal notranslate"><span class="pre">var.response_keyboard_response</span> <span class="pre">!='None'</span></code>.</p></li>
-</ul>
-</div></blockquote>
+<p>Unlike in the solution uploaded above, it is usually <strong>better to avoid comparisons with RTs</strong> to look for missing responses.</p>
 <ul class="simple">
+<li><p>Always go for checking missed responses directly like <code class="docutils literal notranslate"><span class="pre">var.response_keyboard_response</span> <span class="pre">!='None'</span></code>.</p></li>
 <li><p>Sticking to RT checks is error prone. If you change the time allowed for the response elsewhere in the experiment (may be to debug or pilot the experiment), you might have to change the way you detect missed responses too.</p></li>
 <li><p>Different software use different RTs for missed responses. RT for missed responses is 0 in Eprime, ‘[ ]’ in Psychopy, or a few microsenconds higher than max limit of the keyboard object (around 1000.50ms in this experiment).</p></li>
 </ul>
-<blockquote>
-<div><p>Hence the following code is recommended as a form of best practice.</p>
-</div></blockquote>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>if var.response_keyboard_response !=’None’:
-if var.correct == 1 and var.response_time_keyboard_response &lt;= 500:
-var.smiley = 1 #positive
-var.totalPoints = var.totalPoints + 20
-elif var.correct == 1 and var.response_time_keyboard_response &gt; 500:
-var.smiley = 3 #neutral
-var.totalPoints = var.totalPoints + 0
-else:
-var.smiley = 2 #negative
-var.totalPoints = var.totalPoints - 20
-else:
-var.smiley = 2 #negative
-var.totalPoints = var.totalPoints - 20</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
+<p>Hence the following code is recommended as a form of best practice.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">response_keyboard_response</span> <span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">correct</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">var</span><span class="o">.</span><span class="n">response_time_keyboard_response</span> <span class="o">&lt;=</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">smiley</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#positive</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">+</span> <span class="mi">20</span>
+    <span class="k">elif</span> <span class="n">var</span><span class="o">.</span><span class="n">correct</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">var</span><span class="o">.</span><span class="n">response_time_keyboard_response</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">smiley</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">#neutral</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">+</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">smiley</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#negative</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">-</span> <span class="mi">20</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">smiley</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#negative</span>
+    <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">totalPoints</span> <span class="o">-</span> <span class="mi">20</span>
 
 
 </pre></div>
