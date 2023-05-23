@@ -1,0 +1,985 @@
+print('Hello world!')
+
+myvar = 43
+myvar = myvar + 1
+print(myvar)
+
+var.myvar = 43
+
+var.myvar = var.myvar + 1
+print(var.myvar)
+
+name = input("Enter your name: ")
+print("Hello " + name)
+
+hours = float(input("Enter Hours: "))
+rate = float(input("Enter Rate: "))
+print("Pay: " + str(hours*rate))
+
+# OR
+
+hours = input("Enter Hours: ")
+rate = input("Enter Rate: ")
+pay = float(hours) * float(rate)
+print("Pay: ", pay)
+
+width = 17
+height = 12.0
+print(width//2)
+print(type(width//2))
+print(width/2.0)
+print(type(width/2.0))
+print(height/3)
+print(type(height/3))
+print(1 + 2 * 5)
+print(type(1 + 2 * 5))
+
+celsius = float(input("Enter temperature in Celsius: "))
+print("Temperature in Fahrenheit: " + str((celsius * 9/5) + 32))
+
+import math
+RT = int(input("Enter reaction time value in ms (between 1 and 2000 ms): "))
+RTinv = round(-1000 / RT,2)
+RTlog = round(math.log(RT),2)
+print("Inverse RT is: " + str(RTinv) + "; Log RT is: " + str(RTlog) + ".")
+
+RT = int(input("Enter average reaction time value in ms (between 1 and 2000 ms): "))
+ACC = float(input("Enter average accuracy score as proportion (between 0 and 1): "))
+IES = round(RT/ACC)
+PEp = round((1-ACC)*100,2)
+print("When combining an RT of " + str(RT) + " ms and an ACC of " + str(ACC) + " (= " +  str(PEp) + "% errors), the IES score is " + str(IES) + " ms.")
+
+# student from WG 101
+# var.width stores width of the screen set in the experiment
+# Calculate new positions by calculating the proportion of this width
+var.target_pos = float(var.target_pos) * var.width
+var.dist_pos = float(var.dist_pos) * var.width
+
+
+var.missing = 0
+
+## checkMissing inline should contain the following:
+var.missing = var.missing + 1 # one more missing trial
+
+## calculate_rates inline should contain the following:
+var.missing_rate = (var.missing/(var.count_trial_sequence + 1)*100)
+# notice that we needed to add 1 to the count of trials. This is because the OpenSesame counts trials starting at 0.
+
+var.err_rate = 100 - (var.missing_rate + var.acc)
+
+
+je hours = input('Enter Hours: ')
+rate = input('Enter Rate: ')
+try:
+  if float(hours) > 40:
+    extra_rate = float(rate)*1.5
+    normal_hours = 40
+  else:
+    extra_rate = 0
+    normal_hours = float(hours)
+  pay = normal_hours*float(rate) + ((float(hours) - 40)*extra_rate)
+  print('Pay: ', pay)
+except:
+  print('Error, please enter numeric input')
+
+try:
+    hours = int(input("Enter hours: "))
+    rate = float(input("Enter rate: "))
+except:
+    print("Error, please enter numeric input!")
+    raise
+
+if hours > 40:
+    pay = (hours - 40)*rate*1.5 + 40 * rate
+else:
+    pay = hours * rate
+
+print("Pay: ", pay)
+
+import sys
+
+try:
+    hours = int(input("Enter hours: "))
+    rate = float(input("Enter rate: "))
+except:
+    print("Error, please enter numeric input!")
+    sys.exit(1)
+
+if hours > 40:
+    pay = (hours - 40)*rate*1.5 + 40 * rate
+else:
+    pay = hours * rate
+
+print("Pay: ", pay)
+
+score = input('Enter your score (between 0.0 and 1.0): ')
+try:
+  if float(score) > 1 or float(score) < 0:
+    print('Bad score')
+  elif float(score) >= 0.9:
+    print('A')
+  elif float(score) >= 0.8:
+    print('B')
+  elif float(score) >= 0.7:
+    print('C')
+  elif float(score) >= 0.6:
+    print('D')
+  else:
+    print('F')
+except:
+  print('Bad score')
+
+try:
+    grade = float(input("Enter score: "))
+except:
+    print("Bad score")
+    raise
+
+if grade < 0 or grade > 1.0:
+    print("Score is out of range!")
+elif grade >= 0.9:
+    print("A")
+elif grade >= 0.8:
+    print("B")
+elif grade >= 0.7:
+    print("C")
+elif grade >= 0.6:
+    print("D")
+else:
+    print("F")
+
+import sys
+
+try:
+    grade = float(input("Enter score: "))
+except:
+    print("Bad score")
+    sys.exit(1)
+
+if grade < 0 or grade > 1.0:
+    print("Score is out of range!")
+elif grade >= 0.9:
+    print("A")
+elif grade >= 0.8:
+    print("B")
+elif grade >= 0.7:
+    print("C")
+elif grade >= 0.6:
+    print("D")
+else:
+    print("F")
+
+name = input('Your name: ')
+age = input('Your age in years: ')
+try:
+  if float(age) < 18:
+    print('Wow you are too young!')
+  elif float(age) > 30:
+    print('Wow you are too old!')
+  else:
+    print('Hello', name, ', welcome to this experiment!')
+except:
+  print('Invalid input, try again!')
+
+
+if var.correct == 1:
+  var.correctrtcnt = var.correctrtcnt + var.response_time
+if var.correct == 0:
+  var.errorrtcnt = var.errorrtcnt + var.response_time
+
+var.meanrt_corr = var.correctrtcnt / var.trial_counter
+var.meanrt_err = var.errorrtcnt / var.trial_counter
+ 
+
+# EITHER method 1
+if var.subject_parity == "odd":
+  var.version = "version 1"
+  var.corresp_red = "1"
+  var.corresp_green = "2"
+  var.corresp_blue = "3"
+  var.corresp_yellow = "4"
+else:
+  var.version = "version 2"
+  var.corresp_red = "3"
+  var.corresp_green = "4"
+  var.corresp_blue = "1"
+  var.corresp_yellow = "2"
+
+# OR method 2, only the first line needs to change:
+if var.subject_nr % 2 == 1:
+  var.version = "version 1"
+  var.corresp_red = "1"
+  var.corresp_green = "2"
+  var.corresp_blue = "3"
+  var.corresp_yellow = "4"
+else:
+  var.version = "version 2"
+  var.corresp_red = "3"
+  var.corresp_green = "4"
+  var.corresp_blue = "1"
+  var.corresp_yellow = "2"
+
+
+
+def check_age(age, name):
+  if age < 18:
+    return "You are too young for this experiment."
+  elif age > 30:
+    return "You are too old for this experiment."
+  else:
+    return f"Hello {name}, welcome to this experiment."
+
+name = input("Please enter your name: ")
+age = int(input("Please enter your age: "))
+message = check_age(age, name)
+print(message)
+
+count = 0
+total = 0
+
+while True:
+    str_val = input("Enter a number:")
+    if str_val == 'done':
+        break
+    try:
+        val = float(str_val)
+    except:
+        print("Invalid input")
+        continue
+    total = total + val
+    count = count + 1
+
+print(total, count, total/count)
+
+fill = ""
+import time
+for i in range(1,41):
+    fill = fill + " "
+    print("\r",fill + 'Hello world',end='')
+    time.sleep(0.5)
+
+def print_tree(height):
+    # Loop through the rows of the tree
+    for row in range(height):
+        # Print spaces before the asterisks to center the tree
+        for space in range(height-row-1):
+            print(" ", end="")
+        
+        # Print the asterisks for the current row
+        for asterisk in range(row*2+1):
+            print("*", end="")
+        
+        # Move to the next row
+        print()
+
+# Test the function with different values for the height
+print_tree(5)
+print_tree(7)
+print_tree(10)
+
+import cv2
+import numpy
+import pygame
+# Full path to the video file in file pool
+          
+path = pool[var.movie_filename]
+# Open the video
+video = cv2.VideoCapture(path)
+# A loop to play the video file. This can also be a while loop until a key
+# is pressed. etc.
+videowidth = video.get(cv2.CAP_PROP_FRAME_WIDTH)
+videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT)
+          
+for i in range(100):
+    # Get a frame
+    try:
+        retval, frame = video.read()
+        # Rotate it, because for some reason it otherwise appears flipped.
+        frame = numpy.rot90(frame)
+        # Flip it (vertically?!), because for some reason it otherwise appears horizontally (!) flipped.
+        frame = numpy.flipud(frame)
+        # The video uses BGR colors and PyGame needs RGB
+
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        # Create a PyGame surface
+        surf = pygame.surfarray.make_surface(frame)
+    except:
+        #end of movie
+        break
+
+    # Show the PyGame surface!
+    exp.surface.blit(surf, ((var.width - videowidth) / 2, (var.height - videoheight) / 2))
+    pygame.display.flip()
+
+import cv2
+import numpy
+import pygame
+# Full path to the video file in file pool
+          
+path = pool[var.movie_filename]
+# Open the video
+video = cv2.VideoCapture(path)
+# A loop to play the video file. This can also be a while loop until a key
+# is pressed. etc.
+videowidth = video.get(cv2.CAP_PROP_FRAME_WIDTH)
+videoheight = video.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+fps =  video.get(cv2.CAP_PROP_FPS)
+print(fps)
+
+for i in range(100):
+    # Get a frame
+    try:
+        retval, frame = video.read()
+        # Rotate it, because for some reason it otherwise appears flipped.
+        frame = numpy.rot90(frame)
+        # Flip it (vertically?!), because for some reason it otherwise appears horizontally (!) flipped.
+        frame = numpy.flipud(frame)
+        # The video uses BGR colors and PyGame needs RGB
+
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        # Create a PyGame surface
+        surf = pygame.surfarray.make_surface(frame)
+    except:
+        #end of movie
+        break
+
+    # Show the PyGame surface!
+    exp.surface.blit(surf, ((var.width - videowidth) / 2, (var.height - videoheight) / 2))
+    pygame.display.flip()
+    # clock.sleep(1000/fps)
+    myclocktick(fps)
+
+def myclocktick(foo):
+  #inspired by clock.tick
+  #see https://stackoverflow.com/questions/34383559/pygame-clock-tick-vs-framerate-in-game-main-loop
+  if var.has(u'prevt'):
+        diff = ((1000/foo) - (clock.time() - var.prevt) ) - 10
+        if diff>0:
+            clock.sleep(diff)
+
+  var.prevt = clock.time()
+
+text1 = "X-DSPAM-Confidence:0.8475"
+col_index = text1.find(":")
+num = float(text1[col_index+1:])
+print(num)
+print(type(num))
+
+text2 = "  This is a  setece      with  a typo and   too many  spaces "
+
+text2 = text2.strip()
+text2 = text2.replace("setece", "sentence")
+
+while "  " in text2:
+  text2 = text2.replace("  ", " ")
+
+print(text2)
+
+string = "  This is a  setece      with  a typo and   too many  spaces "
+string = string.strip()
+string = string.replace('setece', 'sentence')
+string = string.replace('   ', ' ') # first reduce 3 whitespaces to 2
+string = string.replace('  ', ' ') # second reduce 2 whitespaces to 1
+
+print(string)
+
+string = "  This is a  setece      with  a typo and   too many  spaces "
+
+string = string.strip()
+string = string.replace('setece', 'sentence')
+string = ' '.join(string.split()) # split the string (removes spaces) and rejoin it (around 1 space)
+
+print(string)
+
+string = "  This is a  setece      with  a typo and   too many  spaces "
+" ".join(string.split())
+
+#s = "1234"
+s = "Look at this moving text!!!!!!!!!!!!!!!!"
+
+import time
+for repeat in range(0,3):
+  for i in range(0,len(s)):
+      print('\r',s[i:len(s)]+s[0:i],end='')
+      time.sleep(0.2)
+      
+#end with original
+print('\r',s,end='')      
+      
+
+import time
+
+text = "Look at this moving text!!!!!!!!!!!!!!!!"
+for repeat in range(3):
+
+  for i in range(len(text)):
+    # right to left
+    print('\r', text[i:] + text[:i], end = '')
+    # left to right
+    print('\r', text[-i:] + text[:-i], end = '')
+    
+    time.sleep(.2)
+
+var.stop = 0 # abort the Conditions loop when the value is 1
+incorrect = 0 # record the number of successive incorrect trials
+
+# insert these codes into inline_script item "process_trial"
+if var.num_correct != var.num_total: 
+    incorrect = incorrect + 1
+    if incorrect == 4:
+        var.stop = 1
+else:
+    incorrect = 0
+
+# (1) This can be achieved by iteratively adding each character in var.seq_presented into var.seq_reversed in reversed order
+var.seq_reversed = ''
+for i in range(1,len(var.seq_presented)+1):
+    var.seq_reversed = var.seq_reversed + var.seq_presented[len(var.seq_presented)-i]
+
+
+# (2)	A much easier solution is to use negative slicing
+var.seq_reversed = var.seq_presented[::-1]
+
+if (var.response == var.seq_reversed): 
+    var.fbtext = "Correct sequence"
+else:
+    var.fbtext = "Incorrect sequence"
+
+for i in range(len(var.response)):
+    if var.response[i] == var.seq_reversed[i]: 
+        var.num_correct = var.num_correct + 1
+
+seq_check = var.seq_presented 
+for char in var.response: 
+    if (seq_check.find(char)) > -1: 
+        var.num_correct = var.num_correct + 1
+        seq_check = seq_check.replace(char,'') 
+
+
+Option 1.
+
+# code builds a new string t using unique letters within a string str. It does this in the order of letters found in str. 
+
+str = "abdb"
+t = "" # empty
+for i in str: # for each letter in str
+    if (i in t): # if the letter is already in t
+        pass # do nothing
+    else: # if the letter is not in t
+        t = t + i # add that to t
+    
+print (t) # outputs abd
+
+------------
+Option 2.
+ 
+
+from collections import OrderedDict
+str = "pqrqtrq" 
+x = "".join(OrderedDict.fromkeys(str))
+print (x) # outputs pqrt
+
+filename = input("Enter the file name: ")
+if filename == "na na boo boo":
+    print("NA NA BOO BOO TO YOU - You have been punk'd!")
+
+else:
+  fhand = open(filename, 'r')
+
+  count = 0
+  total_confidence = 0
+  for line in fhand:
+      if line.startswith("X-DSPAM-Confidence:"):
+          space_index = line.find(" ")
+          my_num = float(line[space_index+1:])
+          total_confidence += my_num
+          count += 1
+
+  print("Average spam confidence: ", total_confidence/count)
+
+# Change this to the folder that contains the .csv files
+SRC_FOLDER = './tutorial_data/data/'
+fout = open('./tutorial_data/merged.csv', 'w')
+
+filecount = 0
+for basename in os.listdir(SRC_FOLDER):
+    path = os.path.join(SRC_FOLDER, basename)
+    print('Reading ',path)
+    fhand = open(path)
+    for line in fhand:
+        fout.write(line)
+    fhand.close()
+    filecount = filecount + 1
+print('Number of files considered for merge:',filecount)
+fout.close()
+
+# Change this to the folder that contains the .csv files
+SRC_FOLDER = './tutorial_data/data/'
+fout = open('./tutorial_data/merged.csv', 'w')
+
+filecount = 0
+filecountmerged = 0
+for basename in os.listdir(SRC_FOLDER):
+    path = os.path.join(SRC_FOLDER, basename)
+    if path !=  "./tutorial_data/data/CI_RSI2000_test.csv":
+        print('Reading {}'.format(path))
+        fhand = open(path)
+        linecount = 0
+        for line in fhand:
+            if linecount == 0:
+                if filecount == 0:
+                    #header first file
+                    refheader =  line
+                    fout.write(line)
+                    write_this_file = True
+                else:
+                    #check whether current header matches refheader
+                    if line == refheader:
+                        write_this_file = True
+                        filecountmerged = filecountmerged + 1
+                    else:
+                        write_this_file = False
+            else:
+                if write_this_file:
+                    fout.write(line)
+            linecount = linecount + 1
+        print('Line Count:', linecount)
+        fhand.close()
+        filecount = filecount + 1
+fout.close()
+print('Number of files considered for merge:',filecount,". Merged: ",filecountmerged)
+
+fout = open('./tutorial_data/merged.csv', 'r')
+fout_re = open('./tutorial_data/merged_re.csv', 'w')
+for line in fout:
+    line = line.replace("neutral","neu")
+    fout_re.write(line)
+fout.close()
+fout_re.close()
+
+for i in range(1,11):
+    file_name1 = os.path.join('tutorial_data2', 'file_pp'+str(i)+'.txt')
+    f_copy = open(file_name1,'w')
+    
+    file_name2 = os.path.join('tutorial_data2', str(i), 'file.txt')
+    f_orig = open(file_name2,'r')
+    
+    for line in f_orig:
+        f_copy.write(line)
+    
+    f_copy.close()
+    f_orig.close()
+
+for i in range(1,11):
+    file_name = os.path.join('tutorial_data2', 'file_pp'+str(i)+'.txt')
+    with open(file_name,'r') as f:
+        content = f.readlines()
+    
+    with open(file_name,'w') as f:
+        for line in content:
+            f.write('file_pp'+str(i)+'\t'+line)
+            
+
+fout = open(os.path.join('tutorial_data2','merged.txt'), 'w')
+header = ['file name','column 2','column 3']
+fout.write('\t'.join(header)+'\n')
+
+for i in range(1,11):
+    file_name = os.path.join('tutorial_data2', 'file_pp'+str(i)+'.txt')
+    with open(file_name,'r') as f:
+        content = f.read()
+        fout.write(content)
+fout.close()
+
+
+def calc_grade(score):
+  # define grades and scores tuples
+  grades = ('A', 'B', 'C', 'D', 'E', 'F')
+  scores = (0.9, 0.8, 0.7, 0.6, 0.5, 0.0)
+
+  # loop over them, leaving out F
+  for i in range(len(grades)-1):
+    
+    # if score is larger/equal than cutoff, assign the grade 
+    if score >= scores[i]:
+      grade = grades[i]
+      return grade
+      
+  # otherwise, return F
+  return 'F'
+    
+# Test
+calc_grade(0.7)
+
+import pandas as pd
+
+# Part 1
+df = pd.read_csv('https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/data_exercises/subject-1_IC.csv')
+
+# Part 2
+print(df.head(5))
+print(df.tail(5))
+
+# Part 3
+print(df.response_time)
+
+# Part 4
+print(df.at[68, 'response_time'])
+print('It is higher than 1000ms')
+
+# Part 1
+print(df.shape)
+
+# Part 2
+columns_to_include = ['subject_nr', 'correct', 'response_time', 'congruency']
+df2 = df[columns_to_include]
+
+# Part 3
+df_correct = df2[df2['correct'] == 1]
+
+# Part 4
+print(df_correct.shape)
+
+# Part 1
+df_incorrect = df2[df2['correct'] == 0]
+
+# Part 2
+df_correct.sort_values('response_time', ascending=False, inplace=True)
+df_incorrect.sort_values('response_time', ascending=False, inplace=True)
+
+# Part 3
+print(df_correct.head(10))
+print(df_incorrect.head(10))
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('https://raw.githubusercontent.com/JeshuaT/Experimentation1/main/content/10_dataframes/data/data_exercises/subject-1_IC.csv')
+
+# plot the 'response_time' for each value in 'congruency' using seaborn barplot
+sns.barplot(x='congruency', y='response_time', data=df)
+plt.show()
+
+# plot the response_time for each congruency in a barplot using matplotlib procedural method
+plt.bar(df['congruency'], df['response_time'])
+plt.show()
+
+# plot the average response time for each congruency in a barplot using matplotlib object oriented method
+fig, ax = plt.subplots()
+ax.bar(df['congruency'], df['response_time'])
+plt.show()
+
+
+
+# A possible answer 
+fig, axs = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True, figsize=(5.5, 3.5))
+
+df_subj1_parity = df[(df['task_type'] == 'parity') & (df['session'] == "lowswitch")]
+df_subj2_parity = df[(df['task_type'] == 'parity') & (df['session'] == "highswitch")]
+df_subj1_magnitude = df[(df['task_type'] == 'magnitude') & (df['session'] == "lowswitch")]
+df_subj2_magnitude = df[(df['task_type'] == 'magnitude') & (df['session'] == "highswitch")]
+
+df_subj1_parity['response_time'].hist(ax=axs[0,0])
+df_subj2_parity['response_time'].hist(ax=axs[0,1])
+df_subj1_magnitude['response_time'].hist(ax=axs[1,0])
+df_subj2_magnitude['response_time'].hist(ax=axs[1,1])
+
+# Set common labels
+fig.text(0.28, -0.03, 'Parity', ha='center', va='center')
+fig.text(0.75, -0.03, 'Magnitude', ha='center', va='center')
+
+axs[0,0].set_ylabel('Low-switch condition')
+axs[1,0].set_ylabel('High-switch condition')
+
+plt.show()
+
+
+
+from tkinter import *
+
+window = Tk()
+
+canvas = Canvas(window,height=500,width=500)
+#canvas.create_line(0,0,500,500,fill="blue",width=5)
+#canvas.create_line(0,500,500,0,fill="red",width=5)
+#canvas.create_rectangle(50,50,250,250,fill="purple")
+#points = [250,0,500,500,0,500]
+#canvas.create_polygon(points,fill="yellow",outline="black",width=5)
+#canvas.create_arc(0,0,500,500,style=PIESLICE,start=270,width=5)
+canvas.create_arc(0,0,500,500,fill="red",extent=180,width=10)
+canvas.create_arc(0,0,500,500,fill="white",extent=180,start=180,width=10)
+canvas.create_oval(190,190,310,310,fill="white",width=10)
+canvas.pack()
+
+window.mainloop()
+
+
+# run this code in Spyder, does not work in Colab
+from tkinter import *
+import time
+
+window = Tk()
+canvas = Canvas(window,height=500,width=500)
+
+canvas.create_oval(0,0,500,500,fill="red",width=1)
+canvas.create_oval(50,50,450,450,fill="white",width=1)
+canvas.pack()
+window.update()
+
+for i in range(30):
+    canvas.create_arc(0,0,500,500,fill="gray",start=90,extent=i*360/30,width=1)
+    canvas.create_oval(50,50,450,450,fill="white",width=1)
+    canvas.create_text(250, 250, text="00:"+str(30-i).zfill(2), fill="black", font=('Helvetica 80 bold'))
+    
+    canvas.pack()
+    window.update()
+    time.sleep(1)
+
+i = 30
+#make arc complete not possible so we create gray oval at the end
+canvas.create_oval(0,0,500,500,fill="gray",width=1)
+canvas.create_oval(50,50,450,450,fill="white",width=1)
+canvas.create_text(250, 250, text="00:"+str(30-i).zfill(2), fill="black", font=('Helvetica 80 bold'))
+canvas.pack()
+window.update()
+   
+window.mainloop()
+
+
+
+# run this code in Spyder, does not work in Colab
+
+# timesec = int(input("Please enter how many seconds you want to wait")) #input seems not to work sometimes in spyder?
+timesec = int("900")
+
+if timesec > (60*100)-1:
+    print("Not possible to present a clock beyond 99m:59s")
+else:
+    
+    from tkinter import *
+    import time
+    
+    window = Tk()
+    canvas = Canvas(window,height=500,width=500)
+    
+    canvas.create_oval(0,0,500,500,fill="red",width=1)
+    canvas.create_oval(50,50,450,450,fill="white",width=1)
+    canvas.pack()
+    window.update()
+    
+    for i in range(timesec ):
+        canvas.create_arc(0,0,500,500,fill="gray",start=90,extent=i*360/timesec ,width=1)
+        canvas.create_oval(50,50,450,450,fill="white",width=1)
+        
+        timeleft = timesec - i
+        timeleft_s = timeleft % 60
+        timeleft_m = timeleft // 60
+        
+        canvas.create_text(250, 250, text=str(timeleft_m).zfill(2)+":"+str(timeleft_s).zfill(2), fill="black", font=('Helvetica 80 bold'))
+        
+        canvas.pack()
+        window.update()
+        time.sleep(1)
+    
+    i = timesec 
+    #make arc complete not possible so we create gray oval at the end
+    canvas.create_oval(0,0,500,500,fill="gray",width=1)
+    canvas.create_oval(50,50,450,450,fill="white",width=1)
+    timeleft = timesec - i
+    timeleft_s = timeleft % 60
+    timeleft_m = timeleft // 60
+    canvas.create_text(250, 250, text=str(timeleft_m).zfill(2)+":"+str(timeleft_s).zfill(2), fill="black", font=('Helvetica 80 bold'))
+    canvas.pack()
+    window.update()
+       
+    window.mainloop()
+
+
+def bin_to_dec(binary):
+    decimal = 0
+    for i in range(8):
+        decimal = decimal + int(binary[i]) * (2 ** (7-i))
+    return decimal
+
+# Get the binary number from the user
+binary_number = input("Enter an 8-bit binary number: ")
+
+# Convert the binary number to a decimal value
+# write your own code here (that replaces the line below)
+decimal_value = bin_to_dec(binary_number)
+
+# Print the decimal value
+print(decimal_value)
+
+def dec_to_bin(decimal):
+    binary = ""
+    while decimal > 0:
+        binary = str(decimal % 2) + binary
+        decimal = decimal // 2
+    while len(binary) < 8:
+        binary = "0" + binary
+    return binary
+
+# Get the decimal number from the user
+decimal_value = input("Enter a decimal value between 0 and 255: ")
+
+# Convert the decimal value to a binary value
+# write your own code here (that replaces the line below)
+binary_number_s = dec_to_bin(int(decimal_value))
+
+# Print the binary value
+print(binary_number_s)
+
+# Solution 1
+def print_odd_numbers(n):
+    count = 0
+    num = 1
+    while count < n:
+        print(num)
+        count += 1
+        num += 2
+
+# Solution 2:
+def print_odd_numbers(n):
+    for i in range(n):
+        print(2*i+1)
+
+# Solution 3:
+def print_odd_numbers(n):
+    odd_numbers = list(range(1,200,2))
+    for num in odd_numbers[:n]:
+        print(num)
+
+# 1
+for i in range(1,11):
+    print(i)
+
+# 2
+m = 5 # Change this to any integer you want
+
+for i in range(1,11):
+    print(i,"x",m)
+
+# 3
+m = 5 # Change this to any integer you want
+
+for i in range(1,11):
+    x = i * m
+    print(i,"x",m,"=",x)
+
+# 4
+def print_multiplication_table(m):
+    for i in range(1,11):
+        x = i * m
+        print(i,"x",m,"=",x)
+
+print_multiplication_table(9)
+
+# 5
+for m in range(1, 11):
+    print(f"The multiplication table of {m}:")
+    print() # Optional for readability
+    print_multiplication_table(m)
+    print() # Optional for readability
+
+
+# OR 
+for m in range(1, 11):
+    print(f"The multiplication table of {m}:\n") # Way nicer actually!
+    print_multiplication_table(m)
+    print()
+
+# 6
+group4 = [1,2,5,10]
+group5 = [3,4,6,7,8,9]
+
+print("The following multiplication tables are learned in group 4")
+for m in group4:
+    print(f"The multiplication table of {m}:")
+    print()
+    print_multiplication_table(m)
+    print()
+
+print("The following multiplication tables are learned in group 5")
+for m in group5:
+    print(f"The multiplication table of {m}:")
+    print()
+    print_multiplication_table(m)
+    print()
+
+# 7
+group4 = [1,2,5,10]
+group5 = [3,4,6,7,8,9]
+
+def group_number_chosen(group_number):
+    if group_number == 4:
+        print("The following multiplication tables are learned in group 4")
+        for m in group4:
+            print(f"The multiplication table of {m}:")
+            print()
+            print_multiplication_table(m)
+            print()
+
+    elif group_number == 5:
+        print("The following multiplication tables are learned in group 5")
+        for m in group5:
+            print(f"The multiplication table of {m}:")
+            print()
+            print_multiplication_table(m)
+            print()
+
+group_number_chosen(4)
+
+# 8
+def test_multiplication_table(m):
+    score = 0
+    for i in range(1, 11):
+        answer = int(input(f"{m} x {i} = "))
+        if answer == m * i:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Incorrect. The correct answer is {m*i}")
+    return score / 10 * 100
+
+# Call the function with different values of m
+score = test_multiplication_table(5)
+print(f"Your score is {score}%")
+
+# 9 and 10
+
+def test_multiplication_table(m):
+    score = 0
+    count = 0
+    for i in range(1, 11):
+        while True:
+            answer = input(f"{m} x {i} = ")
+            if answer.isdigit():
+                answer = int(answer)
+                count += 1
+                break
+            else:
+                print("Please enter a valid number!")
+
+        while answer != m * i:
+            answer = input(f"Incorrect. Please try again. {m} x {i} = ?: ")
+            if answer.isdigit():
+                answer = int(answer)
+                count += 1
+            else:
+                print("Please enter a valid number!")
+
+        print("Correct!")
+        score += 1
+
+    return int(score / count * 100)
+
+# Call the function with different values of m
+score = test_multiplication_table(5)
+print(f"Your score is {score}%")
+
+
+
+
